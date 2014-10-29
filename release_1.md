@@ -23,8 +23,9 @@
 
   ```text
     $ gem install rails --version=3.2.18
-
     $ rails _3.2.18_ new dbc_overflow -T -d=postgresql
+    $ sed -i bak -e '/username/d' -e '/password/d' dbc_overflow/config/database.yml
+    $ cd dbc_overflow
   ```
 
   You'll need to install rspec-rails, capybara, shoulda-matchers, and factory-girl in your project. Refer to this document on [how to set up a Rails application.](../../../Rails_with_tests)
