@@ -7,9 +7,9 @@
 
 ### Summary
 
-For this release, you are going to build a live markdown editor for your question creation form.
+For this release, you are going to build -- from scratch -- a live markdown editor for your question creation form.
 
 ## Features
 
-- Build a live markdown editor
+- Build a live markdown editor. **Don't use a pre-made library**.
 - (Optional) Use the markdown widget for your answer forms as well
