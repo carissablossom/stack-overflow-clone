@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Welcome to DBC Overflow!</h1>
+  <div class="main-question">
+    <h2><%= @question.title %></h2>
+    <p><%= @question.content %></p>
+  </div>
+  <% @question.answers.each do |answer| %>
+  <div class="answer">
+    <h3><%= answer.title %></h3>
+    <p><%= answer.content %></p>
+  </div>
+  <% end %>
+</div>
