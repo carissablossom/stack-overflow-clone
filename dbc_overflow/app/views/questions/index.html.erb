@@ -1,0 +1,8 @@
+<h1>hello</h1>
+
+<% if @questions %>
+  <% @questions.each do |question| %>
+    <h2><%= question.title %></h2>
+    <p><%= question.content %></p>
+  <% end %>
+<% end %>
