@@ -1,0 +1,21 @@
+
+
+<ul>
+  <% @questions.each do |qu| %>
+    <li> <a href="/questions/<%= qu.id %>"><%= qu.title %></a></li>
+  <% end %>
+</ul>
+
+<%= form_for @question do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :content %><br>
+    <%= f.text_field :content %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
