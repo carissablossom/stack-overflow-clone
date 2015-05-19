@@ -12,7 +12,9 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.where(id: params[:id]).first
-    @answers = @question.answers
+    if @question
+      @answers = @question.answers
+    end
     @answer = Answer.new
   end
 
@@ -20,6 +22,24 @@ class QuestionsController < ApplicationController
     @question = Question.new
     @questions = Question.all
     @answers = Answer.all
+  end
+
+  def destroy
+    @question = Question.find(params[:id])
+    @question.destroy #destroys all the associated answers also
+    redirect_to :action => :index
+  end
+
+  def edit
+    @question = Question.find(params[:id])
+    render "edit"
+  end
+
+  def update
+    @question = Question.find(params[:id])
+    #saving
+    @question.update_attributes(post_params)
+    redirect_to :action => :show
   end
 
   private
