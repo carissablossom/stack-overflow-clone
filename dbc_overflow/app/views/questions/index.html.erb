@@ -1,14 +1,25 @@
 <h1>DBC Overflow</h1>
 <h3>Question</h3>
 
-<% @question.each do |q|%>
+<% @question.each do |questions|%>
   <div class="question">
   <ul>
-    <li><a href="/questions/<%=q.id%>">
-      <%=q.title%><br>
+    <li><a href="/questions/<%=questions.id%>">
+      <%=questions.title%><br>
     </a></li>
   </ul>
 <%end%>
   </div>
-  <%= link_to "Create New Question", new_question_path%>
+<%= form_for :questions, url: questions_path  do |f| %>
+  <p>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+</p>
+<p>
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+</p>
+  <%= f.submit "Create" %>
+<% end %>
+
 
