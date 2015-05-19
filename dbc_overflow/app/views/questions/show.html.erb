@@ -1,8 +1,8 @@
 <h2><%= @question.title %></h2>
 <p><%= @question.content %></p>
-<%= render 'questions/up' %>
+<%= link_to("Upvote", "/questions/#{@question.id}/upvote") %>
 <span><%= @question.vote %></span>
-<%= render 'questions/down' %>
+<%= link_to("Downvote", "/questions/#{@question.id}/downvote") %>
 
 <%= render 'questions/destroy' %>
 <%= render 'answers/form' %>

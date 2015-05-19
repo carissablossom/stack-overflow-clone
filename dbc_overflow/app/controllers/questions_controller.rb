@@ -2,7 +2,7 @@ class QuestionsController < ApplicationController
 
   def index
     @question = Question.new
-    @questions = Question.all
+    @questions = Question.all.sort_by(&:vote).reverse
   end
 
   # route /questions/:id
@@ -37,13 +37,19 @@ class QuestionsController < ApplicationController
     end
   end
 
-  def vote
+  def upvote
     @question = Question.find(params[:id])
-    @question.vote += params[:vote].to_i
+    @question.vote += 1
     @question.save
-    redirect_to @question
+    redirect_to request.referer
   end
 
+  def downvote
+    @question = Question.find(params[:id])
+    @question.vote -= 1
+    @question.save
+    redirect_to request.referer
+  end
 
   private
 

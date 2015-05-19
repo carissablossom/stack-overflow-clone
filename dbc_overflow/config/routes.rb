@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root 'questions#index'
   resources :questions
   resources :answers, only: [:create, :destroy]
-  post 'questions/vote', :to => 'questions#vote'
+  get 'questions/:id/upvote', :to => 'questions#upvote'
+  get 'questions/:id/downvote', :to => 'questions#downvote'
   get 'answers/:id/upvote', :to => 'answers#upvote'
   get 'answers/:id/downvote', :to => 'answers#downvote'
   # The priority is based upon order of creation: first created -> highest priority.
