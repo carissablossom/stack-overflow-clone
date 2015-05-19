@@ -3,6 +3,7 @@ class QuestionsController < ApplicationController
   def index
     @question = Question.new
     @questions = Question.all.sort_by(&:vote).reverse
+    @quote = ApplicationHelper.quote
   end
 
   # route /questions/:id
