@@ -1,0 +1,5 @@
+<%= form_for :answer, :url => answers_vote_path do  |f| %>
+    <%= hidden_field_tag :id, @answer.id %>
+    <%= hidden_field_tag :vote, -1 %>
+    <%= f.submit 'Downvote!' %>
+<% end %>

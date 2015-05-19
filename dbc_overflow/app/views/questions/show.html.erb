@@ -1,17 +1,22 @@
-<%= @question.id %>
-<%= @question.title %>
-<%= @question.content %>
+<h2><%= @question.title %></h2>
+<p><%= @question.content %></p>
+<%= render 'questions/up' %>
+<span><%= @question.vote %></span>
+<%= render 'questions/down' %>
 
 <%= render 'questions/destroy' %>
 <%= render 'answers/form' %>
 
-<% if @answers.any? %>
-  <ul>
-    <% @answers.each do |answer| %>
-      <li>
-        <h3><%= answer.title %></h3>
-        <p><%= answer.content %></p>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
+
+<ul>
+  <% @answers.each do |answer| %>
+    <li>
+      <h3><%= answer.title %></h3>
+      <p><%= answer.content %></p>
+      <%= link_to("Upvote", "/answers/#{answer.id}/upvote") %>
+      <span><%= answer.vote %></span>
+      <%= link_to("Downvote", "/answers/#{answer.id}/downvote") %>
+    </li>
+  <% end %>
+</ul>
+

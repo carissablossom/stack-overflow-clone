@@ -8,8 +8,8 @@ class QuestionsController < ApplicationController
   # route /questions/:id
   def show
     @question = Question.find(params[:id])
-    @answers = @question.answers
-    @answer = @question.answers.build
+    @answers = @question.answers.sort_by(&:vote).reverse
+    @answer = Answer.new
   end
 
   def create
@@ -35,6 +35,13 @@ class QuestionsController < ApplicationController
     if @question.update_attributes(question_params)
       redirect_to @question
     end
+  end
+
+  def vote
+    @question = Question.find(params[:id])
+    @question.vote += params[:vote].to_i
+    @question.save
+    redirect_to @question
   end
 
 

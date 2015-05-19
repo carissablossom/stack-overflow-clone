@@ -1,0 +1,5 @@
+<%= form_for :question, :url => { action: :vote } do  |f| %>
+    <%= hidden_field_tag :id, @question.id %>
+    <%= hidden_field_tag :vote, 1 %>
+    <%= f.submit 'Upvote!' %>
+<% end %>
