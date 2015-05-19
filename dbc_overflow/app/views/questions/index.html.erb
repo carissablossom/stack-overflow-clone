@@ -1,5 +1,7 @@
 <h1>hello</h1>
 
+<%= render 'questions/form' %>
+
 <% if @questions %>
   <% @questions.each do |question| %>
     <h2><%= question.title %></h2>

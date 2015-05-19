@@ -2,6 +2,9 @@
 <%= @question.title %>
 <%= @question.content %>
 
+<%= render 'questions/destroy' %>
+<%= render 'answers/form' %>
+
 <ul>
   <% @answers.each do |answer| %>
     <li>
