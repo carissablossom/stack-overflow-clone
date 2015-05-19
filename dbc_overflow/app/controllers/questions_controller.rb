@@ -1,5 +1,11 @@
 class QuestionsController < ApplicationController
   def index
+    @quote = QuoteGetter.new.get_quote
+    if !@quote
+      @randomquote = Quote.find(rand(0..59)+1)
+    end
+    @quote ||= @randomquote
+    Quote.create(content: @quote)
     @questions = Question.all
     @question = Question.new
   end

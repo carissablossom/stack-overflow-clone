@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  resources :questions do
 
+  resources :questions do
     put 'upvote',   to: 'questions#upvote'
     put 'downvote', to: 'questions#downvote'
-
   end
 
   resources :answers do
