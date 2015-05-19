@@ -8,4 +8,10 @@
 <% end %>
 </ul>
 
+<%= button_to "delete question", {:controller => :questions,
+  :action => 'destroy', :id => @question.id }, :method => :delete %>
+
+  <%= button_to "edit question", {:controller => :questions,
+  :action => 'edit', :id => @question.id }, :method => :get %>
+
 <%= render template: "questions/_new_answer" %>

@@ -1,8 +1,8 @@
 <% if @answer %>
-  <%= form_for @answer do |f| %>
+  <%= form_for [@question, @answer] do |f| %>
 
   <p>
-    <%= f.label :content %><br>
+    <%= f.label :answer %><br>
     <%= f.text_area :content %>
   </p>
 
