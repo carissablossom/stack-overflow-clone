@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
 
 resources :questions do
+  patch 'upvote', to: 'questions#upvote'
+  patch 'downvote', to: 'questions#downvote'
   resources :answers
 end
-
+patch 'answers/:id/upvote', to: 'answers#upvote'
+patch 'answers/:id/downvote', to: 'answers#downvote'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -14,10 +17,12 @@ end
   #   get 'products/:id' => 'catalog#view'
 
   # Creates a new route for questions to edit them?
-  'questions#edit'
+  # 'questions#edit'
+
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products

@@ -11,6 +11,22 @@ class AnswersController < ApplicationController
 
   end
 
+  def upvote
+    @answer = Answer.find(params[:id])
+    @answer.increment!(:vote_counter)
+    @question = @answer.question
+      redirect_to @question
+  end
+
+  def downvote
+    @answer = Answer.find(params[:id])
+    @answer.decrement!(:vote_counter)
+     @question = @answer.question
+      redirect_to @question
+  end
+
+
+
   def show
   end
 

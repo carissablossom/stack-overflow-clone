@@ -4,6 +4,13 @@
 
 <ul>
 <% @question.answers.each do |answer| %>
+<%= button_to "△", {:controller => :answers,
+    :action => 'upvote', :id => answer.id }, :method => :patch %>
+
+  <%= button_to "▽", {:controller => :answers,
+    :action => 'downvote', :id => answer.id }, :method => :patch %>
+  <%= answer.vote_counter %>
+
   <li><%= answer.content %> </li>
 <% end %>
 </ul>

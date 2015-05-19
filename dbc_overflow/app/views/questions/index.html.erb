@@ -2,7 +2,20 @@
 
 <ul>
 <% @questions.each do |quest| %>
-  <li> <a href="/questions/<%= quest.id %>"> <%= quest.title %></a></li>
+
+
+
+  <li> <a href="/questions/<%= quest.id %>"> <%= quest.title %></a>
+
+ <%= button_to "△", {:controller => :questions,
+    :action => 'upvote', :question_id => quest.id }, :method => :patch %>
+
+  <%= button_to "▽", {:controller => :questions,
+    :action => 'downvote', :question_id => quest.id }, :method => :patch %>
+
+  <%= quest.vote_counter %>
+
+  </li>
   <p> <%= quest.content %></p>
   <% end %>
 </ul>

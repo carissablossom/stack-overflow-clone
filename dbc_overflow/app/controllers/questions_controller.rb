@@ -23,6 +23,19 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def upvote
+    @question = Question.find(params[:question_id])
+    @question.increment!(:vote_counter)
+    redirect_to '/'
+  end
+
+  def downvote
+    @question = Question.find(params[:question_id])
+    @question.decrement!(:vote_counter)
+    redirect_to '/'
+  end
+
+
   def edit
     @question = Question.find(params[:id])
   end
@@ -41,6 +54,7 @@ class QuestionsController < ApplicationController
     @question = Question.where(id: params[:id]).first
     @answer=Answer.new(question_id: @question.id)
   end
+
 
   private
   def question_params
