@@ -1,0 +1,24 @@
+<% @questions.each do |question| %>
+  <div class="uhhh">
+    <h1><%= question.title %></h1>
+    <p><%= question.content %></p>
+  </div>
+<% end %>
+
+
+<%=  form_for @question do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :content %><br>
+    <%= f.text_field :content%>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
