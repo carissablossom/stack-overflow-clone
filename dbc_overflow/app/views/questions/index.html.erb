@@ -6,7 +6,7 @@ You're in the index!
 <div class="questions">
   <ul>
     <% @questions.each do |q| %>
-      <li><a href="/questions/<%= q.id %>"><%= q.title %></a></li>
+      <li><a href="/questions/<%= q.id %>"><%= q.title %></a> votes: <%=q.votes%> <%= render "questions/vote_buttons" %></li>
     <% end %>
   </ul>
 </div>

@@ -32,11 +32,20 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    p params
     @question = Question.find(params[:id])
     @question.update(title: params[:question][:title],
                      content: params[:question][:content])
     redirect_to "/questions/#{params[:id]}"
+  end
+
+  def upvote
+    @question = Question.find(params[:id])
+    @question.update(votes: @question.vote += 1)
+  end
+
+  def downvote
+    @question = Question.find(params[:id])
+    @question.update(vote: @question.vote -= 1)
   end
 
   private
