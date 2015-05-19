@@ -4,9 +4,10 @@
 
   <ul>
     <% @questions.each do |qu| %>
-      <li> <a href="/questions/<%= qu.id %>"><%= qu.title %></a>
-        <a href="/questions/<%= qu.id %>/upvote"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></a>
-        <a href="/questions/<%= qu.id %>/downvote"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></a>
+      <li>
+        <%= link_to qu.title, qu %>
+        <%= link_to raw('<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>'), question_path(qu)+'/upvote' %>
+        <%= link_to raw('<span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>'), question_path(qu)+'/downvote' %>
         <%= qu.vote_count %>
       </li>
     <% end %>

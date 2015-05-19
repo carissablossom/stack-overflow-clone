@@ -2,9 +2,7 @@
   <h3><%= @question.title %></h3>
 
   <p><%= @question.content %></p>
-  <a href="/questions/<%= @question.id %>/upvote"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></a>
-  <a href="/questions/<%= @question.id %>/downvote"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></a>
-  <%= @question.vote_count %>
+
 
   <h4>answers:</h4>
 
@@ -14,8 +12,8 @@
         <h5><%= an.title %></h5>
         <p><%= an.content %></p>
         <p>
-          <a href="/questions/<%= @question.id %>/answers/<%= an.id %>/upvote"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></a>
-          <a href="/questions/<%= @question.id %>/answers/<%= an.id %>/downvote"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></a>
+          <%= link_to raw('<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>'), question_answer_path(@question, an)+'/upvote' %>
+          <%= link_to raw('<span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>'), question_answer_path(@question, an)+'/downvote' %>
           <%= an.vote_count %>
         </p>
       </li>

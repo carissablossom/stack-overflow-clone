@@ -1,4 +1,5 @@
 class QuestionsController < ApplicationController
+  before_action :set_question, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
   def index
     response = HTTParty.get('https://api.github.com/zen', headers: {"User-Agent" => 'SF Dev BootCamp'}, basic_auth: {username: ENV['USERNAME'], password: ENV['PASSWORD']})
@@ -17,7 +18,7 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     if @question.save
-      redirect_to "/questions/#{@question.id}"
+      redirect_to @question
     else
       status 400
       'fu'
@@ -25,19 +26,16 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @question = Question.find(params[:id])
     @answers = @question.answers.order(vote_count: :desc)
     @answer = Answer.new
   end
 
   def edit
-    @question = Question.find(params[:id])
   end
 
   def update
-    @question = Question.find(params[:id])
     if @question.update_attributes(question_params)
-      redirect_to "/questions/#{@question.id}"
+      redirect_to @question
     else
       status 400
       'fu'
@@ -45,16 +43,14 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    @question = Question.find(params[:id])
     @question.destroy
-    redirect_to "/"
+    redirect_to root_path
   end
 
   def upvote
-    @question = Question.find(params[:id])
     @question.vote_count += 1
     if @question.save
-      redirect_to "/"
+      redirect_to root_path
     else
       status 400
       'fu'
@@ -62,10 +58,9 @@ class QuestionsController < ApplicationController
   end
 
   def downvote
-    @question = Question.find(params[:id])
     @question.vote_count -= 1 if @question.vote_count > 0
     if @question.save
-      redirect_to "/"
+      redirect_to root_path
     else
       status 400
       'fu'
@@ -73,6 +68,10 @@ class QuestionsController < ApplicationController
   end
 
   private
+  def set_question
+    @question = Question.find(params[:id])
+  end
+
   def question_params
     params.require(:question).permit(:title, :content)
   end
