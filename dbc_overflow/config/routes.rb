@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   resources :questions
+  resources :answers
+  resources :users
   # get 'users/new'
 
   # get 'users/create'
