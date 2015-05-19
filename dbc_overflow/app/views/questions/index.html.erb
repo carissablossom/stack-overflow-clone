@@ -1,5 +1,8 @@
+<h1>DBC Overflow</h1>
+<h3>Questions:</h3>
 <ul>
 <% @questions.each do |question| %>
   <li><a href="/questions/<%=question.id%>"><%= question.title %></a></li>
 <% end %>
 </ul>
+<%= render partial: "questions/new" %>

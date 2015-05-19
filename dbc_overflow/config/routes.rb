@@ -1,19 +1,21 @@
 Rails.application.routes.draw do
-  get 'answers/new'
+  # get 'answers/new'
 
-  get 'answers/create'
+  # get 'answers/create'
 
-  get 'answer/new'
+  # get 'answer/new'
 
-  get 'answer/create'
+  # get 'answer/create'
 
-  get 'questions/new'
+  # get 'questions/new'
 
-  get 'questions/create'
 
-  get 'questions/index'
 
-  get 'questions/show'
+  # get 'questions/create'
+
+  # get 'questions/index'
+
+  # get 'questions/show'
 
   resources :questions
   resources :answers
