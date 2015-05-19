@@ -3,6 +3,9 @@
 
   <h1><%= @question.title %></h1>
   <p><%= @question.content %></p>
+    <%= button_to "edit", {:controller => :questions,
+      :action => 'edit', :id => @question.id }, :method => :get %>
+
     <%= button_to "delete", {:controller => :questions,
       :action => 'destroy', :id => @question.id }, :method => :delete %>
 

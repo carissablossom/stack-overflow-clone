@@ -25,6 +25,16 @@ class QuestionsController < ApplicationController
     redirect_to action: "index"
   end
 
+  def edit
+    @question = Question.find(params[:id])
+  end
+
+  def update
+    @question = Question.find(params[:id])
+    @question.update(param_check)
+    redirect_to @question
+  end
+
   private
 
   def param_check
