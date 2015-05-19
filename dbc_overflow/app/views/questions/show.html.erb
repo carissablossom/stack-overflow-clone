@@ -1,2 +1,8 @@
-<h1>Questions#show</h1>
-<p>Find me in app/views/questions/show.html.erb</p>
+<h1>Question: <%= @question.title %></h1>
+<p><%= @question.content %></p>
+
+<h2>All answers:</h1>
+  <% @question.answers.each_with_index do |answer, index| %>
+    <h4><%= index + 1 %>. <%= answer.title %></h4>
+    <p><%= answer.content %></p>
+  <% end %>
