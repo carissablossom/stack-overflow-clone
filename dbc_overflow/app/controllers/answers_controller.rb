@@ -18,6 +18,6 @@ class AnswersController < ApplicationController
 
   private
   def answer_params
-    params.required(:answer).permit(:title, :content)
+    params.require(:answer).permit(:title, :content)
   end
 end

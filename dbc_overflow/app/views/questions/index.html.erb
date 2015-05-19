@@ -1,5 +1,21 @@
 <h1>All questions:</h1>
-  <% @questions.each do |question| %>
-    <h3><%= question.title %></h3>
-    <p><%= question.content %></p>
-  <% end %>
+
+  <p><%= render template: "questions/new.html.erb" %></p>
+
+  <p>
+    <% @questions.each do |question| %>
+      <h3><%= question.title %></h3>
+      <p>
+      <%= question.content %>
+
+      <%= form_for question, :method => :put do |f| %>
+        <%= f.submit  "Edit" %>
+      <% end %>
+
+      <%= form_for question, :method => :delete do |f| %>
+        <%= f.submit  "Delete" %>
+      <% end %>
+      </p>
+
+    <% end %>
+  </p>

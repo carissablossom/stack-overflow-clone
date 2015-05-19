@@ -1,6 +1,10 @@
 <h1>Question: <%= @question.title %></h1>
 <p><%= @question.content %></p>
 
+<p>
+  <%= render template: "answers/new.html.erb" %>
+</p>
+
 <h2>All answers:</h1>
   <% @question.answers.each_with_index do |answer, index| %>
     <h4><%= index + 1 %>. <%= answer.title %></h4>
