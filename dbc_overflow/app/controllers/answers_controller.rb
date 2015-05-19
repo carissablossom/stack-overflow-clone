@@ -20,14 +20,20 @@ class AnswersController < ApplicationController
   #   @answer = Answer.where(id: params[:id]).first
   # end
 
-  # def upvote
-  #   question = Question.where(id: params[:id]).first
-  #   question.up_vote
-  # end
 
-  # def downvote
-  #   self.down_vote
-  # end
+  def upvote
+    answer = Answer.where(id: params[:id]).first
+    answer.up_vote
+    @qid = answer.question_id
+     redirect_to question_path(@qid)
+
+  end
+
+  def downvote
+    answer = Answer.where(id: params[:id]).first
+    answer.down_vote
+    redirect_to :action => 'show'
+  end
 
   private
 

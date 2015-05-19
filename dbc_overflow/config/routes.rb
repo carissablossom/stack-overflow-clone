@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   post 'questions/:id/upvote' => 'questions#upvote', :as => 'upvote'
   post 'questions/:id/downvote' => 'questions#downvote', :as => 'downvote'
 
+
+  post 'answers/:id/upvote' => 'answers#upvote', :as => 'upvote_answer'
+  post 'answers/:id/downvote' => 'answers#downvote', :as => 'downvote_answer'
+
   # match 'questions/:id/upvote' => 'questions#upvote', :as => :upvote_path
   # match 'questions/:id/downvote' => 'questions#downvote', :as => :downvote_path
   # Example of regular route:

@@ -12,9 +12,11 @@
 
 
   <hr>
-<ul><% @question.answers.each.with_index(1) do |answer, ans_ind| %>
+<ul><% @answers.each.with_index(1) do |answer, ans_ind| %>
   <h3><%= answer.title %></h3>
   <p><%= answer.content %></p>
+  <%= link_to "upvote", upvote_answer_path(answer), method: :post %>
+  <%= link_to "downvote", downvote_answer_path(answer), method: :post %>
 <% end %></ul>
 
 <%= render partial: "answers/new" %>

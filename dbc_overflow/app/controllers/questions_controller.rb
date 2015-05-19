@@ -17,6 +17,7 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.where(id: params[:id]).first
     @answer = Answer.new
+    @answers = @question.answers.order(vote_total: :desc)
   end
 
   def destroy
