@@ -9,7 +9,7 @@ class AnswersController < ApplicationController
     @answer.question_id = params[:question_id]
     @answer.save
 
-    redirect_to "/questions/#{params[:question_id]}"
+    redirect_to question_path(@answer.question_id)
   end
 
   def show
@@ -20,14 +20,14 @@ class AnswersController < ApplicationController
     answer = Answer.find(params[:id])
     answer.votes += 1
     answer.save
-    redirect_to "/questions/#{answer.question_id}"
+    redirect_to question_path(answer.question_id)
   end
 
   def downvotes
     answer = Answer.find(params[:id])
     answer.votes -= 1
     answer.save
-    redirect_to "/questions/#{answer.question_id}"
+    redirect_to question_path(answer.question_id)
   end
 
   private
