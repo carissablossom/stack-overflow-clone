@@ -7,7 +7,7 @@
 <% end %>
 </ul>
 
-<%= form_for :answer, url: answer_something do |f| %>
+<%= form_for [@question, @answer] do |f| %>
 
   <p>
     <%= f.label :content %><br />
@@ -18,3 +18,7 @@
     <%= f.submit %>
   </p>
 <% end %>
+
+<%= button_to "delete", @question, method: :delete %>
+
+<%= button_to "edit", edit_question_path, method: :get %>

@@ -1,12 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'answers/create'
-
-  # get 'questions/index' # ask TA why this route is returning show route
-  # get 'questions/show'
-  resources :questions #do
-  resources :answers, only: [:edit, :update, :new, :create]
-  #end
+  resources :questions do
+    resources :answers, only: [:edit, :update, :new, :create]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
