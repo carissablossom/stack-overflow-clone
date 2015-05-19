@@ -1,12 +1,12 @@
 class QuestionsController < ApplicationController
 
   def index
-    @questions = Question.all
+    @questions = Question.all.sort_by(&:count).reverse
   end
 
   def show
     @question = Question.find(params[:id])
-    @answers = @question.answers
+    @answers = @question.answers.sort_by(&:count).reverse
     @answer = Answer.new
   end
 
@@ -33,6 +33,20 @@ class QuestionsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def upvote
+    @question = Question.find(params[:id])
+    @question.count += 1
+    @question.save
+    redirect_to '/'
+  end
+
+  def downvote
+    @question = Question.find(params[:id])
+    @question.count -= 1
+    @question.save
+    redirect_to '/'
   end
 
   private

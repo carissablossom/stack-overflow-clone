@@ -1,7 +1,16 @@
 Rails.application.routes.draw do
 
   resources :questions do
-    resources :answers, only: [:edit, :update, :new, :create]
+    member do
+      post 'upvote'
+      post 'downvote'
+    end
+    resources :answers, only: [:edit, :update, :new, :create] do
+      member do
+        post 'upvote'
+        post 'downvote'
+      end
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -14,7 +23,6 @@ Rails.application.routes.draw do
   #   get 'products/:id' => 'catalog#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
 

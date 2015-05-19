@@ -7,6 +7,22 @@ class AnswersController < ApplicationController
     redirect_to "/questions/#{@question.id}"
   end
 
+  def upvote
+    @question = Question.find(params[:question_id])
+    @answer = Answer.find(params[:id])
+    @answer.count += 1
+    @answer.save
+    redirect_to @question
+  end
+
+  def downvote
+    @question = Question.find(params[:question_id])
+    @answer = Answer.find(params[:id])
+    @answer.count -= 1
+    @answer.save
+    redirect_to @question
+  end
+
 
   private
   def answer_params
