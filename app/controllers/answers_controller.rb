@@ -25,6 +25,28 @@ class AnswersController < ApplicationController
   def destroy
   end
 
+  def upvote
+    @answer = Answer.find(params[:a_id])
+    @answer.vote_count += 1
+    if @answer.save
+      redirect_to "/questions/#{params[:q_id]}"
+    else
+      status 400
+      'fu'
+    end
+  end
+
+  def downvote
+    @answer = Answer.find(params[:a_id])
+    @answer.vote_count -= 1 if @answer.vote_count > 0
+    if @answer.save
+      redirect_to "/questions/#{params[:q_id]}"
+    else
+      status 400
+      'fu'
+    end
+  end
+
   private
   def answer_params
     params.require(:answer).permit(:title, :content, :question_id)

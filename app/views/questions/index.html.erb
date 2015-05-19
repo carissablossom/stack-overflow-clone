@@ -1,21 +1,26 @@
 
+<section class="container">
+  <ul>
+    <% @questions.each do |qu| %>
+      <li> <a href="/questions/<%= qu.id %>"><%= qu.title %></a>
+        <a href="/questions/<%= qu.id %>/upvote"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></a>
+        <a href="/questions/<%= qu.id %>/downvote"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></a>
+        <%= qu.vote_count %>
+      </li>
+    <% end %>
+  </ul>
 
-<ul>
-  <% @questions.each do |qu| %>
-    <li> <a href="/questions/<%= qu.id %>"><%= qu.title %></a></li>
+  <%= form_for @question do |f| %>
+    <p>
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+    </p>
+    <p>
+      <%= f.label :content %><br>
+      <%= f.text_field :content %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
   <% end %>
-</ul>
-
-<%= form_for @question do |f| %>
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :content %><br>
-    <%= f.text_field :content %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+</section>

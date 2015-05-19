@@ -1,33 +1,42 @@
-<h3><%= @question.title %></h3>
+<section class="container">
+  <h3><%= @question.title %></h3>
 
-<p><%= @question.content %></p>
+  <p><%= @question.content %></p>
+  <a href="/questions/<%= @question.id %>/upvote"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></a>
+  <a href="/questions/<%= @question.id %>/downvote"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></a>
+  <%= @question.vote_count %>
 
+  <h4>answers:</h4>
 
-<h4>answers:</h4>
+  <ul>
+    <% @answers.each do |an| %>
+      <li>
+        <h5><%= an.title %></h5>
+        <p><%= an.content %></p>
+        <p>
+          <a href="/questions/<%= @question.id %>/answers/<%= an.id %>/upvote"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></a>
+          <a href="/questions/<%= @question.id %>/answers/<%= an.id %>/downvote"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></a>
+          <%= an.vote_count %>
+        </p>
+      </li>
+    <% end %>
+  </ul>
 
-<ul>
-  <% @answers.each do |an| %>
-    <li>
-      <a href="/answers/<%= an.id %>"><%= an.title %></a>
-      <p><%= an.content %></p>
-    </li>
+  <%= form_for [@question, @answer] do |f| %>
+    <p>
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+    </p>
+    <p>
+      <%= f.label :content %><br>
+      <%= f.text_field :content %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+
   <% end %>
-</ul>
 
-<%= form_for [@question, @answer] do |f| %>
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :content %><br>
-    <%= f.text_field :content %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-
-<% end %>
-
-<%= link_to 'Edit', question_path(@question)+'/edit', :method => :get %>
-<%= link_to 'Destroy', question_path(@question), :method => :delete %>
+  <%= link_to 'Edit', question_path(@question)+'/edit', :method => :get %>
+  <%= link_to 'Destroy', question_path(@question), :method => :delete %>
+</section>

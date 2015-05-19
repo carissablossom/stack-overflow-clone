@@ -19,7 +19,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
-    @answers = @question.answers
+    @answers = @question.answers.order(vote_count: :desc)
     @answer = Answer.new
   end
 
@@ -41,6 +41,28 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @question.destroy
     redirect_to "/"
+  end
+
+  def upvote
+    @question = Question.find(params[:id])
+    @question.vote_count += 1
+    if @question.save
+      redirect_to "/"
+    else
+      status 400
+      'fu'
+    end
+  end
+
+  def downvote
+    @question = Question.find(params[:id])
+    @question.vote_count -= 1 if @question.vote_count > 0
+    if @question.save
+      redirect_to "/"
+    else
+      status 400
+      'fu'
+    end
   end
 
   private
