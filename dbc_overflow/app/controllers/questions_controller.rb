@@ -2,9 +2,10 @@ class QuestionsController < ApplicationController
   def index
     @question = Question.all
   end
+
   def show
-    #@question = Question.find(params[:id])
-    # @answers = Answer.find(question_id: @question)
+    @question = Question.where(id: params[:id]).first
+    # @answers = @question.answers
   end
 
   def new
