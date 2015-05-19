@@ -1,7 +1,7 @@
-<%= @question.title %><br>
-<%= @question.content %><br>
-<% @question.answers.each do |answer| %>
-  <%= answer.id %>
-  <%= answer.title %>
-  <%= answer.content %><br>
-<% end %>
+<h2>Question: <%= @question.title %></h2>
+<p><%= @question.content %><p><br>
+  <hr>
+<ul><% @question.answers.each.with_index(1) do |answer, ans_ind| %>
+  <h3><%= answer.title %></h3>
+  <p><%= answer.content %></p>
+<% end %></ul>
