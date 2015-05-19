@@ -2,8 +2,10 @@
   <h1> Question Show</h1>
 
   <h1><%= @question.title %></h1>
-
   <p><%= @question.content %></p>
+    <%= button_to "delete", {:controller => :questions,
+      :action => 'destroy', :id => @question.id }, :method => :delete %>
+
 
   <div class="header">
     <h2> Answers: </h2>

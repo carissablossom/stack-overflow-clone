@@ -20,6 +20,11 @@ class QuestionsController < ApplicationController
     redirect_to @question
   end
 
+  def destroy
+    Question.destroy(params[:id])
+    redirect_to action: "index"
+  end
+
   private
 
   def param_check
