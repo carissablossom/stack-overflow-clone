@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'question/index'
 
+  get 'question/index'
+
   get 'question/new'
 
   get 'question/create'
@@ -17,7 +19,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   resources :questions
   # You can have the root of your site routed with "root"
-  root 'question#show'
+  root 'question#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
