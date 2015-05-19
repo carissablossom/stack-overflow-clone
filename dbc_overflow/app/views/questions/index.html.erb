@@ -1,23 +1,25 @@
-<h1>All questions:</h1>
+<h3>"<%= @quote.content %>"</h3>
+
 
   <p><%= render template: "questions/new.html.erb" %></p>
 
+  <h1>All questions:</h1>
   <p>
-    <% @questions.each do |question| %>
-      <h3><a href="/questions/<%= question.id %>"><%= question.title %></a></h3>
-      <p><%= question.content %></p>
+  <% @questions.each do |question| %>
+    <h3><a href="/questions/<%= question.id %>"><%= question.title %></a></h3>
+    <p><%= question.content %></p>
 
-      <p>
-      <button><a href="/questions/<%= question.id %>/edit">Edit</a></button>
+    <p>
+    <button><a href="/questions/<%= question.id %>/edit">Edit</a></button>
 
-      <%= form_for question, :method => :delete do |f| %>
-        <%= f.submit  "Delete" %>
-      <% end %>
-
-      <a href="/questions/<%= question.id %>/upvotes"><i class="fa fa-thumbs-o-up"></i></a>
-      <a href="/questions/<%= question.id %>/downvotes"><i class="fa fa-thumbs-o-down"></i></a>
-      <%= question.votes %>
-      </p>
-
+    <%= form_for question, :method => :delete do |f| %>
+      <%= f.submit  "Delete" %>
     <% end %>
+
+    <a href="/questions/<%= question.id %>/upvotes"><i class="fa fa-thumbs-o-up"></i></a>
+    <a href="/questions/<%= question.id %>/downvotes"><i class="fa fa-thumbs-o-down"></i></a>
+    <%= question.votes %>
+    </p>
+
+  <% end %>
   </p>

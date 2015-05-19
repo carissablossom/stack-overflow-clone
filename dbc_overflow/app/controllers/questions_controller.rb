@@ -17,6 +17,12 @@ class QuestionsController < ApplicationController
   def index
     @question = Question.new
     @questions = Question.order("created_at DESC")
+    zen = HTTParty.get('https://api.github.com/zen', headers: {"User-Agent" => 'SF Dev BootCamp'}, basic_auth: {username: ENV['USERNAME'], password: ENV['PASSWORD']})
+    if zen
+      @quote = Quote.create!(content: zen.body)
+    else
+      @quote = Quote.all.sample
+    end
   end
 
   def destroy
