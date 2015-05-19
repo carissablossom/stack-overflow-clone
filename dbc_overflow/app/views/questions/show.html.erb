@@ -5,17 +5,14 @@
 
 <h2>Answers:</h2>
 <% @answers.each do |answer| %>
-  <%= answer.title %>
-  <%= answer.content %>
+  <h4><%= answer.title %></h4>
+  <p><%= answer.content %></p>
+  <br>
 <% end %>
-
-<%= @answer.title %>
-<%= @answer.content %>
-<%= @answer.id %>
 
 <hr>
 <h3>Post an answer:</h3>
-<%= form_for @answer do |form| %>
+<%= form_for [@question, @answer] do |form| %>
   <p>
     <%= form.label :title %>
     <%= form.text_field :title %>

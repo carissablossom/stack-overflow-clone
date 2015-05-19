@@ -4,24 +4,23 @@ class AnswersController < ApplicationController
   end
 
   def create
-    # @answer = Answer.new(answer_params)
-    #@answer.save
-    @answer = Answer.create(
-      title: params[:title],
-      content: params[:content],
-      question_id: params[:id])
+    @answer = Answer.new(answer_params)
+    @answer.question_id = params[:question_id]
+    @answer.save
+    redirect_to "/questions/#{@answer.question_id}"
+
   end
 
   def show
   end
 
   private
-  # def answer_params
-  #   params.require(:answer).permit(
-  #         :title,
-  #         :content,
-  #         :question_id
-  #         )
-  # end
+  def answer_params
+    params.require(:answer).permit(
+          :title,
+          :content
+          )
+    #params.require(:question_id).permit! #how can allow mutiple params and not do the manual assignment of id on line8
+  end
 
 end
