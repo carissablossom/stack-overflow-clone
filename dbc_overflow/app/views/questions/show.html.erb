@@ -6,3 +6,15 @@
   <li><%= answer.content %></li>
 <% end %>
 </ul>
+
+<%= form_for :answer, url: answer_something do |f| %>
+
+  <p>
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

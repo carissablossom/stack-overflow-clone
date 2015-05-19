@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
 
-  get 'questions/index'
+  get 'answers/create'
 
-  resources :questions
+  # get 'questions/index' # ask TA why this route is returning show route
+  # get 'questions/show'
+  resources :questions #do
+  resources :answers, only: [:edit, :update, :new, :create]
+  #end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'questions#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

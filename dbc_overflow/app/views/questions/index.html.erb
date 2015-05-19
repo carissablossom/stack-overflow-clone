@@ -1,4 +1,20 @@
 <% @questions.each do |question| %>
-  <h1><%= link_to question.title, question %></h1>
+  <h1><%= link_to question.title, question %>?</h1>
   <p><%= question.content %></p>
+<% end %>
+
+<%= form_for :question do |f| %>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
 <% end %>
