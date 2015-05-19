@@ -1,0 +1,7 @@
+<%= @question.title %><br>
+<%= @question.content %><br>
+<% @question.answers.each do |answer| %>
+  <%= answer.id %>
+  <%= answer.title %>
+  <%= answer.content %><br>
+<% end %>

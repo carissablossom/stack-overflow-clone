@@ -1,0 +1,9 @@
+##This app will allow users to upvote / downvote solutions to common development problems.
+
+#A user can create a question
+
+#A user can answer a question
+
+#Questions can be upvoted / downvoted
+
+#A user will be assigned a score based on user feedback
