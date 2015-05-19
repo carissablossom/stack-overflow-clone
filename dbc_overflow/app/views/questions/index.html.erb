@@ -4,7 +4,9 @@
 
 <% if @questions %>
   <% @questions.each do |question| %>
-    <h2><%= question.title %></h2>
+    <a href="<%= question_path(question) %>">
+      <h2><%= question.title %></h2>
+    </a>
     <p><%= question.content %></p>
   <% end %>
 <% end %>

@@ -5,11 +5,13 @@
 <%= render 'questions/destroy' %>
 <%= render 'answers/form' %>
 
-<ul>
-  <% @answers.each do |answer| %>
-    <li>
-      <h3><%= answer.title %></h3>
-      <p><%= answer.content %></p>
-    </li>
-  <% end %>
-</ul>
+<% if @answers.any? %>
+  <ul>
+    <% @answers.each do |answer| %>
+      <li>
+        <h3><%= answer.title %></h3>
+        <p><%= answer.content %></p>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
