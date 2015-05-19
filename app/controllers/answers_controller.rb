@@ -10,8 +10,9 @@ class AnswersController < ApplicationController
     if @answer.save
       redirect_to question_path(@answer.question.id)
     else
-      status 400
-      'fu'
+      @question = Question.find(@answer.question.id)
+      @answers = @question.answers
+      render :'questions/show'
     end
   end
 

@@ -21,6 +21,13 @@
   </ul>
 
   <%= form_for [@question, @answer] do |f| %>
+    <% if @answer.errors.any? %>
+      <div class="error_explanation">
+        <% @answer.errors.full_messages.each do |message| %>
+          <p><%= message %></p>
+        <% end %>
+      </div>
+    <% end %>
     <p>
       <%= f.label :title %><br>
       <%= f.text_field :title %>

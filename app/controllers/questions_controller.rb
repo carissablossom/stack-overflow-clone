@@ -1,13 +1,8 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
+  before_action :get_quote, only: [:index, :create]
 
   def index
-    response = HTTParty.get('https://api.github.com/zen', headers: {"User-Agent" => 'SF Dev BootCamp'}, basic_auth: {username: ENV['USERNAME'], password: ENV['PASSWORD']})
-    if response.response.code == "200"
-      @quote = Quote.create(content: response.parsed_response)
-    else
-      @quote = Quote.all.sample || Quote.new
-    end
     @questions = Question.order(created_at: :desc)
     @question = Question.new
   end
@@ -20,8 +15,8 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to @question
     else
-      status 400
-      'fu'
+    @questions = Question.order(created_at: :desc)
+      render :index, status: 400
     end
   end
 
@@ -70,6 +65,15 @@ class QuestionsController < ApplicationController
   private
   def set_question
     @question = Question.find(params[:id])
+  end
+
+  def get_quote
+    response = HTTParty.get('https://api.github.com/zen', headers: {"User-Agent" => 'SF Dev BootCamp'}, basic_auth: {username: ENV['USERNAME'], password: ENV['PASSWORD']})
+    if response.response.code == "200"
+      @quote = Quote.create(content: response.parsed_response)
+    else
+      @quote = Quote.all.sample || Quote.new
+    end
   end
 
   def question_params
