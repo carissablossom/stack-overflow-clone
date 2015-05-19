@@ -1,5 +1,12 @@
 class QuestionsController < ApplicationController
+
   def index
+    response = HTTParty.get('https://api.github.com/zen', headers: {"User-Agent" => 'SF Dev BootCamp'})
+    if response.response.code == "200"
+      @quote = Quote.create(content: response.parsed_response)
+    else
+      @quote = Quote.all.sample
+    end
     @questions = Question.order(created_at: :desc)
     @question = Question.new
   end
