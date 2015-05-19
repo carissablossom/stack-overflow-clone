@@ -1,0 +1,23 @@
+<h1>Questions#index</h1>
+<p>Find me in app/views/questions/index.html.erb</p>
+<p>we need to implement this with all the questions</p>
+<ul>
+<% @questions.each do |question| %>
+  <li><a href="/questions/<%= question.id %>" ><%= question.title %></a></li>
+<% end %>
+
+<h2>Create your new question here</h2>
+<%= form_for @question do |f| %>
+
+  <p>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  </p>
+
+  <p>
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+  </p>
+
+  <%= f.submit "Create Question" %>
+<% end %>

@@ -1,0 +1,10 @@
+This app is a stackoverflow clone.
+
+The index page will list all the questions
+
+Users will be able to ask questions
+
+A user will be able to click on a questions to show the whole question and its answers.
+
+Users will be able to answer questions
+

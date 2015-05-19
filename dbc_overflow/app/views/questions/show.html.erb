@@ -1,0 +1,25 @@
+
+<p><%= @question.title %></p>
+<%= @question.content %><br>
+
+<% @answers.each do |answer| %>
+  <%= answer.title %><br>
+  <%= answer.content %><br>
+<% end %>
+
+
+<h2>Create your new answer here</h2>
+<%= form_for [@question, @answer] do |f| %>
+
+  <p>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  </p>
+
+  <p>
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+  </p>
+
+  <%= f.submit "Create Answer" %>
+<% end %>
