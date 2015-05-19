@@ -1,25 +1,21 @@
 Rails.application.routes.draw do
-  get 'question/index'
 
-  get 'question/index'
 
-  get 'question/new'
+  # get 'post/new'
 
-  get 'question/create'
+  # get 'post/create'
 
-  get 'question/show'
-
-  get 'post/new'
-
-  get 'post/create'
-
-  get 'post/show'
+  # get 'post/show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  resources :questions
+
+  resources :questions do
+    resources :answers
+  end
+
   # You can have the root of your site routed with "root"
-  root 'question#index'
+  root 'questions#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
