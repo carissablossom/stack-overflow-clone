@@ -14,7 +14,7 @@
   <% end %>
 </ul>
 
-<%= form_for @answer do |f| %>
+<%= form_for [@question, @answer] do |f| %>
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
@@ -26,7 +26,7 @@
   <p>
     <%= f.submit %>
   </p>
-  <%= f.hidden_field :question_id, value: @question.id %>
+
 <% end %>
 
 <%= link_to 'Edit', question_path(@question)+'/edit', :method => :get %>
