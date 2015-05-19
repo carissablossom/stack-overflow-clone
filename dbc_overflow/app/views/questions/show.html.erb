@@ -1,8 +1,15 @@
 <h2>Question: <%= @question.title %></h2>
 <p><%= @question.content %><p><br>
+<div style="display:inline">
   <%= form_for @question, method: :delete  do |f| %>
   <%= f.submit :value => "Delete" %>
   <% end %>
+
+  <%= form_for @question, :url => {:action => "edit"}, :method => "get"  do |f| %>
+  <%= f.submit :value => "Edit" %>
+  <% end %>
+</div>
+
 
   <hr>
 <ul><% @question.answers.each.with_index(1) do |answer, ans_ind| %>
