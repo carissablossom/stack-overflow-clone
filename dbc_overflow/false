@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20150519191042_update_vote_totals_to_questions.rb

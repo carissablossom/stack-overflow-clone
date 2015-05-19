@@ -1,0 +1,13 @@
+<h1>Update your question</h1>
+
+<%= form_for(@question) do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+
+  <%= f.submit "Save changes" %>
+
+<% end %>

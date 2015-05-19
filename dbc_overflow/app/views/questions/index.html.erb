@@ -1,11 +1,14 @@
 <% @questions.each do |question| %>
   <div class="uhhh">
-    <h1><%= question.title %></h1>
+    <a href ="/questions/<%= question.id %>"><h1><%= question.title %></h1></a>
     <p><%= question.content %></p>
+    <a href=""><p>upvote</p></a>
+    <a href=""><p>downvote</p></a>
+    <p>vote totals: <%= question.vote_totals %></p>
   </div>
 <% end %>
 
-
+<h3> ~~~Enter New Question~~~ </h3>
 <%=  form_for @question do |f| %>
   <p>
     <%= f.label :title %><br>

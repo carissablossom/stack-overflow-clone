@@ -3,6 +3,12 @@
 </h2>
 <p> <%= @question.content %> </p>
 
+<%= button_to "delete", { :controller => :questions, :action => 'destroy', :id => @question.id }, :method => :delete %>
+
+<%= button_to "edit", { :controller => :questions, :action => 'edit', :id => @question.id }, :method => :get %>
+
+<h3> ~~~Enter Answer~~~ </h3>
+
 <%= form_for [@question, @answer] do |f| %>
 
 <p>

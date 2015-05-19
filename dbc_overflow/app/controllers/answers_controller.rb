@@ -4,8 +4,9 @@ class AnswersController < ApplicationController
   end
 
   def create
-    @answer=Answer.new(answer_params)
+
     @question = Question.find(params[:question_id])
+    @answer = @question.answers.build(answer_params)
     @answer.save
     redirect_to "/questions/#{@question.id}/answers/#{@answer.id}"
   end
@@ -17,7 +18,7 @@ class AnswersController < ApplicationController
   private
 
   def answer_params
-    params.require(:answer).permit(:title, :content)
+    params.require(:answer).permit(:title, :content, :question_id)
   end
 
 end
