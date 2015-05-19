@@ -1,2 +1,30 @@
-<h1>Questions#show</h1>
-<p>Find me in app/views/questions/show.html.erb</p>
+<h2>Q: <%= @question.title %></h2>
+<p>
+    <%= @question.content %>
+<p>
+
+<h2>Answers:</h2>
+<% @answers.each do |answer| %>
+  <%= answer.title %>
+  <%= answer.content %>
+<% end %>
+
+<%= @answer.title %>
+<%= @answer.content %>
+<%= @answer.id %>
+
+<hr>
+<h3>Post an answer:</h3>
+<%= form_for @answer do |form| %>
+  <p>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </p>
+  <p>
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

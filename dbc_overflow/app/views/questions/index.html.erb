@@ -1,0 +1,12 @@
+<h2>DBC Overflow</h2>
+
+<h3>Questions:</h3>
+You're in the index!
+
+<div class="questions">
+  <ul>
+    <% @questions.each do |q| %>
+      <li><a href="/questions/<%= q.id %>"><%= q.title %></a></li>
+    <% end %>
+  </ul>
+</div>
