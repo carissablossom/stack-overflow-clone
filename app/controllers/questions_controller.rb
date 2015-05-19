@@ -1,9 +1,9 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
-  before_action :get_quote, only: [:index, :create]
 
   def index
-    @questions = Question.order(created_at: :desc)
+    get_quote
+    get_paged_questions
     @question = Question.new
   end
 
@@ -15,7 +15,8 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to @question
     else
-    @questions = Question.order(created_at: :desc)
+      get_quote
+      get_paged_questions
       render :index, status: 400
     end
   end
@@ -78,5 +79,9 @@ class QuestionsController < ApplicationController
 
   def question_params
     params.require(:question).permit(:title, :content)
+  end
+
+  def get_paged_questions
+    @questions = Question.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
   end
 end
