@@ -3,18 +3,31 @@ class QuestionsController < ApplicationController
     @question = Question.all
   end
 
+  def new
+    @question = Question.new
+  end
+
+  def create
+    @question = Question.new(question_params)
+    @question.save
+  end
+
   def show
-    @question = Question.where(id: params[:id]).first
+    @question = Question.find(params[:id])
+    @answers = @question.answers
+    @answer = Answer.new
     # @answers = @question.answers
   end
 
-  def new
-  end
 
   def edit
   end
 
-  def create
+private
+  def question_params
+    params.require(:question).permit(
+      :title,
+      :content)
   end
 
 

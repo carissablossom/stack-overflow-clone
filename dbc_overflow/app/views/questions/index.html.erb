@@ -1,6 +1,14 @@
-<h1>HELLO QUESTIONS!!</h1>
+<h1>DBC Overflow</h1>
+<h3>Question</h3>
 
 <% @question.each do |q|%>
-  <%=q.title%><br>
-  <%=q.content%>
+  <div class="question">
+  <ul>
+    <li><a href="/questions/<%=q.id%>">
+      <%=q.title%><br>
+    </a></li>
+  </ul>
 <%end%>
+  </div>
+  <%= link_to "Create New Question", new_question_path%>
+

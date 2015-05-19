@@ -1,8 +1,12 @@
-<h1>Your Questions</h1>
+<h1>DBC Overflow</h1>
+<h1>Your Question</h1>
+<p><%= @question.content %></p>
 
-<%= @question.title %>
 
-<% @question.answers.each do |a| %>
-<%= a.title %>
+
+<h2>All answers:</h2>
+<% @question.answers.each_with_index do |answer, index| %>
+<h4><%= index + 1%>. <%= answer.title %></h4>
+<p><%= answer.content %></p>
 
 <% end %>
