@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
 
   def index
-    @questions = Question.all
+    @questions = Question.all.order(:id)
     @question = Question.new
   end
 
@@ -31,14 +31,26 @@ class QuestionsController < ApplicationController
 
   def update
     @question = Question.find(params[:id])
+    upvote_count = @question.upvote
+    downvote_count = @question.downvote
     @question.update(param_check)
-    redirect_to @question
+    if (upvote_count == @question.upvote) && (downvote_count == @question.downvote)
+      redirect_to @question
+    else
+      redirect_to action: "index"
+    end
   end
+
+  # def upvote
+  #   @question = Question.find(params[:id])
+  #   @question.upcount
+  #   redirect_to action: "index"
+  # end
 
   private
 
   def param_check
-    params.require(:question).permit(:title, :content)
+    params.require(:question).permit(:title, :content, :upvote, :downvote)
   end
 
 end

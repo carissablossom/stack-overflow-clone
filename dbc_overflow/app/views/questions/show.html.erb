@@ -15,26 +15,20 @@
   </div>
 
   <% @question.answers.each do |answer| %>
-  <div class="answer">
-    <h3><%= answer.title %></h3>
-    <p><%= answer.content %></p>
-  </div>
+    <div class="answer">
+      <h3><%= answer.title %></h3>
+      <p><%= answer.content %></p>
+    </div>
   <% end %>
 
   <%= form_for [@question, @answer] do |f| %>
-  <%= f.label :title %>:
-  <%= f.text_field :title %><br />
+    <%= f.label :title %>:
+    <%= f.text_field :title %><br />
 
-  <%= f.label :content %>:
-  <%= f.text_field :content %><br />
+    <%= f.label :content %>:
+    <%= f.text_field :content %><br />
 
-  <%= f.submit %>
-<% end %>
-
-
-
-
-
-
+    <%= f.submit %>
+  <% end %>
 </div>
 

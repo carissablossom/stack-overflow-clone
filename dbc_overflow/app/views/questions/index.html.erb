@@ -7,7 +7,26 @@
 
   <% @questions.each do |question| %>
     <div class="question">
-      <%= link_to question.title, question_path(question) %>
+      <h3><%= link_to question.title, question_path(question) %></h3>
+
+      <h4> Upvotes: <%= question.upvote%></h4>
+
+      <%= form_for question do |f| %>
+      <%= f.hidden_field :upvote, :value => question.upvote + 1 %>
+
+      <%= f.submit "thumbs up" %>
+    <% end %>
+
+      <h4>Downvotes: <%= question.downvote%> </h4>
+
+      <%= form_for question do |f| %>
+      <%= f.hidden_field :downvote, :value => question.downvote + 1 %>
+
+      <%= f.submit "thumbs down" %>
+    <% end %>
+
+
+
     </div>
   <% end %>
 
