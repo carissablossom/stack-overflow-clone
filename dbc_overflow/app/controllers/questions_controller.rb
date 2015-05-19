@@ -37,12 +37,27 @@ class QuestionsController < ApplicationController
     @question = Question.where(id: params[:id]).first
     @question.title = params["question"]["title"]
     @question.content = params["question"]["content"]
+    # @question.point_count = params["question"]["point_count"]
     @question.save
     redirect_to "/questions/#{@question.id}"
   end
 
   def edit
     @question = Question.where(id: params[:id]).first
+  end
+
+  def upvote
+    @question = Question.where(id: params[:question_id]).first
+    @question.upvote
+    @question.save
+    redirect_to "/questions/#{@question.id}"
+  end
+
+  def downvote
+    @question = Question.where(id: params[:question_id]).first
+    @question.downvote
+    @question.save
+    redirect_to "/questions/#{@question.id}"
   end
 
   private

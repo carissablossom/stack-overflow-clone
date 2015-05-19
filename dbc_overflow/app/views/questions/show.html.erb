@@ -1,5 +1,10 @@
 <div>
   <h1><%= @question.title %></h1>
+  Point Count: <b><%= @question.point_count %></b>
+
+  <%= link_to "▲", "/questions/#{@question.id}/upvote", method: "put" %>
+  <%= link_to "▼", "/questions/#{@question.id}/downvote", method: "put" %>
+
   <hr>
   <%= @question.content %>
   <%= button_to "deletee Question", { action: "destroy", id: @question.id }, method: :delete, data: { confirm: "Are you sure?" } %>
@@ -8,6 +13,9 @@
 <% @answer_set.each do |answer| %>
   <hr>
   <h3><%= answer.title %></h3>
+  Point Count: <b><%= answer.point_count %></b>
+  <%= link_to "▲", "/answers/#{answer.id}/upvote", method: "put" %>
+  <%= link_to "▼", "/answers/#{answer.id}/downvote", method: "put" %>
   <p><%= answer.content %></p>
 <% end %>
 <hr>

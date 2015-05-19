@@ -1,24 +1,16 @@
 Rails.application.routes.draw do
-  # get 'answers/new'
+  resources :questions do
 
-  # get 'answers/create'
+    put 'upvote',   to: 'questions#upvote'
+    put 'downvote', to: 'questions#downvote'
 
-  # get 'answer/new'
+  end
 
-  # get 'answer/create'
+  resources :answers do
+    put 'upvote', to: 'answers#upvote'
+    put 'downvote', to: 'answers#downvote'
+  end
 
-  # get 'questions/new'
-
-
-
-  # get 'questions/create'
-
-  # get 'questions/index'
-
-  # get 'questions/show'
-
-  resources :questions
-  resources :answers
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
