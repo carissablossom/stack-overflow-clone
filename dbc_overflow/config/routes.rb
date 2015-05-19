@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   resources :questions do
     resources :answers
+    post 'votes'
+    put 'votes'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
