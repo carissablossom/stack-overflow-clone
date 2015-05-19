@@ -32,9 +32,10 @@ class QuestionsController < ApplicationController
   end
 
   def update
+    p params
     @question = Question.find(params[:id])
-    @question.update(title: params[:title],
-                     content: params[:content])
+    @question.update(title: params[:question][:title],
+                     content: params[:question][:content])
     redirect_to "/questions/#{params[:id]}"
   end
 
