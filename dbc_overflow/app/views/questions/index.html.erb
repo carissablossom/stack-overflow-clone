@@ -6,7 +6,11 @@ You're in the index!
 <div class="questions">
   <ul>
     <% @questions.each do |q| %>
-      <li><a href="/questions/<%= q.id %>"><%= q.title %></a> votes: <%=q.votes%> <%= render "questions/vote_buttons" %></li>
+      <li><a href="/questions/<%= q.id %>"><%= q.title %></a>
+        votes: <%=q.votes%>
+        <%= button_to("UP", question_upvote_path(q), method: "patch") %>
+        <%= button_to("DOWN", question_downvote_path(q), method: "patch") %>
+      </li>
     <% end %>
   </ul>
 </div>
