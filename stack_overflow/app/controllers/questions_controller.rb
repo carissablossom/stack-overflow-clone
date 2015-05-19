@@ -1,6 +1,11 @@
 class QuestionsController < ApplicationController
   def new
+    @question = Question.new
     @questions = Question.all
+  end
+
+  def edit
+    @question = Question.find(params[:id])
   end
 
   def create
@@ -14,8 +19,29 @@ class QuestionsController < ApplicationController
 end
 
   def index
-    @question = Question.all
+    @questions = Question.all
   end
+
+  def update
+    @question = Question.find(params[:id])
+
+  if @question.update(question_params)
+    redirect_to @question
+  else
+    render 'edit'
+  end
+end
+
+  def show
+    @question = Question.find(params[:id])
+  end
+
+  def destroy
+    @question = Question.find(params[:id])
+    @question.destroy
+
+    redirect_to questions_path
+end
 
   private
 
@@ -23,8 +49,5 @@ end
     params.require(:question).permit(:title, :text)
   end
 
-  def show
-    @question = Question.find(params[:id])
-  end
 
 end
