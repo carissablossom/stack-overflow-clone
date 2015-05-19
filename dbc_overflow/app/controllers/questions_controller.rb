@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
   def index
     @question = Question.new
-    @questions = Question.all
+    @questions = Question.order(vote_total: :desc)
   end
 
   def new
@@ -36,6 +36,20 @@ class QuestionsController < ApplicationController
       redirect_to :action => "edit", :id => params[:id].to_i
     end
   end
+
+  def upvote
+    question = Question.where(id: params[:id]).first
+    question.up_vote
+    redirect_to :action => 'index'
+
+  end
+
+  def downvote
+    question = Question.where(id: params[:id]).first
+    question.down_vote
+    redirect_to :action => 'index'
+  end
+
 
   private
   def post_params

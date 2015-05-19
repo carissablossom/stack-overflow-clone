@@ -10,6 +10,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'questions#index'
 
+  post 'questions/:id/upvote' => 'questions#upvote', :as => 'upvote'
+  post 'questions/:id/downvote' => 'questions#downvote', :as => 'downvote'
+
+  # match 'questions/:id/upvote' => 'questions#upvote', :as => :upvote_path
+  # match 'questions/:id/downvote' => 'questions#downvote', :as => :downvote_path
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

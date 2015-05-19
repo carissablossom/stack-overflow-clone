@@ -20,6 +20,15 @@ class AnswersController < ApplicationController
   #   @answer = Answer.where(id: params[:id]).first
   # end
 
+  # def upvote
+  #   question = Question.where(id: params[:id]).first
+  #   question.up_vote
+  # end
+
+  # def downvote
+  #   self.down_vote
+  # end
+
   private
 
   def post_params
