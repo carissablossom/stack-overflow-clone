@@ -1,0 +1,18 @@
+<div>
+  <h3> Create a new Question </h3>
+  <%= form_for @question, method: :patch do |q| %>
+  <p>
+    <%= q.label :title %>
+    <%= q.text_field :title %>
+  </p>
+
+  <p>
+    <%= q.label :body %>
+    <%= q.text_area :body %>
+  </p>
+
+  <p>
+    <%= q.submit "EDIIIIITTT" %>
+  </p>
+  <% end %>
+</div>

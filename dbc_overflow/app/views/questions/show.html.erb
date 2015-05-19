@@ -1,2 +1,23 @@
-<h1>Questions#show</h1>
-<p>Find me in app/views/questions/show.html.erb</p>
+<h1><%=@question.title%></h1>
+<p><%=@question.body%></p>
+
+<%= form_for @question, method: :delete do |f| %>
+  <%= f.submit "DELETE YOUR QUESTION" %>
+<% end %>
+
+<%= form_for @question, url: {action: "update"} do |f| %>
+  <%= f.submit "EDIIIT" %>
+<% end %>
+
+<h3>Answers:</h3>
+<% @question.answers.each do |answer| %>
+  <ul>
+  <p>
+    <li>
+      <p><%= answer.body %></p>
+      <p>Answer by: <%=User.find(answer.user_id).username%></p>
+      Score: <%= answer.votes %>
+    </li>
+  </p>
+</ul>
+<%end%>

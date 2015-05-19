@@ -1,0 +1,36 @@
+<h1>StackOverflow</h1>
+
+<div>
+  <h3> Create a new Question </h3>
+  <%= form_for @question, url: {action: "create"} do |q| %>
+  <p>
+    <%= q.label :title %>
+    <%= q.text_field :title %>
+  </p>
+
+  <p>
+    <%= q.label :body %>
+    <%= q.text_area :body %>
+  </p>
+
+  <p>
+    <%= q.submit %>
+  </p>
+  <% end %>
+</div>
+
+<h3> Questions </h3>
+
+<div>
+  <% @questions.each do |question| %>
+  <ul>
+    <li>
+      <p>
+        <a href="/questions/<%=question.id%>"><%= question.title %></a><br>
+        posted by <%= User.where(id: question.user_id).first.username%><br>
+        Score: <%= question.votes %>
+      </p>
+    </li>
+  </ul>
+  <% end %>
+</div>
