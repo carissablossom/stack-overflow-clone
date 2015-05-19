@@ -10,14 +10,11 @@
   <%= button_to "deletee Question", { action: "destroy", id: @question.id }, method: :delete, data: { confirm: "Are you sure?" } %>
   <a href="/questions/<%=@question.id%>/edit">Edit Question</a>
 </div>
-<% @answer_set.each do |answer| %>
-  <hr>
-  <h3><%= answer.title %></h3>
-  Point Count: <b><%= answer.point_count %></b>
-  <%= link_to "▲", "/answers/#{answer.id}/upvote", method: "put" %>
-  <%= link_to "▼", "/answers/#{answer.id}/downvote", method: "put" %>
-  <p><%= answer.content %></p>
-<% end %>
 <hr>
+<div id="answer_container">
+<% @answer_set.each do |answer| %>
+  <%= render partial: "answers/show", locals: {answer: answer} %>
+<% end %>
+</div>
 <h1>Answer Question</h1>
-<%= render partial: "answer/new", locals: {question_id: @question.id} %>
+<%= render partial: "answers/new", locals: {question_id: @question.id} %>

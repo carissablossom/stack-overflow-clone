@@ -1,9 +1,9 @@
 <h1>DBC Overflow</h1>
 <h1><%= @quote %></h1>
 <h3>Questions:</h3>
-<ul>
+<ul id="question_list">
 <% @questions.each do |question| %>
-  <li><a href="/questions/<%=question.id%>"><%= question.title %></a></li>
+<%= render partial: "questions/show_title", locals: {question: question} %>
 <% end %>
 </ul>
 <%= render partial: "questions/new" %>
