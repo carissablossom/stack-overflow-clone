@@ -10,8 +10,8 @@
     <h4><%= index + 1 %>. <%= answer.title %></h4>
     <p><%= answer.content %></p>
 
-    <a href="/questions/<%= @question.id %>/answers/<%= answer.id %>/upvotes"><i class="fa fa-thumbs-o-up"></i></a>
-    <a href="/questions/<%= @question.id %>/answers/<%= answer.id %>/downvotes"><i class="fa fa-thumbs-o-down"></i></a>
+    <%= link_to raw('<i class="fa fa-thumbs-o-up"></i>'), question_answer_path(@question, answer)+"/upvotes"%>
+    <%= link_to raw('<i class="fa fa-thumbs-o-down"></i>'), question_answer_path(@question, answer)+"/downvotes"%>
 
     <%= answer.votes %>
   <% end %>

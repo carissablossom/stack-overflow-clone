@@ -6,18 +6,18 @@
   <h1>All questions:</h1>
   <p>
   <% @questions.each do |question| %>
-    <h3><a href="/questions/<%= question.id %>"><%= question.title %></a></h3>
+    <h3><%= link_to "#{question.title}", question %></h3>
     <p><%= question.content %></p>
 
     <p>
-    <button><a href="/questions/<%= question.id %>/edit">Edit</a></button>
+    <button><%= link_to "Edit", edit_question_path(question) %></button>
 
     <%= form_for question, :method => :delete do |f| %>
       <%= f.submit  "Delete" %>
     <% end %>
 
-    <a href="/questions/<%= question.id %>/upvotes"><i class="fa fa-thumbs-o-up"></i></a>
-    <a href="/questions/<%= question.id %>/downvotes"><i class="fa fa-thumbs-o-down"></i></a>
+    <%= link_to raw('<i class="fa fa-thumbs-o-up"></i>'), question_path(question)+"/upvotes"%>
+    <%= link_to raw('<i class="fa fa-thumbs-o-down"></i>'), question_path(question)+"/downvotes"%>
     <%= question.votes %>
     </p>
 
