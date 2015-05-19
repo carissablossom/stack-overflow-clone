@@ -3,7 +3,8 @@
 <p> <%= @question.content %> </p>
 
 <ul>
-<% @question.answers.each do |answer| %>
+  <% answers = @question.answers.order(vote_counter: :desc)%>
+<% answers.each do |answer| %>
 <%= button_to "△", {:controller => :answers,
     :action => 'upvote', :id => answer.id }, :method => :patch %>
 

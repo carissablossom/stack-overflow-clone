@@ -1,3 +1,5 @@
+
+
 class QuestionsController < ApplicationController
   def new
 
@@ -46,7 +48,14 @@ class QuestionsController < ApplicationController
   end
 
   def index
-    @questions = Question.all
+    # p @response.headers["x-ratelimit-remaining"]
+    p "))))))))))))))))))"
+
+    headers = {"User-Agent" => ENV['USER_AGENT'], "Authorization" => 'token ' + ENV["AUTHORIZATION"]}
+     @response = HTTParty.get("https://api.github.com/zen", :headers => headers)
+    p @response
+
+    @questions = Question.order(vote_counter: :desc)
     @question = Question.new
   end
 

@@ -5,6 +5,7 @@ resources :questions do
   patch 'downvote', to: 'questions#downvote'
   resources :answers
 end
+
 patch 'answers/:id/upvote', to: 'answers#upvote'
 patch 'answers/:id/downvote', to: 'answers#downvote'
   # The priority is based upon order of creation: first created -> highest priority.

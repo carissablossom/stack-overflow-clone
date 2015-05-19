@@ -1,5 +1,11 @@
 <h1>Questions</h1>
 
+<% if @response.headers["x-ratelimit-remaining"].to_i > 0 %>
+  <%= @response.body %>
+<% else %>
+  <%= "Fucking, I dunno!" %>
+<% end %>
+
 <ul>
 <% @questions.each do |quest| %>
 
