@@ -7,7 +7,7 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
     @question.save
 
-    redirect_to '/questions'
+    redirect_to "/questions"
   end
 
   def show

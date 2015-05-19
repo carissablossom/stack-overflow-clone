@@ -6,7 +6,10 @@ class AnswersController < ApplicationController
 
   def create
     @answer = Answer.new(answer_params)
+    @answer.question_id = params[:question_id]
     @answer.save
+
+    redirect_to "/questions/#{params[:question_id]}"
   end
 
   def show
@@ -15,6 +18,6 @@ class AnswersController < ApplicationController
 
   private
   def answer_params
-    params.required(:answer).permit(:title, :content, :question_id)
+    params.required(:answer).permit(:title, :content)
   end
 end
