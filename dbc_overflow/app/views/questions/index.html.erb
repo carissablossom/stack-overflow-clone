@@ -5,11 +5,10 @@
     <th>Title</th>
     <th>Content</th>
   </tr>
-
   <% @questions.each do |question| %>
     <tr>
-      <td><%= question.title %></td>
-      <td><%= question.content %></td>
+      <td><%= link_to question.title, questions_path %></td>
+      <td><%= link_to question.content, questions_path %></td>
     </tr>
   <% end %>
 </table>
