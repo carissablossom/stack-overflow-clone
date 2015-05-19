@@ -6,7 +6,12 @@
 </p>
 
 <h2>All answers:</h1>
-  <% @question.answers.each_with_index do |answer, index| %>
+  <% @question.answers.sort_by{ |answer| answer.created_at }.each_with_index do |answer, index| %>
     <h4><%= index + 1 %>. <%= answer.title %></h4>
     <p><%= answer.content %></p>
+
+    <a href="/questions/<%= @question.id %>/answers/<%= answer.id %>/upvotes"><i class="fa fa-thumbs-o-up"></i></a>
+    <a href="/questions/<%= @question.id %>/answers/<%= answer.id %>/downvotes"><i class="fa fa-thumbs-o-down"></i></a>
+
+    <%= answer.votes %>
   <% end %>

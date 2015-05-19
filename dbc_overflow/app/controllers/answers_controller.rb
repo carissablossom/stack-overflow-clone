@@ -16,6 +16,20 @@ class AnswersController < ApplicationController
     @answer = Answer.find(params[:id])
   end
 
+  def upvotes
+    answer = Answer.find(params[:id])
+    answer.votes += 1
+    answer.save
+    redirect_to "/questions/#{answer.question_id}"
+  end
+
+  def downvotes
+    answer = Answer.find(params[:id])
+    answer.votes -= 1
+    answer.save
+    redirect_to "/questions/#{answer.question_id}"
+  end
+
   private
   def answer_params
     params.require(:answer).permit(:title, :content)

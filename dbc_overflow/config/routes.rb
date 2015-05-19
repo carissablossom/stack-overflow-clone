@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get 'questions/:id/upvotes' => 'questions#upvotes'
   get 'questions/:id/downvotes' => 'questions#downvotes'
+  get 'questions/:question_id/answers/:id/upvotes' => 'answers#upvotes'
+  get 'questions/:question_id/answers/:id/downvotes' => 'answers#downvotes'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
