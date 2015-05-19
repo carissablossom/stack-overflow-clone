@@ -1,0 +1,21 @@
+# RoR Stack Overflow Clone
+
+## Contents
+
+* **Sign Up/Log in**
+  - Users will be able to sign up
+  - Users will be able to log in
+
+* **Question & Answer**
+  - Users will be able to ask questions
+  - Users will be able to answer questions
+
+* **Voting System**
+  - Users will be able to vote on questions
+  - Users will be able to vote on answers
+  - Votes highlight popularity of questions and answers
+  - Questions are sorted by popularity (ascending)
+  - Answers are sorted by popularity (ascending)
+
+
+
