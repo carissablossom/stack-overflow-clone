@@ -8,12 +8,15 @@
       <p><%= question.content %></p>
 
       <p>
-      <a href="/questions/<%= question.id %>/upvotes"><img src="thumbs_up.png"/></a>
-      <a href="/questions/<%= question.id %>/downvotes"><img src="thumbs_down.png"/></a>
       <button><a href="/questions/<%= question.id %>/edit">Edit</a></button>
+
       <%= form_for question, :method => :delete do |f| %>
         <%= f.submit  "Delete" %>
       <% end %>
+
+      <a href="/questions/<%= question.id %>/upvotes"><img src="thumbs_up.png"/></a>
+      <a href="/questions/<%= question.id %>/downvotes"><img src="thumbs_down.png"/></a>
+      <%= question.votes %>
       </p>
 
     <% end %>

@@ -16,7 +16,7 @@ class QuestionsController < ApplicationController
 
   def index
     @question = Question.new
-    @questions = Question.all
+    @questions = Question.order("created_at DESC")
   end
 
   def destroy
@@ -36,6 +36,20 @@ class QuestionsController < ApplicationController
   def update
     @question = Question.find(params[:id])
     @question.update_attributes(question_params)
+    redirect_to "/questions"
+  end
+
+  def upvotes
+    question = Question.find(params[:id])
+    question.votes += 1
+    question.save
+    redirect_to "/questions"
+  end
+
+  def downvotes
+    question = Question.find(params[:id])
+    question.votes -= 1
+    question.save
     redirect_to "/questions"
   end
 
