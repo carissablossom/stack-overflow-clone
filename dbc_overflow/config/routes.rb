@@ -2,7 +2,16 @@ Rails.application.routes.draw do
 
   root 'questions#index'
 
-  resources :questions
+  resources :questions do
+    resources :answers
+  end
+
+  # map.resources :questions do |question|
+  #   book.resources :answers
+  # end
+
+  # resources :questions
+  # resources :answers
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
