@@ -16,9 +16,10 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question = Question.where(id: params[:id]).first
+    p "hello destroy" * 10
     @question.destroy
-    # redirect_to action: 'index', status: 303
-    redirect_to :index
+    redirect_to action: 'index', status: 303
+    # redirect_to :index
   end
 
   def create
@@ -29,6 +30,15 @@ class QuestionsController < ApplicationController
       status 400
       'bad question data'
     end
+  end
+
+  def update
+    # params.inspect
+    @question = Question.where(id: params[:id]).first
+    @question.title = params["question"]["title"]
+    @question.content = params["question"]["content"]
+    @question.save
+    redirect_to "/questions/#{@question.id}"
   end
 
   def edit

@@ -2,9 +2,7 @@
   <h1><%= @question.title %></h1>
   <hr>
   <%= @question.content %>
-  <%= form_for(@question, :html => { :method => :delete, :remote => true }) do |f| %>
-  <%= f.submit %>
-  <% end %>
+  <%= button_to "deletee Question", { action: "destroy", id: @question.id }, method: :delete, data: { confirm: "Are you sure?" } %>
   <a href="/questions/<%=@question.id%>/edit">Edit Question</a>
 </div>
 <% @answer_set.each do |answer| %>
