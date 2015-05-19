@@ -10,3 +10,18 @@ You're in the index!
     <% end %>
   </ul>
 </div>
+
+<h3>Create a new question</h3>
+<%= form_for @question do |f| %>
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </p>
+  <%= f.submit %>
+<% end %>
+

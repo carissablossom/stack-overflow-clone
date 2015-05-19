@@ -1,0 +1,15 @@
+<h1>Questions#edit</h1>
+
+<%= form_for @question do |form| %>
+<p>
+  <%= form.label :title %>
+  <%= form.text_field :title, :value => @question.title %>
+</p>
+<p>
+  <%= form.label :content %>
+  <%= form.text_area :content, :value => @question.content %>
+</p>
+<p>
+  <%= form.submit %>
+</p>
+<% end %>

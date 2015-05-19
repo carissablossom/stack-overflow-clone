@@ -3,6 +3,12 @@
     <%= @question.content %>
 <p>
 
+<%= form_for @question, :html => {:method => :delete} do |f| %>
+<%= f.submit "Delete" %>
+<% end %>
+
+<a href="/questions/<%=@question.id%>/edit">Edit Question</a>
+
 <h2>Answers:</h2>
 <% @answers.each do |answer| %>
   <h4><%= answer.title %></h4>
