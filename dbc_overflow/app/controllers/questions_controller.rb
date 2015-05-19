@@ -1,7 +1,9 @@
 class QuestionsController < ApplicationController
+  include HTTParty
 
   def index
     @questions = Question.all.sort_by(&:count).reverse
+    @quote = HTTParty.get("https://api.github.com/zen").body
   end
 
   def show
