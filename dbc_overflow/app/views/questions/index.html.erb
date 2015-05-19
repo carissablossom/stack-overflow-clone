@@ -1,5 +1,27 @@
-<% @questions.each do |question| %>
+<div class="container">
+  <h1> Question Index</h1>
 
-<%= question.title %>
+  <div class="header">
+    <h2> Questions: </h2>
+  </div>
 
-<% end %>
+  <% @questions.each do |question| %>
+    <div class="question">
+      <h3><%= question.title %></h3>
+    </div>
+  <% end %>
+
+  <div class="question-form">
+    <%= form_for @question do |f| %>
+      <%= f.label :title %>:
+      <%= f.text_field :title %><br />
+
+      <%= f.label :content %>:
+      <%= f.text_field :content %><br />
+
+      <%= f.submit %>
+    <% end %>
+  </div>
+
+
+</div>

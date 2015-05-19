@@ -16,8 +16,8 @@ class AnswersController < ApplicationController
     @answer.question_id = params[:question_id]
     @answer.save
     @question = @answer.question
-    redirect_to @question
-    # render 'questions/show' I think this is the same as above.
+    # redirect_to @answer.question
+    render 'questions/show'
   end
 
   private

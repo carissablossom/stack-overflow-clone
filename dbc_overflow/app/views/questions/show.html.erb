@@ -1,8 +1,13 @@
 <div class="container">
+  <h1> Question Show</h1>
 
   <h1><%= @question.title %></h1>
 
   <p><%= @question.content %></p>
+
+  <div class="header">
+    <h2> Answers: </h2>
+  </div>
 
   <% @question.answers.each do |answer| %>
   <div class="answer">

@@ -1,12 +1,25 @@
 .answer {
   border:.2em solid black;
   padding: .4em;
-
 }
 
 .container {
   margin: 5em;
-}/*
+}
+
+.question {
+  border:.2em solid black;
+  padding: .4em;
+}
+
+.question-form {
+  margin: 3em;
+}
+
+.header {
+  margin-left: 6em;
+}
+/*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
