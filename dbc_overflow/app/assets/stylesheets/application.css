@@ -1,4 +1,12 @@
-/*
+.answer {
+  border:.2em solid black;
+  padding: .4em;
+
+}
+
+.container {
+  margin: 5em;
+}/*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *

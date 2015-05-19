@@ -1,2 +1,15 @@
-<h1><%= @question.title %></h1>
-<%= @question.content %>
+<div class="container">
+
+  <h1><%= @question.title %></h1>
+
+  <p><%= @question.content %></p>
+
+  <% @question.answers.each do |answer| %>
+  <div class="answer">
+    <h3><%= answer.title %></h3>
+    <p><%= answer.content %></p>
+  </div>
+  <% end %>
+
+</div>
+
