@@ -17,12 +17,20 @@ class AnswersController < ApplicationController
     @answer.save
     @question = @answer.question
     # redirect_to @answer.question
-    render 'questions/show'
+    redirect_to @answer.question
+  end
+
+  def update
+    @answer = Answer.find(params[:id])
+    upvote_count = @answer.upvote
+    downvote_count = @answer.downvote
+    @answer.update(param_check)
+    redirect_to @answer.question
   end
 
   private
 
   def param_check
-    params.require(:answer).permit(:title, :content)
+    params.require(:answer).permit(:title, :content, :upvote, :downvote)
   end
 end

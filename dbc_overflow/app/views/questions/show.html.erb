@@ -14,10 +14,31 @@
     <h2> Answers: </h2>
   </div>
 
-  <% @question.answers.each do |answer| %>
+  <% @answers.each do |answer| %>
     <div class="answer">
       <h3><%= answer.title %></h3>
       <p><%= answer.content %></p>
+
+      <h4> Upvotes: <%= answer.upvote%></h4>
+
+      <%= form_for [@question, answer] do |f| %>
+      <%= f.hidden_field :upvote, :value => answer.upvote + 1 %>
+
+      <div class="thumbs-up"><%= f.submit "thumbs up" %></div>
+    <% end %>
+
+      <h4>Downvotes: <%= answer.downvote%> </h4>
+
+      <%= form_for [@question, answer] do |f| %>
+      <%= f.hidden_field :downvote, :value => answer.downvote + 1 %>
+
+      <%= f.submit "thumbs down" %>
+    <% end %>
+
+
+
+
+
     </div>
   <% end %>
 

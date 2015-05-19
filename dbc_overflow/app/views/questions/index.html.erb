@@ -1,4 +1,7 @@
 <div class="container">
+  <div id="quote">
+    <p><%= @message %></p>
+  </div>
   <h1> Question Index</h1>
 
   <div class="header">
@@ -14,7 +17,7 @@
       <%= form_for question do |f| %>
       <%= f.hidden_field :upvote, :value => question.upvote + 1 %>
 
-      <%= f.submit "thumbs up" %>
+      <div class="thumbs-up"><%= f.submit "thumbs up" %></div>
     <% end %>
 
       <h4>Downvotes: <%= question.downvote%> </h4>

@@ -1,12 +1,28 @@
+require 'rubygems'
+require 'httparty'
+
 class QuestionsController < ApplicationController
 
+
   def index
+    quote = HTTParty.get("https://api.github.com/zen",
+      basic_auth: { username: "Makdash49", password: "Sonia12" })
+    puts "**********************************************************"
+    p quote.to_json
+    # reply = quote.to_h["message"]
+    # if reply.include?("limit exceeded")
+    #   # p "It includes it!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+    #   @message = ["WTF Bro!", "Make it so!", "limit exceeeeded!"].sample
+    # else
+      @message = quote.to_json
+    # end
     @questions = Question.all.order(:id)
     @question = Question.new
   end
 
   def show
     @question = Question.find(params[:id])
+    @answers = Answer.where(question_id: @question.id).order('upvote DESC')
     @answer = Answer.new
   end
 

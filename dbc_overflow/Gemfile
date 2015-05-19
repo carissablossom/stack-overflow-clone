@@ -51,6 +51,8 @@ end
 
 gem 'factory_girl_rails'
 
+gem 'httparty'
+
 
 
 
