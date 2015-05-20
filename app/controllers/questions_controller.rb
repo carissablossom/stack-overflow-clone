@@ -56,7 +56,11 @@ class QuestionsController < ApplicationController
   def upvote
     @question.vote_count += 1
     if @question.save
-      redirect_to root_path
+      if request.xhr?
+        render json: @question.vote_count
+      else
+        redirect_to root_path
+      end
     else
       status 400
       'fu'

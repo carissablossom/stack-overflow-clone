@@ -1,9 +1,9 @@
 <section class="container">
 
   <h2><%= @quote.content %></h2>
-
-  <%= render 'all_questions' %>
-
+  <div id="page-wrap">
+    <%= render 'all_questions' %>
+  </div>
 
   <%= form_for @question do |f| %>
     <% if @question.errors.any? %>
