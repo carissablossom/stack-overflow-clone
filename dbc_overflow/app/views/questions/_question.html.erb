@@ -8,7 +8,7 @@
   <%= f.submit  "Delete" %>
 <% end %>
 
-<%= link_to raw('<i class="fa fa-thumbs-o-up up"></i>'), question_path(question)+"/upvotes", class: "up" %>
-<%= link_to raw('<i class="fa fa-thumbs-o-down down"></i>'), question_path(question)+"/downvotes", class: "down" %>
+<%= link_to raw('<i class="fa fa-thumbs-o-up"></i>'), question_path(question)+"/upvotes", class: "up" %>
+<%= link_to raw('<i class="fa fa-thumbs-o-down"></i>'), question_path(question)+"/downvotes", class: "down" %>
 <span class="votes"><%= question.votes %></span>
 </p>
