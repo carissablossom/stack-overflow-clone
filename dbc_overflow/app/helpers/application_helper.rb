@@ -2,12 +2,12 @@ module ApplicationHelper
   include HTTParty
 
   def self.quote
-    quote = HTTParty.get('https://api.github.com/zen').to_s
-    if !quote.empty?
-      Quote.create(text: quote)
+    quote = HTTParty.get('https://api.github.com/zen')
+    if quote.message != "Forbidden"
+      Quote.create(text: quote.to_s)
       return quote
     else
-      return Quote.find(rand[0...Quote.count])
+      Quote.find(rand(0...(Quote.count))).text
     end
   end
 

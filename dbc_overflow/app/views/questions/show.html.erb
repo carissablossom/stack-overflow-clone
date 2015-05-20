@@ -1,22 +1,16 @@
 <h2><%= @question.title %></h2>
 <p><%= @question.content %></p>
-<%= link_to("Upvote", "/questions/#{@question.id}/upvote") %>
+<%= link_to("Upvote", "/questions/#{@question.id}/upvote", class: 'vote') %>
 <span><%= @question.vote %></span>
-<%= link_to("Downvote", "/questions/#{@question.id}/downvote") %>
+<%= link_to("Downvote", "/questions/#{@question.id}/downvote", class: 'vote') %>
 
 <%= render 'questions/destroy' %>
 <%= render 'answers/form' %>
 
 
-<ul>
+<ul id="answers">
   <% @answers.each do |answer| %>
-    <li>
-      <h3><%= answer.title %></h3>
-      <p><%= answer.content %></p>
-      <%= link_to("Upvote", "/answers/#{answer.id}/upvote") %>
-      <span><%= answer.vote %></span>
-      <%= link_to("Downvote", "/answers/#{answer.id}/downvote") %>
-    </li>
+    <%= render('answers/new_answer', answer: answer) %>
   <% end %>
 </ul>
 

@@ -3,13 +3,9 @@
 <%= render 'questions/form' %>
 
 <% if @questions %>
+	<ul id="questions">
   <% @questions.each do |question| %>
-    <a href="<%= question_path(question) %>">
-      <h2><%= question.title %></h2>
-    </a>
-    <p><%= question.content %></p>
-    <%= link_to("Upvote", "/questions/#{question.id}/upvote") %>
-    <span id="<%= question.id %>"><%= question.vote %></span>
-    <%= link_to("Downvote", "/questions/#{question.id}/downvote") %>
+    <%= render('questions/new_question', question: question) %>
   <% end %>
+	</ul>
 <% end %>

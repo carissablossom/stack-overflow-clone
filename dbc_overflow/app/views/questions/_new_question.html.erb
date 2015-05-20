@@ -1,0 +1,7 @@
+<li>
+	<h2><a href="<%= question_path(question) %>"><%= question.title %></a></h2>
+	<p><%= question.content %></p>
+	<%= link_to("Upvote", "/questions/#{question.id}/upvote") %>
+	<span id="<%= question.id %>"><%= question.vote %></span>
+	<%= link_to("Downvote", "/questions/#{question.id}/downvote") %>
+</li>
