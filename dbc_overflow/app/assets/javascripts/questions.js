@@ -22,6 +22,8 @@ $(document).ready(function(){
   $('#question_list').on('click', '.up', function(e){
     e.preventDefault();
     var post = $(this).parents('.question');
+    // var link = $(post.children('.up')).attr('href')
+    // can't get the above to work properly. it'll add like 2-3 votes instead of one
     var request = $.ajax({
       method: "get",
       url: $($(this).parent()[0]).attr('href'),
