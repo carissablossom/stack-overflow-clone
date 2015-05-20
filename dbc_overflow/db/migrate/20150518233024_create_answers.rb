@@ -4,7 +4,7 @@ class CreateAnswers < ActiveRecord::Migration
       t.belongs_to :user
       t.belongs_to :question
       t.text :body
-      t.integer :votes, default: 0
+      t.integer :score, default: 0
 
       t.timestamps
     end

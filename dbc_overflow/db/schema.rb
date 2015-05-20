@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150518233223) do
+ActiveRecord::Schema.define(version: 20150520193339) do
 
   create_table "answers", force: true do |t|
     t.integer  "user_id"
     t.integer  "question_id"
     t.text     "body"
-    t.integer  "votes",       default: 0
+    t.integer  "score",       default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20150518233223) do
     t.integer  "user_id"
     t.string   "title"
     t.text     "body"
-    t.integer  "votes",      default: 0
+    t.integer  "score",      default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(version: 20150518233223) do
     t.string   "username"
     t.string   "password_hash"
     t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "votes", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "question_id"
+    t.integer  "answer_id"
+    t.integer  "total",       default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

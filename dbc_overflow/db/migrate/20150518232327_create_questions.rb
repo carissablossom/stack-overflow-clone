@@ -4,7 +4,7 @@ class CreateQuestions < ActiveRecord::Migration
       t.belongs_to :user
       t.string :title
       t.text :body
-      t.integer :votes, default: 0
+      t.integer :score, default: 0
 
       t.timestamps
     end

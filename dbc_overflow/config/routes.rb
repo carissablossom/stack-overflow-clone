@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'votes/new'
+
+  get 'votes/create'
+
+  get 'votes/show'
+
   resources :questions do
     resources :answers
   end

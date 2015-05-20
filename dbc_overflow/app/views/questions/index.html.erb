@@ -28,7 +28,7 @@
       <p>
         <a href="/questions/<%=question.id%>"><%= question.title %></a><br>
         posted by <%= User.where(id: question.user_id).first%><br>
-        Score: <%= question.votes %>
+        Score: <%= question.score %>
       </p>
     </li>
   </ul>
