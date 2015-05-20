@@ -21,11 +21,12 @@ $(document).ready(function() {
       data: $(this).serialize()
     }).done(function(response){
       $('.questions').append(question_form(response))
-      // response.title
-      // response.content
-      debugger
+      current.find('input[name="question[title]"]').val('')
+      current.find('input[name="question[content]"]').val('')
     });
   });
+
+
 
 });
 

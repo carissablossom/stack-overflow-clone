@@ -5,8 +5,7 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.paginate(page: params[:page], :per_page => 10)
-    #.paginate(page: params[:page], :per_page => 10)
-    #.all.sort_by(&:count).reverse
+    # @questions.all.sort_by(&:count).reverse
     @question = Question.new
   end
 
