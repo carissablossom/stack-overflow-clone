@@ -4,7 +4,6 @@ class AnswersController < ApplicationController
   end
 
   def create
-
     @question = Question.find(params[:question_id])
     @answer = @question.answers.build(answer_params)
     @answer.save
@@ -15,6 +14,13 @@ class AnswersController < ApplicationController
     @answer = Answer.find(params[:id])
   end
 
+  # def upvote
+  #   @question.vote_totals += 1
+  # end
+
+  # def downvote
+  #   @question.vote_totals -= 1
+  # end
   private
 
   def answer_params
