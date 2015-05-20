@@ -33,9 +33,14 @@ class QuestionsController < ApplicationController
   end
 
   def create
+    @questions = Question.all
     @question = Question.new(param_check)
-    @question.save
-    redirect_to @question
+    # respond_to do |format|
+      # if @question.save
+      #   format.html { redirect_to action: "index", notice:"Question Created!" }
+      #   format.json {}
+      # end
+
   end
 
   def destroy
