@@ -17,4 +17,32 @@ $(document).ready(function(){
       $form[0].reset();
     })
   })
+
+
+  $('#question_list').on('click', '.up', function(e){
+    e.preventDefault();
+    var post = $(this).parents('.question');
+    var request = $.ajax({
+      method: "get",
+      url: $($(this).parent()[0]).attr('href'),
+      dataType: 'json',
+    });
+    request.done(function(response){
+      $(post).children('span.votes').text(response.votes)
+    });
+  })
+
+  $('#question_list').on('click', '.down', function(e){
+    e.preventDefault();
+    var post = $(this).parents('.question');
+    var request = $.ajax({
+      method: "get",
+      url: $($(this).parent()[0]).attr('href'),
+      dataType: 'json',
+    });
+    request.done(function(response){
+      $(post).children('span.votes').text(response.votes)
+    });
+  })
+
 })

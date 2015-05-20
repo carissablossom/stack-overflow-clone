@@ -46,17 +46,25 @@ class QuestionsController < ApplicationController
   end
 
   def upvotes
-    question = Question.find(params[:id])
-    question.votes += 1
-    question.save
-    redirect_to questions_path
+    @question = Question.find(params[:id])
+    @question.votes += 1
+    @question.save
+
+    respond_to do |format|
+      format.json {render json: @question.to_json}
+      format.html { redirect_to @questions_path }
+    end
   end
 
   def downvotes
     question = Question.find(params[:id])
     question.votes -= 1
     question.save
-    redirect_to questions_path
+
+    respond_to do |format|
+      format.json {render json: question.to_json}
+      format.html { redirect_to questions_path }
+    end
   end
 
   private

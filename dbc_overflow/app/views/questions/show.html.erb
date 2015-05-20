@@ -4,11 +4,10 @@
 <p><%= render "answers/new" %></p>
 
 <h2>All answers:</h1>
-
-<% @question.answers.sort_by{ |answer| answer.created_at }.each_with_index do |answer, index| %>
-
-  <div class="answer">
-    <%= render "answers/answer", answer: answer, index: index %>
-  </div>
-
-<% end %>
+<div id="answer_list">
+  <% @question.answers.sort_by{ |answer| answer.created_at }.each_with_index do |answer, index| %>
+    <div class="answer">
+      <%= render "answers/answer", answer: answer, index: index %>
+    </div>
+  <% end %>
+<div>
