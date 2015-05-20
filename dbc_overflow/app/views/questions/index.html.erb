@@ -7,8 +7,8 @@
   </tr>
   <% @questions.each do |question| %>
     <tr>
-      <td><%= link_to question.title, questions_path %></td>
-      <td><%= link_to question.content, questions_path %></td>
+      <td><%= link_to question.title, question_path(question), method: 'get'%></td>
+       <td><%= link_to question.content, question_path(question), method: 'get'%></td>
     </tr>
   <% end %>
 </table>
