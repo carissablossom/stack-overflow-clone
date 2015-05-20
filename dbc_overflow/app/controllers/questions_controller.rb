@@ -1,13 +1,14 @@
 class QuestionsController < ApplicationController
+  before_action :post_question, only: [:destroy, :show, :edit, :update, :upvote, :downvote]
   include HTTParty
 
   def index
     @questions = Question.all.sort_by(&:count).reverse
-    @quote = HTTParty.get("https://api.github.com/zen").body
+    # @quote = HTTParty.get("https://api.github.com/zen").body
+    @quote = "oops we hit the limit"
   end
 
   def show
-    @question = Question.find(params[:id])
     @answers = @question.answers.sort_by(&:count).reverse
     @answer = Answer.new
   end
@@ -19,17 +20,14 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    @question = Question.find(params[:id])
     @question.destroy
     redirect_to '/'
   end
 
   def edit
-    @question = Question.find(params[:id])
   end
 
   def update
-    @question = Question.find(params[:id])
     if @question.update_attributes(question_params)
       redirect_to @question
     else
@@ -38,14 +36,12 @@ class QuestionsController < ApplicationController
   end
 
   def upvote
-    @question = Question.find(params[:id])
     @question.count += 1
     @question.save
     redirect_to '/'
   end
 
   def downvote
-    @question = Question.find(params[:id])
     @question.count -= 1
     @question.save
     redirect_to '/'
@@ -56,4 +52,7 @@ class QuestionsController < ApplicationController
     params.require(:question).permit(:title, :content)
   end
 
+  def post_question
+    @question = Question.find(params[:id])
+  end
 end
