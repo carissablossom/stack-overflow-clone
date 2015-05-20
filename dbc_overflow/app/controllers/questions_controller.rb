@@ -18,8 +18,15 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(question_params)
-    @question.save
-    redirect_to root_path
+    respond_to do |format|
+      if @question.save
+        format.json {render :json => @question, :status => :created}
+      else
+        p "************** fucccccck"
+        # format.html {render action: 'index'}
+        # format.json { render :json => root_path.errors.full_messages, :status => :unprocessable_entity}
+      end
+    end
   end
 
   def show

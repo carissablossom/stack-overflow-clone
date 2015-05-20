@@ -5,7 +5,8 @@
 <div class="questions">
   <ul>
     <% @questions.order("votes desc").each do |q| %>
-      <li><a href="/questions/<%= q.id %>"><%= q.title %></a>
+      <li>
+        <a href="/questions/<%= q.id %>"><%= q.title %></a>
         votes: <%=q.votes%>
         <%= button_to("△", question_upvote_path(q), method: "patch") %>
         <%= button_to("▼", question_downvote_path(q), method: "patch") %>
@@ -28,3 +29,11 @@
   <%= f.submit %>
 <% end %>
 
+<script id="question_block" type="text/x-handlebars-template">
+  <li>
+    <a href="/questions/{{data.id}}">{{ data.title }}</a>
+    votes: {{data.votes}}
+    <form action="/questions/{{data.id}}/upvote" method="patch"><button type="submit">△</button></form>
+    <form action="/questions/{{data.id}}/downvote" method="patch"><button type="submit">▼</button></form>
+  </li>
+</script>

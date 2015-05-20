@@ -19,7 +19,6 @@
 <% end %>
 
 
-
 <hr>
 <h3>Post an answer:</h3>
 <%= form_for [@question, @answer] do |form| %>
@@ -35,3 +34,12 @@
     <%= form.submit %>
   </p>
 <% end %>
+
+  <h1>{{ answer.title }}</h1>
+  <p>{{ answer.content }}</p>
+  votes: {{ answer.votes }}
+  {{ <form action = "/questions/{{answer.question_id}}/answers/{{answer.id}}/upvote" method="patch"><input type="submit", value="upvote">△></form> }}
+  {{ <form_action = "/questions/#{answer.question_id}/answers/#{answer.id}/downvote" method="patch"><input type="submit", value="downvote">▼</button></form> }<script id="answer_block" type="text/x-handlebars-template">
+}
+</script>
+
