@@ -37,7 +37,7 @@ $(document).ready(function(){
   $('#question_list').on('click', '.down', function(e){
     e.preventDefault();
     var post = $(this).parents('.question');
-    var link = $(post.children('.up')).attr('href');
+    var link = $(post.children('.down')).attr('href');
 
     var request = $.ajax({
       method: "get",
