@@ -12,12 +12,13 @@ class QuestionsController < ApplicationController
       redirect_to action: 'index'
     else
       puts '!' * 40
-      'u failed'
+      redirect_to action: 'index'
     end
   end
 
   def show
     @question = Question.find(params[:id])
+    @answer = Answer.new
   end
 
   def index
@@ -38,16 +39,16 @@ class QuestionsController < ApplicationController
   end
 
   def edit
-
+    @question = Question.find(params[:id])
   end
 
   def update
-    puts '^' * 50
-    p params
     @question = Question.find(params[:id])
-    # if @question.save
-    #   redirect_to action: 'show'
-    # end
+    if @question.update_attributes(question_params)
+      redirect_to action: 'index'
+    else
+      redirect_to action: 'edit'
+    end
   end
 
   private

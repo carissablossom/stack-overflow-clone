@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :questions
-  resources :answers
+  resources :questions do
+    resources :answers
+  end
   resources :users
   # get 'users/new'
 
