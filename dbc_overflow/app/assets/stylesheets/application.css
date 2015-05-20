@@ -1,4 +1,16 @@
-/*
+.fa-arrow-circle-o-down{
+  color: red;
+  text-decoration: none;
+}
+
+.fa-arrow-circle-o-up{
+  color: green;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}/*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
