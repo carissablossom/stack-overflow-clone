@@ -1,5 +1,4 @@
 class QuestionsController < ApplicationController
-
   def new
     @question = Question.new
   end
@@ -25,6 +24,10 @@ class QuestionsController < ApplicationController
   def index
     @question = Question.new
     @questions = Question.order('created_at DESC').all
+    headers = { "User-Agent" => "StacksOnStacks",
+                "Authorization" => ENV['GITHUB_KEY']}
+    @quote = HTTParty.get("https://api.github.com/zen", headers: headers)
+    p @quote
   end
 
   def edit

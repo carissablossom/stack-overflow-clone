@@ -1,3 +1,10 @@
+<h1> StackOnStacks </h1>
+
+<hr>
+<h2> Quote: <h2>
+  <h3><%= @quote %></h3>
+<hr>
+
 <% @questions.each do |question| %>
   <div class="uhhh">
     <a href ="/questions/<%= question.id %>"><h1><%= question.title %></h1></a>
