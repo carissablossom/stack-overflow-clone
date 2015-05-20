@@ -1,7 +1,15 @@
+require 'httparty'
+
+KEY = ENV['GITHUB_API_KEY']
+HOST = ENV['GITHUB']
+
 class QuestionsController < ApplicationController
+  include HTTParty
+
   def index
     @questions = Question.all
     @question = Question.new
+    @quote = HTTParty.get("https://api.github.com/zen", {headers: {'Authorization' => KEY, 'User-Agent' => 'bananaboat'}} )
   end
 
   def new
