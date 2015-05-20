@@ -1,13 +1,9 @@
-<h1>Question: <%= @question.title %></h1>
+<h1><%= @question.title %></h1>
 <p><%= @question.content %></p>
 
 
 <%= link_to raw('<i class="fa fa-pencil"></i>'), edit_question_path(@question) %>
-
-<%= form_for @question, :method => :delete do |f| %>
-  <%= f.submit  "Delete" %>
-<% end %>
-
+<%= link_to raw('<i class="fa fa-trash-o"></i>'), question_path(@question), :method => :delete %>
 
 <p><%= render "answers/new" %></p>
 

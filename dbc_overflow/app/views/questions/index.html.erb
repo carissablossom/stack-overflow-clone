@@ -1,10 +1,5 @@
-<h3>"<%= @quote.content %>"</h3>
+<h1>"<%= @quote.content %>"</h1>
 
-<h1>Create new question!</h1>
-
-<p><%= render "form" %></p>
-
-<h1>DBC Overflow Questions</h1>
 
 <div id="question_list">
   <% @questions.each do |question| %>
@@ -13,3 +8,6 @@
     </div>
   <% end %>
 </div>
+
+
+<%= render "form" %>

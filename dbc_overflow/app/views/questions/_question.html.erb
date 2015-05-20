@@ -2,4 +2,7 @@
 <%= link_to raw('<i class="fa fa-plus-circle" style="color: green"></i>'), question_path(question)+"/upvotes", class: "up" %>
 <%= link_to raw('<i class="fa fa-minus-circle" style="color: red"></i>'), question_path(question)+"/downvotes", class: "down" %>
 <%= link_to "#{question.title}", question %>
+<br>
+<%= question.content %>
+
 
