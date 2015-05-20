@@ -6,7 +6,6 @@ class QuestionsController < ApplicationController
 
   def new
     @question = Question.new
-
   end
 
   def create
@@ -41,14 +40,12 @@ class QuestionsController < ApplicationController
   def upvote
     @question = Question.find(params[:question_id])
     @question.upvote
-    @question.save
     redirect_to root_path
   end
 
   def downvote
     @question = Question.find(params[:question_id])
     @question.downvote
-    @question.save
     redirect_to root_path
   end
 

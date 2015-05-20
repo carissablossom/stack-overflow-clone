@@ -14,6 +14,18 @@ class AnswersController < ApplicationController
   def show
   end
 
+  def upvote
+    @answer = Answer.find(params[:answer_id])
+    @answer.upvote
+    redirect_to "/questions/#{@answer.question_id}"
+  end
+
+  def downvote
+    @answer = Answer.find(params[:answer_id])
+    @answer.downvote
+    redirect_to "/questions/#{@answer.question_id}"
+  end
+
   private
   def answer_params
     params.require(:answer).permit(

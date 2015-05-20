@@ -7,14 +7,9 @@ Rails.application.routes.draw do
     patch 'downvote', to: 'questions#downvote'
     resources :answers do
       patch 'upvote', to: 'answers#upvote'
-      patch 'downvote', to: 'answers#upvote'
+      patch 'downvote', to: 'answers#downvote'
     end
   end
   root 'questions#index'
 
-
-
-  # put 'questions/:question_id/answers/:id#upvote'
-
-  # put 'questions/:question_id/answers/:id#downvote'
 end
