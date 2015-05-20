@@ -2,6 +2,8 @@ class QuestionsController < ApplicationController
   def index
     @question = Question.new
     @questions = Question.order(vote_total: :desc)
+    headers = {"User-Agent" => ENV['GITHUB_LOGIN'], "Authorization" => "token " + ENV['GITHUB_TOKEN']}
+    @quote = HTTParty.get("https://api.github.com/zen", :headers => headers)
   end
 
   def new

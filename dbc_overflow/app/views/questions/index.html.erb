@@ -1,6 +1,8 @@
+<h1><%= @quote %></h1>
 <% @questions.each do |question| %>
   <a href="/questions/<%= question.id %>"><%= question.title %></a>
   <%= question.content %>
+  <p><%= question.vote_total %></p>
   <%= link_to "upvote", upvote_path(question), method: :post %>
   <%= link_to "downvote", downvote_path(question), method: :post %>
   <br>
