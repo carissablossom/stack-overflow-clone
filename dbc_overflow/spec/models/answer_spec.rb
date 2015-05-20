@@ -1,5 +1,13 @@
-require 'rails_helper'
-
 RSpec.describe Answer, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context "create" do 
+    it 'should not have empty title' do
+      answer = Answer.new(content: 'hello')
+      expect(answer).to validate_presence_of(:title)
+    end
+
+    it 'should not have empty content' do 
+      answer = Answer.new(title: 'hello')
+      expect(answer).to validate_presence_of(:content)
+    end
+  end
 end

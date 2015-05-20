@@ -36,15 +36,23 @@ gem 'httparty'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 group :test do
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'nyan-cat-formatter'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
   gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'chromedriver-helper'
 end
 
 # Use debugger
 group :development, :test do
   gem 'debugger'
-  gem 'rspec-rails'
-  gem 'shoulda-matchers'
-  gem 'factory_girl'
+  # gem 'rspec-rails'
+  # gem 'shoulda-matchers'
+  # gem 'factory_girl'
   gem 'pry'
   gem 'pry-byebug'
+  gem 'faker'
 end

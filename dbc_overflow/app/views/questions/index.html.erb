@@ -9,7 +9,7 @@
     </a>
     <p><%= question.content %></p>
     <%= link_to("Upvote", "/questions/#{question.id}/upvote") %>
-    <span><%= question.vote %></span>
+    <span id="<%= question.id %>"><%= question.vote %></span>
     <%= link_to("Downvote", "/questions/#{question.id}/downvote") %>
   <% end %>
 <% end %>
