@@ -35,5 +35,6 @@ $(function() {
 		});
 	};
 
+
 	$('#question-form').on('submit', createQuestion);
 });
