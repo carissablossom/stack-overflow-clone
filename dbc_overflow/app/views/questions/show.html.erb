@@ -1,13 +1,13 @@
-<div>
+<div class="question">
   <h1><%= @question.title %></h1>
-  Point Count: <b><%= @question.point_count %></b>
+  Point Count: <span><%= @question.point_count %></span>
 
-  <%= link_to "▲", "/questions/#{@question.id}/upvote", method: "put" %>
-  <%= link_to "▼", "/questions/#{@question.id}/downvote", method: "put" %>
+  <%= link_to "▲", "/questions/#{@question.id}/upvote", method: "put", class: "vote" %>
+  <%= link_to "▼", "/questions/#{@question.id}/downvote", method: "put", class: "vote" %>
 
   <hr>
   <%= @question.content %>
-  <%= button_to "deletee Question", { action: "destroy", id: @question.id }, method: :delete, data: { confirm: "Are you sure?" } %>
+  <%= button_to "Delete Question", { action: "destroy", id: @question.id }, method: :delete, data: { confirm: "Are you sure?" } %>
   <a href="/questions/<%=@question.id%>/edit">Edit Question</a>
 </div>
 <hr>

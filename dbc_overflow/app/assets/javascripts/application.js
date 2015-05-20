@@ -19,5 +19,6 @@ $(document).ready(function(){
 
 bindAnswerEvents();
 bindQuestionEvents();
+bindVoteEvents();
 
 });

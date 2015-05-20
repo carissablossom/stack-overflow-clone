@@ -64,14 +64,21 @@ class QuestionsController < ApplicationController
     @question = Question.where(id: params[:question_id]).first
     @question.upvote
     @question.save
-    redirect_to "/questions/#{@question.id}"
+    p "this is a DOUBLE VOTE"
+    respond_to do |format|
+        format.html { redirect_to("/questions/#{@question.id}") }
+        format.json { render :json => @question }
+    end
   end
 
   def downvote
     @question = Question.where(id: params[:question_id]).first
     @question.downvote
     @question.save
-    redirect_to "/questions/#{@question.id}"
+    respond_to do |format|
+        format.html { redirect_to("/questions/#{@question.id}") }
+        format.json { render :json => @question }
+    end
   end
 
   private

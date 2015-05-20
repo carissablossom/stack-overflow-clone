@@ -20,14 +20,20 @@ class AnswersController < ApplicationController
     @answer = Answer.where(id: params[:answer_id]).first
     @answer.upvote
     @answer.save
-    redirect_to "/questions/#{@answer.question_id}"
+    respond_to do |format|
+        format.html { redirect_to("/questions/#{@answer.question_id}") }
+        format.json { render :json => @answer }
+    end
   end
 
   def downvote
     @answer = Answer.where(id: params[:answer_id]).first
     @answer.downvote
     @answer.save
-    redirect_to "/questions/#{@answer.question_id}"
+    respond_to do |format|
+        format.html { redirect_to("/questions/#{@answer.question_id}") }
+        format.json { render :json => @answer }
+    end
   end
 
   private

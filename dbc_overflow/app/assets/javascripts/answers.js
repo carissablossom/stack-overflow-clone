@@ -33,9 +33,9 @@ function buildAnswer(answerData){
       var skeleton =
       $('<div class="answer">' +
           '<h3>' +answerData.title+ '</h3>' +
-          'Point Count:' + '<b>1</b>' +
-          '<a data-method="put" href="/answers/'+answerData.id+'/upvote" rel="nofollow">' +'▲' + '</a>' +
-          '<a data-method="put" href="/answers/'+answerData.id+'/downvote" rel="nofollow">' + '▼' + '</a>' +
+          'Point Count:' + '<span>1</span>' +
+          '<a class="vote" data-method="put" href="/answers/'+answerData.id+'/upvote" rel="nofollow">' +'▲' + '</a>' +
+          '<a class="vote" data-method="put" href="/answers/'+answerData.id+'/downvote" rel="nofollow">' + '▼' + '</a>' +
           '<p>'+answerData.content+'</p>' +'<hr>' +
           '</div>');
       //Darwin is a genius
