@@ -2,9 +2,14 @@ class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
   def index
-    get_quote
-    get_paged_questions
-    @question = Question.new
+    if request.xhr?
+      get_paged_questions
+      return render :'questions/_all_questions', layout: false
+    else
+      get_quote
+      get_paged_questions
+      @question = Question.new
+    end
   end
 
   def new
@@ -13,7 +18,12 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     if @question.save
-      redirect_to @question
+      if request.xhr?
+        get_paged_questions
+        return render :'questions/_all_questions', layout: false
+      else
+        redirect_to @question
+      end
     else
       get_quote
       get_paged_questions

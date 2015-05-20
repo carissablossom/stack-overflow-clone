@@ -2,18 +2,7 @@
 
   <h2><%= @quote.content %></h2>
 
-  <%= will_paginate %>
-
-  <ul>
-    <% @questions.each do |qu| %>
-      <li>
-        <%= link_to qu.title, qu %>
-        <%= link_to raw('<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>'), question_path(qu)+'/upvote' %>
-        <%= link_to raw('<span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>'), question_path(qu)+'/downvote' %>
-        <%= qu.vote_count %>
-      </li>
-    <% end %>
-  </ul>
+  <%= render 'all_questions' %>
 
 
   <%= form_for @question do |f| %>
