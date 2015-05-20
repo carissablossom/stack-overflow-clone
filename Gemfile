@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+ source 'https://rubygems.org'
 
 
 gem 'httparty'
@@ -42,5 +42,9 @@ gem 'debugger', group: [:development, :test]
 gem 'pry', group: [:development, :test]
 gem 'rspec-rails', group: :test
 gem 'capybara', group: :test
+gem 'selenium-webdriver', group: :test
+gem 'chromedriver-helper', group: :test
 gem 'shoulda-matchers', group: :test
 gem 'faker', group: [:development, :test]
+gem 'simplecov', group: [:development, :test]
+gem 'database_cleaner', group: [:test]
