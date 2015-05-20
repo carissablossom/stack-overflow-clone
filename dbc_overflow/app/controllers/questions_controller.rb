@@ -38,6 +38,22 @@ class QuestionsController < ApplicationController
     redirect_to root_path
   end
 
+  def upvote
+    @question = Question.find(params[:id])
+      if @question.vote_total == nil
+        @question.vote_total = 1
+      else
+        @question.vote_total += 1
+      end
+    @question.save
+    redirect_to :action => :index
+end
+
+def downvote
+  @question = Question.find(params[:id])
+  @question.vote_total += 1
+  end
+
 private
   def question_params
     params.require(:question).permit(
