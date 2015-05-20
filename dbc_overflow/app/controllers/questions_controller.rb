@@ -20,8 +20,15 @@ class QuestionsController < ApplicationController
 
   def index
 
-    default_quote = "Hello there!"
-    response = HTTParty.get("https://api.github.com/zen", { params: ENV["CALVIN_TOKEN"]} )
+    # default_quote = "Hello there!"
+    # response = HTTParty.get("https://api.github.com/zen", { params: ENV["CALVIN_TOKEN"]} )
+    token = ENV["CALVIN_TOKEN"]
+    response = HTTParty.get(
+            "https://api.github.com/zen",
+            :headers => {
+                "Authorization" => "token #{token}",
+                "User-Agent" => "cal"
+                })
 
     if response.response.is_a? Net::HTTPForbidden
       @quote = default_quote
