@@ -1,12 +1,7 @@
 <h3><%= link_to "#{question.title}", question %></h3>
-<p><%= question.content %></p>
+
 
 <p>
-<button><%= link_to "Edit", edit_question_path(question) %></button>
-
-<%= form_for question, :method => :delete do |f| %>
-  <%= f.submit  "Delete" %>
-<% end %>
 
 <%= link_to raw('<i class="fa fa-thumbs-o-up"></i>'), question_path(question)+"/upvotes", class: "up" %>
 <%= link_to raw('<i class="fa fa-thumbs-o-down"></i>'), question_path(question)+"/downvotes", class: "down" %>
