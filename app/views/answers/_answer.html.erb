@@ -1,0 +1,14 @@
+<li>
+  <h5><%= answer.title %></h5>
+  <p><%= answer.content %></p>
+  <p>
+    <% if !session[:a_votes].include?(answer.id) %>
+    <%= link_to raw('<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>'), question_answer_path(@question, answer)+'/upvote', class: 'vote' %>
+    <%= link_to raw('<span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>'), question_answer_path(@question, answer)+'/downvote', class: 'vote' %>
+    <% else %>
+    <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+    <% end %>
+    <span class="count"><%= answer.vote_count %></span>
+  </p>
+</li>

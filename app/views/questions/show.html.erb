@@ -7,18 +7,8 @@
 
   <h4>answers:</h4>
 
-  <ul>
-    <% @answers.each do |an| %>
-      <li>
-        <h5><%= an.title %></h5>
-        <p><%= an.content %></p>
-        <p>
-          <%= link_to raw('<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>'), question_answer_path(@question, an)+'/upvote' %>
-          <%= link_to raw('<span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>'), question_answer_path(@question, an)+'/downvote' %>
-          <span class="count"><%= an.vote_count %></span>
-        </p>
-      </li>
-    <% end %>
+  <ul id="answers">
+    <%= render @answers %>
   </ul>
 
   <%= form_for [@question, @answer] do |f| %>

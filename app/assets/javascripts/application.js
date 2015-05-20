@@ -23,8 +23,9 @@ $(document).ready(function() {
 function bindEvents(){
   $('#page-wrap').on('click', 'div.pagination a', pagination);
   $('#page-wrap').on('click', '.vote', vote);
+  $('#answers').on('click', '.vote', ansVote);
   $('#new_question').on('submit', newQuestion);
-
+  $('#new_answer').on('submit', newAnswer);
 }
 
 function pagination(e){
@@ -43,7 +44,7 @@ function newQuestion(e) {
   e.preventDefault();
   var data = $(this).serialize();
   $.ajax({
-    url: '/questions',
+    url: $(this).attr('action'),
     type: 'POST',
     data: data + '&page=1',
     success: function(data) {
@@ -54,7 +55,38 @@ function newQuestion(e) {
   });
 };
 
+function newAnswer(e) {
+  e.preventDefault();
+  var data = $(this).serialize();
+  $.ajax({
+    url: $(this).attr('action'),
+    type: 'POST',
+    data: data,
+    success: function(data) {
+      $('#answers').append($(data));
+      $('#answer_content').val('');
+      $('#answer_title').val('');
+    }
+  });
+}
+
 function vote(e){
+  e.preventDefault();
+  var button = $(this);
+  var url = $(this).attr('href');
+  $.ajax({
+    url: url,
+    type: 'GET',
+    success: function(data) {
+      button.siblings('span').text(data);
+      $(button).parent().find('.vote').each(function(_, elem) {
+        $(elem).replaceWith($(elem).html());
+      });
+    }
+  });
+};
+
+function ansVote(e){
   e.preventDefault();
   var button = $(this);
   var url = $(this).attr('href');

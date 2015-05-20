@@ -61,7 +61,6 @@ class QuestionsController < ApplicationController
       @question.vote_count -= 1
     end
     if @question.save
-      # session[:q_votes] ||= []
       session[:q_votes] << @question.id
       if request.xhr?
         render json: @question.vote_count
