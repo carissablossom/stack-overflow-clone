@@ -1,8 +1,8 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy, :vote]
+  before_action :set_sesh
 
   def index
-    session[:q_votes] ||= []
     if request.xhr?
       get_paged_questions
       return render :'questions/_all_questions', layout: false
@@ -79,8 +79,16 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
   end
 
+  def set_sesh
+    session[:q_votes] ||= []
+  end
+
   def get_quote
-    response = HTTParty.get('https://api.github.com/zen', headers: {"User-Agent" => 'SF Dev BootCamp'}, basic_auth: {username: ENV['USERNAME'], password: ENV['PASSWORD']})
+    response = HTTParty.get(
+      'https://api.github.com/zen',
+      headers: {"User-Agent" => 'SF Dev BootCamp'},
+      basic_auth: {username: ENV['USERNAME'], password: ENV['PASSWORD']}
+    )
     if response.response.code == "200"
       @quote = Quote.create(content: response.parsed_response)
     else
