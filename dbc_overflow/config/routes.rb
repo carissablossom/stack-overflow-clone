@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'questions/edit'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -10,6 +10,12 @@ Rails.application.routes.draw do
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
+  post 'questions/:id/upvote' => 'question#upvote', as: 'question_upvote'
+  post 'questions/:id/downvote' => 'question#downvote', as: 'question_downvote'
+
+  # post 'questions/:id/upvote' => 'question#upvote'
+  # post 'questions/:id/downvote' => 'question#downvote'
+
   root 'questions#index'
   resources :questions do
     resources :answers

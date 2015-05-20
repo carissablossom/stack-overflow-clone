@@ -1,8 +1,6 @@
 <h1>Questions#edit</h1>
 
 
-<p><%= button_to ' Edit this question', @question, :confirm => 'Are you sure?', :method => :put   %></p>
-
 <%= form_for :question, url: question_path(@question), method: :put do |f| %>
 
   <p>
@@ -15,5 +13,5 @@
   <%= f.text_field :content %>
   </p>
 
-  <%= f.submit "Create Answer" %>
+  <%= f.submit "Edit This Question" %>
 <% end %>

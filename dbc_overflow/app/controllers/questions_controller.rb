@@ -42,6 +42,21 @@ class QuestionsController < ApplicationController
     redirect_to :action => :show
   end
 
+  def upvote
+    @question = Question.find(params[:id])
+    @question.vote += 1
+    @question.save
+    redirect_to :action => :index
+  end
+
+  def downvote
+    @question = Question.find(params[:id])
+    @question.vote -= 1
+    @question.save
+    redirect_to :back
+
+  end
+
   private
   def post_params
     params.require(:question).permit(:title, :content)

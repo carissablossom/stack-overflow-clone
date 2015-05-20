@@ -1,7 +1,7 @@
 
 <p><%= @question.title %> <%= button_to ' Destroy this question', @question, :confirm => 'Are you sure?', :method => :delete   %></p>
 
-<%= link_to '<button>Edit</button>'.html_safe, controller: 'questions', action: "edit", id: @question, class: "button" %>
+<%= link_to '<button>Edit</button>'.html_safe, controller: 'questions', action: "edit", id: @question %>
 
 <%= @question.content %><br>
 
