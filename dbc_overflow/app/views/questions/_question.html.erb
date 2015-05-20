@@ -1,9 +1,5 @@
-<h3><%= link_to "#{question.title}", question %></h3>
-
-
-<p>
-
+<span class="votes"><%= question.votes %></span>
 <%= link_to raw('<i class="fa fa-thumbs-o-up"></i>'), question_path(question)+"/upvotes", class: "up" %>
 <%= link_to raw('<i class="fa fa-thumbs-o-down"></i>'), question_path(question)+"/downvotes", class: "down" %>
-<span class="votes"><%= question.votes %></span>
-</p>
+<%= link_to "#{question.title}", question %>
+
