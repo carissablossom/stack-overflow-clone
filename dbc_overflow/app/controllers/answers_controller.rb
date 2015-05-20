@@ -7,20 +7,29 @@ class AnswersController < ApplicationController
     @question = Question.find(params[:question_id])
     @answer = @question.answers.build(answer_params)
     @answer.save
-    redirect_to "/questions/#{@question.id}/answers/#{@answer.id}"
+    redirect_to "/questions/#{@question.id}"
   end
 
   def show
     @answer = Answer.find(params[:id])
   end
 
-  # def upvote
-  #   @question.vote_totals += 1
-  # end
+  def upvote
+    @answer = Answer.find(params[:answer_id])
+    @answer.vote_totals += 1
+    @answer.save
+    @question = Question.find(params[:question_id])
+    redirect_to "/questions/#{@question.id}"
+  end
 
-  # def downvote
-  #   @question.vote_totals -= 1
-  # end
+  def downvote
+    @answer = Answer.find(params[:answer_id])
+    @answer.vote_totals -= 1
+    @answer.save
+    @question = Question.find(params[:question_id])
+    redirect_to "/questions/#{@question.id}"
+  end
+
   private
 
   def answer_params

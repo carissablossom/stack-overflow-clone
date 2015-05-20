@@ -19,12 +19,12 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @answer = Answer.new
+    @answers = @question.answers.order('created_at DESC').all
   end
 
   def index
     @question = Question.new
     @questions = Question.order('created_at DESC').all
-
   end
 
   def edit

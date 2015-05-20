@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   resources :questions do
     get 'upvote', to: 'questions#upvote'
     get 'downvote', to: 'questions#downvote'
-    resources :answers
+    resources :answers do
+      get 'upvote', to: 'answers#upvote'
+      get 'downvote', to: 'answers#downvote'
+    end
   end
 
   # You can have the root of your site routed with "root"

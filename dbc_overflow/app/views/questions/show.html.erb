@@ -1,28 +1,51 @@
-<h2>
+<h3> Question: </h3>
+
+<h3>
   <%= @question.title %><br>
-</h2>
+</h3>
 <p> <%= @question.content %> </p>
 
 <%= button_to "delete", { :controller => :questions, :action => 'destroy', :id => @question.id }, :method => :delete %>
 
 <%= button_to "edit", { :controller => :questions, :action => 'edit', :id => @question.id }, :method => :get %>
+<br>
 
-<h3> ~~~Enter Answer~~~ </h3>
+<h3>Answers:</h3>
+
+<div class = "answers">
+  <ol>
+  <% @answers.each do |answer| %>
+    <li>
+      <%= answer.content %>
+
+      <%= link_to image_tag("https://rittamdebnath.files.wordpress.com/2015/03/triangle.jpg"), question_answer_upvote_path(@question, answer), method: :get %>
+      <%= link_to image_tag("http://le2020.com/assets/images/transparent-triangle-1.png"), question_answer_downvote_path( @question, answer), method: :get %>
+
+      <p>vote totals: <%= answer.vote_totals %></p>
+    </li>
+  <% end %>
+  </ol>
+
+</div>
+
+
+<br>
+<h3> ~~Enter New Answer~~ </h3>
 
 <%= form_for [@question, @answer] do |f| %>
 
 <p>
-<%= f.label :title %> <br>
-<%= f.text_field :title %>
+  <%= f.label :title %> <br>
+  <%= f.text_field :title %>
 </p>
 
 <p>
-<%= f.label :content %> <br>
-<%= f.text_field :content %>
+  <%= f.label :content %> <br>
+  <%= f.text_field :content %>
 </p>
 
 <p>
-<%= f.submit %>
+  <%= f.submit %>
 </p>
 
 <%end%>
