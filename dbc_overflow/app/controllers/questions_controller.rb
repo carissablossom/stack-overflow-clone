@@ -13,14 +13,14 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.where(id: params[:id]).first
     if @question
-      @answers = @question.answers
+      @answers = @question.answers.order(:id)
     end
     @answer = Answer.new
   end
 
   def index
     @question = Question.new
-    @questions = Question.all
+    @questions = Question.all.order(:id)
     @answers = Answer.all
   end
 
@@ -51,7 +51,7 @@ class QuestionsController < ApplicationController
 
   def downvote
     @question = Question.find(params[:id])
-    @question.vote -= 1
+    @question.vote -= 1 if @question.vote > 0
     @question.save
     redirect_to :back
 

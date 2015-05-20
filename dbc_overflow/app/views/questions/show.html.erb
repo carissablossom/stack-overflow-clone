@@ -1,11 +1,16 @@
 
-<p><%= @question.title %> <%= button_to ' Destroy this question', @question, :confirm => 'Are you sure?', :method => :delete   %></p>
-
+<p><%= @question.title %>
+<br>
+<%= @question.content %>
 <%= link_to '<button>Edit</button>'.html_safe, controller: 'questions', action: "edit", id: @question %>
+<%= button_to ' Destroy this question', @question, :confirm => 'Are you sure?', :method => :delete   %></p>
 
-<%= @question.content %><br>
+
 
 <% @answers.each do |answer| %>
+  vote: <%= answer.vote %><br>
+  <%= button_to 'upvote', answer_upvote_path(id: answer.id ), :action => "upvote" %>
+  <%= button_to 'downvote', answer_downvote_path(:id => answer.id ), action: "downvote" %>
   <%= answer.title %><br>
   <%= answer.content %><br>
 <% end %>

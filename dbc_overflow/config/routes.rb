@@ -10,8 +10,11 @@ Rails.application.routes.draw do
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
-  post 'questions/:id/upvote' => 'question#upvote', as: 'question_upvote'
-  post 'questions/:id/downvote' => 'question#downvote', as: 'question_downvote'
+  post 'questions/:id/upvote' => 'questions#upvote', as: 'question_upvote'
+  post 'questions/:id/downvote' => 'questions#downvote', as: 'question_downvote'
+
+  post 'answers/:id/upvote' => 'answers#upvote', as: 'answer_upvote'
+  post 'answers/:id/downvote' => 'answers#downvote', as: 'answer_downvote'
 
   # post 'questions/:id/upvote' => 'question#upvote'
   # post 'questions/:id/downvote' => 'question#downvote'

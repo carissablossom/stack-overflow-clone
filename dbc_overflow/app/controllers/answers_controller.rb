@@ -13,9 +13,25 @@ class AnswersController < ApplicationController
 
   def show
   end
-end
+
+  def upvote
+    @answer = Answer.find(params[:id])
+    @answer.vote += 1
+    @answer.save
+    redirect_to :back
+  end
+
+  def downvote
+    @answer = Answer.find(params[:id])
+    @answer.vote -= 1 if @answer.vote > 0
+    @answer.save
+    redirect_to :back
+
+  end
+
 
  private
   def post_params
     params.require(:answer).permit(:title, :content)
   end
+end
