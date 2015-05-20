@@ -5,8 +5,9 @@ class QuestionsController < ApplicationController
 
 
   def index
-    quote = HTTParty.get("https://api.github.com/zen",
-      basic_auth: { username: "Makdash49", password: "Sonia12" })
+    quote = HTTParty.get("https://api.github.com/zen")
+    # quote = HTTParty.get("https://api.github.com/zen",
+    #   basic_auth: { username: "" , password: "" })
     puts "**********************************************************"
     p quote.to_json
     # reply = quote.to_h["message"]
