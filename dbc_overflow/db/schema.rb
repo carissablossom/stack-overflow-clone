@@ -16,26 +16,12 @@ ActiveRecord::Schema.define(version: 20150519184355) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "answer_votes", force: true do |t|
-    t.integer  "count",      default: 0
-    t.integer  "answer_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "answers", force: true do |t|
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "question_id"
     t.integer  "count",       default: 0
-  end
-
-  create_table "question_votes", force: true do |t|
-    t.integer  "count",       default: 0
-    t.integer  "question_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "questions", force: true do |t|
