@@ -1,7 +1,7 @@
 <h1>DBC Overflow</h1>
 <h3>Question</h3>
 
-<% @question.each do |questions|%>
+<% @questions.each do |questions|%>
   <div class="question">
   <ul>
     <li><a href="/questions/<%=questions.id%>">
@@ -9,8 +9,9 @@
     </a></li>
   </ul>
 <%end%>
+<h1>Make a new Question</h1>
   </div>
-<%= form_for :questions, url: questions_path  do |f| %>
+<%= form_for :@question, url: questions_path  do |f| %>
   <p>
   <%= f.label :title %>
   <%= f.text_field :title %>
