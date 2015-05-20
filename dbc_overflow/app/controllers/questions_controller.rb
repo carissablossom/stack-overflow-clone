@@ -6,7 +6,7 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     @question.save
-    redirect_to questions_path
+    render partial: "question", locals: {question: @question}
   end
 
   def show

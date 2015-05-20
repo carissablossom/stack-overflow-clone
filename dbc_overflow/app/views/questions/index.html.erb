@@ -1,13 +1,15 @@
 <h3>"<%= @quote.content %>"</h3>
 
+<h1>Create new question!</h1>
 
-  <p><%= render template: "questions/_new.html.erb" %></p>
+<p><%= render "form" %></p>
 
-  <h1>All questions:</h1>
-  <p>
+<h1>All questions:</h1>
+
+<div id="question_list">
   <% @questions.each do |question| %>
     <div class="question">
-      <%= render template: "questions/_question.html.erb", layout: false, locals: {:question => question } %>
+      <%= render "question", question: question %>
     </div>
   <% end %>
-  </p>
+</div>
