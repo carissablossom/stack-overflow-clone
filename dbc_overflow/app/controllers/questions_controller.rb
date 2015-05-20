@@ -5,20 +5,19 @@ class QuestionsController < ApplicationController
 
 
   def index
+    # Use when authentication not desired:
     # quote = HTTParty.get("https://api.github.com/zen")
+
     quote = HTTParty.get("https://api.github.com/zen",
-      basic_auth: { username: ENV['USERNAME'] , password: ENV['PASSWORD'] })
-    puts "**********************************************************"
-    p ENV['USERNAME']
-    p ENV['PASSWORD']
-    p quote.to_json
-    # reply = quote.to_h["message"]
-    # if reply.include?("limit exceeded")
-    #   # p "It includes it!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-    #   @message = ["WTF Bro!", "Make it so!", "limit exceeeeded!"].sample
-    # else
-      @message = quote.to_json
-    # end
+      basic_auth: { username: ENV['USERNAME'], password: ENV['PASSWORD'] })
+
+    reply = quote.to_json.to_s
+    if reply.include?("limit exceeded")
+      @message = ["WTF Bro!", "Make it so!", "limit exceeeeded!"].sample
+    else
+      @message = quote.to_json.to_s[1..-2]
+    end
+
     @questions = Question.all.order(:id)
     @question = Question.new
   end
