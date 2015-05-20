@@ -5,10 +5,12 @@ class QuestionsController < ApplicationController
 
 
   def index
-    quote = HTTParty.get("https://api.github.com/zen")
-    # quote = HTTParty.get("https://api.github.com/zen",
-    #   basic_auth: { username: "" , password: "" })
+    # quote = HTTParty.get("https://api.github.com/zen")
+    quote = HTTParty.get("https://api.github.com/zen",
+      basic_auth: { username: ENV['USERNAME'] , password: ENV['PASSWORD'] })
     puts "**********************************************************"
+    p ENV['USERNAME']
+    p ENV['PASSWORD']
     p quote.to_json
     # reply = quote.to_h["message"]
     # if reply.include?("limit exceeded")
