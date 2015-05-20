@@ -1,0 +1,8 @@
+<div class="answer">
+  <h3><%= answer.title %></h3>
+  Point Count: <b><%= answer.point_count %></b>
+  <%= link_to "▲", "/answers/#{answer.id}/upvote", method: "put" %>
+  <%= link_to "▼", "/answers/#{answer.id}/downvote", method: "put" %>
+  <p><%= answer.content %></p>
+  <hr>
+</div>

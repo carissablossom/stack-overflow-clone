@@ -30,11 +30,19 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(question_params)
-    if @question.save
-      redirect_to action: 'index', status: 303
+    if request.xhr?
+      if @question.save
+        render partial: "questions/show_title", locals: { question: @question }
+      else
+        status 400
+      end
     else
-      status 400
-      'bad question data'
+      if @question.save
+        redirect_to action: 'index', status: 303
+      else
+        status 400
+        'bad question data'
+      end
     end
   end
 
