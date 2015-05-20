@@ -6,9 +6,13 @@ class AnswersController < ApplicationController
   def create
     @answer = Answer.new(answer_params)
     @answer.question_id = params[:question_id]
-    @answer.save
-    redirect_to "/questions/#{@answer.question_id}"
-
+    respond_to do |format|
+      if @answer.save
+        format.json {render :json => @answer, :status => :created}
+      else
+        p "You fucking suck"
+      end
+    end
   end
 
   def show

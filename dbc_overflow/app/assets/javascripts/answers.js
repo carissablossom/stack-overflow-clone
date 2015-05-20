@@ -1,12 +1,9 @@
 $(document).ready(function() {
 
-
-
-  $('#new_question').on('submit', function (event) {
+  $('#new_answer').on('submit', function(event) {
     event.preventDefault();
 
-    //For HandleBars
-    var source = $('#question_block').html();
+    var source = $('#answer_block').html();
     var template = Handlebars.compile(source);
 
     var url = $(this).attr('action');
@@ -19,17 +16,14 @@ $(document).ready(function() {
     });
 
     request.done(function(data) {
-
-      //$('ul').append('<li>' +data+ '</li>'); //non-handlebars way
       var context = {};
       context.data = data;
-      $('ul').append(template(context)); //handlebars way
+      $('.answer_div').append(template(context));
     });
 
-    request.fail(function(data) {
-      $('#new_question').prepend('<span id="error">You fucked up</span>');
+    request.fail(function(data){
+      console.log("we failed");
     });
 
   });
-
-}); //end doc ready
+});

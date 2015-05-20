@@ -9,6 +9,7 @@
 
 <a href="/questions/<%=@question.id%>/edit">Edit Question</a>
 
+<div class="answer_div">
 <h2>Answers:</h2>
 <% @answers.order("votes desc").each do |answer| %>
   <h4><%= answer.title %></h4>
@@ -17,6 +18,7 @@
   <%= button_to("△", "/questions/#{answer.question_id}/answers/#{answer.id}/upvote", method: "patch") %>
   <%= button_to("▼", "/questions/#{answer.question_id}/answers/#{answer.id}/downvote", method: "patch") %>
 <% end %>
+</div>
 
 
 <hr>
@@ -35,11 +37,13 @@
   </p>
 <% end %>
 
-  <h1>{{ answer.title }}</h1>
-  <p>{{ answer.content }}</p>
-  votes: {{ answer.votes }}
-  {{ <form action = "/questions/{{answer.question_id}}/answers/{{answer.id}}/upvote" method="patch"><input type="submit", value="upvote">△></form> }}
-  {{ <form_action = "/questions/#{answer.question_id}/answers/#{answer.id}/downvote" method="patch"><input type="submit", value="downvote">▼</button></form> }<script id="answer_block" type="text/x-handlebars-template">
-}
+<script id="answer_block" type="text/x-handlebars-template">
+  <h4>{{ data.title }}</h4>
+  <p>{{ data.content }}</p>
+  votes: {{ data.votes }}
+  <form action = "/questions/{{data.question_id}}/answers/{{data.id}}/upvote" method="patch">
+  <input type="submit", value="△"></form>
+  <form_action = "/questions/{{data.question_id}}/answers/{{data.id}}/downvote" method="patch">
+  <input type="submit", value="▼"></form>
 </script>
 
