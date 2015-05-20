@@ -1,8 +1,8 @@
 <h2><%= @question.title %></h2>
 <p><%= @question.content %></p>
-<%= link_to("Upvote", "/questions/#{@question.id}/upvote", class: 'vote') %>
+<%= link_to("▲", "/questions/#{@question.id}/upvote", class: 'vote') %>
 <span><%= @question.vote %></span>
-<%= link_to("Downvote", "/questions/#{@question.id}/downvote", class: 'vote') %>
+<%= link_to("▼", "/questions/#{@question.id}/downvote", class: 'vote') %>
 
 <%= render 'questions/destroy' %>
 

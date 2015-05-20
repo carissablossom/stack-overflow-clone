@@ -3,9 +3,9 @@ $(function() {
 		str = '<li>' +
 					  '<h3>'+ answer.title +'</h3>' +
 					  '<p>'+ answer.content +'</p>' +
-					  '<a class="vote" href="/answers/'+ answer.id +'/upvote">Upvote</a>' +
+					  '<a class="vote" href="/answers/'+ answer.id +'/upvote">▲</a>' +
 					  '<span> '+ answer.vote +' </span>' +
-					  '<a class="vote" href="/answers/'+ answer.id +'/downvote">Downvote</a>' +
+					  '<a class="vote" href="/answers/'+ answer.id +'/downvote">▼</a>' +
 					'</li>';
 		return str;
 	};

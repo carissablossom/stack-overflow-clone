@@ -1,7 +1,7 @@
 <li>
   <h3><%= answer.title %></h3>
   <p><%= answer.content %></p>
-  <%= link_to("Upvote", "/answers/#{answer.id}/upvote", class: 'vote') %>
+  <%= link_to("▲", "/answers/#{answer.id}/upvote", class: 'vote') %>
   <span><%= answer.vote %></span>
-  <%= link_to("Downvote", "/answers/#{answer.id}/downvote", class: 'vote') %>
+  <%= link_to("▼", "/answers/#{answer.id}/downvote", class: 'vote') %>
 </li>
