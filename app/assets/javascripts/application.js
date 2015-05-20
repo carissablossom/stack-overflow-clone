@@ -26,6 +26,7 @@ function bindEvents(){
   $('#answers').on('click', '.vote', ansVote);
   $('#new_question').on('submit', newQuestion);
   $('#new_answer').on('submit', newAnswer);
+  $('#search').on('keyup', search);
 }
 
 function pagination(e){
@@ -101,3 +102,16 @@ function ansVote(e){
     }
   });
 };
+
+function search(){
+  var phrase = $(this).val().toLowerCase();
+  if (phrase) {
+    $.get('/questions/search/'+phrase).success(function(payload) {
+      $('#page-wrap').html($(payload));
+    });
+  } else {
+    $.get('/questions').success(function(payload) {
+      $('#page-wrap').html($(payload));
+    });
+  }
+}

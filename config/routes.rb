@@ -4,6 +4,10 @@ Rails.application.routes.draw do
     resources :answers
   end
 
+  get '/questions/search/' => 'questions#index'
+
+  get '/questions/search/:phrase' => 'questions#search'
+
   get '/questions/:id/:vote' => 'questions#vote'
 
   get '/questions/:question_id/answers/:id/:vote' => 'answers#vote'

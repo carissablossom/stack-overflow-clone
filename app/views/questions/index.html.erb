@@ -1,4 +1,9 @@
 <section class="container">
+  <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+  <input type="text" id="search" placeholder="search questions">
+</section>
+
+<section class="container">
 
   <h2><%= @quote.content %></h2>
   <div id="page-wrap">
@@ -19,7 +24,7 @@
     </p>
     <p>
       <%= f.label :content %><br>
-      <%= f.text_field :content, required: true %>
+      <%= f.text_area :content, required: true %>
     </p>
     <p>
       <%= f.submit %>

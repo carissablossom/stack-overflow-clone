@@ -73,6 +73,11 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def search
+    @questions = Question.where("lower(content) LIKE ? OR lower(title) LIKE ?", "%#{params[:phrase]}%", "%#{params[:phrase]}%").paginate(page: 1, per_page: 10)
+    return render :'questions/_all_questions', layout: false
+  end
+
   private
   def set_question
     @question = Question.find(params[:id])
@@ -83,16 +88,7 @@ class QuestionsController < ApplicationController
   end
 
   def get_quote
-    response = HTTParty.get(
-      'https://api.github.com/zen',
-      headers: {"User-Agent" => 'SF Dev BootCamp'},
-      basic_auth: {username: ENV['USERNAME'], password: ENV['PASSWORD']}
-    )
-    if response.response.code == "200"
-      @quote = Quote.create(content: response.parsed_response)
-    else
-      @quote = Quote.all.sample || Quote.new
-    end
+    @quote = Quote.new.get_quote
   end
 
   def question_params

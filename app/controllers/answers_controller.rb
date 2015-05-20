@@ -53,25 +53,6 @@ class AnswersController < ApplicationController
     end
   end
 
-  # def upvote
-  #   @answer.vote_count += 1
-  #   if @answer.save
-  #     redirect_to question_path(@answer.question.id)
-  #   else
-  #     status 400
-  #     'fu'
-  #   end
-  # end
-
-  # def downvote
-  #   @answer.vote_count -= 1 if @answer.vote_count > 0
-  #   if @answer.save
-  #     redirect_to question_path(@answer.question.id)
-  #   else
-  #     status 400
-  #     'fu'
-  #   end
-  # end
 
   private
   def set_answer
