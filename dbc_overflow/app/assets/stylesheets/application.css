@@ -10,6 +10,15 @@
 
 a {
   text-decoration: none;
+}
+
+h3 {
+  margin: 5px;
+  display: inline;
+}
+
+h2 {
+  display: inline;
 }/*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

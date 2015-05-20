@@ -12,8 +12,15 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(post_params)
-    @question.save
-    redirect_to action: "index"
+      respond_to do |format|
+      if @question.save
+        format.html { redirect_to action: "index", notice: "Question created successfully." }
+        format.json { render :json => @question, :status => :created }
+      else
+        format.html {render action: 'index' }
+        format.json {render :json => @question.errors.full_messages, :status => :unprocessable_entity }
+      end
+    end
   end
 
   def show
@@ -23,6 +30,7 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
+    @question = Question.where(id: params[:id]).first
     @question.destroy
     redirect_to :action => 'index'
   end
