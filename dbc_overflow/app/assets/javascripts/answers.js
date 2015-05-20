@@ -19,20 +19,25 @@ function postNewAnswer(){
     data: data,
     dataType: 'JSON',
     success: function(data){
-      console.log(data)
-      var answer =
-      $('<div class="answer">
-        <h3>'+data.title+'</h3>
-        Point Count: <b>1</b>
-        <a data-method="put" href="/answers/'+data.id+'/upvote" rel="nofollow">▲</a>
-        <a data-method="put" href="/answers/'+data.id+'/downvote" rel="nofollow">▼</a>
-        <p>'+data.content+'</p><hr>
-      </div>')
-      // var newAnswer = $(data);
-      // $("input[name='answer[title]']").val("");
-      // $("textarea[name='answer[content]']").val(" ");
-      $('#answer_container').append(answer);
+      console.log(data);
+      console.log("AJAX BABY")
+      $('#answer_container').prepend(buildAnswer(data));
+      $("input[name='answer[title]']").val("");
+      $("textarea[name='answer[content]']").val(" ");
       }
     });
   });
+};
+
+function buildAnswer(answerData){
+      var skeleton =
+      $('<div class="answer">' +
+          '<h3>' +answerData.title+ '</h3>' +
+          'Point Count:' + '<b>1</b>' +
+          '<a data-method="put" href="/answers/'+answerData.id+'/upvote" rel="nofollow">' +'▲' + '</a>' +
+          '<a data-method="put" href="/answers/'+answerData.id+'/downvote" rel="nofollow">' + '▼' + '</a>' +
+          '<p>'+answerData.content+'</p>' +'<hr>' +
+          '</div>');
+      //Darwin is a genius
+      return skeleton;
 };
