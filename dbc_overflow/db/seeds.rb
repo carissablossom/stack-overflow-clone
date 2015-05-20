@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'faker'
 
-100.times do
+10.times do
   question = Question.create(title: Faker::Hacker.abbreviation, content: Faker::Hacker.say_something_smart)
   answer = Answer.create(content: Faker::Hacker.say_something_smart)
   answer1 = Answer.create(content: Faker::Hacker.say_something_smart)

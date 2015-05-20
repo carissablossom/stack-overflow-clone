@@ -1,7 +1,8 @@
 class AnswersController < ApplicationController
+  before_action :post_question, only: [:create, :upvote, :downvote]
+
 
   def create
-    @question = Question.find(params[:question_id])
     @answer = @question.answers.build(answer_params)
     respond_to do |format|
       if @answer.save
@@ -15,19 +16,23 @@ class AnswersController < ApplicationController
   end
 
   def upvote
-    @question = Question.find(params[:question_id])
     @answer = Answer.find(params[:id])
     @answer.count += 1
-    @answer.save
-    redirect_to @question
+    if @answer.save && request.xhr?
+      render json: {count: @answer.count}
+    else
+      redirect_to @question
+    end
   end
 
   def downvote
-    @question = Question.find(params[:question_id])
     @answer = Answer.find(params[:id])
     @answer.count -= 1
-    @answer.save
-    redirect_to @question
+    if @answer.save && request.xhr?
+      render json: {count: @answer.count}
+    else
+      redirect_to @question
+    end
   end
 
 
@@ -36,5 +41,8 @@ class AnswersController < ApplicationController
     params.require(:answer).permit(:content)
   end
 
+  def post_question
+    @question = Question.find(params[:question_id])
+  end
 
 end

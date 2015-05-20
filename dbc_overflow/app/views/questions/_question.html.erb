@@ -1,5 +1,7 @@
+<div class="the-question">
 <h1><%= link_to question.title, question %>?</h1>
-  <%= button_to "upvote", upvote_question_path(question), method: :post %>
-  <%= button_to "downvote", downvote_question_path(question), method: :post %>
+  <%= button_to "upvote", upvote_question_path(question), method: :post%>
+  <%= button_to "downvote", downvote_question_path(question), method: :post%>
 <p><%= question.count %></p>
 <p><%= question.content %></p>
+</div>

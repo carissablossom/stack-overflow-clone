@@ -46,14 +46,20 @@ class QuestionsController < ApplicationController
 
   def upvote
     @question.count += 1
-    @question.save
-    redirect_to '/'
+    if @question.save && request.xhr?
+      render json: {count: @question.count}
+    else
+      redirect_to '/'
+    end
   end
 
   def downvote
     @question.count -= 1
-    @question.save
-    redirect_to '/'
+    if @question.save && request.xhr?
+      render json: {count: @question.count}
+    else
+      redirect_to '/'
+    end
   end
 
   private

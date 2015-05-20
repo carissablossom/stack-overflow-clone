@@ -3,7 +3,7 @@
 
 <div class='answers'>
 <% @answers.each do |answer| %>
-  <p><strong><%= answer.content %></strong></p>
+  <h3><strong><%= answer.content %></strong></h3>
   <%= button_to "upvote", upvote_question_answer_path(@question, answer), method: :post %>
   <%= button_to "downvote", downvote_question_answer_path(@question, answer), method: :post %>
   <p><em>count: <%= answer.count %></em></p>
