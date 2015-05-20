@@ -19,9 +19,28 @@ class QuestionsController < ApplicationController
   end
 
   def index
+
+    default_quote = "Hello there!"
+    response = HTTParty.get("https://api.github.com/zen", { params: ENV["CALVIN_TOKEN"]} )
+
+    if response.response.is_a? Net::HTTPForbidden
+      @quote = default_quote
+    else
+      @quote = response.parsed_response
+    end
+
     @question = Question.new
     @questions = Question.all.order(:id)
     @answers = Answer.all
+
+  #   default_quote = "Hello there!"
+  #   response = HTTParty.get("https://api.github.com/zen")
+  #   @quote = HTTParty.get("https://api.github.com/zen").parsed_response
+  #   @question = Question.new
+  #   @questions = Question.all.order(:id)
+  #   @answers = Answer.all
+  # rescue => e
+  #   @quote = default_quote
   end
 
   def destroy

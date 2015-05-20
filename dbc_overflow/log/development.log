@@ -17672,3 +17672,1560 @@ Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-19 18:27:52 -
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-19 18:27:52 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-19 19:05:26 -0700
+Processing by QuestionsController#index as HTML
+Completed 500 Internal Server Error in 2ms
+
+NameError (uninitialized constant QuestionsController::HTTParty):
+  app/controllers/questions_controller.rb:22:in `index'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-19 19:05:56 -0700
+Processing by QuestionsController#index as HTML
+Completed 500 Internal Server Error in 1ms
+
+NameError (uninitialized constant QuestionsController::HTTParty):
+  app/controllers/questions_controller.rb:22:in `index'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-19 19:06:44 -0700
+Processing by QuestionsController#index as HTML
+Completed 500 Internal Server Error in 2ms
+
+NameError (uninitialized constant QuestionsController::HTTParty):
+  app/controllers/questions_controller.rb:22:in `index'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-19 19:08:16 -0700
+
+LoadError (cannot load such file -- httparty):
+  app/controllers/questions_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-19 19:08:20 -0700
+
+LoadError (cannot load such file -- httparty):
+  app/controllers/questions_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.7ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-05-19 19:10:08 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.8ms)[0m  SELECT "questions".* FROM "questions"   ORDER BY "questions"."id" ASC
+  Rendered questions/index.html.erb within layouts/application (56.6ms)
+Completed 200 OK in 677ms (Views: 239.7ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-05-19 19:10:09 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.6ms)[0m  [1mSELECT "questions".* FROM "questions"   ORDER BY "questions"."id" ASC[0m
+  Rendered questions/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 426ms (Views: 89.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-19 19:10:10 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-19 19:10:10 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-19 19:10:10 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-19 19:10:10 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-19 19:10:10 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-19 19:10:10 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-19 19:10:10 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-19 19:10:10 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-19 19:10:10 -0700
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-05-19 19:11:24 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.5ms)[0m  SELECT "questions".* FROM "questions"   ORDER BY "questions"."id" ASC
+  Rendered questions/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 431ms (Views: 91.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-19 19:11:24 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-19 19:11:24 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-19 19:11:24 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-19 19:11:24 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-19 19:11:24 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-19 19:11:24 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-19 19:11:24 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-19 19:11:24 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-19 19:11:24 -0700
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-05-19 19:21:57 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.6ms)[0m  [1mSELECT "questions".* FROM "questions"   ORDER BY "questions"."id" ASC[0m
+  Rendered questions/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 457ms (Views: 100.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-19 19:21:58 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-19 19:21:58 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-19 19:21:58 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-19 19:21:58 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-19 19:21:58 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-19 19:21:58 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-19 19:21:58 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-19 19:21:58 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-19 19:21:58 -0700
+
+
+Started POST "/questions/1/upvote" for 127.0.0.1 at 2015-05-19 19:29:21 -0700
+Processing by QuestionsController#upvote as HTML
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"1"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "questions" SET "updated_at" = $1, "vote" = $2 WHERE "questions"."id" = 1  [["updated_at", "2015-05-20 02:29:21.300701"], ["vote", 4]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-19 19:29:21 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT "questions".* FROM "questions"   ORDER BY "questions"."id" ASC
+  Rendered questions/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 406ms (Views: 63.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:21 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:21 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:21 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:21 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:21 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:21 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:21 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:21 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:21 -0700
+
+
+Started POST "/questions/1/upvote" for 127.0.0.1 at 2015-05-19 19:29:22 -0700
+Processing by QuestionsController#upvote as HTML
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"1"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "questions" SET "updated_at" = $1, "vote" = $2 WHERE "questions"."id" = 1[0m  [["updated_at", "2015-05-20 02:29:22.701310"], ["vote", 5]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-19 19:29:22 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT "questions".* FROM "questions"   ORDER BY "questions"."id" ASC[0m
+  Rendered questions/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 438ms (Views: 99.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:23 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:23 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:23 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:23 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:23 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:23 -0700
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:23 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:23 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:23 -0700
+
+
+Started POST "/questions/1/downvote" for 127.0.0.1 at 2015-05-19 19:29:23 -0700
+Processing by QuestionsController#downvote as HTML
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"1"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.7ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "questions" SET "updated_at" = $1, "vote" = $2 WHERE "questions"."id" = 1  [["updated_at", "2015-05-20 02:29:23.888499"], ["vote", 4]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-19 19:29:23 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.5ms)[0m  SELECT "questions".* FROM "questions"   ORDER BY "questions"."id" ASC
+  Rendered questions/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 442ms (Views: 101.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:24 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:24 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:24 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:24 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:24 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:24 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:24 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:24 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:24 -0700
+
+
+Started POST "/questions/1/downvote" for 127.0.0.1 at 2015-05-19 19:29:24 -0700
+Processing by QuestionsController#downvote as HTML
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"1"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "questions" SET "updated_at" = $1, "vote" = $2 WHERE "questions"."id" = 1[0m  [["updated_at", "2015-05-20 02:29:24.945065"], ["vote", 3]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-19 19:29:24 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT "questions".* FROM "questions"   ORDER BY "questions"."id" ASC[0m
+  Rendered questions/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 440ms (Views: 100.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:25 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:25 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:25 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:25 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:25 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:25 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:25 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:25 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:25 -0700
+
+
+Started POST "/questions/1/downvote" for 127.0.0.1 at 2015-05-19 19:29:25 -0700
+Processing by QuestionsController#downvote as HTML
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"1"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "questions" SET "updated_at" = $1, "vote" = $2 WHERE "questions"."id" = 1  [["updated_at", "2015-05-20 02:29:25.758638"], ["vote", 2]]
+  [1m[36m (75.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 117ms (ActiveRecord: 76.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-19 19:29:25 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.6ms)[0m  SELECT "questions".* FROM "questions"   ORDER BY "questions"."id" ASC
+  Rendered questions/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 437ms (Views: 101.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/questions/1/downvote" for 127.0.0.1 at 2015-05-19 19:29:26 -0700
+Processing by QuestionsController#downvote as HTML
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "questions" SET "updated_at" = $1, "vote" = $2 WHERE "questions"."id" = 1[0m  [["updated_at", "2015-05-20 02:29:26.324370"], ["vote", 1]]
+  [1m[35m (1.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 1.7ms)
+
+
+Started POST "/questions/1/downvote" for 127.0.0.1 at 2015-05-19 19:29:26 -0700
+Processing by QuestionsController#downvote as HTML
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "questions" SET "updated_at" = $1, "vote" = $2 WHERE "questions"."id" = 1[0m  [["updated_at", "2015-05-20 02:29:26.333558"], ["vote", 0]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-19 19:29:26 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.5ms)[0m  [1mSELECT "questions".* FROM "questions"   ORDER BY "questions"."id" ASC[0m
+  Rendered questions/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 440ms (Views: 101.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:26 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:26 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:26 -0700
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:26 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:26 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:26 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:26 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:26 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:26 -0700
+
+
+Started POST "/questions/1/upvote" for 127.0.0.1 at 2015-05-19 19:29:28 -0700
+Processing by QuestionsController#upvote as HTML
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"1"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "questions" SET "updated_at" = $1, "vote" = $2 WHERE "questions"."id" = 1  [["updated_at", "2015-05-20 02:29:28.311401"], ["vote", 1]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-19 19:29:28 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT "questions".* FROM "questions"   ORDER BY "questions"."id" ASC
+  Rendered questions/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 441ms (Views: 104.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:28 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:28 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:28 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:28 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:28 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:28 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:28 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:28 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:28 -0700
+
+
+Started POST "/questions/1/upvote" for 127.0.0.1 at 2015-05-19 19:29:29 -0700
+Processing by QuestionsController#upvote as HTML
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "questions" SET "updated_at" = $1, "vote" = $2 WHERE "questions"."id" = 1[0m  [["updated_at", "2015-05-20 02:29:29.990368"], ["vote", 2]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-19 19:29:29 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.5ms)[0m  [1mSELECT "questions".* FROM "questions"   ORDER BY "questions"."id" ASC[0m
+  Rendered questions/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 434ms (Views: 100.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:30 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:30 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:30 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:30 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:30 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:30 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:30 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:30 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:30 -0700
+
+
+Started POST "/questions/1/downvote" for 127.0.0.1 at 2015-05-19 19:29:31 -0700
+Processing by QuestionsController#downvote as HTML
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"1"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "questions" SET "updated_at" = $1, "vote" = $2 WHERE "questions"."id" = 1  [["updated_at", "2015-05-20 02:29:31.759617"], ["vote", 1]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-19 19:29:31 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT "questions".* FROM "questions"   ORDER BY "questions"."id" ASC
+  Rendered questions/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 448ms (Views: 100.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:32 -0700
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:32 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:32 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:32 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:32 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:32 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:32 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:32 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:32 -0700
+
+
+Started POST "/questions/1/downvote" for 127.0.0.1 at 2015-05-19 19:29:32 -0700
+Processing by QuestionsController#downvote as HTML
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "questions" SET "updated_at" = $1, "vote" = $2 WHERE "questions"."id" = 1[0m  [["updated_at", "2015-05-20 02:29:32.521593"], ["vote", 0]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-19 19:29:32 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.5ms)[0m  [1mSELECT "questions".* FROM "questions"   ORDER BY "questions"."id" ASC[0m
+  Rendered questions/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 433ms (Views: 100.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:32 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:33 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:33 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:33 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:33 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:33 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:33 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:33 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:33 -0700
+
+
+Started GET "/questions/4" for 127.0.0.1 at 2015-05-19 19:29:38 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mQuestion Load (0.5ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = 4  ORDER BY "questions"."id" ASC LIMIT 1
+  [1m[36mAnswer Load (0.5ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  ORDER BY "answers"."id" ASC[0m  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 416ms (Views: 111.2ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/questions/4/answers" for 127.0.0.1 at 2015-05-19 19:29:45 -0700
+Processing by AnswersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "answer"=>{"title"=>"hello", "content"=>"hello"}, "commit"=>"Create Answer", "question_id"=>"4"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (30.1ms)[0m  [1mINSERT INTO "answers" ("content", "created_at", "question_id", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "hello"], ["created_at", "2015-05-20 02:29:45.431557"], ["question_id", 4], ["title", "hello"], ["updated_at", "2015-05-20 02:29:45.431557"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/questions/4
+Completed 302 Found in 35ms (ActiveRecord: 31.0ms)
+
+
+Started GET "/questions/4" for 127.0.0.1 at 2015-05-19 19:29:45 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = 4  ORDER BY "questions"."id" ASC LIMIT 1[0m
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  ORDER BY "answers"."id" ASC  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 121ms (Views: 117.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:45 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:45 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:45 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:45 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:45 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:45 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:45 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:45 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:45 -0700
+
+
+Started POST "/questions/4/answers" for 127.0.0.1 at 2015-05-19 19:29:51 -0700
+Processing by AnswersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "answer"=>{"title"=>"hello2", "content"=>"hello2"}, "commit"=>"Create Answer", "question_id"=>"4"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "answers" ("content", "created_at", "question_id", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["content", "hello2"], ["created_at", "2015-05-20 02:29:51.541564"], ["question_id", 4], ["title", "hello2"], ["updated_at", "2015-05-20 02:29:51.541564"]]
+  [1m[36m (15.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/4
+Completed 302 Found in 20ms (ActiveRecord: 16.3ms)
+
+
+Started GET "/questions/4" for 127.0.0.1 at 2015-05-19 19:29:51 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = 4  ORDER BY "questions"."id" ASC LIMIT 1
+  [1m[36mAnswer Load (0.5ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  ORDER BY "answers"."id" ASC[0m  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 104ms (Views: 101.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:51 -0700
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:51 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:51 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:51 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:51 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:51 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:51 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:51 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:51 -0700
+
+
+Started POST "/answers/9/upvote" for 127.0.0.1 at 2015-05-19 19:29:54 -0700
+Processing by AnswersController#upvote as HTML
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"9"}
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 9  [["updated_at", "2015-05-20 02:29:54.498738"], ["vote", 1]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/4
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/questions/4" for 127.0.0.1 at 2015-05-19 19:29:54 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = 4  ORDER BY "questions"."id" ASC LIMIT 1
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  ORDER BY "answers"."id" ASC[0m  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 98ms (Views: 95.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:54 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:54 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:54 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:54 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:54 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:54 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:54 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:54 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:54 -0700
+
+
+Started POST "/answers/9/upvote" for 127.0.0.1 at 2015-05-19 19:29:55 -0700
+Processing by AnswersController#upvote as HTML
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"9"}
+  [1m[35mAnswer Load (0.5ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 9  [["updated_at", "2015-05-20 02:29:55.332757"], ["vote", 2]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/4
+Completed 302 Found in 6ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/questions/4" for 127.0.0.1 at 2015-05-19 19:29:55 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = 4  ORDER BY "questions"."id" ASC LIMIT 1
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  ORDER BY "answers"."id" ASC[0m  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 101ms (Views: 98.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:55 -0700
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:55 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:55 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:55 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:55 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:55 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:55 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:55 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:55 -0700
+
+
+Started POST "/answers/9/downvote" for 127.0.0.1 at 2015-05-19 19:29:55 -0700
+Processing by AnswersController#downvote as HTML
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"9"}
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 9  [["updated_at", "2015-05-20 02:29:55.895019"], ["vote", 1]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/4
+Completed 302 Found in 6ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/questions/4" for 127.0.0.1 at 2015-05-19 19:29:55 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = 4  ORDER BY "questions"."id" ASC LIMIT 1
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  ORDER BY "answers"."id" ASC[0m  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 97ms (Views: 94.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:56 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:56 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:56 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:56 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:56 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:56 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:56 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:56 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:56 -0700
+
+
+Started POST "/answers/9/downvote" for 127.0.0.1 at 2015-05-19 19:29:56 -0700
+Processing by AnswersController#downvote as HTML
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"9"}
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 9  [["updated_at", "2015-05-20 02:29:56.454188"], ["vote", 0]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/4
+Completed 302 Found in 6ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/questions/4" for 127.0.0.1 at 2015-05-19 19:29:56 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = 4  ORDER BY "questions"."id" ASC LIMIT 1
+  [1m[36mAnswer Load (0.5ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  ORDER BY "answers"."id" ASC[0m  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 61ms (Views: 58.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:56 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:56 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:56 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:56 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:56 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:56 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:56 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:56 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:56 -0700
+
+
+Started POST "/answers/10/upvote" for 127.0.0.1 at 2015-05-19 19:29:57 -0700
+Processing by AnswersController#upvote as HTML
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"10"}
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 10]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 10  [["updated_at", "2015-05-20 02:29:57.445260"], ["vote", 1]]
+  [1m[36m (4.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/4
+Completed 302 Found in 9ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/questions/4" for 127.0.0.1 at 2015-05-19 19:29:57 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = 4  ORDER BY "questions"."id" ASC LIMIT 1
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  ORDER BY "answers"."id" ASC[0m  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 94ms (Views: 91.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:57 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:57 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:57 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:57 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:57 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:57 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:57 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:57 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:57 -0700
+
+
+Started POST "/answers/10/upvote" for 127.0.0.1 at 2015-05-19 19:29:57 -0700
+Processing by AnswersController#upvote as HTML
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"10"}
+  [1m[35mAnswer Load (0.5ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 10]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 10  [["updated_at", "2015-05-20 02:29:57.833002"], ["vote", 2]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/4
+Completed 302 Found in 5ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/questions/4" for 127.0.0.1 at 2015-05-19 19:29:57 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = 4  ORDER BY "questions"."id" ASC LIMIT 1
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  ORDER BY "answers"."id" ASC[0m  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 98ms (Views: 95.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:57 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:57 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:57 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:57 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:57 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:57 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:58 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:58 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:58 -0700
+
+
+Started POST "/answers/10/upvote" for 127.0.0.1 at 2015-05-19 19:29:58 -0700
+Processing by AnswersController#upvote as HTML
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"10"}
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 10]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 10  [["updated_at", "2015-05-20 02:29:58.278906"], ["vote", 3]]
+  [1m[36m (20.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/4
+Completed 302 Found in 25ms (ActiveRecord: 21.1ms)
+
+
+Started GET "/questions/4" for 127.0.0.1 at 2015-05-19 19:29:58 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = 4  ORDER BY "questions"."id" ASC LIMIT 1
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  ORDER BY "answers"."id" ASC[0m  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 103ms (Views: 100.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:58 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:58 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:58 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:58 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:58 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-19 19:29:58 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:58 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:58 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-19 19:29:58 -0700
+
+
+Started POST "/answers/10/upvote" for 127.0.0.1 at 2015-05-19 19:30:00 -0700
+Processing by AnswersController#upvote as HTML
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"10"}
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 10]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 10  [["updated_at", "2015-05-20 02:30:00.187363"], ["vote", 4]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/4
+Completed 302 Found in 6ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/questions/4" for 127.0.0.1 at 2015-05-19 19:30:00 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = 4  ORDER BY "questions"."id" ASC LIMIT 1
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  ORDER BY "answers"."id" ASC[0m  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 103ms (Views: 100.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-19 19:30:00 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-19 19:30:00 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-19 19:30:00 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-19 19:30:00 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-19 19:30:00 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-19 19:30:00 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-19 19:30:00 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-19 19:30:00 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-19 19:30:00 -0700
+
+
+Started POST "/answers/10/upvote" for 127.0.0.1 at 2015-05-19 19:30:00 -0700
+Processing by AnswersController#upvote as HTML
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"10"}
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 10]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  UPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 10  [["updated_at", "2015-05-20 02:30:00.842319"], ["vote", 5]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/4
+Completed 302 Found in 7ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/questions/4" for 127.0.0.1 at 2015-05-19 19:30:00 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mQuestion Load (0.7ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = 4  ORDER BY "questions"."id" ASC LIMIT 1
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  ORDER BY "answers"."id" ASC[0m  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 103ms (Views: 99.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-19 19:30:00 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-19 19:30:00 -0700
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-19 19:30:00 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-19 19:30:01 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-19 19:30:01 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-19 19:30:01 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-19 19:30:01 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-19 19:30:01 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-19 19:30:01 -0700
+
+
+Started POST "/answers/10/upvote" for 127.0.0.1 at 2015-05-19 19:30:01 -0700
+Processing by AnswersController#upvote as HTML
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"10"}
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 10]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 10  [["updated_at", "2015-05-20 02:30:01.211426"], ["vote", 6]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/4
+Completed 302 Found in 6ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/questions/4" for 127.0.0.1 at 2015-05-19 19:30:01 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mQuestion Load (0.5ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = 4  ORDER BY "questions"."id" ASC LIMIT 1
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  ORDER BY "answers"."id" ASC[0m  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 104ms (Views: 100.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-19 19:30:01 -0700
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-19 19:30:01 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-19 19:30:01 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-19 19:30:01 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-19 19:30:01 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-19 19:30:01 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-19 19:30:01 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-19 19:30:01 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-19 19:30:01 -0700
+
+
+Started POST "/answers/10/upvote" for 127.0.0.1 at 2015-05-19 19:30:02 -0700
+Processing by AnswersController#upvote as HTML
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"10"}
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 10]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 10  [["updated_at", "2015-05-20 02:30:02.626351"], ["vote", 7]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/4
+Completed 302 Found in 5ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/questions/4" for 127.0.0.1 at 2015-05-19 19:30:02 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mQuestion Load (0.5ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = 4  ORDER BY "questions"."id" ASC LIMIT 1
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  ORDER BY "answers"."id" ASC[0m  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (47.9ms)
+Completed 200 OK in 107ms (Views: 102.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-19 19:30:02 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-19 19:30:02 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-19 19:30:02 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-19 19:30:02 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-19 19:30:02 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-19 19:30:02 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-19 19:30:02 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-19 19:30:02 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-19 19:30:02 -0700
+
+
+Started POST "/answers/10/downvote" for 127.0.0.1 at 2015-05-19 19:30:03 -0700
+Processing by AnswersController#downvote as HTML
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"10"}
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 10]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 10  [["updated_at", "2015-05-20 02:30:03.521726"], ["vote", 6]]
+  [1m[36m (11.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/4
+Completed 302 Found in 17ms (ActiveRecord: 12.6ms)
+
+
+Started GET "/questions/4" for 127.0.0.1 at 2015-05-19 19:30:03 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = 4  ORDER BY "questions"."id" ASC LIMIT 1
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  ORDER BY "answers"."id" ASC[0m  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 94ms (Views: 91.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-19 19:30:03 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-19 19:30:03 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-19 19:30:03 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-19 19:30:03 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-19 19:30:03 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-19 19:30:03 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-19 19:30:03 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-19 19:30:03 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-19 19:30:03 -0700
+
+
+Started POST "/answers/9/upvote" for 127.0.0.1 at 2015-05-19 19:39:18 -0700
+Processing by AnswersController#upvote as HTML
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"9"}
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 9  [["updated_at", "2015-05-20 02:39:18.773298"], ["vote", 1]]
+  [1m[36m (282.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/4
+Completed 302 Found in 296ms (ActiveRecord: 285.4ms)
+
+
+Started GET "/questions/4" for 127.0.0.1 at 2015-05-19 19:39:19 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = 4  ORDER BY "questions"."id" ASC LIMIT 1
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  ORDER BY "answers"."id" ASC[0m  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (41.9ms)
+Completed 200 OK in 120ms (Views: 105.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-19 19:39:19 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-19 19:39:19 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:19 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:19 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:19 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-19 19:39:19 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:19 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:19 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:19 -0700
+
+
+Started POST "/answers/9/upvote" for 127.0.0.1 at 2015-05-19 19:39:19 -0700
+Processing by AnswersController#upvote as HTML
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"9"}
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 9  [["updated_at", "2015-05-20 02:39:19.777118"], ["vote", 2]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/4
+Completed 302 Found in 4ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/questions/4" for 127.0.0.1 at 2015-05-19 19:39:19 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = 4  ORDER BY "questions"."id" ASC LIMIT 1
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  ORDER BY "answers"."id" ASC[0m  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 104ms (Views: 101.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-19 19:39:19 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:19 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:19 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:19 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:19 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-19 19:39:19 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-19 19:39:19 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:19 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:19 -0700
+
+
+Started POST "/answers/9/upvote" for 127.0.0.1 at 2015-05-19 19:39:20 -0700
+Processing by AnswersController#upvote as HTML
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"9"}
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 9  [["updated_at", "2015-05-20 02:39:20.662928"], ["vote", 3]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/4
+Completed 302 Found in 6ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/questions/4" for 127.0.0.1 at 2015-05-19 19:39:20 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = 4  ORDER BY "questions"."id" ASC LIMIT 1
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  ORDER BY "answers"."id" ASC[0m  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 101ms (Views: 98.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-19 19:39:20 -0700
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-19 19:39:20 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:20 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-19 19:39:20 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:20 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:20 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:20 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:20 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:20 -0700
+
+
+Started POST "/answers/10/downvote" for 127.0.0.1 at 2015-05-19 19:39:24 -0700
+Processing by AnswersController#downvote as HTML
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"10"}
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 10]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 10  [["updated_at", "2015-05-20 02:39:24.805236"], ["vote", 5]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/4
+Completed 302 Found in 5ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/questions/4" for 127.0.0.1 at 2015-05-19 19:39:24 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mQuestion Load (0.5ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = 4  ORDER BY "questions"."id" ASC LIMIT 1
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  ORDER BY "answers"."id" ASC[0m  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 103ms (Views: 99.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-19 19:39:24 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-19 19:39:24 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:24 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:24 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-19 19:39:25 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:25 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:25 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:25 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:25 -0700
+
+
+Started POST "/answers/10/downvote" for 127.0.0.1 at 2015-05-19 19:39:26 -0700
+Processing by AnswersController#downvote as HTML
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"10"}
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 10]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 10  [["updated_at", "2015-05-20 02:39:26.498946"], ["vote", 4]]
+  [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/4
+Completed 302 Found in 6ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/questions/4" for 127.0.0.1 at 2015-05-19 19:39:26 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = 4  ORDER BY "questions"."id" ASC LIMIT 1
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  ORDER BY "answers"."id" ASC[0m  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 96ms (Views: 93.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-19 19:39:26 -0700
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-19 19:39:26 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:26 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:26 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-19 19:39:26 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:26 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:26 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:26 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:26 -0700
+
+
+Started POST "/answers/10/downvote" for 127.0.0.1 at 2015-05-19 19:39:27 -0700
+Processing by AnswersController#downvote as HTML
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"10"}
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 10]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 10  [["updated_at", "2015-05-20 02:39:27.502919"], ["vote", 3]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/4
+Completed 302 Found in 6ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/questions/4" for 127.0.0.1 at 2015-05-19 19:39:27 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = 4  ORDER BY "questions"."id" ASC LIMIT 1
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  ORDER BY "answers"."id" ASC[0m  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 99ms (Views: 96.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-19 19:39:27 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-19 19:39:27 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:27 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:27 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-19 19:39:27 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:27 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:27 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:27 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-19 19:39:27 -0700
