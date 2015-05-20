@@ -1,7 +1,8 @@
 class QuestionsController < ApplicationController
-  before_action :set_question, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
+  before_action :set_question, only: [:show, :edit, :update, :destroy, :vote]
 
   def index
+    session[:q_votes] ||= []
     if request.xhr?
       get_paged_questions
       return render :'questions/_all_questions', layout: false
@@ -53,24 +54,20 @@ class QuestionsController < ApplicationController
     redirect_to root_path
   end
 
-  def upvote
-    @question.vote_count += 1
+  def vote
+    if params[:vote] == 'upvote'
+      @question.vote_count += 1
+    elsif params[:vote] == 'downvote'
+      @question.vote_count -= 1
+    end
     if @question.save
+      # session[:q_votes] ||= []
+      session[:q_votes] << @question.id
       if request.xhr?
         render json: @question.vote_count
       else
         redirect_to root_path
       end
-    else
-      status 400
-      'fu'
-    end
-  end
-
-  def downvote
-    @question.vote_count -= 1 if @question.vote_count > 0
-    if @question.save
-      redirect_to root_path
     else
       status 400
       'fu'

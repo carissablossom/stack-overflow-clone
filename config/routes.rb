@@ -4,9 +4,7 @@ Rails.application.routes.draw do
     resources :answers
   end
 
-  get '/questions/:id/upvote' => 'questions#upvote'
-
-  get '/questions/:id/downvote' => 'questions#downvote'
+  get '/questions/:id/:vote' => 'questions#vote'
 
   get '/questions/:question_id/answers/:id/upvote' => 'answers#upvote'
 

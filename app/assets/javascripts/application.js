@@ -22,8 +22,7 @@ $(document).ready(function() {
 
 function bindEvents(){
   $('#page-wrap').on('click', 'div.pagination a', pagination);
-  $('#page-wrap').on('click', '.upvote', upvote);
-  $('#page-wrap').on('click', '.downvote', downvote);
+  $('#page-wrap').on('click', '.vote', vote);
   $('#new_question').on('submit', newQuestion);
 
 }
@@ -55,7 +54,7 @@ function newQuestion(e) {
   });
 };
 
-function upvote(e){
+function vote(e){
   e.preventDefault();
   var button = $(this);
   var url = $(this).attr('href');
@@ -64,18 +63,9 @@ function upvote(e){
     type: 'GET',
     success: function(data) {
       button.siblings('span').text(data);
-    }
-  });
-};
-
-function downvote(e){
-  e.preventDefault();
-  var url = $(this).attr('href');
-  $.ajax({
-    url: url,
-    type: 'GET',
-    success: function(data) {
-      $('#page-wrap').html($(data));
+      $(button).parent().find('.vote').each(function(_, elem) {
+        $(elem).replaceWith($(elem).html());
+      });
     }
   });
 };

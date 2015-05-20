@@ -5,8 +5,13 @@
     <% @questions.each do |qu| %>
       <li>
         <%= link_to qu.title, qu %>
-        <%= link_to raw('<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>'), question_path(qu)+'/upvote', class: 'upvote' %>
-        <%= link_to raw('<span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>'), question_path(qu)+'/downvote', class: 'downvote' %>
+        <% if !session[:q_votes].include?(qu.id) %>
+        <%= link_to raw('<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>'), question_path(qu)+'/upvote', class: 'vote' %>
+        <%= link_to raw('<span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>'), question_path(qu)+'/downvote', class: 'vote' %>
+        <% else %>
+        <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+        <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+        <% end %>
         <span class="count"><%= qu.vote_count %></span>
       </li>
     <% end %>
