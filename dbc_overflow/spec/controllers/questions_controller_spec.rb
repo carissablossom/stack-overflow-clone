@@ -2,6 +2,9 @@ require 'rails_helper'
 
 RSpec.describe QuestionsController, type: :controller do
 
+
+ p let!(:question){ FactoryGirl.create(:question)}
+
   describe "GET #new" do
     it "returns http success" do
       get :new
@@ -11,29 +14,31 @@ RSpec.describe QuestionsController, type: :controller do
 
   describe "GET #create" do
     it "returns http success" do
-      get :create
+      get :create, id: question
+      p question
+      p "++++++++++++++++++++++"
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET #update" do
     it "returns http success" do
-      get :update
+      get :update, id: question
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET #edit" do
     it "returns http success" do
-      get :edit
+      get :edit, id: question
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET #destroy" do
     it "returns http success" do
-      get :destroy
-      expect(response).to have_http_status(:success)
+      get :destroy, id: question
+      expect(response).to have_http_status(:redirect)
     end
   end
 
@@ -46,7 +51,7 @@ RSpec.describe QuestionsController, type: :controller do
 
   describe "GET #show" do
     it "returns http success" do
-      get :show
+      get :show, id: question
       expect(response).to have_http_status(:success)
     end
   end
