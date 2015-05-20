@@ -5,11 +5,14 @@ class AnswersController < ApplicationController
 
   def create
     @answer = Answer.new(answer_params)
-    if @answer.save
-      redirect_to(:back)
-    else
-      status 400
-      'bad answer data'
+    respond_to do |format|
+      if @answer.save
+        format.html { redirect_to(:back) }
+        format.json { render :json => @answer, :status=> :created }
+      else
+        format.html { status 400; 'bad answer data' }
+        format.json { render :json => @answer.errors.full_messages, :status => :unprocessable_entity }
+      end
     end
   end
 
