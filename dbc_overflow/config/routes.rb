@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
-  get 'votes/new'
+  # get 'votes/new'
 
-  get 'votes/create'
+  # get 'votes/create'
 
-  get 'votes/show'
+  # get 'votes/show'
 
   resources :questions do
-    resources :answers
+    resources :answers do
+      resources :votes
+    end
+    resources :votes
   end
   resources :users
   # get 'users/new'
