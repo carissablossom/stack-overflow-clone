@@ -2,7 +2,7 @@
 
 <div>
   <h3> Create a new Question </h3>
-  <%= form_for @question, url: {action: "create"} do |q| %>
+  <%= form_for :question do |q| %>
   <p>
     <%= q.label :title %>
     <%= q.text_field :title %>
@@ -27,7 +27,7 @@
     <li>
       <p>
         <a href="/questions/<%=question.id%>"><%= question.title %></a><br>
-        posted by <%= User.where(id: question.user_id).first.username%><br>
+        posted by <%= User.where(id: question.user_id).first%><br>
         Score: <%= question.votes %>
       </p>
     </li>

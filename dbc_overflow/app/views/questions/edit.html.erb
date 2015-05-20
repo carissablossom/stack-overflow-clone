@@ -1,0 +1,20 @@
+<h1>Edit your Question</h1>
+
+<!-- Renders the form -->
+<div id="edit_form">
+<%=form_for(@question) do |q| %>
+<%= q.label :title %><br />
+<%= q.text_field :title %>
+<p>
+  <%= q.label :body %><br />
+  <%= q.text_area :body %>
+</p>
+<p>
+  <%= q.submit "Save Changes" %>
+</p>
+<% end %>
+</div>
+
+
+
+

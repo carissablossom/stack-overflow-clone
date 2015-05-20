@@ -5,19 +5,30 @@
   <%= f.submit "DELETE YOUR QUESTION" %>
 <% end %>
 
-<%= form_for @question, url: {action: "update"} do |f| %>
-  <%= f.submit "EDIIIT" %>
-<% end %>
+<%= button_to "Edit", edit_question_path(@question), method: :get %>
 
 <h3>Answers:</h3>
-<% @question.answers.each do |answer| %>
+<% @question.answers.each do |a| %>
   <ul>
   <p>
     <li>
-      <p><%= answer.body %></p>
-      <p>Answer by: <%=User.find(answer.user_id).username%></p>
-      Score: <%= answer.votes %>
+      <p>id: <%= a.id %></p>
+      <p>body: <%= a.body %></p>
+      <p>Answer by: </p>
+      Score: <%= a.votes %>
     </li>
   </p>
 </ul>
 <%end%>
+<div id="post_answer">
+  <h3> Post a new Answer </h3>
+  <%= form_for [@question, @answer] do |a| %>
+  <p>
+    <%= a.label :body %>
+    <%= a.text_area :body %>
+  </p>
+  <p>
+    <%= a.submit %>
+  </p>
+  <% end %>
+</div>
