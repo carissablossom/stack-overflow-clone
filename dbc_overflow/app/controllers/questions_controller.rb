@@ -22,10 +22,8 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question = Question.where(id: params[:id]).first
-    p "hello destroy" * 10
     @question.destroy
     redirect_to action: 'index', status: 303
-    # redirect_to :index
   end
 
   def create

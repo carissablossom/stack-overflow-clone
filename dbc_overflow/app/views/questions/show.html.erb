@@ -1,9 +1,9 @@
 <div>
   <h1><%= @question.title %></h1>
-  Point Count: <b><%= @question.point_count %></b>
+  Point Count: <b class="question_point_count"><%= @question.point_count %></b>
 
-  <%= link_to "▲", "/questions/#{@question.id}/upvote", method: "put" %>
-  <%= link_to "▼", "/questions/#{@question.id}/downvote", method: "put" %>
+  <%= link_to "▲", "/questions/#{@question.id}/upvote", class: "question_upvote" %>
+  <%= link_to "▼", "/questions/#{@question.id}/downvote", class: "question_downvote"%>
 
   <hr>
   <%= @question.content %>
