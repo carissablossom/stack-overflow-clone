@@ -72,6 +72,9 @@ class QuestionsController < ApplicationController
     redirect_to "/questions/#{@question.id}"
   end
 
+  def test
+  end
+
   private
   def question_params
     params.require(:question).permit(:title,:content)
