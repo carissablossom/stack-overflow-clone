@@ -1,0 +1,21 @@
+<h1>Question & Answers</h1><br>
+
+<%= @question.title %><br>
+
+
+<div>
+  <p class="vote_count_<%=@question.id%>"><%=@question.vote_count%></p>
+</div>
+  <div class="upvote">
+    <%= button_to 'upvote', upvote_question_path(@question), method: :put %>
+  </div>
+
+  <div class="downvote">
+    <%= button_to 'downvote', downvote_question_path(@question), method: :put %>
+  </div>
+
+  <div class="edit">
+    <%= link_to 'Edit', edit_question_path(@question), method: :get%>
+  </div><br>
+
+</div>
