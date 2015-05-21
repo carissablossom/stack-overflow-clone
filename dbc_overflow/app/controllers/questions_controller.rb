@@ -15,7 +15,7 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @questions =  Question.all.sort_by(&:count).reverse
+    @questions =  Question.paginate(page: params[:page], :per_page => 10)
     @question = Question.new(question_params)
     respond_to do |format|
       if @question.save

@@ -26,6 +26,6 @@ $(document).ready(function() {
     });
   });
 
-
+// need to create new button class for votes, collides with edit/delete
 
 });

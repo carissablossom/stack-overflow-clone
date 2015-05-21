@@ -1,12 +1,6 @@
 <blockquote>ZEN API QUOTE: <%= @quote %></blockquote>
 
-<%= will_paginate %>
-
-<div class='questions'>
-  <%= render @questions %>
-</div>
-
-<%= will_paginate %>
+<textarea class="markdown" name="name"><br> </textarea>
 
 <%= form_for @question do |f| %>
   <p>
@@ -23,3 +17,11 @@
     <%= f.submit %>
   </p>
 <% end %>
+
+<%= will_paginate %>
+
+<div class='questions'>
+  <%= render @questions %>
+</div>
+
+<%= will_paginate %>

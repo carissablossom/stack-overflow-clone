@@ -38,5 +38,4 @@ $(document).ready(function() {
       $(current.parent().find('p')[0]).text(response.count)
     });
   });
-});
-
+})
