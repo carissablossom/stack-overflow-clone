@@ -3,7 +3,7 @@
   <h1>Questions</h1><br>
     <% @question.each do |question| %>
   <div id="<% question.id%>">
-    <%= question.title %><br>
+    <h2><%= link_to "#{question.title}", question_path(question), method: :get %><br></h2>
     <div class="vote_count_<%=question.id%>">
       <p class="vote_count_<%=question.id%>"><%=question.vote_count%></p>
   </div><br>
@@ -22,9 +22,6 @@
     <%= link_to 'Edit', edit_question_path(question), method: :get%>
   </div><br>
 
-  <div class="widget">
-    <%= link_to 'Widget', edit_question_path(question), method: :get%>
-  </div><br>
 
   </div>
     <%end%>
