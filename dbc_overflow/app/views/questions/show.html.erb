@@ -19,22 +19,26 @@
     <%= link_to 'Edit', edit_question_path(@question), method: :get%>
   </div><br>
 
-# => <h1></h1>
-
 </div>
 
+<div class="md-form">
+  <h2></h2>
+  <p></p>
+</div>
 
-<h2>New Answer Form (In sweet markdown!)</h2>
-<%= form_for [@question, @answer] do |f| %>
-  <%= f.label :title %>:
-  <%= f.text_area :title %><br>
+<div class="answer_form">
+  <h2>New Answer Form (In sweet markdown!)</h2>
+  <%= form_for [@question, @answer] do |f| %>
+    <%= f.label :title %>:
+    <%= f.text_area :title %><br>
 
-  <%= f.label :text %>:
-  <%= f.text_area :text %><br>
+    <%= f.label :text %>:
+    <%= f.text_area :text %><br>
 
-  <%= f.submit %>
+    <%= f.submit %>
 
-<% end %>
+  <% end %>
+</div>
 
 <hr>
 

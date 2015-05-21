@@ -6,11 +6,9 @@ class AnswersController < ApplicationController
   end
 
   def create
-    @answer = Answer.create(title: params[:answer][:title], text: params[:answer][:text])
-    redirect_to question_answers_path(@answer.question_id)
+    @answer = Answer.create(title: params[:answer][:title], text: params[:answer][:text], question_id: params[:question_id])
+    redirect_to "/questions/#{@answer.question_id}"
   end
-
-
 
 
 end
