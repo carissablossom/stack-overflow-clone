@@ -1,4 +1,5 @@
 class Question < ActiveRecord::Base
+  validates :title, :content, presence: true
   has_many :answers
 
   before_save :default_vote_count

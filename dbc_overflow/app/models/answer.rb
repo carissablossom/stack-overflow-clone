@@ -1,4 +1,5 @@
 class Answer < ActiveRecord::Base
+   validates :content, presence: true
   belongs_to :question
 
   before_save :default_vote_count

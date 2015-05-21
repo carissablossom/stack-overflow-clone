@@ -1,6 +1,6 @@
 == README
 This is a web app where users can post questions
 Users can answer questions
-Answers can be upvoted (and downvoted?)
+Answers can be upvoted downvoted
 
 

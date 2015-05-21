@@ -1,6 +1,11 @@
 <h1>Question</h1>
 <%= @question.title %>
 <p> <%= @question.content %> </p>
+<%= button_to "delete question", {:controller => :questions,
+  :action => 'destroy', :id => @question.id }, :method => :delete %>
+
+  <%= button_to "edit question", {:controller => :questions,
+  :action => 'edit', :id => @question.id }, :method => :get %>
 
 <ul>
   <% answers = @question.answers.order(vote_counter: :desc)%>
@@ -16,10 +21,5 @@
 <% end %>
 </ul>
 
-<%= button_to "delete question", {:controller => :questions,
-  :action => 'destroy', :id => @question.id }, :method => :delete %>
-
-  <%= button_to "edit question", {:controller => :questions,
-  :action => 'edit', :id => @question.id }, :method => :get %>
 
 <%= render template: "questions/_new_answer" %>

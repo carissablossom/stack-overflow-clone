@@ -6,14 +6,22 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = Question.new(question_params)
-    if @question.save
-      redirect_to '/'
-    else
-      status 400
-      redirect_to '/'
-    end
+    headers = {"User-Agent" => ENV['USER_AGENT'],
+               "Authorization" => 'token ' + ENV["AUTHORIZATION"]}
+    @resp = HTTParty.get("https://api.github.com/zen",
+                             :headers => headers)
 
+    @questions = Question.order(vote_counter: :desc)
+    @question = Question.new(question_params)
+    respond_to do |format|
+      if @question.save
+        format.html { redirect_to @question, notice: 'Question successfully created.' }
+        format.json { render :json => @question, :status => :created }
+      else
+        format.html { render action: 'index' }
+        format.json { render :json => @question.errors.full_messages, :status => :unprocessable_entity }
+      end
+    end
   end
 
   def update
@@ -28,13 +36,19 @@ class QuestionsController < ApplicationController
   def upvote
     @question = Question.find(params[:question_id])
     @question.increment!(:vote_counter)
-    redirect_to '/'
+    respond_to do |format|
+      format.html { redirect_to '/' }
+      format.json { render :json => @question.vote_counter }
+    end
   end
 
   def downvote
     @question = Question.find(params[:question_id])
     @question.decrement!(:vote_counter)
-    redirect_to '/'
+    respond_to do |format|
+      format.html { redirect_to '/' }
+      format.json { render :json => @question.vote_counter }
+    end
   end
 
 
@@ -50,8 +64,8 @@ class QuestionsController < ApplicationController
   def index
     headers = {"User-Agent" => ENV['USER_AGENT'],
                "Authorization" => 'token ' + ENV["AUTHORIZATION"]}
-    @response = HTTParty.get("https://api.github.com/zen",
-                              :headers => headers)
+    @resp = HTTParty.get("https://api.github.com/zen",
+                             :headers => headers)
 
 
     @questions = Question.order(vote_counter: :desc)

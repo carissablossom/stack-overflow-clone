@@ -1,29 +1,42 @@
 <h1>Questions</h1>
-
-<% if @response.headers["x-ratelimit-remaining"].to_i > 0 %>
-  <%= @response.body %>
-<% else %>
-  <%= "Fucking, I dunno!" %>
+<% if @resp %>
+  <% if @resp.headers["x-ratelimit-remaining"].to_i > 0 %>
+    <%= @resp.body %>
+  <% else %>
+    <%= "Fucking, I dunno!" %>
+  <% end %>
 <% end %>
-
-<ul>
+<ul id = 'question_list'>
 <% @questions.each do |quest| %>
-
-
-
   <li> <a href="/questions/<%= quest.id %>"> <%= quest.title %></a>
-
- <%= button_to "△", {:controller => :questions,
-    :action => 'upvote', :question_id => quest.id }, :method => :patch %>
-
-  <%= button_to "▽", {:controller => :questions,
-    :action => 'downvote', :question_id => quest.id }, :method => :patch %>
-
-  <%= quest.vote_counter %>
-
+    <%= button_to "△", {:controller => :questions,
+        :action => 'upvote', :question_id => quest.id }, {:method => :patch, :class => 'upvote'} %>
+    <%= button_to "▽", {:controller => :questions,
+        :action => 'downvote', :question_id => quest.id }, {:method => :patch, :class => 'downvote'} %>
+   <p> <%= quest.vote_counter %> </p>
   </li>
-  <p> <%= quest.content %></p>
+  <%= quest.content %>
   <% end %>
 </ul>
 
 <%= render template: "questions/_new_question" %>
+
+<script id="question-display" type="text/x-handlebars-template">
+<li> <a href="/questions/{{id}}"> {{ title }}</a>
+
+<form method="post" action="/questions/{{id}}/upvote">
+  <input type="hidden" name="_method" value="patch">
+  <button class="upvote" type="submit">△</button>
+</form>
+
+<form method="post" action="/questions/{{id}}/downvote">
+  <input type="hidden" name="_method" value="patch">
+  <button class="downvote" type="submit">▽</button>
+</form>
+
+
+  <p>  {{ vote_counter }} </p>
+</li>
+  <p> {{ content }}</p>
+
+</script>
