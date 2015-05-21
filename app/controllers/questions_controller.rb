@@ -44,8 +44,7 @@ class QuestionsController < ApplicationController
     if @question.update_attributes(question_params)
       redirect_to @question
     else
-      status 400
-      'fu'
+      render json: 'fu', status: 400
     end
   end
 
@@ -68,8 +67,7 @@ class QuestionsController < ApplicationController
         redirect_to root_path
       end
     else
-      status 400
-      'fu'
+      render json: 'fu', status: 400
     end
   end
 
