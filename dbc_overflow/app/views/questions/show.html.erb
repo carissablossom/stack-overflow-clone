@@ -11,17 +11,13 @@
 <br>
 
 <h3>Answers:</h3>
-
-<div class = "answers" id="answer-container">
-  <ol>
-  <% @answers.each do |answer| %>
-    <li>
-      <%= render :partial => "/answers/answertemp", :locals=> { :answer => answer } %>
-    </li>
-  <% end %>
-  </ol>
-
-</div>
+<ol>
+  <div class = "answers" id="answer-container">
+    <% @answers.each do |answer| %>
+      <%= render :partial => "answers/answer", :locals=> { :answer => answer } %>
+    <% end %>
+  </div>
+</ol>
 
 
 <br>

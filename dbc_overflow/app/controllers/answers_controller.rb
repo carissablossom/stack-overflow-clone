@@ -7,15 +7,8 @@ class AnswersController < ApplicationController
   def create
     @question = Question.find(params[:question_id])
     @answer = @question.answers.build(answer_params)
-    respond_to do |format|
-      if @answer.save
-        format.html { redirect_to @question, notice: 'answer successfully added!'}
-        format.json { render :json => @answer, :status => :created }
-      else
-        format.html { render action: 'show'}
-        format.json { render :json => @answer.errors.full_messages, :status => :unprocessable_entity }
-      end
-    end
+    @answer.save
+    render partial: "answer", locals: { answer: @answer , question: @question }
   end
 
   def show
