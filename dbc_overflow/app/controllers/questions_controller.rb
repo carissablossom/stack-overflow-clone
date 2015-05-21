@@ -22,7 +22,7 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question = Question.where(id: params[:id]).first
-    p "hello destroy" * 10
+    # p "hello destroy" * 10
     @question.destroy
     redirect_to action: 'index', status: 303
     # redirect_to :index
@@ -64,7 +64,7 @@ class QuestionsController < ApplicationController
     @question = Question.where(id: params[:question_id]).first
     @question.upvote
     @question.save
-    p "this is a DOUBLE VOTE"
+    # p "this is a DOUBLE VOTE"
     respond_to do |format|
         format.html { redirect_to("/questions/#{@question.id}") }
         format.json { render :json => @question }

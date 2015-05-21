@@ -43,3 +43,10 @@ gem 'shoulda-matchers'
 gem 'factory_girl'
 gem 'httparty'
 gem 'dotenv-rails', :groups => [:development, :test]
+gem 'factory_girl_rails'
+gem 'database_cleaner'
+gem 'selenium-webdriver'
+gem 'chromedriver-helper'
+gem 'faker'
+gem 'simplecov'
+
