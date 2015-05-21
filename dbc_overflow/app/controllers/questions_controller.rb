@@ -9,6 +9,20 @@ class QuestionsController < ApplicationController
     redirect_to questions_path
   end
 
+  def upvote
+    question = Question.find(params[:id])
+    question.votes += 1
+    question.save
+    redirect_to questions_path
+  end
+
+  def downvote
+    question = Question.find(params[:id])
+    question.votes -= 1
+    question.save
+    redirect_to questions_path
+  end
+
   def show
     @question = Question.find(params[:id])
     @answers = @question.answers.sort_by { |answer| answer.created_at }
@@ -43,20 +57,6 @@ class QuestionsController < ApplicationController
   def update
     @question = Question.find(params[:id])
     @question.update_attributes(question_params)
-    redirect_to questions_path
-  end
-
-  def upvotes
-    question = Question.find(params[:id])
-    question.votes += 1
-    question.save
-    redirect_to questions_path
-  end
-
-  def downvotes
-    question = Question.find(params[:id])
-    question.votes -= 1
-    question.save
     redirect_to questions_path
   end
 

@@ -1,19 +1,24 @@
 Rails.application.routes.draw do
 
   resources :questions do
-    resources :answers
+    member do
+      put 'upvote'
+      put 'downvote'
+    end
+    resources :answers do
+      member do
+        put 'upvote'
+        put 'downvote'
+      end
+    end
   end
-
-  get 'questions/:id/upvotes' => 'questions#upvotes'
-  get 'questions/:id/downvotes' => 'questions#downvotes'
-  get 'questions/:question_id/answers/:id/upvotes' => 'answers#upvotes'
-  get 'questions/:question_id/answers/:id/downvotes' => 'answers#downvotes'
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'questions#index'
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
