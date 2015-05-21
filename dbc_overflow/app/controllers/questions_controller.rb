@@ -2,8 +2,8 @@ class QuestionsController < ApplicationController
 
   def index
     @question = Question.new
-    @questions = Question.all.sort_by(&:vote).reverse
-    @quote = ApplicationHelper.quote
+    @questions = Question.all.sort_by(&:created_at).reverse
+    @quote = get_quote
   end
 
   # route /questions/:id
@@ -11,6 +11,7 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @answers = @question.answers.sort_by(&:vote).reverse
     @answer = Answer.new
+    @quote = get_quote
   end
 
   def create
@@ -66,6 +67,10 @@ class QuestionsController < ApplicationController
 
     def question_params
       params.require(:question).permit(:title, :content)
+    end
+
+    def get_quote
+      ApplicationHelper.quote
     end
 
 end

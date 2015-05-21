@@ -7,7 +7,11 @@ module ApplicationHelper
       Quote.create(text: quote.to_s)
       return quote
     else
-      Quote.find(rand(0...(Quote.count))).text
+      begin
+        Quote.find(rand(0...(Quote.count))).text
+      rescue Exception => e
+        quote = ''
+      end
     end
   end
 

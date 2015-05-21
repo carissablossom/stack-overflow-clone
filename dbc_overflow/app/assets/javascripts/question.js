@@ -1,17 +1,18 @@
 $(function() {
 	var newQuestionStr = function(question) {
 		var str = "<li>" +
+								"<a class='vote' href='/questions/"+ question.id +"/upvote'>▲</a>" +
+								"<span id='"+ question.id +"'> "+ question.vote +" </span>" +
+								"<a class='vote' href='/questions/"+ question.id +"/downvote'>▼</a>" +
 								"<h2><a href='/questions/"+ question.id +"'>"+ question.title +"</a></h2>" +
 								"<p>"+ question.content +"</p>" +
-								"<a class='vote' href='/questions/"+ question.id +"/upvote'>Upvote</a>" +
-								"<span id='"+ question.id +"'> "+ question.vote +" </span>" +
-								"<a class='vote' href='/questions/"+ question.id +"/downvote'>Downvote</a>" +
 							"</li>";
 		return str;
 	};
 	
 	var createQuestion = function(event) {
 		event.preventDefault();
+		$('.live-md').find('div').children().remove();
 		$('.errors').remove();
 		$this = $(this);
 		$.ajax({
