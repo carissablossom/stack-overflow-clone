@@ -6,10 +6,10 @@
       <div class="this-vote">
       <%= question.vote_total %>
       </div>
-      <%= link_to upvote_path(question), method: :post do %>
+      <%= link_to upvote_path(question), method: :get do %>
       <i class="fa fa-arrow-circle-o-up"></i>
         <% end %>
-      <%= link_to downvote_path(question), method: :post do %>
+      <%= link_to downvote_path(question), method: :get do %>
         <i class="fa fa-arrow-circle-o-down"></i>
       <% end %>
       <a href="/questions/<%= question.id %>"><h3><%= question.title %></h3></a><br>

@@ -1,4 +1,4 @@
-$(document).on('ready page:load', function(){
+$(document).on('ready page:refresh', function(){
   $('.new_question').on('submit', function(e){
     e.preventDefault();
     var data = $('.new_question').serialize();
@@ -32,7 +32,7 @@ $(document).on('ready page:load', function(){
 
     var req = $.ajax({
       url: url,
-      type: 'POST',
+      type: 'GET',
       dataType: 'JSON'
     });
 
@@ -52,13 +52,16 @@ $(document).on('ready page:load', function(){
 
     var req = $.ajax({
       url: url,
-      type: 'POST',
-      dataType: 'JSON'
+      type: 'GET',
+      // dataType: 'JSON'
     });
 
     req.done(function(response) {
-      $thisCount.children('.this-vote').text(response.vote_total)
+      var body = $(response).find('#question_list').html();
+      $(document).find('#question_list').replaceWith(body)
 
+      //this will replace the #question_list originally on the document with the appropriate div..
+      //this is only reworked for downvotes at the moment. Requires requesting html by default
     });
 
   });
