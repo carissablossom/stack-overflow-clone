@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  //$(document).on(pageChange(function...something?)))
   $('#new_question').on('submit', function (event) {
     event.preventDefault();
 
@@ -28,20 +29,50 @@ $(document).ready(function() {
     });
   });
 
+
+
   $('.q_up').on('submit', function(event){
     event.preventDefault();
 
+    var upvotes = $(this).prev();
     var data = $(this).serialize();
-
-    $.ajax({
-      url: $(this).attr('action'),
+    var url = $(this).attr('action');
+    var request = $.ajax({
+      url: url,
       type: 'post',
-      data: data,
-    }).done(function(response){
-      console.log(response.votes)
-      // ('#votes').val('votes:' +  )
-    }).fail(function(response){
+      data: data
+    });
+
+    request.done(function(response){
+      upvotes.text(response.votes);
+    });
+
+    request.fail(function(response){
       console.log('failure');
     });
+
+  });
+
+  $('.q_down').on('submit', function(event){
+    event.preventDefault();
+    var downvotes = $(this).prev().prev();
+    var data = $(this).serialize();
+    var url = $(this).attr('action');
+    console.log(downvotes);
+    var request = $.ajax({
+      url: url,
+      type: 'post',
+      data: data
+    });
+
+    request.done(function(response){
+      downvotes.text(response.votes);
+      console.log(downvotes);
+    });
+
+    request.fail(function(response){
+      console.log('failure');
+    });
+
   });
 });

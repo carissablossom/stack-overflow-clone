@@ -20,14 +20,20 @@ class AnswersController < ApplicationController
 
   def upvote
     @answer = Answer.find(params[:answer_id])
-    @answer.upvote
-    redirect_to "/questions/#{@answer.question_id}"
+    if @answer.upvote
+      respond_to do |format|
+        format.json {render :json => @answer, :status => :created}
+      end
+    end
   end
 
   def downvote
     @answer = Answer.find(params[:answer_id])
-    @answer.downvote
-    redirect_to "/questions/#{@answer.question_id}"
+    if @answer.downvote
+      respond_to do |format|
+        format.json {render :json => @answer, :status => :created}
+      end
+    end
   end
 
   private

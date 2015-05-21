@@ -7,7 +7,7 @@
     <% @questions.order("votes desc").each do |q| %>
       <li>
         <a href="/questions/<%= q.id %>"><%= q.title %></a>
-        votes: <%=q.votes%>
+        votes: <span class="votes"><%=q.votes%></span>
         <%= button_to("△", question_upvote_path(q), method: "patch", form_class: "q_up") %>
         <%= button_to("▼", question_downvote_path(q), method: "patch", form_class: "q_down") %>
       </li>

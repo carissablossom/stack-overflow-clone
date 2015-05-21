@@ -64,8 +64,12 @@ class QuestionsController < ApplicationController
 
   def downvote
     @question = Question.find(params[:question_id])
-    @question.downvote
-    redirect_to root_path
+    if @question.downvote
+      respond_to do |format|
+        format.json {render :json => @question, :status => :created}
+      end
+    end
+    #redirect_to root_path  #don't need this for ajax?
   end
 
   private

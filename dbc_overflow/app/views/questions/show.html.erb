@@ -14,9 +14,9 @@
 <% @answers.order("votes desc").each do |answer| %>
   <h4><%= answer.title %></h4>
   <p><%= answer.content %></p>
-  votes: <%= answer.votes %>
-  <%= button_to("△", "/questions/#{answer.question_id}/answers/#{answer.id}/upvote", method: "patch") %>
-  <%= button_to("▼", "/questions/#{answer.question_id}/answers/#{answer.id}/downvote", method: "patch") %>
+  votes: <span class="answer_votes"><%= answer.votes %></span>
+  <%= button_to("△", "/questions/#{answer.question_id}/answers/#{answer.id}/upvote", method: "patch", form_class: "a_up") %>
+  <%= button_to("▼", "/questions/#{answer.question_id}/answers/#{answer.id}/downvote", method: "patch", form_class: "a_down") %>
 <% end %>
 </div>
 
