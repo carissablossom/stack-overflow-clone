@@ -22,7 +22,7 @@ class QuestionsController < ApplicationController
       if @question.save
         format.json {render :json => @question, :status => :created}
       else
-        p "************** fucccccck"
+        p "************** we are in the else"
         # format.html {render action: 'index'}
         # format.json { render :json => root_path.errors.full_messages, :status => :unprocessable_entity}
       end
@@ -54,8 +54,12 @@ class QuestionsController < ApplicationController
 
   def upvote
     @question = Question.find(params[:question_id])
-    @question.upvote
-    redirect_to root_path
+    if @question.upvote
+      respond_to do |format|
+        format.json {render :json => @question, :status => :created}
+      end
+    end
+    #redirect_to root_path  #don't need this for ajax?
   end
 
   def downvote

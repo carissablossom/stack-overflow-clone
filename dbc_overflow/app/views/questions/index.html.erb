@@ -8,8 +8,8 @@
       <li>
         <a href="/questions/<%= q.id %>"><%= q.title %></a>
         votes: <%=q.votes%>
-        <%= button_to("△", question_upvote_path(q), method: "patch") %>
-        <%= button_to("▼", question_downvote_path(q), method: "patch") %>
+        <%= button_to("△", question_upvote_path(q), method: "patch", form_class: "q_up") %>
+        <%= button_to("▼", question_downvote_path(q), method: "patch", form_class: "q_down") %>
       </li>
     <% end %>
   </ul>

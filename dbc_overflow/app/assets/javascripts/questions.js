@@ -1,7 +1,4 @@
 $(document).ready(function() {
-
-
-
   $('#new_question').on('submit', function (event) {
     event.preventDefault();
 
@@ -29,7 +26,22 @@ $(document).ready(function() {
     request.fail(function(data) {
       $('#new_question').prepend('<span id="error">You fucked up</span>');
     });
-
   });
 
-}); //end doc ready
+  $('.q_up').on('submit', function(event){
+    event.preventDefault();
+
+    var data = $(this).serialize();
+
+    $.ajax({
+      url: $(this).attr('action'),
+      type: 'post',
+      data: data,
+    }).done(function(response){
+      console.log(response.votes)
+      // ('#votes').val('votes:' +  )
+    }).fail(function(response){
+      console.log('failure');
+    });
+  });
+});
