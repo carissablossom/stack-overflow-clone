@@ -5,12 +5,11 @@
 $(document).ready(function(){
   $('.new_question').on('submit', function(e) {
     e.preventDefault();
-    var $data = $(this).serialize();
     var $form = $(this);
     var request = $.ajax({
       method: "post",
       url: $(this).attr("action"),
-      data: $data
+      data: $form.serialize()
     });
     request.done(function(response){
       $('#question_list').prepend(response);

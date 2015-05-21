@@ -7,9 +7,10 @@ class AnswersController < ApplicationController
   def create
     @answer = Answer.new(answer_params)
     @answer.question_id = params[:question_id]
+    @question = Question.find(params[:question_id])
     @answer.save
-
-    redirect_to question_path(@answer.question_id)
+    # binding.pry
+    render partial: "answer", locals: {answer: @answer, question: @question}
   end
 
   def show

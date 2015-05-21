@@ -5,10 +5,11 @@
 
 <h2>All answers:</h1>
 
-<% @question.answers.sort_by{ |answer| answer.created_at }.each_with_index do |answer, index| %>
+<div id="answer_list">
+	<% @question.answers.sort_by{ |answer| answer.created_at }.each do |answer| %>
+	  <div class="answer">
+	    <%= render "answers/answer", answer: answer%>
+	  </div>
+	<% end %>
+</div>
 
-  <div class="answer">
-    <%= render "answers/answer", answer: answer, index: index %>
-  </div>
-
-<% end %>
