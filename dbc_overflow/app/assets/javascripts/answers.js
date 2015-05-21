@@ -1,10 +1,15 @@
+
+
 $(document).ready(function(){
   questionBindings();
   answerBindings();
-})
+});
 
 function answerBindings(){
-  $('#new_answer').on('submit', newAnswer)
+  $('#answer_list').on('click', '.a_upvote', upVote);
+  $('#answer_list').on('click', '.a_downvote', downVote);
+  $('#new_answer').on('submit', newAnswer);
+
 }
 
 var newAnswer = function(event) {
@@ -17,7 +22,17 @@ var newAnswer = function(event) {
     dataType: 'JSON',
     type: 'POST'
   }).done(function(data){
-    debugger
-    $('ul').append(template(data))
-  })
+    console.log("ajaxing");
+    $('ul').append(template(data));
+  }).fail(function(data){
+    console.log("fuckedup fail");
+  });
 }
+
+// var upVote = function(event) {
+//   event.preventDefault();
+//   console.log("im trying to upvote");
+//   // $.ajax({
+//   //   url: $(this)
+//   // })
+// }

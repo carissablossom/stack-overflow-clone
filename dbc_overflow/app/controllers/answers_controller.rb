@@ -8,9 +8,9 @@ class AnswersController < ApplicationController
         format.html { redirect_to @question }
         format.json { render :json => @answer,  :status => :created }
       else
-       p "************* im in the else"
-       format.html { redirect_to question_path } #how can we make this work?
-       format.json { render :json => @answer.errors.full_messages, :status => :unprocessable_entity }
+        p "************* im in the else"
+        format.html { redirect_to question_path } #how can we make this work?
+        format.json { render :json => @answer.errors.full_messages, :status => :unprocessable_entity }
       end
     end
 
@@ -20,14 +20,21 @@ class AnswersController < ApplicationController
     @answer = Answer.find(params[:id])
     @answer.increment!(:vote_counter)
     @question = @answer.question
-      redirect_to @question
+    respond_to do |format|
+      format.html { redirect_to @question }
+      format.json { render :json => @answer.vote_counter }
+    end
+
   end
 
   def downvote
     @answer = Answer.find(params[:id])
     @answer.decrement!(:vote_counter)
-     @question = @answer.question
-      redirect_to @question
+    @question = @answer.question
+    respond_to do |format|
+      format.html { redirect_to @question }
+      format.json { render :json => @answer.vote_counter }
+    end
   end
 
 
@@ -48,7 +55,7 @@ class AnswersController < ApplicationController
   def index
   end
   private
-    def answer_params
-      params.require(:answer).permit(:content)
-    end
+  def answer_params
+    params.require(:answer).permit(:content)
+  end
 end

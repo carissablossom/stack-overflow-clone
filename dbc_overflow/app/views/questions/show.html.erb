@@ -7,18 +7,17 @@
   <%= button_to "edit question", {:controller => :questions,
   :action => 'edit', :id => @question.id }, :method => :get %>
 
-<ul>
-  <% answers = @question.answers.order(vote_counter: :desc)%>
-<% answers.each do |answer| %>
-<%= button_to "△", {:controller => :answers,
-    :action => 'upvote', :id => answer.id }, :method => :patch %>
-
+<ul id='answer_list'>
+  <li> <% answers = @question.answers.order(vote_counter: :desc)%>
+  <% answers.each do |answer| %>
+    <%= button_to "△", {:controller => :answers,
+    :action => 'upvote', :id => answer.id }, {:method => :patch, :class => 'a_upvote'} %>
   <%= button_to "▽", {:controller => :answers,
-    :action => 'downvote', :id => answer.id }, :method => :patch %>
-  <%= answer.vote_counter %>
-
+    :action => 'downvote', :id => answer.id }, {:method => :patch, :class => 'a_downvote'} %>
+  <p><%= answer.vote_counter %></p>
+  </li>
   <li><%= answer.content %> </li>
-<% end %>
+  <% end %>
 </ul>
 
 <%= render template: "questions/_new_answer" %>
@@ -29,14 +28,14 @@
         action='/questions/{{question_id}}/answers/{{id}}/upvote'>
         <div>
           <input type="hidden" name="_method" value="patch">
-          <button>△</button>
+          <button class='a_upvote'>△</button>
         </div>
   </form>
   <form method='post'
         action='/questions/{{question_id}}/answers/{{id}}/downvote'>
       <div>
         <input type="hidden" name="_method" value="patch">
-        <button>▽</button>
+        <button class='a_downvote'>▽</button>
       </div>
   </form>
   {{vote_counter}}

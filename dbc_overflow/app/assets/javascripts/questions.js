@@ -1,5 +1,3 @@
-
-
 function questionBindings(){
   $('#new_question').on('submit', submitQuestion);
   $('#question_list').on('click','.upvote' , upVote);
@@ -26,7 +24,6 @@ var submitQuestion = function(event){
 
 var upVote = function(event){
   event.preventDefault();
-  // debugger
   var charlie = $(this).closest('li').find('p')
   var req = $.ajax({
     type: 'PATCH',
@@ -35,7 +32,12 @@ var upVote = function(event){
   })
   req.done(function(data) {
     charlie.text(data)
+    console.log("im upvoting a QUESTION");
+
   })
+  req.fail(function(data){
+    console.log("im failing to upvote a QUESTION");
+  });
 }
 
 var downVote = function(event){
