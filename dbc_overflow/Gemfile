@@ -46,6 +46,7 @@ gem 'sprockets'
 #Added by Mark based on the github pages: **********************************************************
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
+  gem 'pry-byebug'
 end
 
 gem 'capybara'

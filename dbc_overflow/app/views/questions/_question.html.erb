@@ -1,18 +1,17 @@
 <div class="question">
   <h3><%= link_to question.title, question_path(question) %></h3>
 
-  <h4> Upvotes: <%= question.upvote%></h4>
+  <h4 class="thumbs-up">
+    Upvotes:
+    <span><%= question.upvote%></span>
+    <%= link_to("▲", "/questions/#{question.id}/upvote") %>
+  </h4>
 
-  <%= form_for question do |f| %>
-    <%= f.hidden_field :upvote, :value => question.upvote + 1 %>
-    <div class="thumbs-up"><%= f.submit "thumbs up" %></div>
-  <% end %>
-
-  <h4>Downvotes: <%= question.downvote%> </h4>
-
-  <%= form_for question do |f| %>
-    <%= f.hidden_field :downvote, :value => question.downvote + 1 %>
-    <%= f.submit "thumbs down" %>
-  <% end %>
+  <h4 class="thumbs-down">
+    Downvotes:
+    <span><%= question.downvote%></span>
+    <%= link_to("▼", "/questions/#{question.id}/downvote") %>
+  </h4>
 
 </div>
+

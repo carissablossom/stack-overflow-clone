@@ -14,42 +14,49 @@
     <h2> Answers: </h2>
   </div>
 
-  <% @answers.each do |answer| %>
-    <div class="answer">
-      <h3><%= answer.title %></h3>
-      <p><%= answer.content %></p>
+  <div class="answers">
+    <% @answers.each do |answer| %>
+      <div class="answer">
+        <h3><%= answer.title %></h3>
+        <p><%= answer.content %></p>
 
-      <h4> Upvotes: <%= answer.upvote%></h4>
+        <h4 class="thumbs-up">
+          Upvotes:
+          <span><%= answer.upvote%></span>
+          <%= link_to("▲", "/answers/#{answer.id}/upvote") %>
+        </h4>
 
-      <%= form_for [@question, answer] do |f| %>
-      <%= f.hidden_field :upvote, :value => answer.upvote + 1 %>
+        <h4 class="thumbs-down">
+          Downvotes:
+          <span><%= answer.downvote%></span>
+          <%= link_to("▼", "/answers/#{answer.id}/downvote") %>
+        </h4>
 
-      <div class="thumbs-up"><%= f.submit "thumbs up" %></div>
+      </div>
     <% end %>
+  </div>
 
-      <h4>Downvotes: <%= answer.downvote%> </h4>
+  <div class="answer-form">
+    <%= form_for [@question, @answer] do |f| %>
+      <%= f.label :title %>:
+      <%= f.text_field :title %><br />
 
-      <%= form_for [@question, answer] do |f| %>
-      <%= f.hidden_field :downvote, :value => answer.downvote + 1 %>
+      <%= f.label :content %>:
+      <%= f.text_field :content %><br />
 
-      <%= f.submit "thumbs down" %>
+      <%= f.submit %>
     <% end %>
-
-
-
-
-
-    </div>
-  <% end %>
-
-  <%= form_for [@question, @answer] do |f| %>
-    <%= f.label :title %>:
-    <%= f.text_field :title %><br />
-
-    <%= f.label :content %>:
-    <%= f.text_field :content %><br />
-
-    <%= f.submit %>
-  <% end %>
+  </div>
 </div>
 
+  <script id="answer-template" type="text/x-handlebars-template">
+
+    <div class="answer">
+      <h3>{{title}}</h3>
+
+      <h4 class="thumbs-up"> Upvotes: <span>{{upvote}}</span> <%= link_to("▲", "/answers/{{id}}/upvote", class: 'thumbs-up') %></h4>
+
+      <h4 class="thumbs-down">Downvotes: <span>{{downvote}}</span> <%= link_to("▼", "/answers/{{id}}/downvote", class: 'thumbs-down') %></h4>
+    </div>
+
+  </script>

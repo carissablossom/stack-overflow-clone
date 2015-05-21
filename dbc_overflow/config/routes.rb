@@ -6,6 +6,12 @@ Rails.application.routes.draw do
     resources :answers
   end
 
+  get '/questions/:id/upvote', :to => 'questions#upvote'
+  get '/questions/:id/downvote', :to => 'questions#downvote'
+
+  get '/answers/:id/upvote', :to => 'answers#upvote'
+  get '/answers/:id/downvote', :to => 'answers#downvote'
+
 
 
   # map.resources :questions do |question|

@@ -14,18 +14,34 @@ class AnswersController < ApplicationController
   def create
     @answer = Answer.new(param_check)
     @answer.question_id = params[:question_id]
-    @answer.save
     @question = @answer.question
-    # redirect_to @answer.question
-    redirect_to @answer.question
+    respond_to do |format|
+      if @answer.save
+        format.html { redirect_to @question, notice:"Answer Created!" }
+        format.json {render :json => @answer, :status => :created}
+      else
+        format.html {render action: 'index'}
+        format.json { render :json => @answer.errors.full_messages, :status => :unprocessable_entity}
+      end
+    end
   end
 
-  def update
+  def upvote
     @answer = Answer.find(params[:id])
-    upvote_count = @answer.upvote
-    downvote_count = @answer.downvote
-    @answer.update(param_check)
-    redirect_to @answer.question
+    @answer.upcount
+    respond_to do |format|
+      format.html { redirect_to @answer.question }
+      format.json { render json: @answer }
+    end
+  end
+
+  def downvote
+    @answer = Answer.find(params[:id])
+    @answer.downcount
+    respond_to do |format|
+      format.html { redirect_to @answer.question }
+      format.json { render json: @answer }
+    end
   end
 
   private

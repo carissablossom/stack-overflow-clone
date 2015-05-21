@@ -37,7 +37,6 @@ class QuestionsController < ApplicationController
     @question = Question.new(param_check)
     respond_to do |format|
       if @question.save
-        puts "SAVE*************************************************************"
         format.html { redirect_to @question, notice:"Question Created!" }
         format.json {render :json => @question, :status => :created}
       else
@@ -69,11 +68,23 @@ class QuestionsController < ApplicationController
     end
   end
 
-  # def upvote
-  #   @question = Question.find(params[:id])
-  #   @question.upcount
-  #   redirect_to action: "index"
-  # end
+  def upvote
+    @question = Question.find(params[:id])
+    @question.upcount
+    respond_to do |format|
+      format.html { redirect_to action: "index" }
+      format.json { render :json => @question }
+    end
+  end
+
+  def downvote
+    @question = Question.find(params[:id])
+    @question.downcount
+    respond_to do |format|
+      format.html { redirect_to action: "index" }
+      format.json { render :json => @question }
+    end
+  end
 
   private
 
