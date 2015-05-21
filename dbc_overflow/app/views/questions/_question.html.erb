@@ -1,0 +1,9 @@
+<div class='question' id="<%= question.id %>Q">
+  <a href="<%= question_path(question) %>">
+    <h2><%= question.title %></h2>
+  </a>
+  <p><%= question.content %></p>
+  <%= link_to("Upvote", "/questions/#{question.id}/upvote", { :class => 'upvoteQ'}) %>
+  <span><%= question.vote %></span>
+  <%= link_to("Downvote", "/questions/#{question.id}/downvote", { :class => 'downvoteQ'}) %>
+</div>

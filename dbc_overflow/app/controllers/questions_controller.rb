@@ -15,10 +15,14 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(question_params)
-    if @question.save
-      redirect_to questions_path
-    else
-      redirect_to 'show'
+    respond_to do |format|
+      if @question.save
+        format.html { redirect_to @question, notice: 'Question successfully created.' }
+        format.json { render :json => @question, status: :created }
+      else
+        format.html { render action: 'index' }
+        format.json { render :json => @question.errors.full_messages, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -42,14 +46,22 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @question.vote += 1
     @question.save
-    redirect_to request.referer
+    if request.xhr?
+      render json: { count: @question.vote, id: @question.id }
+    else
+      raise 'fuck off'
+    end
   end
 
   def downvote
     @question = Question.find(params[:id])
     @question.vote -= 1
     @question.save
-    redirect_to request.referer
+    if request.xhr?
+      render json: { count: @question.vote, id: @question.id }
+    else
+      raise 'fuck off'
+    end
   end
 
   private

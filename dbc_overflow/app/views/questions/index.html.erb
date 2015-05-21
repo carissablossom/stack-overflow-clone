@@ -1,15 +1,10 @@
 <h2><em><%= @quote %></em></h2>
 
-<%= render 'questions/form' %>
+<div id='question_form'>
+  <%= render 'questions/form' %>
+</div>
 
-<% if @questions %>
-  <% @questions.each do |question| %>
-    <a href="<%= question_path(question) %>">
-      <h2><%= question.title %></h2>
-    </a>
-    <p><%= question.content %></p>
-    <%= link_to("Upvote", "/questions/#{question.id}/upvote") %>
-    <span id="<%= question.id %>"><%= question.vote %></span>
-    <%= link_to("Downvote", "/questions/#{question.id}/downvote") %>
-  <% end %>
-<% end %>
+<div id='questions'>
+  <%= render @questions %>
+</div>
+

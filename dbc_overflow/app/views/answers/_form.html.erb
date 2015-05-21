@@ -1,4 +1,4 @@
-<%= form_for :answer, :url => answers_path do |f| %>
+<%= form_for :answer, url: answers_path,  html: { id: "new_answer"} do |f| %>
   <%= hidden_field_tag(:id, @question.id) %>
   <p>
     <%= f.label :title %>
