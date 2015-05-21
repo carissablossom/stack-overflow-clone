@@ -1,27 +1,21 @@
 $(function(){
   $("#new_question").on('submit',function(event){
     event.preventDefault();
+    var questionTemplate = Handlebars.compile($('#question_template').html());
+    var errorTemplate = Handlebars.compile($('#error_template').html());
     $.ajax({
       method: 'POST',
       url: $(this).attr('action'),
       data: $(this).serialize(),
       dataType: 'json',
       success: function(response){
-        $.each($('.kill'), function(index,value){
-          value.remove();
-        });
-        var insert = $("<div class='question' id='"+response.id+"Q'><a href='/questions/"+response.id+"'><h2>"+response.title+"</h2></a><p>"+response.content+"</p><a class='upvoteQ' href='/questions/"+response.id+"/upvote'>Upvote</a><span> "+response.vote+" </span><a class='downvoteQ' href='/questions/"+response.id+"/downvote'>Downvote</a></div>")
-        $('#questions').prepend(insert);
+        $('#kill').remove();
+        $('#questions').prepend(questionTemplate(response));
         $('#new_question')[0].reset();
       },
       error: function(response){
-        $.each($('.kill'), function(index,value){
-          value.remove();
-        });
-        $.each(response.responseJSON, function(index,value){
-          $("#question_form").prepend($("<p class='kill'>"+value+"</p>"));
-        });
-        $("#question_form").prepend($("<p class='kill'>Errors prevented this from saving:</p>"));
+        $('#kill').remove();
+        $('#question_form').prepend(errorTemplate({ errors: response.responseJSON }));
       }
     });
   });
@@ -45,4 +39,7 @@ $(function(){
       }
     });
   });
+  var parser = new MarkdownParser;
+  parser.preview('#question_content','#preview_pane');
 });
+

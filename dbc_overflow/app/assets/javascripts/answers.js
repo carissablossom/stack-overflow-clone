@@ -1,27 +1,21 @@
 $(function(){
   $('#new_answer').on('submit', function(event){
     event.preventDefault();
+    var answerTemplate = Handlebars.compile($('#answer_template').html());
+    var errorTemplate = Handlebars.compile($('#error_template').html());
     $.ajax({
       method: 'POST',
       url: $(this).attr('action'),
       data: $(this).serialize(),
       dataType: 'json',
       success: function(response){
-        $.each($('.kill'), function(index,value){
-          value.remove();
-        });
-        var insert = $("<li id='"+response.id+"A'><h3>"+response.title+"</h3><p>"+response.content+"</p><a class='upvoteA' href='/answers/"+response.id+"/upvote'>Upvote</a><span>"+response.vote+"</span><a class='downvoteA' href='/answers/"+response.id+"/downvote'>downvote</a></li>")
-        $("#answers").prepend(insert);
+        $('#kill').remove();
+        $("#answers").prepend(answerTemplate(response));
         $('#new_answer')[0].reset();
       },
       error: function(response){
-        $.each($('.kill'), function(index,value){
-          value.remove();
-        });
-        $.each(response.responseJSON, function(index,value){
-          $("#answer_form").prepend($("<p class='kill'>"+value+"</p>"));
-        });
-        $("#answer_form").prepend($("<p class='kill'>Errors prevented this from saving:</p>"));
+        $('#kill').remove();
+        $('#answer_form').prepend(errorTemplate({ errors: response.responseJSON }));
       }
     });
   });
@@ -45,4 +39,6 @@ $(function(){
       }
     });
   });
+  var parser = new MarkdownParser;
+  parser.preview('#answer_content', '#preview_pane');
 });

@@ -1,0 +1,11 @@
+<script type="text/x-handlebars-template" id='question_template'>
+  <div class='question' id="{{ id }}Q">
+    <a href="/questions/{{ id }}">
+      <h2>{{ title }}</h2>
+    </a>
+    <p>{{ content }}</p>
+    <a class='upvoteQ' href="/questions/{{ id }}/upvote">Upvote</a>
+    <span>{{ vote }}</span>
+    <a class='downvoteQ' href="/questions/{{ id }}/downvote">Downvote</a>
+  </div>
+</script>

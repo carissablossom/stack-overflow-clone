@@ -1,3 +1,6 @@
+<%= render 'answers/answers_handlebars' %>
+<%= render 'layouts/errors_handlebars' %>
+
 <div id='questions'>
   <%= render @question %>
 </div>
@@ -6,8 +9,9 @@
 
 <div id='answer_form'>
   <%= render 'answers/form' %>
+  <div id='preview_pane'>
+  </div>
 </div>
-
 
 <ul id='answers'>
   <%= render @answers %>

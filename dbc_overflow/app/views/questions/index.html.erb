@@ -1,7 +1,12 @@
+<%= render 'questions/question_handlebars' %>
+<%= render 'layouts/errors_handlebars' %>
+
 <h2><em><%= @quote %></em></h2>
 
 <div id='question_form'>
   <%= render 'questions/form' %>
+  <div id='preview_pane'>
+  </div>
 </div>
 
 <div id='questions'>
