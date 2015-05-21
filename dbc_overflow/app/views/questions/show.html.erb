@@ -1,0 +1,14 @@
+<h1>Question</h1>
+
+<div><%= @question.title %></div>
+<div><%= @question.content %></div>
+  <h3>Create An Answer:</h3>
+    <%= render @answers %>
+
+
+<%= render '/answers/form' %>
+<%= button_to "delete question", {controller: :questions, action: :destroy}, method: :delete %>
+
+
+<%= button_to "edit question", {controller: :questions, action: :edit}, method: :get %>
+

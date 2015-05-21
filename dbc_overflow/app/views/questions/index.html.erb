@@ -1,0 +1,9 @@
+<h1>DBC OVERFLOW</h1>
+<h3>Your Questions</h3>
+<% @questions.each do |question| %>
+<p>
+  Title:
+<%= link_to question.title, question %>
+</p>
+<% end %>
+<%= render 'form' %>
