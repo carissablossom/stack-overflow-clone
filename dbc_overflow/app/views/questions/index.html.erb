@@ -1,15 +1,10 @@
 <h1>Questions#index</h1>
 <h1><%= @quote %> </h1>
 <p>we need to implement this with all the questions</p>
-<ul>
-<% @questions.each do |question| %>
-  <li><a href="/questions/<%= question.id %>" ><%= question.title %> <%= question.vote %></a>
-    <br>
-  <%= button_to 'upvote', question_upvote_path(id: question.id ), :action => "upvote" %>
-  <%= button_to 'downvote', question_downvote_path(:id => question.id ), action: "downvote" %>
 
-    </li>
-<% end %>
+<ul class="questions">
+  <%= render @questions %>
+</ul>
 
 <h2>Create your new question here</h2>
 <%= form_for @question do |f| %>
