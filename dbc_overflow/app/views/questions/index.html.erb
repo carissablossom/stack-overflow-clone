@@ -25,13 +25,17 @@
 <li> <a href="/questions/{{id}}"> {{ title }}</a>
 
 <form method="post" action="/questions/{{id}}/upvote">
+<div>
   <input type="hidden" name="_method" value="patch">
   <button class="upvote" type="submit">△</button>
+</div>
 </form>
 
 <form method="post" action="/questions/{{id}}/downvote">
+<div>
   <input type="hidden" name="_method" value="patch">
   <button class="downvote" type="submit">▽</button>
+</div>
 </form>
 
 

@@ -21,5 +21,24 @@
 <% end %>
 </ul>
 
-
 <%= render template: "questions/_new_answer" %>
+
+<script id='build_answer' type="text/x-handlebars-template">
+
+  <form method='post'
+        action='/questions/{{question_id}}/answers/{{id}}/upvote'>
+        <div>
+          <input type="hidden" name="_method" value="patch">
+          <button>△</button>
+        </div>
+  </form>
+  <form method='post'
+        action='/questions/{{question_id}}/answers/{{id}}/downvote'>
+      <div>
+        <input type="hidden" name="_method" value="patch">
+        <button>▽</button>
+      </div>
+  </form>
+  {{vote_counter}}
+  <li>{{content}}</li>
+</script>
