@@ -17,12 +17,8 @@ function bindEvents(){
 function pagination(e){
   e.preventDefault();
   var url = $(this).attr('href');
-  $.ajax({
-    url: url,
-    type: 'GET',
-    success: function(data) {
-      $('#page-wrap').html($(data));
-    }
+  $.get(url).success(function(data) {
+    $('#page-wrap').html($(data));
   });
 };
 
@@ -60,15 +56,11 @@ function vote(e){
   e.preventDefault();
   var button = $(this);
   var url = $(this).attr('href');
-  $.ajax({
-    url: url,
-    type: 'GET',
-    success: function(data) {
-      button.siblings('span').text(data);
-      $(button).parent().find('.vote').each(function(_, elem) {
-        $(elem).replaceWith($(elem).html());
-      });
-    }
+  $.get(url).success(function(data) {
+    button.siblings('span').text(data);
+    $(button).parent().find('.vote').each(function(_, elem) {
+      $(elem).replaceWith($(elem).html());
+    });
   });
 };
 
@@ -76,15 +68,11 @@ function ansVote(e){
   e.preventDefault();
   var button = $(this);
   var url = $(this).attr('href');
-  $.ajax({
-    url: url,
-    type: 'GET',
-    success: function(data) {
-      button.siblings('span').text(data);
-      $(button).parent().find('.vote').each(function(_, elem) {
-        $(elem).replaceWith($(elem).html());
-      });
-    }
+  $.get(url).success(function(data) {
+    button.siblings('span').text(data);
+    $(button).parent().find('.vote').each(function(_, elem) {
+      $(elem).replaceWith($(elem).html());
+    });
   });
 };
 
