@@ -1,9 +1,15 @@
 <h1>QUESTIONS</h1>
 
 <% @questions.each do |question|%>
-  <p><%= question.title%>
-  <%= question.content%></p>
-  <%= link_to "Show Question", controller:"questions", action:"show", id:question %>
+  <p>
+    <span>Title:</span><%= question.title%>
+    <span>Content:</span><%= question.content%>
+    <span>Votes:</span><%=question.votes%>
+  </p>
+  <%= link_to "Show Question", controller:"questions", action:"show", id: question.id %>
+  <%= link_to "Upvote", controller:"questions", action:"", id:question.id%>
+
+
 <%end%>
 
 <p>
@@ -20,6 +26,6 @@
 
   <%= f.submit %>
 <% end %>
-</p>
+
 
 

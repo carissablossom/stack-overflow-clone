@@ -49,6 +49,11 @@ class QuestionsController < ApplicationController
     # @answer = Answer.new(params[:title],params[:id])
   end
 
+  # def upvote
+  #   question = Question.find(params[:id])
+
+  # end
+
 private
   def post_params
     params.require(:question).permit(:title, :content)
