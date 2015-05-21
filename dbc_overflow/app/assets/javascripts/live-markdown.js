@@ -39,7 +39,7 @@ $(function() {
 	};
 
 	$('#question-form').on('keyup', 'input[name="question[title]"]', liveCodeTitle);
-	$('#question-form').on('keyup', 'textarea[name="question[content]"]', liveCodeContent);
+	$('#question-form').on('keyup', 'textarea', liveCodeContent);
 	$('#answer-form').on('keyup', 'input[name="answer[title]"]', liveCodeTitle);
-	$('#answer-form').on('keyup', 'textarea[name="answer[content]"]', liveCodeContent);
+	$('#answer-form').on('keyup', 'textarea', liveCodeContent);
 });
