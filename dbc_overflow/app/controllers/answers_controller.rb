@@ -6,9 +6,11 @@ class AnswersController < ApplicationController
   #   @answer = Answer.new()
   # end
   def create
-    @answer = Answer.new(title: params["answer"][:title], content:params["answer"][:content], question_id:params[:question_id])
+    @question = Question.find(params[:question_id])
+    @answer = @question.answers.build(answer_params)
     @answer.save
-    redirect_to "/questions/#{@answer.question_id}"
+    # redirect_to "/questions/#{@answer.question_id}"
+    redirect_to question_path(@question)
   end
 
   def new
@@ -25,6 +27,6 @@ class AnswersController < ApplicationController
 
   private
   def answer_params
-    params.require(:answer).permit(:title, :content, :question_id)
+    params.require(:answer).permit(:title, :content, :question)
   end
 end

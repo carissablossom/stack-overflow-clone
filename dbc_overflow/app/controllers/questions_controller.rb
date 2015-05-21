@@ -35,6 +35,8 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question = Question.find(params[:id])
+    @answers = @question.answers
+    @answers.destroy
     @question.destroy
 
     redirect_to questions_path
@@ -49,10 +51,11 @@ class QuestionsController < ApplicationController
     # @answer = Answer.new(params[:title],params[:id])
   end
 
-  # def upvote
-  #   question = Question.find(params[:id])
 
-  # end
+  def upvote
+    question = Question.find(params[:id])
+
+  end
 
 private
   def post_params

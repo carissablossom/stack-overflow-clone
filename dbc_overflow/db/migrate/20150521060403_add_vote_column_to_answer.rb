@@ -1,5 +1,5 @@
 class AddVoteColumnToAnswer < ActiveRecord::Migration
   def change
-    add_column :answers, :votes, :integer
+    add_column :answers, :votes, :integer, :null => false, :default => 0
   end
 end
