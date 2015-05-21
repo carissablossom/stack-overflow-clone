@@ -1,0 +1,17 @@
+<h3><%= link_to "#{question.title}", question %></h3>
+<p><%= question.content %></p>
+
+<p>
+  <button><%= link_to "Edit", edit_question_path(question) %></button>
+
+  <%= form_for question, method: :delete do |f| %>
+    <%= f.submit "Delete" %>
+  <% end %>
+
+  <!-- upvote & downvote links go here -->
+  <%= link_to raw('<i class="fa fa-plus-circle"></i>'), upvote_question_path(id: question.id), method: :put %>
+  <%= link_to raw('<i class="fa fa-minus-circle"></i>'), downvote_question_path(id: question.id), method: :put %>
+  <!-- display vote count here -->
+
+  <%= question.votes %>
+</p>

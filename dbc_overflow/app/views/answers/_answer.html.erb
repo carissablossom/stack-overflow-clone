@@ -1,0 +1,8 @@
+<h4><%= answer.title %></h4>
+<p><%= answer.content %></p>
+
+<!-- upvote & downvote links go here -->
+  <%= link_to raw('<i class="fa fa-plus-circle"></i>'), upvote_question_answer_path(id: answer.id, question_id: question.id), method: :put %>
+  <%= link_to raw('<i class="fa fa-minus-circle"></i>'), downvote_question_answer_path(id: answer.id, question_id: question.id), method: :put %>
+<!-- vote count goes here -->
+<%= answer.votes %>
