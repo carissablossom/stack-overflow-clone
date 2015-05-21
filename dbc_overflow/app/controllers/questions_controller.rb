@@ -5,8 +5,16 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(question_params)
-    @question.save
-    redirect_to "/questions/#{@question.id}"
+    @questions = Question.all
+    respond_to do |format|
+      if @question.save
+        format.html { redirect_to action: 'index', notice: 'question successfully added!'}
+        format.json { render :json => @question, :status => :created }
+      else
+        format.html { render action: 'index'}
+        format.json { render :json => @question.errors.full_messages, :status => :unprocessable_entity }
+      end
+    end
   end
 
   def destroy
@@ -27,7 +35,7 @@ class QuestionsController < ApplicationController
     headers = { "User-Agent" => "StacksOnStacks",
                 "Authorization" => ENV['GITHUB_KEY']}
     @quote = HTTParty.get("https://api.github.com/zen", headers: headers)
-    p @quote
+    # p @quote
   end
 
   def edit

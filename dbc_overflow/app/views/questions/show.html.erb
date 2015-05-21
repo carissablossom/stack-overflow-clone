@@ -12,16 +12,11 @@
 
 <h3>Answers:</h3>
 
-<div class = "answers">
+<div class = "answers" id="answer-container">
   <ol>
   <% @answers.each do |answer| %>
     <li>
-      <%= answer.content %>
-
-      <%= link_to image_tag("https://rittamdebnath.files.wordpress.com/2015/03/triangle.jpg"), question_answer_upvote_path(@question, answer), method: :get %>
-      <%= link_to image_tag("http://le2020.com/assets/images/transparent-triangle-1.png"), question_answer_downvote_path( @question, answer), method: :get %>
-
-      <p>vote totals: <%= answer.vote_totals %></p>
+      <%= render :partial => "/answers/answertemp", :locals=> { :answer => answer } %>
     </li>
   <% end %>
   </ol>

@@ -4,7 +4,7 @@
 <h2> Quote: <h2>
   <h3><%= @quote %></h3>
 <hr>
-
+<div id="question_container" >
 <% @questions.each do |question| %>
   <div class="uhhh">
     <a href ="/questions/<%= question.id %>"><h1><%= question.title %></h1></a>
@@ -16,7 +16,7 @@
     <p>vote totals: <%= question.vote_totals %></p>
   </div>
 <% end %>
-
+</div>
 <h3> ~~~Enter New Question~~~ </h3>
 <%=  form_for @question do |f| %>
   <p>

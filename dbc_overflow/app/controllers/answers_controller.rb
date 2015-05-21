@@ -1,4 +1,5 @@
 class AnswersController < ApplicationController
+
   def new
     @answer = Answer.new
   end
@@ -6,8 +7,15 @@ class AnswersController < ApplicationController
   def create
     @question = Question.find(params[:question_id])
     @answer = @question.answers.build(answer_params)
-    @answer.save
-    redirect_to "/questions/#{@question.id}"
+    respond_to do |format|
+      if @answer.save
+        format.html { redirect_to @question, notice: 'answer successfully added!'}
+        format.json { render :json => @answer, :status => :created }
+      else
+        format.html { render action: 'show'}
+        format.json { render :json => @answer.errors.full_messages, :status => :unprocessable_entity }
+      end
+    end
   end
 
   def show
