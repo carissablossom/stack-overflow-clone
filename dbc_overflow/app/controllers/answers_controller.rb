@@ -20,7 +20,10 @@ class AnswersController < ApplicationController
     @answer.vote_totals += 1
     @answer.save
     @question = Question.find(params[:question_id])
-    redirect_to "/questions/#{@question.id}"
+    respond_to do |format|
+      format.json {render json: @answer.to_json}
+      format.html {redirect_to "/questions/#{@question.id}" }
+    end
   end
 
   def downvote
@@ -28,7 +31,11 @@ class AnswersController < ApplicationController
     @answer.vote_totals -= 1
     @answer.save
     @question = Question.find(params[:question_id])
-    redirect_to "/questions/#{@question.id}"
+    respond_to do |format|
+      format.json {render json: @answer.to_json}
+      format.html {redirect_to "/questions/#{@question.id}"}
+    end
+
   end
 
   private
