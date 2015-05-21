@@ -16,9 +16,12 @@ var submitQuestion = function(event){
     data: $(this).serialize(),
     dataType: 'JSON',
   }).done(function(data){
-    $('#question_list').append(template(data))
-
-  })
+    console.log("ajaxing a new question");
+    $('#question_list').append(template(data));
+  }).fail(function(data){
+      console.log("ajax fail!");
+      console.log(data.responseText);
+  });
 }
 
 var upVote = function(event){
@@ -50,6 +53,7 @@ var downVote = function(event){
   });
 
   req.done(function(data) {
+    console.log("Downvoting")
     tom.text(data);
   });
   req.fail(function(data){

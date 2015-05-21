@@ -24,14 +24,14 @@
 <script id='build_answer' type="text/x-handlebars-template">
   <li>
     <form method='post'
-          action='/questions/{{question_id}}/answers/{{id}}/upvote'>
+          action='/answers/{{id}}/upvote'>
           <div>
             <input type="hidden" name="_method" value="patch">
             <button class='a_upvote' type="submit">△</button>
           </div>
     </form>
     <form method='post'
-          action='/questions/{{question_id}}/answers/{{id}}/downvote'>
+          action='/answers/{{id}}/downvote'>
         <div>
           <input type="hidden" name="_method" value="patch">
           <button class='a_downvote' type="submit">▽</button>

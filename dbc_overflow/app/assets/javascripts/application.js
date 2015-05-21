@@ -20,7 +20,3 @@
 
 
 
-$(document).on('ready page:load',function(){
-  questionBindings();
-  answerBindings();
-});

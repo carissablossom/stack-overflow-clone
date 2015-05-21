@@ -1,4 +1,10 @@
-// $(document).on('page:load', questionBindings);
+
+$(document).on('ready page:load',function(){
+  questionBindings();
+  answerBindings();
+});
+
+// $(document).on('page:ch', questionBindings);
 
 // $(document).ready(function(){
 //   questionBindings();
