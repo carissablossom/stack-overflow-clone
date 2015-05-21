@@ -1,7 +1,13 @@
-<h2>Q: <%= @question.title %></h2>
-<p>
+<div class="show_markdown">
+  <h2>
+    <div class="show_md_title">
+      <%= @question.title %>
+    </div>
+  </h2>
+  <div class="show_md_content">
     <%= @question.content %>
-<p>
+  </div>
+</div>
 
 <%= form_for @question, :html => {:method => :delete} do |f| %>
 <%= f.submit "Delete" %>
