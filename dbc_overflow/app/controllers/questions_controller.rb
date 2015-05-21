@@ -45,7 +45,7 @@ class QuestionsController < ApplicationController
   def update
     @question = Question.find(params[:id])
     if @question.update_attributes(question_params)
-      redirect_to action: 'index'
+      redirect_to action: 'show'
     else
       redirect_to action: 'edit'
     end

@@ -8,8 +8,8 @@
 <%= button_to "Edit", edit_question_path(@question), method: :get %>
 
 <h3>Answers:</h3>
+  <ul id="answers">
 <% @question.answers.each do |a| %>
-  <ul>
   <p>
     <li>
       <p>id: <%= a.id %></p>
@@ -18,8 +18,8 @@
       Score: <%= a.score %>
     </li>
   </p>
-</ul>
 <%end%>
+</ul>
 <div id="post_answer">
   <h3> Post a new Answer </h3>
   <%= form_for [@question, @answer] do |a| %>
