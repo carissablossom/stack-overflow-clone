@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).on('ready page:load', function(){
   $('.new_question').on('submit', function(e){
     e.preventDefault();
     var data = $('.new_question').serialize();
@@ -14,14 +14,53 @@ $(document).ready(function(){
     });
 
     req.done(function(response){
-      debugger
       $('#question_list').append(template(response))
-      debugger
     });
 
     req.fail(function(data){
 
     });
+  });
+
+
+  $('a').on('click', '.fa-arrow-circle-o-up', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    var url = $(this).parent().attr('href')
+
+    $thisCount = $(this).parent().parent()
+
+    var req = $.ajax({
+      url: url,
+      type: 'POST',
+      dataType: 'JSON'
+    });
+
+    req.done(function(response) {
+      $thisCount.children('.this-vote').text(response.vote_total)
+
+    });
 
   });
+
+   $('a').on('click', '.fa-arrow-circle-o-down', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    var url = $(this).parent().attr('href')
+
+    $thisCount = $(this).parent().parent()
+
+    var req = $.ajax({
+      url: url,
+      type: 'POST',
+      dataType: 'JSON'
+    });
+
+    req.done(function(response) {
+      $thisCount.children('.this-vote').text(response.vote_total)
+
+    });
+
+  });
+
 });

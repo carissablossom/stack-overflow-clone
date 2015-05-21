@@ -50,15 +50,31 @@ class QuestionsController < ApplicationController
 
   def upvote
     question = Question.where(id: params[:id]).first
-    question.up_vote
-    redirect_to :action => 'index'
-
+    p params
+    p "what are you doing here? "*10
+    respond_to do |format|
+      if question.up_vote
+        format.html { redirect_to action: "index" }
+        format.json { render :json => question }
+      else
+        format.html {render action: 'index' }
+        format.json {render :json => question.errors.full_messages, :status => :unprocessable_entity }
+      end
+    end
   end
 
   def downvote
     question = Question.where(id: params[:id]).first
-    question.down_vote
-    redirect_to :action => 'index'
+
+    respond_to do |format|
+      if question.down_vote
+        format.html { redirect_to action: "index" }
+        format.json { render :json => question }
+      else
+        format.html {render action: 'index' }
+        format.json {render :json => question.errors.full_messages, :status => :unprocessable_entity }
+      end
+    end
   end
 
 

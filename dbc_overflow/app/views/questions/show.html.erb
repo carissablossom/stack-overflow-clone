@@ -1,37 +1,27 @@
 <%= link_to root_path method: :get do %>
   <p>Back</p>
 <% end %>
-
 <h2><%= @question.title %></h2>
-
 <%= link_to question_path(@question), method: :delete do %>
   <i class="fa fa-trash-o"></i>
 <% end %>
-
 <%= link_to edit_question_path(@question), method: :get do %>
   <i class="fa fa-pencil"></i>
 <% end %>
-
 <p><%= @question.content %><p>
-
 <h4>Answers</h4>
 <hr>
-
 <ul>
   <% @answers.each.with_index(1) do |answer, ans_ind| %>
     <%= answer.vote_total %>
-
     <%= link_to upvote_answer_path(answer), method: :post do %>
       <i class="fa fa-arrow-circle-o-up"></i>
     <% end %>
-
     <%= link_to downvote_answer_path(answer), method: :post do %>
       <i class="fa fa-arrow-circle-o-down"></i>
     <% end %>
-
     <h3><%= answer.title %></h3>
     <p><%= answer.content %></p>
   <% end %>
-
   <%= render partial: "answers/new" %>
 </ul>
