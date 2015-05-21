@@ -1,14 +1,14 @@
 <h1>Question: <%= @question.title %></h1>
 <p><%= @question.content %></p>
 
-<p><%= render template: "answers/_new.html.erb" %></p>
+<p><%= render "answers/new" %></p>
 
 <h2>All answers:</h1>
+<div id='answer-list'>
+  <% @answers.each_with_index do |answer| %>
 
-<% @question.answers.sort_by{ |answer| answer.created_at }.each_with_index do |answer, index| %>
-
-  <div class="answer">
-    <%= render template: "answers/_answer.html.erb", layout: false, locals: {:answer => answer, :index => index } %>
-  </div>
-
-<% end %>
+    <div class="answer">
+      <%= render "answer", answer: answer %>
+    </div>
+  <% end %>
+</div>
