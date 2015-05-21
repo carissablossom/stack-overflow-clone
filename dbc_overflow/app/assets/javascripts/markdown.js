@@ -3,19 +3,13 @@
 // }
 $(document).ready(function(){
    $( "#markdown" ).keyup(function() { //whenever a key is pressed within the #markdown box
-      $("#markdown_text").text($('#markdown').val());
+      $("#markdown_text").text($('#markdown').val()); //automatically updates markdown display
+      // $("#markdown_text").html($('#markdown').val().replace(/(\*)+([^.*?$]+)+(\*)/gi,
+      //   "<i>" + "$2"+ "</i>")); //italics
+      $("#markdown_text").html($('#markdown').val().replace(/(\*\*)+([^.*?$]+)+(\*\*)/gi,
+        "<b>" + "$2"+ "</b>")); //sets logic for bold replacement
 
-  //section where we define the rules for markdown to html
-   var rule_bold = new RegExp(/(\*)+([^.*?$]+)+(\*)/);
-
-
-
-   //section where we test for presence of rules
-    if (rule_bold.test($(this).val())){
-      $("#markdown_text").html($('#markdown').val().replace(/(\*)+([^.*?$]+)+(\*)/,
-        "<b>" + $('#markdown').val().match(/(\*)+([^.*?$]+)+(\*)/)[2]) + "</b>");
-     }
-   });
+        });
 });
 
 
