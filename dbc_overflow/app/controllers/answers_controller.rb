@@ -8,7 +8,6 @@ class AnswersController < ApplicationController
     @answer = Answer.new(answer_params)
     @answer.question_id = params[:question_id]
     @answer.save
-
     redirect_to question_path(@answer.question_id)
   end
 
