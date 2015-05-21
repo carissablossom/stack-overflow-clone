@@ -10,7 +10,7 @@ $(function(){
         $.each($('.kill'), function(index,value){
           value.remove();
         });
-        var insert = $("<div class='question' id='"+response.id+"'><a href='/questions/"+response.id+"'><h2>"+response.title+"</h2></a><p>"+response.content+"</p><a class='upvoteQ' href='/questions/"+response.id+"/upvote'>Upvote</a><span> "+response.vote+" </span><a class='downvoteQ' href='/questions/"+response.id+"/downvote'>Downvote</a></div>")
+        var insert = $("<div class='question' id='"+response.id+"Q'><a href='/questions/"+response.id+"'><h2>"+response.title+"</h2></a><p>"+response.content+"</p><a class='upvoteQ' href='/questions/"+response.id+"/upvote'>Upvote</a><span> "+response.vote+" </span><a class='downvoteQ' href='/questions/"+response.id+"/downvote'>Downvote</a></div>")
         $('#questions').prepend(insert);
         $('#new_question')[0].reset();
       },
