@@ -5,16 +5,18 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(question_params)
+    @question.save
     @questions = Question.all
-    respond_to do |format|
-      if @question.save
-        format.html { redirect_to action: 'index', notice: 'question successfully added!'}
-        format.json { render :json => @question, :status => :created }
-      else
-        format.html { render action: 'index'}
-        format.json { render :json => @question.errors.full_messages, :status => :unprocessable_entity }
-      end
-    end
+    render partial: "question", locals: { question: @question }
+    # respond_to do |format|
+    #   if @question.save
+    #     format.html { render action: 'index', notice: 'question successfully added!'}
+    #     format.json { render :json => @question, :status => :created }
+    #   else
+    #     format.html { render action: 'index'}
+    #     format.json { render :json => @question.errors.full_messages, :status => :unprocessable_entity }
+    #   end
+    # end
   end
 
   def destroy

@@ -1,0 +1,8 @@
+<a href ="/questions/<%= question.id %>"><h1><%= question.title %></h1></a>
+  <p><%= question.content %></p>
+  <div="tri">
+    <%= link_to image_tag("https://rittamdebnath.files.wordpress.com/2015/03/triangle.jpg"), question_upvote_path(Question.find(question.id), method: :get) %>
+    <%= link_to image_tag("http://le2020.com/assets/images/transparent-triangle-1.png"), question_downvote_path(Question.find(question.id), method: :get) %>
+  </div>
+  <p>vote totals: <%= question.vote_totals %></p>
+
