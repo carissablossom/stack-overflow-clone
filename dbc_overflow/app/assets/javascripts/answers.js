@@ -1,9 +1,10 @@
+// $(document).on('page:load', questionBindings);
 
+// $(document).ready(function(){
+//   questionBindings();
+//   answerBindings();
+// });
 
-$(document).ready(function(){
-  questionBindings();
-  answerBindings();
-});
 
 function answerBindings(){
   $('#answer_list').on('click', '.a_upvote', upVote);
@@ -29,10 +30,4 @@ var newAnswer = function(event) {
   });
 }
 
-// var upVote = function(event) {
-//   event.preventDefault();
-//   console.log("im trying to upvote");
-//   // $.ajax({
-//   //   url: $(this)
-//   // })
-// }
+

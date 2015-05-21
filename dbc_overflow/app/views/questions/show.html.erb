@@ -8,36 +8,36 @@
   :action => 'edit', :id => @question.id }, :method => :get %>
 
 <ul id='answer_list'>
-  <li> <% answers = @question.answers.order(vote_counter: :desc)%>
+  <% answers = @question.answers.order(vote_counter: :desc)%>
   <% answers.each do |answer| %>
-    <%= button_to "△", {:controller => :answers,
-    :action => 'upvote', :id => answer.id }, {:method => :patch, :class => 'a_upvote'} %>
-  <%= button_to "▽", {:controller => :answers,
-    :action => 'downvote', :id => answer.id }, {:method => :patch, :class => 'a_downvote'} %>
-  <p><%= answer.vote_counter %></p>
-  </li>
-  <li><%= answer.content %> </li>
+    <li>
+      <%= button_to "△", {:controller => :answers, :action => 'upvote', :id => answer.id }, {:method => :patch, :class => 'a_upvote'} %>
+      <%= button_to "▽", {:controller => :answers, :action => 'downvote', :id => answer.id }, {:method => :patch, :class => 'a_downvote'} %>
+      <p><%= answer.vote_counter %></p>
+    </li>
+    <%= answer.content %>
   <% end %>
 </ul>
 
 <%= render template: "questions/_new_answer" %>
 
 <script id='build_answer' type="text/x-handlebars-template">
-
-  <form method='post'
-        action='/questions/{{question_id}}/answers/{{id}}/upvote'>
+  <li>
+    <form method='post'
+          action='/questions/{{question_id}}/answers/{{id}}/upvote'>
+          <div>
+            <input type="hidden" name="_method" value="patch">
+            <button class='a_upvote' type="submit">△</button>
+          </div>
+    </form>
+    <form method='post'
+          action='/questions/{{question_id}}/answers/{{id}}/downvote'>
         <div>
           <input type="hidden" name="_method" value="patch">
-          <button class='a_upvote'>△</button>
+          <button class='a_downvote' type="submit">▽</button>
         </div>
-  </form>
-  <form method='post'
-        action='/questions/{{question_id}}/answers/{{id}}/downvote'>
-      <div>
-        <input type="hidden" name="_method" value="patch">
-        <button class='a_downvote'>▽</button>
-      </div>
-  </form>
-  {{vote_counter}}
-  <li>{{content}}</li>
+    </form>
+   <p> {{vote_counter}} </p>
+  </li>
+  {{content}}
 </script>

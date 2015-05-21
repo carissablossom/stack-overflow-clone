@@ -16,7 +16,6 @@ var submitQuestion = function(event){
     data: $(this).serialize(),
     dataType: 'JSON',
   }).done(function(data){
-    // debugger
     $('#question_list').append(template(data))
 
   })
@@ -24,14 +23,14 @@ var submitQuestion = function(event){
 
 var upVote = function(event){
   event.preventDefault();
-  var charlie = $(this).closest('li').find('p')
+  var charlie = $(this).closest('li').find('p');
   var req = $.ajax({
     type: 'PATCH',
     url: $(this.closest('form')).attr('action'),
     dataType: 'JSON',
-  })
+  });
   req.done(function(data) {
-    charlie.text(data)
+    charlie.text(data);
     console.log("im upvoting a QUESTION");
 
   })
@@ -42,17 +41,20 @@ var upVote = function(event){
 
 var downVote = function(event){
   event.preventDefault();
-  var tom = $(this).closest('li').find('p')
+  var tom = $(this).closest('li').find('p');
 
   var req = $.ajax({
     type: 'PATCH',
     url: $(this.closest('form')).attr('action'),
     dataType: 'JSON',
-  })
+  });
 
   req.done(function(data) {
-    tom.text(data)
-  })
+    tom.text(data);
+  });
+  req.fail(function(data){
+    console.log("I'm failing to downvote");
+  });
 
 }
 

@@ -1,3 +1,5 @@
+
+
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -15,3 +17,10 @@
 //= require turbolinks
 //= require handlebars
 //= require_tree .
+
+
+
+$(document).on('ready page:load',function(){
+  questionBindings();
+  answerBindings();
+});
