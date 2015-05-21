@@ -9,6 +9,19 @@
     <%= button_to "delete", {:controller => :questions,
       :action => 'destroy', :id => @question.id }, :method => :delete %>
 
+  <p>New Answer:</p>
+  <div class="answer-form">
+    <%= form_for [@question, @answer] do |f| %>
+      <%= f.label :title %>:
+      <%= f.text_field :title %><br />
+
+      <%= f.label :content %>:
+      <%= f.text_field :content %><br />
+
+      <%= f.submit %>
+    <% end %>
+  </div>
+
 
   <div class="header">
     <h2> Answers: </h2>
@@ -36,17 +49,6 @@
     <% end %>
   </div>
 
-  <div class="answer-form">
-    <%= form_for [@question, @answer] do |f| %>
-      <%= f.label :title %>:
-      <%= f.text_field :title %><br />
-
-      <%= f.label :content %>:
-      <%= f.text_field :content %><br />
-
-      <%= f.submit %>
-    <% end %>
-  </div>
 </div>
 
   <script id="answer-template" type="text/x-handlebars-template">
