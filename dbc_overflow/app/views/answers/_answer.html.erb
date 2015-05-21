@@ -1,5 +1,5 @@
-<h4><%= answer.title %></h4>
-<p><%= answer.content %></p>
+<%= answer.title %>
+<%= answer.content %>
 
 <%= link_to raw('<i class="fa fa-thumbs-o-up"></i>'), question_answer_path(@question, answer)+"/upvotes"%>
 <%= link_to raw('<i class="fa fa-thumbs-o-down"></i>'), question_answer_path(@question, answer)+"/downvotes"%>

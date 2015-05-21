@@ -1,17 +1,19 @@
 <h1><%= @question.title %></h1>
-<p><%= @question.content %></p>
+<p><%= @question.content %>
 
 
 <%= link_to raw('<i class="fa fa-pencil"></i>'), edit_question_path(@question) %>
-<%= link_to raw('<i class="fa fa-trash-o"></i>'), question_path(@question), :method => :delete %>
+<%= link_to raw('<i class="fa fa-trash-o"></i>'), question_path(@question), :method => :delete %></p>
 
-<p><%= render "answers/new" %></p>
 
-<h2>All answers:</h1>
+<h3>Answers</h3>
 <div id="answer_list">
   <% @question.answers.sort_by{ |answer| answer.created_at }.each_with_index do |answer, index| %>
     <div class="answer">
-      <%= render "answers/answer", answer: answer, index: index %>
+      <%= render "answers/answer", answer: answer %>
     </div>
   <% end %>
 </div>
+
+
+<p><%= render "answers/new" %></p>
