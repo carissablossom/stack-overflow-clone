@@ -1,7 +1,8 @@
 class QuestionsController < ApplicationController
   def index
-    @questions = Question.all
+    @questions = Question.all.order('votes DESC')
     @question = Question.new
+
   end
 
   def create
@@ -33,6 +34,32 @@ class QuestionsController < ApplicationController
     # end
   end
 
+
+  def show
+    @question = Question.find(params[:id])
+    p"THIS IS WHAT WE ARE LOOKING FOR ******************"
+    p @answers = @question.answers
+    @answer = Answer.new
+    # @answers = Answer.where(question_id: @question.id)
+     # @answer = Answer.new(params[:title],params[:id])
+  end
+
+
+  def upvote
+    @question = Question.find(params[:question_id])
+    @question.votes += 1
+    @question.save
+
+    redirect_to questions_path
+  end
+
+  def downvote
+    @question = Question.find(params[:question_id])
+    @question.votes -=1
+    @question.save
+
+    redirect_to questions_path
+  end
   def destroy
     @question = Question.find(params[:id])
     @answers = @question.answers
@@ -40,21 +67,6 @@ class QuestionsController < ApplicationController
     @question.destroy
 
     redirect_to questions_path
-  end
-
-  def show
-    @question = Question.find(params[:id])
-    @answers = @question.answers
-    @answer = Answer.new
-    # @answers = Answer.where(question_id: @question.id)
-
-    # @answer = Answer.new(params[:title],params[:id])
-  end
-
-
-  def upvote
-    question = Question.find(params[:id])
-
   end
 
 private

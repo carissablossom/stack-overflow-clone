@@ -5,8 +5,8 @@
     <span>Title:</span><%= question.title%>
     <span>Content:</span><%= question.content%>
     <span>Votes:</span><%=question.votes%>
-    <div><%= link_to image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD72DEgGgvvcfmb24bIDNYiQrcY2JkBhjMywx8CoFXMzlQrc7w") %>
-      <%= link_to image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1U9PfKvVRtnLSzlGgVgONCNNojxLfHrhBCWHb2Zrk1CZ4xbTEpipvyA") %></div>
+    <div><%= link_to image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD72DEgGgvvcfmb24bIDNYiQrcY2JkBhjMywx8CoFXMzlQrc7w"),question_upvote_path(question, method: :get)%>
+      <%= link_to image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1U9PfKvVRtnLSzlGgVgONCNNojxLfHrhBCWHb2Zrk1CZ4xbTEpipvyA"),question_downvote_path(question, method: :get) %></div>
   </p>
   <%= link_to "Show Question", controller:"questions", action:"show", id: question.id %>
 

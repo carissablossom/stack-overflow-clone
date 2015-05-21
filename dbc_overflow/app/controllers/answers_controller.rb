@@ -1,7 +1,7 @@
 class AnswersController < ApplicationController
-  # def index
-  #   @answers = Answer.all
-  # end
+  def index
+    @answers = Answer.all
+  end
   # def show
   #   @answer = Answer.new()
   # end
@@ -22,7 +22,20 @@ class AnswersController < ApplicationController
     end
   end
 
-  def show
+  def upvote
+    @answer = Answer.find(params[:answer_id])
+    @answer.votes += 1
+    @answer.save
+
+    redirect_to question_path
+  end
+
+  def downvote
+    @answer = Answer.find(params[:answer_id])
+    @answer.votes -=1
+    @answer.save
+
+    redirect_to question_path
   end
 
   private
