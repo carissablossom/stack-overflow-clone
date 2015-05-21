@@ -18,9 +18,9 @@ function postNewQuestion(){
     type: 'post',
     url: '/questions',
     data: data,
-    success: function(data){
+    success: function(response){
       console.log("AJAX")
-      var newQuestion = $(data);
+      var newQuestion = $(response);
       $("input[name='question[title]']").val("");
       $("textarea[name='question[content]']").val(" ");
       $('#question_list').append(newQuestion);

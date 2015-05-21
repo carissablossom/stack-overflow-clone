@@ -1,3 +1,10 @@
+$(document).ready(function(){
+
+bindAnswerEvents();
+bindQuestionEvents();
+bindVoteEvents();
+
+});
 
 function bindAnswerEvents(){
   postNewAnswer();
@@ -38,6 +45,6 @@ function buildAnswer(answerData){
           '<a class="vote" data-method="put" href="/answers/'+answerData.id+'/downvote" rel="nofollow">' + '▼' + '</a>' +
           '<p>'+answerData.content+'</p>' +'<hr>' +
           '</div>');
-      //Darwin is a genius
+      // Darwin is a genius
       return skeleton;
 };
