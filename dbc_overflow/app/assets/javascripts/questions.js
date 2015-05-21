@@ -14,7 +14,6 @@ $(function(){
       // debugger;
 
     request.done(function(response){
-      debugger
       // console.log(response)
       $('.error_messages').remove();
 

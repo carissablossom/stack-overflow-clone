@@ -15,12 +15,21 @@
 
   <script id="entry-template" type="text/x-handlebars-template">
 
+
     <div class="question">
+      <h3><a href="/questions/{{id}}">{{title}}</a></h3>
       <h4> Upvotes: {{upvote}}</h4>
       <%= form_for @question, url: '/questions/{{id}}', method: :put  do |f| %>
-        <%= f.hidden_field :upvote, :value => @question.upvote %>
+        <%= f.hidden_field :upvote, :value => @question.upvote + 1%>
         <div class="thumbs-up"><%= f.submit "thumbs up" %></div>
       <% end %>
+
+      <h4>Downvotes: {{downvote}} </h4>
+      <%= form_for @question, url: '/questions/{{id}}', method: :put  do |f| %>
+        <%= f.hidden_field :downvote, :value => @question.downvote + 1%>
+        <div class="thumbs-down"><%= f.submit "thumbs down" %></div>
+      <% end %>
+
     </div>
 
   </script>
