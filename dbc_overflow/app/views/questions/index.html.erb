@@ -8,7 +8,23 @@
     <h2> Questions: </h2>
   </div>
 
-  <%= render @questions %>
+  <div class="questions">
+    <%= render @questions %>
+  </div>
+
+
+  <script id="entry-template" type="text/x-handlebars-template">
+
+    <div class="question">
+      <h4> Upvotes: {{upvote}}</h4>
+      <%= form_for @question, url: '/questions/{{id}}', method: :put  do |f| %>
+        <%= f.hidden_field :upvote, :value => @question.upvote %>
+        <div class="thumbs-up"><%= f.submit "thumbs up" %></div>
+      <% end %>
+    </div>
+
+  </script>
+
 
   <div class="question-form">
     <%= form_for @question do |f| %>

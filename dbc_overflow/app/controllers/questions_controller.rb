@@ -35,11 +35,16 @@ class QuestionsController < ApplicationController
   def create
     @questions = Question.all
     @question = Question.new(param_check)
-    # respond_to do |format|
-      # if @question.save
-      #   format.html { redirect_to action: "index", notice:"Question Created!" }
-      #   format.json {}
-      # end
+    respond_to do |format|
+      if @question.save
+        puts "SAVE*************************************************************"
+        format.html { redirect_to @question, notice:"Question Created!" }
+        format.json {render :json => @question, :status => :created}
+      else
+        format.html {render action: 'index'}
+        format.json { render :json => @question.errors.full_messages, :status => :unprocessable_entity}
+      end
+    end
 
   end
 
