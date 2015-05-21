@@ -1,3 +1,4 @@
+var convert = new Markdown.Converter();
 
 $(document).ready(function() {
   bindEvents();
@@ -10,6 +11,7 @@ function bindEvents(){
   $('#new_question').on('submit', newQuestion);
   $('#new_answer').on('submit', newAnswer);
   $('#search').on('keyup', search);
+  $('#answer_content').on('keyup', preview)
 }
 
 function pagination(e){
@@ -97,4 +99,10 @@ function search(){
       $('#page-wrap').html($(payload));
     });
   }
+}
+
+function preview() {
+  var markdown = $(this).val();
+  var html = convert.makeHtml(markdown);
+  $('#markdown').html(html);
 }
