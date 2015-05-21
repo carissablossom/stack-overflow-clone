@@ -11,17 +11,24 @@
 <p><%= @question.content %><p>
 <h4>Answers</h4>
 <hr>
+
 <ul>
   <% @answers.each.with_index(1) do |answer, ans_ind| %>
-    <%= answer.vote_total %>
-    <%= link_to upvote_answer_path(answer), method: :post do %>
-      <i class="fa fa-arrow-circle-o-up"></i>
-    <% end %>
-    <%= link_to downvote_answer_path(answer), method: :post do %>
-      <i class="fa fa-arrow-circle-o-down"></i>
-    <% end %>
-    <h3><%= answer.title %></h3>
-    <p><%= answer.content %></p>
+  <div class="answer-block">
+
+    <div class="this-vote">
+      <%= answer.vote_total %>
+    </div>
+      <%= link_to upvote_answer_path(answer), method: :get, class: "vote-up-answer" do %>
+        <i class="fa fa-arrow-circle-o-up"></i>
+      <% end %>
+      <%= link_to downvote_answer_path(answer), method: :get, class: "vote-down-answer" do %>
+        <i class="fa fa-arrow-circle-o-down"></i>
+      <% end %>
+      <h3><%= answer.title %></h3>
+      <p><%= answer.content %></p>
+
+  </div>
   <% end %>
   <%= render partial: "answers/new" %>
 </ul>

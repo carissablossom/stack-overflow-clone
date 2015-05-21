@@ -1,4 +1,4 @@
-$(document).on('ready page:refresh', function(){
+$(document).on("page:change", function(){
   $('.new_question').on('submit', function(e){
     e.preventDefault();
     var data = $('.new_question').serialize();
@@ -23,13 +23,14 @@ $(document).on('ready page:refresh', function(){
   });
 
 
-  $('a').on('click', '.fa-arrow-circle-o-up', function(e){
+  $('a.question-upvote').on('click', '.fa-arrow-circle-o-up', function(e){
+    debugger
     e.preventDefault();
     e.stopPropagation();
     var url = $(this).parent().attr('href')
 
     $thisCount = $(this).parent().parent()
-
+    debugger
     var req = $.ajax({
       url: url,
       type: 'GET',
@@ -37,13 +38,14 @@ $(document).on('ready page:refresh', function(){
     });
 
     req.done(function(response) {
+      debugger
       $thisCount.children('.this-vote').text(response.vote_total)
 
     });
 
   });
 
-   $('a').on('click', '.fa-arrow-circle-o-down', function(e){
+   $('a.question-downvote').on('click', '.fa-arrow-circle-o-down', function(e){
     e.preventDefault();
     e.stopPropagation();
     var url = $(this).parent().attr('href')
@@ -57,6 +59,7 @@ $(document).on('ready page:refresh', function(){
     });
 
     req.done(function(response) {
+      debugger
       var body = $(response).find('#question_list').html();
       $(document).find('#question_list').replaceWith(body)
 

@@ -1,22 +1,32 @@
 <div class="container">
   <h1><%= @quote %></h1>
+
   <div id="question_list">
+
     <% @questions.each do |question| %>
     <div class="count">
+
       <div class="this-vote">
-      <%= question.vote_total %>
+        <%= question.vote_total %>
       </div>
-      <%= link_to upvote_path(question), method: :get do %>
-      <i class="fa fa-arrow-circle-o-up"></i>
-        <% end %>
-      <%= link_to downvote_path(question), method: :get do %>
-        <i class="fa fa-arrow-circle-o-down"></i>
+
+      <%= link_to upvote_path(question), method: :get, class: "question-upvote" do %>
+           <i class="fa fa-arrow-circle-o-up"></i>
       <% end %>
+
+      <%= link_to downvote_path(question), method: :get, class: "question-downvote" do %>
+          <i class="fa fa-arrow-circle-o-down"></i>
+      <% end %>
+
       <a href="/questions/<%= question.id %>"><h3><%= question.title %></h3></a><br>
         <%= question.content %><br><br>
-      </div>
+
+    </div>
     <% end %>
+
   </div>
+
+
   <%= render partial: 'new' %>
 </div>
 

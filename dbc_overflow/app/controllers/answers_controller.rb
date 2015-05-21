@@ -23,16 +23,22 @@ class AnswersController < ApplicationController
 
   def upvote
     answer = Answer.where(id: params[:id]).first
-    answer.up_vote
-    @qid = answer.question_id
-     redirect_to question_path(@qid)
-
+    respond_to do |format|
+      if answer.up_vote
+        format.html { redirect_to question_path(answer.question_id), method: :get}
+        format.json { render :json => answer }
+      else
+        format.html {render action: 'index' }
+        format.json {render :json => answer.errors.full_messages, :status => :unprocessable_entity }
+      end
+    end
   end
 
   def downvote
     answer = Answer.where(id: params[:id]).first
-    answer.down_vote
-    redirect_to :action => 'show'
+    if answer.down_vote
+    redirect_to question_path(answer.question_id), :method => :get
+    end
   end
 
   private

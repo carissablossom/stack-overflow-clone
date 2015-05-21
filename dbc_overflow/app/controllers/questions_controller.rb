@@ -50,8 +50,8 @@ class QuestionsController < ApplicationController
 
   def upvote
     question = Question.where(id: params[:id]).first
-    p params
-    p "what are you doing here? "*10
+    # p params
+    # p "what are you doing here? "*10
     respond_to do |format|
       if question.up_vote
         format.html { redirect_to action: "index" }
