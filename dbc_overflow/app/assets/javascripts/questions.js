@@ -34,6 +34,7 @@ $(document).ready(function(){
   $('#question_container').on('click', ".down_tri", function(event){
     event.preventDefault();
     event.stopPropagation();
+    debugger
     var votes = $(this).siblings('.votes')[0];
     var request = $.ajax({
       method: 'get',

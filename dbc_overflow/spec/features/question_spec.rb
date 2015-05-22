@@ -27,4 +27,14 @@ describe "Question", js: true do
     expect(page.find('#question_container .votes').text).to have_content("vote totals: -1")
   end
 
+  it 'ensures question title and content form' do
+    visit root_path
+    fill_in 'Title', with: question.title
+    fill_in 'Content', with: question.content
+    click_on("Create Question")
+    expect(page).to have_content(question.title)
+    expect(page).to have_content(question.content)
+  end
+
 end
+
