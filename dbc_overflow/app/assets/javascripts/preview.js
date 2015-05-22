@@ -6,14 +6,15 @@ var previewTitle = function(key){
 }
 
 var previewContent = function(key){
- code = key.keyCode
+ // code = key.keyCode
+ $('.preview div').children().remove();
  var mimic = $(this).val()
 
- if (code === 13){
-  $('.preview p').text(mimic)
- }
- else
-  $('.preview p').text(mimic)
+ var strings = mimic.split("\n");
+ console.log(strings);
+
+for (var i = 0; i < strings.length; i++)
+  $('.preview div').append('<p>'+strings[i]+'<p>')
 }
 
   $("#question_title").on('keyup', previewTitle)
