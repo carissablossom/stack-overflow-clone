@@ -47,45 +47,46 @@ $(document).ready(function(){
 
   $('#answer_title').on('keypress', function(){
     var input = $(this).val();
-    $('.md-form').find('h2').text(input);
+    $('.md-form').find('h2').html(input);
     // debugger
   })
 
   $('#answer_text').on('keypress', function(){
-    var text = $(this).val('##banana, ######turtle, asdfasdf');
+    // var text = $(this).val('Finlandiaaaa ##banana whats up ######turtle ###asdfasdf ####oijerw!');
     var input = $(this).val().split(' ');
 
-      markDown(input);
+    markDown(input);
 
-    // $('.md-form').find('p').text(input);
+    $('.md-form').find('p').html(markDown(input));
 
-    debugger
+    // debugger
   })
 
   var markDown = function(string_array){
+    // var string_array = string_array.join('').split(' ')
     // debugger
     var str = '';
 
     for (var i=0; i < string_array.length; i++ ){
       if (string_array[i].includes("######")){
-        string_array[i] = "<h6>" + string_array[i].slice(6) + "</h1>"
+        string_array[i] = "<h6>" + string_array[i].slice(6) + "</h6>";
       } else if (string_array[i].includes("#####")){
-        string_array[i] = "<h5>" + string_array[i].slice(5) + "</h1>"
+        string_array[i] = "<h5>" + string_array[i].slice(5) + "</h5>";
       } else if (string_array[i].includes("####")){
-        string_array[i] = "<h4>" + string_array[i].slice(4) + "</h1>"
+        string_array[i] = "<h4>" + string_array[i].slice(4) + "</h4>";
       } else if (string_array[i].includes("###")){
-        string_array[i] = "<h3>" + string_array[i].slice(3) + "</h1>"
+        string_array[i] = "<h3>" + string_array[i].slice(3) + "</h3>";
       } else if (string_array[i].includes("##")){
-        string_array[i] = "<h2>" + string_array[i].slice(2) + "</h1>"
+        string_array[i] = "<h2>" + string_array[i].slice(2) + "</h2>";
       } else if (string_array[i].includes("#")){
-        string_array[i] = "<h1>" + string_array[i].slice(1) + "</h1>"
+        string_array[i] = "<h1>" + string_array[i].slice(1) + "</h1>";
+      } else {
+        string_array[i] = "<p>" + string_array[i] + "</p>";
       }
-        str += string_array[i]
+        str += string_array[i];
     }
     return str
   }
-
-
 
 
 })
