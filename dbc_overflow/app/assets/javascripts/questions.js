@@ -31,17 +31,21 @@ $(document).ready(function(){
 
   })
 
+  var questionArea = $(".questions")
 
-  $('.button_to').on('submit', function(event){
+  questionArea.on('submit',".button_to", function(event){
       event.preventDefault();
       var request = $.ajax({
+
         url: $(this).attr('action'),
         type: $(this).attr('method'),
         data: $(this).serialize(),
         dataType: 'json',
+
       })
 
       request.done(function(data){
+        console.log(data)
         // console.log(data.question.vote)
         // console.log(data.question.id)
         var questionId = data.question.id

@@ -1,4 +1,4 @@
-<li><p><a href="/questions/<%= question.id %>" ><%= question.title %></a> vote: <div class="<%= question.id %>"><%= question.vote %></div></p>
+<li class="question_view"><p><a href="/questions/<%= question.id %>" ><%= question.title %></a> vote: <div class="<%= question.id %>"><%= question.vote %></div></p>
     <br>
 
   <%= button_to 'upvote', question_upvote_path(id: question.id ), :action => "upvote" %>

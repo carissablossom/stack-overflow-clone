@@ -20,21 +20,20 @@ var form = $(".new_answer")
 
   })
 
-  $('.button_to_answer').on('submit', '' function(event){
+  var answerArea = $(".answers")
+  answerArea.on('submit', ".button_to_answer", function(event){
     event.preventDefault();
     var request = $.ajax({
       url: $(this).attr('action'),
       type: $(this).attr('method'),
       data: $(this).serialize(),
       dataType: 'json',
-
     })
     request.done(function(data){
-      console.log(data)
       var answerId = data.answer.id
       var newVote = data.answer.vote
       var selection = "." + answerId
-      var voteArea = $('div'+selection)
+      var voteArea = $('div'+ selection)
       voteArea.html(newVote)
     })
   })
