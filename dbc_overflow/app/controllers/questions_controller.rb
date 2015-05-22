@@ -5,8 +5,15 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(question_params)
-    @question.save
-    redirect_to questions_path
+    respond_to do |format|
+      if @question.save
+        format.html { redirect_to question_path(@question), notice: 'Successfully saved' }
+        format.json { render json: @answer, status: :created }
+      else
+        format.html { redirect_to question_path(@question) }
+        format.json { render json: @answers.errors.full_messages, status: :unprocessable_entity }
+      end
+    end
   end
 
   def upvote
