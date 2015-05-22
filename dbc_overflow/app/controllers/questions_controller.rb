@@ -3,6 +3,30 @@ class QuestionsController < ApplicationController
     @question = Question.new
   end
 
+
+  # Voting --------------------------
+  #  When a '+' is clicked, The 'score' attr is incremented.
+  #  When a '-' is clicked, the 'score' attr is decremented.
+  #  A voting def handles the upvote or downvote.
+
+  def upvote
+    @question = Question.find(params[:id])
+    @question.score +=1
+    @question.save
+    # p "*" * 50
+    # p @question.score
+    redirect_to :back
+  end
+
+  def downvote
+    @question = Question.find(params[:id])
+    @question.score -=1
+    @question.save
+    # p "*" * 50
+    # p @question.score
+    redirect_to :back
+  end
+
   def create
     @question = Question.new(question_params)
     puts '%' * 40
@@ -31,7 +55,6 @@ class QuestionsController < ApplicationController
     # p params
     @question = Question.find(params[:id])
     if @question.destroy
-      puts '*' * 50
       redirect_to action: 'index'
     else
       'NOPE'

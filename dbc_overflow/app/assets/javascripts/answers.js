@@ -1,9 +1,22 @@
-console.log('shout')
+
 $(document).ready(function() {
-  $('#new_answer').on('submit', function(event){
+
+  var voteButton = function(event){
     event.preventDefault();
-    // alert("hello");
-    // alert('yup');
+
+    var request = $.ajax({
+      type: 'POST',
+      url: $(this).attr('action'),
+    });
+
+    request.done(function(data) {
+      // console.log(data);
+      $(".score-"+ data.id ).text(data.score);
+    })
+  };
+
+  var newAnswer = function(event){
+    event.preventDefault();
 
     var request = $.ajax({
       type: 'POST',
@@ -13,19 +26,18 @@ $(document).ready(function() {
     });
 
     request.done(function(data){
-      // debugger
       console.log('DONE!');
       var content = data.body;
       console.log(content);
-      // debugger
+
       $('#answers').append('<li>' + 'id: ' + data.id + '<p></p>' + 'body: ' + content + '<p></p>' + 'Score: ' + data.score + '</li>');
-      // $('#answers').append('<li>' + 'body: ' + content + '</li>');
-      // $('#answers').append('<li>' + 'Score: ' + data.score + '</li>');
     });
-    request.fail(function(data) {
+      request.fail(function(data) {
+      console.log(data);
       console.log('FAIL');
     })
+  };
 
-
-  });
+$('#new_answer').on('submit', newAnswer);
+$('.button_to').on('submit', voteButton);
 });

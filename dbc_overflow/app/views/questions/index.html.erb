@@ -28,7 +28,11 @@
       <p>
         <a href="/questions/<%=question.id%>"><%= question.title %></a><br>
         posted by <%= User.where(id: question.user_id).first%><br>
+        <div style="display: inline">
         Score: <%= question.score %>
+        <%= button_to '+', question_upvote_path(question) %>
+        <%= button_to '-', question_downvote_path(question) %>
+      </div>
       </p>
     </li>
   </ul>

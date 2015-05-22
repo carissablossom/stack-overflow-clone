@@ -14,9 +14,11 @@
     <li>
       <p>id: <%= a.id %></p>
       <p>body: <%= a.body %></p>
-      <p>Answer by: </p>
-      Score: <%= a.score %>
-    </li>
+      Answer Score:
+      <div class="score-<%= a.id %>"><%= a.score %></div>
+        <%= button_to '+', answer_upvote_path(a) %>
+        <%= button_to '-', answer_downvote_path(a) %>
+      </li>
   </p>
 <%end%>
 </ul>
