@@ -1,0 +1,6 @@
+<li><p><%= answer.title %> <%= answer.content %> vote:<div class="<%= answer.id %>"><%= answer.vote %></div></p>
+<br>
+<%= button_to 'upvote', answer_upvote_path(id: answer.id ), :action => "upvote" , form_class: "button_to_answer" %><br>
+<%= button_to 'downvote', answer_downvote_path(:id => answer.id ), action: "downvote" , form_class: "button_to_answer"  %>
+<br>
+</li>

@@ -2771,3 +2771,106 @@ Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-18 20:00:51 -
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-18 20:00:51 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-22 11:54:15 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (16.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (16.6ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.erb within layouts/application (96.7ms)
+Completed 200 OK in 578ms (Views: 484.3ms | ActiveRecord: 19.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-22 11:54:16 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 109ms (Views: 107.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-22 11:54:16 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-22 11:54:16 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-22 11:54:16 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-22 11:54:16 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-22 11:54:16 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-22 11:54:16 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-22 11:54:16 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-22 11:54:16 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-22 11:54:16 -0700
+
+
+Started GET "/questions/81" for 127.0.0.1 at 2015-05-22 11:54:21 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"81"}
+  [1m[35mQuestion Load (0.8ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = 81  ORDER BY "questions"."id" ASC LIMIT 1
+  [1m[36mAnswer Load (0.6ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1[0m  [["question_id", 81]]
+  Rendered questions/show.html.erb within layouts/application (35.1ms)
+Completed 200 OK in 215ms (Views: 104.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/questions/80" for 127.0.0.1 at 2015-05-22 11:54:25 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"80"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = 80  ORDER BY "questions"."id" ASC LIMIT 1
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1[0m  [["question_id", 80]]
+  Rendered questions/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 121ms (Views: 117.6ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/questions/80/answers" for 127.0.0.1 at 2015-05-22 11:54:28 -0700
+Processing by AnswersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "answer"=>{"title"=>"dsfgf", "content"=>"dfgdfg"}, "commit"=>"Create Answer", "question_id"=>"80"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "answers" ("content", "created_at", "question_id", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "dfgdfg"], ["created_at", "2015-05-22 18:54:28.767402"], ["question_id", 80], ["title", "dsfgf"], ["updated_at", "2015-05-22 18:54:28.767402"]]
+  [1m[35m (16.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/questions/80
+Completed 302 Found in 21ms (ActiveRecord: 16.6ms)
+
+
+Started GET "/questions/80" for 127.0.0.1 at 2015-05-22 11:54:28 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"80"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = 80  ORDER BY "questions"."id" ASC LIMIT 1[0m
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  [["question_id", 80]]
+  Rendered questions/show.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 84ms (Views: 80.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-22 11:54:28 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-22 11:54:28 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-22 11:54:28 -0700
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-22 11:54:28 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-22 11:54:28 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-22 11:54:28 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-22 11:54:28 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-22 11:54:28 -0700
