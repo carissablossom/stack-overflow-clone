@@ -1,54 +1,58 @@
-<h2>DBC Overflow</h2>
-<%= @quote %>
-<h3>Questions:</h3>
+<div class="stack-overflow"><%= image_tag('stack-overflow.png') %></div>
+<div class="gopher"><%= image_tag('gopher.png') %></div>
+<div class="container">
+  <h2 class="col ">Stack GopherFlow</h2>
+  <%= @quote %>
+  <h3 class="">Questions:</h3>
 
-<div class="questions">
-  <ul>
-    <% @questions.order("votes desc").each do |q| %>
-      <li>
-        <a href="/questions/<%= q.id %>"><%= q.title %></a>
-        votes: <span class="votes"><%=q.votes%></span>
-        <%= button_to("△", question_upvote_path(q), method: "patch", form_class: "q_up") %>
-        <%= button_to("▼", question_downvote_path(q), method: "patch", form_class: "q_down") %>
-      </li>
-    <% end %>
-  </ul>
-</div>
-
-<hr>
-<br>
-<br>
-<div class="live_markdown">
-  <h2>
-    <div class="md_q_title">
-    </div>
-  </h2>
-  <div class="md_q_content">
+  <div class="questions">
+    <ul>
+      <% @questions.order("votes desc").each do |q| %>
+        <li>
+          <a href="/questions/<%= q.id %>"><%= q.title %></a>
+          votes: <span class="votes"><%=q.votes%></span>
+          <%= button_to("△", question_upvote_path(q), method: "patch", form_class: "q_up") %>
+          <%= button_to("▼", question_downvote_path(q), method: "patch", form_class: "q_down") %>
+        </li>
+      <% end %>
+    </ul>
   </div>
+
+  <hr>
+  <br>
+  <br>
+  <div class="live_markdown">
+    <h2>
+      <div class="md_q_title">
+      </div>
+    </h2>
+    <div class="md_q_content">
+    </div>
+  </div>
+  <br>
+  <br>
+  <hr>
+
+  <h3>Create a new question</h3>
+  <%= form_for @question do |f| %>
+    <p>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </p>
+
+    <p>
+      <%= f.label :content %>
+      <%= f.text_area :content %>
+    </p>
+    <%= f.submit %>
+  <% end %>
+
+  <script id="question_block" type="text/x-handlebars-template">
+    <li>
+      <a href="/questions/{{data.id}}">{{ data.title }}</a>
+      votes: {{data.votes}}
+      <form action="/questions/{{data.id}}/upvote" method="patch"><button type="submit">△</button></form>
+      <form action="/questions/{{data.id}}/downvote" method="patch"><button type="submit">▼</button></form>
+    </li>
+  </script>
 </div>
-<br>
-<br>
-<hr>
-
-<h3>Create a new question</h3>
-<%= form_for @question do |f| %>
-  <p>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </p>
-
-  <p>
-    <%= f.label :content %>
-    <%= f.text_area :content %>
-  </p>
-  <%= f.submit %>
-<% end %>
-
-<script id="question_block" type="text/x-handlebars-template">
-  <li>
-    <a href="/questions/{{data.id}}">{{ data.title }}</a>
-    votes: {{data.votes}}
-    <form action="/questions/{{data.id}}/upvote" method="patch"><button type="submit">△</button></form>
-    <form action="/questions/{{data.id}}/downvote" method="patch"><button type="submit">▼</button></form>
-  </li>
-</script>

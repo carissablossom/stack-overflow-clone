@@ -75,4 +75,21 @@ $(document).ready(function() {
     });
 
   });
+
+  $(document).ready(function() {
+    function loop() {
+        $('.gopher').css({right:1225, top:50});
+        $('.gopher').css('transform','rotate("180 deg")');
+        $('.gopher').animate ({
+            right: '-=1200',
+            top: '+=50',
+            right: '-=1200',
+            top: '+=50',
+            speed: 'fast'
+        }, 5000, 'linear', function() {
+            loop();
+        });
+    }
+    loop();
+});
 });
