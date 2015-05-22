@@ -7,7 +7,6 @@ $(document).ready(function(){
       method: 'post',
       url: $(this).attr('action'),
       data: $(this).serialize(),
-      // dataType: 'json'
     });
 
     request.done(function(response){
@@ -20,7 +19,7 @@ $(document).ready(function(){
   $('#question_container').on('click', ".up_tri", function(event){
     event.preventDefault();
     event.stopPropagation();
-    var votes = $(this).siblings('p').last()[0];
+    var votes = $(this).siblings('.votes')[0];
     var request = $.ajax({
       method: 'get',
       url: $(this).attr('href'),
@@ -35,7 +34,7 @@ $(document).ready(function(){
   $('#question_container').on('click', ".down_tri", function(event){
     event.preventDefault();
     event.stopPropagation();
-    var votes = $(this).siblings('p').last()[0];
+    var votes = $(this).siblings('.votes')[0];
     var request = $.ajax({
       method: 'get',
       url: $(this).attr('href'),

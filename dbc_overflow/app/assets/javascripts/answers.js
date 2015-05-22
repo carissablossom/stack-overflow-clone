@@ -19,7 +19,7 @@ $(document).ready(function(){
     event.preventDefault();
     event.stopPropagation();
     // debugger
-    var votes = $(this).siblings('p').last()[0];
+    var votes = $(this).siblings('.votes')[0];
     var request = $.ajax({
       method: 'get',
       url: $(this).attr('href'),
@@ -34,7 +34,7 @@ $(document).ready(function(){
   $('#answer-container').on('click', ".down_tri", function(event){
     event.preventDefault();
     event.stopPropagation();
-    var votes = $(this).siblings('p').last()[0];
+    var votes = $(this).siblings('.votes')[0];
     var request = $.ajax({
       method: 'get',
       url: $(this).attr('href'),

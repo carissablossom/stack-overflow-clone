@@ -27,7 +27,7 @@ class QuestionsController < ApplicationController
     @questions = Question.order('created_at DESC').all
     headers = { "User-Agent" => "StacksOnStacks",
                 "Authorization" => ENV['GITHUB_KEY']}
-    @quote = HTTParty.get("https://api.github.com/zen", headers: headers)
+    # @quote = HTTParty.get("https://api.github.com/zen", headers: headers)
   end
 
   def edit
