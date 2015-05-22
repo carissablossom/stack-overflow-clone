@@ -2874,3 +2874,96 @@ Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-22 11:54:28 -
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-22 11:54:28 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-22 12:01:45 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.7ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.erb within layouts/application (60.7ms)
+Completed 200 OK in 219ms (Views: 193.7ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-22 12:01:46 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-22 12:01:46 -0700
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-22 12:01:46 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-22 12:01:46 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-22 12:01:46 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-22 12:01:46 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-22 12:01:46 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-22 12:01:46 -0700
+
+
+Started GET "/questions/81" for 127.0.0.1 at 2015-05-22 12:01:48 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"81"}
+  [1m[36mQuestion Load (0.8ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = 81  ORDER BY "questions"."id" ASC LIMIT 1[0m
+  [1m[35mAnswer Load (0.7ms)[0m  SELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  [["question_id", 81]]
+  Rendered questions/show.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 93ms (Views: 72.9ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/questions/84" for 127.0.0.1 at 2015-05-22 12:01:53 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"84"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = 84  ORDER BY "questions"."id" ASC LIMIT 1[0m
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  [["question_id", 84]]
+  Rendered questions/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 115ms (Views: 111.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/questions/84/answers" for 127.0.0.1 at 2015-05-22 12:01:56 -0700
+Processing by AnswersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "answer"=>{"title"=>"sdfasdf", "content"=>"sdfsdf"}, "commit"=>"Create Answer", "question_id"=>"84"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "answers" ("content", "created_at", "question_id", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["content", "sdfsdf"], ["created_at", "2015-05-22 19:01:56.607242"], ["question_id", 84], ["title", "sdfasdf"], ["updated_at", "2015-05-22 19:01:56.607242"]]
+  [1m[36m (15.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/84
+Completed 302 Found in 21ms (ActiveRecord: 16.6ms)
+
+
+Started GET "/questions/84" for 127.0.0.1 at 2015-05-22 12:01:56 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"84"}
+  [1m[35mQuestion Load (0.5ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = 84  ORDER BY "questions"."id" ASC LIMIT 1
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1[0m  [["question_id", 84]]
+  Rendered questions/show.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 67ms (Views: 64.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-22 12:01:56 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-22 12:01:56 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-22 12:01:56 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-22 12:01:56 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-22 12:01:56 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-22 12:01:56 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-22 12:01:56 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-22 12:01:56 -0700
