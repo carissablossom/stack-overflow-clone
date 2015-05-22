@@ -2,7 +2,7 @@ $(function(){
 
 var previewTitle = function(key){
   var mimic = $(this).val()
-  $('.preview h2').text(mimic)
+  $('.preview h3').text(mimic)
 }
 
 var previewContent = function(key){
