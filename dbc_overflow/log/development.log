@@ -48233,3 +48233,370 @@ Processing by AnswersController#upvote as JSON
   [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
   [1m[35mAnswer Load (0.2ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 43]]
 Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/questions/77" for 127.0.0.1 at 2015-05-22 15:08:43 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"77"}
+  [1m[35mQuestion Load (16.6ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = 77  ORDER BY "questions"."id" ASC LIMIT 1
+  Rendered questions/_question.html.erb (1.7ms)
+  [1m[36mAnswer Load (0.6ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  ORDER BY "answers"."id" ASC[0m  [["question_id", 77]]
+  Rendered answers/_answer.html.erb (6.4ms)
+  Rendered questions/show.html.erb within layouts/application (81.3ms)
+Completed 200 OK in 417ms (Views: 275.7ms | ActiveRecord: 21.8ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-05-22 15:08:44 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-22 15:08:44 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-22 15:08:44 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-22 15:08:44 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-22 15:08:44 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-05-22 15:08:44 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-05-22 15:08:44 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-05-22 15:08:44 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-22 15:08:44 -0700
+
+
+Started POST "/answers/45/upvote" for 127.0.0.1 at 2015-05-22 15:09:26 -0700
+Processing by AnswersController#upvote as JSON
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"45"}
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 45]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 45  [["updated_at", "2015-05-22 22:09:26.696412"], ["vote", 31]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 45]]
+Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/answers/45/upvote" for 127.0.0.1 at 2015-05-22 15:09:26 -0700
+Processing by AnswersController#upvote as JSON
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"45"}
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1[0m  [["id", 45]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 45[0m  [["updated_at", "2015-05-22 22:09:26.921678"], ["vote", 32]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1[0m  [["id", 45]]
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/answers/45/downvote" for 127.0.0.1 at 2015-05-22 15:09:27 -0700
+Processing by AnswersController#downvote as JSON
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"45"}
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 45]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 45  [["updated_at", "2015-05-22 22:09:27.741183"], ["vote", 31]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 45]]
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/answers/45/downvote" for 127.0.0.1 at 2015-05-22 15:09:27 -0700
+Processing by AnswersController#downvote as JSON
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"45"}
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1[0m  [["id", 45]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 45[0m  [["updated_at", "2015-05-22 22:09:27.898631"], ["vote", 30]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1[0m  [["id", 45]]
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/answers/45/downvote" for 127.0.0.1 at 2015-05-22 15:09:28 -0700
+Processing by AnswersController#downvote as JSON
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"45"}
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 45]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 45  [["updated_at", "2015-05-22 22:09:28.045019"], ["vote", 29]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 45]]
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/questions/77/answers" for 127.0.0.1 at 2015-05-22 15:09:40 -0700
+Processing by AnswersController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "answer"=>{"title"=>"sdfsdf", "content"=>"sdfsd"}, "question_id"=>"77"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "answers" ("content", "created_at", "question_id", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["content", "sdfsd"], ["created_at", "2015-05-22 22:09:40.036025"], ["question_id", 77], ["title", "sdfsdf"], ["updated_at", "2015-05-22 22:09:40.036025"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  Rendered answers/_answer.html.erb (1.6ms)
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/answers/46/upvote" for 127.0.0.1 at 2015-05-22 15:09:41 -0700
+Processing by AnswersController#upvote as JSON
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"46"}
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 46]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 46  [["updated_at", "2015-05-22 22:09:41.532153"], ["vote", 1]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mAnswer Load (0.1ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 46]]
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/answers/46/upvote" for 127.0.0.1 at 2015-05-22 15:09:41 -0700
+Processing by AnswersController#upvote as JSON
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"46"}
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1[0m  [["id", 46]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 46[0m  [["updated_at", "2015-05-22 22:09:41.959351"], ["vote", 2]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1[0m  [["id", 46]]
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/answers/46/upvote" for 127.0.0.1 at 2015-05-22 15:09:42 -0700
+Processing by AnswersController#upvote as JSON
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"46"}
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 46]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 46  [["updated_at", "2015-05-22 22:09:42.264106"], ["vote", 3]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 46]]
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/answers/46/downvote" for 127.0.0.1 at 2015-05-22 15:09:42 -0700
+Processing by AnswersController#downvote as JSON
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"46"}
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1[0m  [["id", 46]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 46[0m  [["updated_at", "2015-05-22 22:09:42.748869"], ["vote", 2]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1[0m  [["id", 46]]
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/answers/46/downvote" for 127.0.0.1 at 2015-05-22 15:09:42 -0700
+Processing by AnswersController#downvote as JSON
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"46"}
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 46]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 46  [["updated_at", "2015-05-22 22:09:42.973666"], ["vote", 1]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 46]]
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/answers/46/downvote" for 127.0.0.1 at 2015-05-22 15:09:43 -0700
+Processing by AnswersController#downvote as JSON
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"46"}
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1[0m  [["id", 46]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 46[0m  [["updated_at", "2015-05-22 22:09:43.097542"], ["vote", 0]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1[0m  [["id", 46]]
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/answers/46/downvote" for 127.0.0.1 at 2015-05-22 15:09:43 -0700
+Processing by AnswersController#downvote as JSON
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"46"}
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 46]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1[0m  [["id", "46"]]
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/answers/46/upvote" for 127.0.0.1 at 2015-05-22 15:09:43 -0700
+Processing by AnswersController#upvote as JSON
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"46"}
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 46]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 46  [["updated_at", "2015-05-22 22:09:43.744574"], ["vote", 1]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 46]]
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/answers/46/upvote" for 127.0.0.1 at 2015-05-22 15:09:43 -0700
+Processing by AnswersController#upvote as JSON
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"46"}
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1[0m  [["id", 46]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 46[0m  [["updated_at", "2015-05-22 22:09:43.924850"], ["vote", 2]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1[0m  [["id", 46]]
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/answers/46/upvote" for 127.0.0.1 at 2015-05-22 15:09:44 -0700
+Processing by AnswersController#upvote as JSON
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"46"}
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 46]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 46  [["updated_at", "2015-05-22 22:09:44.081139"], ["vote", 3]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 46]]
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/answers/46/upvote" for 127.0.0.1 at 2015-05-22 15:09:44 -0700
+Processing by AnswersController#upvote as JSON
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"46"}
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1[0m  [["id", 46]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 46[0m  [["updated_at", "2015-05-22 22:09:44.236516"], ["vote", 4]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1[0m  [["id", 46]]
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/answers/46/upvote" for 127.0.0.1 at 2015-05-22 15:09:44 -0700
+Processing by AnswersController#upvote as JSON
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"46"}
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 46]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 46  [["updated_at", "2015-05-22 22:09:44.401086"], ["vote", 5]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 46]]
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/answers/46/upvote" for 127.0.0.1 at 2015-05-22 15:09:44 -0700
+Processing by AnswersController#upvote as JSON
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"46"}
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1[0m  [["id", 46]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 46[0m  [["updated_at", "2015-05-22 22:09:44.562191"], ["vote", 6]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1[0m  [["id", 46]]
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/answers/46/upvote" for 127.0.0.1 at 2015-05-22 15:09:44 -0700
+Processing by AnswersController#upvote as JSON
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"46"}
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 46]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 46  [["updated_at", "2015-05-22 22:09:44.741698"], ["vote", 7]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 46]]
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/answers/46/upvote" for 127.0.0.1 at 2015-05-22 15:09:44 -0700
+Processing by AnswersController#upvote as JSON
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"46"}
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1[0m  [["id", 46]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 46[0m  [["updated_at", "2015-05-22 22:09:44.898666"], ["vote", 8]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1[0m  [["id", 46]]
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/answers/46/upvote" for 127.0.0.1 at 2015-05-22 15:09:45 -0700
+Processing by AnswersController#upvote as JSON
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"46"}
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 46]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 46  [["updated_at", "2015-05-22 22:09:45.062464"], ["vote", 9]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 46]]
+Completed 200 OK in 59ms (Views: 54.7ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/answers/46/upvote" for 127.0.0.1 at 2015-05-22 15:09:45 -0700
+Processing by AnswersController#upvote as JSON
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"46"}
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1[0m  [["id", 46]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 46[0m  [["updated_at", "2015-05-22 22:09:45.220161"], ["vote", 10]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1[0m  [["id", 46]]
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/answers/46/upvote" for 127.0.0.1 at 2015-05-22 15:09:45 -0700
+Processing by AnswersController#upvote as JSON
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"46"}
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 46]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 46  [["updated_at", "2015-05-22 22:09:45.382211"], ["vote", 11]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 46]]
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/answers/46/upvote" for 127.0.0.1 at 2015-05-22 15:09:45 -0700
+Processing by AnswersController#upvote as JSON
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"46"}
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1[0m  [["id", 46]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 46[0m  [["updated_at", "2015-05-22 22:09:45.530232"], ["vote", 12]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1[0m  [["id", 46]]
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/answers/46/upvote" for 127.0.0.1 at 2015-05-22 15:09:45 -0700
+Processing by AnswersController#upvote as JSON
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"46"}
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 46]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 46  [["updated_at", "2015-05-22 22:09:45.685892"], ["vote", 13]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 46]]
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/answers/46/upvote" for 127.0.0.1 at 2015-05-22 15:09:45 -0700
+Processing by AnswersController#upvote as JSON
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"46"}
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1[0m  [["id", 46]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 46[0m  [["updated_at", "2015-05-22 22:09:45.858700"], ["vote", 14]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mAnswer Load (0.6ms)[0m  [1mSELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1[0m  [["id", 46]]
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/answers/46/upvote" for 127.0.0.1 at 2015-05-22 15:09:46 -0700
+Processing by AnswersController#upvote as JSON
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"46"}
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 46]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 46  [["updated_at", "2015-05-22 22:09:46.021325"], ["vote", 15]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 46]]
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/answers/46/upvote" for 127.0.0.1 at 2015-05-22 15:09:46 -0700
+Processing by AnswersController#upvote as JSON
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"46"}
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1[0m  [["id", 46]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 46[0m  [["updated_at", "2015-05-22 22:09:46.178499"], ["vote", 16]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1[0m  [["id", 46]]
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/answers/46/upvote" for 127.0.0.1 at 2015-05-22 15:09:46 -0700
+Processing by AnswersController#upvote as JSON
+  Parameters: {"authenticity_token"=>"iXitqIVgn9CXAztemVRbiZmSx9gFGjXk3DNgBhpvwbE=", "id"=>"46"}
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 46]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "answers" SET "updated_at" = $1, "vote" = $2 WHERE "answers"."id" = 46  [["updated_at", "2015-05-22 22:09:46.342173"], ["vote", 17]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mAnswer Load (0.1ms)[0m  SELECT  "answers".* FROM "answers"  WHERE "answers"."id" = $1 LIMIT 1  [["id", 46]]
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.3ms)
