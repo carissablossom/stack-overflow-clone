@@ -6,8 +6,16 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = Question.create(post_params)
-    redirect_to questions_path
+    @question = Question.new(post_params)
+    respond_to do |format|
+      if @question.save
+        format.html { redirect_to action: 'index', notice: 'question was created!'}
+        format.json { render :json => @question, :status => :created}
+      else
+        format.html { render action: 'index' }
+        format.json { render :json => @question.errors.full_messages, :status => :question_not_created}
+      end
+    end
   end
 
   def new

@@ -1,5 +1,5 @@
 <h1>QUESTIONS</h1>
-
+<div id="question_container">
 <% @questions.each do |question|%>
   <p>
     <span>Title:</span><%= question.title%>
@@ -9,10 +9,23 @@
       <%= link_to image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1U9PfKvVRtnLSzlGgVgONCNNojxLfHrhBCWHb2Zrk1CZ4xbTEpipvyA"),question_downvote_path(question, method: :get) %></div>
   </p>
   <%= link_to "Show Question", controller:"questions", action:"show", id: question.id %>
-
-
-
 <%end%>
+</div>
+
+  <script id="questions_template" type="text/x-handlebars-template">
+   <p>
+      <span>Title:</span>{{title}}
+      <span>Content:</span>{{content}}
+      <span>Votes:</span>{{votes}}
+
+    <div>
+    <%= link_to question_upvote_path(@question, method: :get) do %>
+        <%= image_tag ("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD72DEgGgvvcfmb24bIDNYiQrcY2JkBhjMywx8CoFXMzlQrc7w") %>
+        <%end%>
+  </p>
+  <%= link_to "Show Question", controller:"questions", action:"show", id: "{{ id }}" %>
+
+  </script>
 
 <p>
 <%= form_for @question do |f| %>

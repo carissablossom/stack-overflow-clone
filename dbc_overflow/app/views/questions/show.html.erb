@@ -14,9 +14,10 @@
     <p>
       <%= answer.title%>
       <%= answer.content%>
+      <%= answer.votes%>
     </p>
-    <div><%= link_to image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD72DEgGgvvcfmb24bIDNYiQrcY2JkBhjMywx8CoFXMzlQrc7w")%>
-      <%= link_to image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1U9PfKvVRtnLSzlGgVgONCNNojxLfHrhBCWHb2Zrk1CZ4xbTEpipvyA"),question_answer_downvote_path(answer, method: :get) %></div>
+    <div><%= link_to image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD72DEgGgvvcfmb24bIDNYiQrcY2JkBhjMywx8CoFXMzlQrc7w"),question_answer_upvote_path(@question, answer), method: :get%>
+      <%= link_to image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1U9PfKvVRtnLSzlGgVgONCNNojxLfHrhBCWHb2Zrk1CZ4xbTEpipvyA"),question_answer_downvote_path(@question, answer), method: :get %></div>
   <%end%>
 
   <h3>Add your answers here:</h3>
