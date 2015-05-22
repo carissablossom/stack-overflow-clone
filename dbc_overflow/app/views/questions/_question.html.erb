@@ -1,6 +1,9 @@
- <li><a href="/questions/<%= question.id %>" ><%= question.title %> <%= question.vote %></a>
+<li><p><a href="/questions/<%= question.id %>" ><%= question.title %></a> vote: <div class="<%= question.id %>"><%= question.vote %></div></p>
     <br>
+
   <%= button_to 'upvote', question_upvote_path(id: question.id ), :action => "upvote" %>
+  <br>
   <%= button_to 'downvote', question_downvote_path(:id => question.id ), action: "downvote" %>
+  <br>
 
 </li>

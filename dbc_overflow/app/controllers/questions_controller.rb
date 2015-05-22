@@ -1,9 +1,26 @@
 class QuestionsController < ApplicationController
   def create
+    @questions = Question.all
+    p post_params
+    puts "*****************"
+    puts "*****************"
+    puts "*****************"
+    puts "*****************"
     @question = Question.new(post_params)
-    @question.save
-    redirect_to :back
+    # respond_to do |format|
+    #  if @question.save
+    #   # format.html { redirect_to @question, notice: "It worked" }
+    #   format.json { render json: @question, status: :created }
+    #   pry.debugger
+    #  else
+    #   format.html { render action: 'index'}
+    #   format.json { render json: @question.errors.full_message, status: "Didn't work"}
+     # end
+     # redirect_to :back
      # redirect_to :action => :index
+     if @question.save
+       render json: {"html" => render_to_string(partial: 'question.html.erb', locals: {question: @question})}
+     end
   end
 
   def new
@@ -20,7 +37,7 @@ class QuestionsController < ApplicationController
 
   def index
 
-    # default_quote = "Hello there!"
+    default_quote = "Hello there!"
     # response = HTTParty.get("https://api.github.com/zen", { params: ENV["CALVIN_TOKEN"]} )
     token = ENV["CALVIN_TOKEN"]
     response = HTTParty.get(
@@ -72,15 +89,16 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @question.vote += 1
     @question.save
-    redirect_to :action => :index
+    # redirect_to :action => :index
+    render json: {"question" => Question.find(params[:id])}
+
   end
 
   def downvote
     @question = Question.find(params[:id])
     @question.vote -= 1 if @question.vote > 0
     @question.save
-    redirect_to :back
-
+    render json: {"question" => Question.find(params[:id])}
   end
 
   private

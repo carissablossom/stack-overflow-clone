@@ -1,20 +1,15 @@
+<h1>Question View</h1>
+<div class="question">
+  <ul>
+   <%= render @question %>
+   <%= @question.content %>
+  </ul>
+</div>
 
-<p><%= @question.title %>
-<br>
-<%= @question.content %>
-<%= link_to '<button>Edit</button>'.html_safe, controller: 'questions', action: "edit", id: @question %>
-<%= button_to ' Destroy this question', @question, :confirm => 'Are you sure?', :method => :delete   %></p>
-
-
-
-<% @answers.each do |answer| %>
-  vote: <%= answer.vote %><br>
-  <%= button_to 'upvote', answer_upvote_path(id: answer.id ), :action => "upvote" %>
-  <%= button_to 'downvote', answer_downvote_path(:id => answer.id ), action: "downvote" %>
-  <%= answer.title %><br>
-  <%= answer.content %><br>
-<% end %>
-
+<h1>Answers for this question</h1>
+<ul class="answers">
+  <%= render @answers %>
+</ul>
 
 <h2>Create your new answer here</h2>
 <%= form_for [@question, @answer] do |f| %>
