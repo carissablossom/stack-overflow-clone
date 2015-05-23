@@ -7,12 +7,12 @@
 
   <div class="questions">
     <ul>
-      <% @questions.order("votes desc").each do |q| %>
+      <% @questions.each do |q| %>
         <li>
-          <a href="/questions/<%= q.id %>"><%= q.title %></a>
-          votes: <span class="votes"><%=q.votes%></span>
-          <%= button_to("△", question_upvote_path(q), method: "patch", form_class: "q_up") %>
-          <%= button_to("▼", question_downvote_path(q), method: "patch", form_class: "q_down") %>
+          <a href="/questions/<%= q['id'] %>"><%= q['title'] %></a>
+          votes: <span class="votes"><%=q['votes']%></span>
+          <%= button_to("△", question_upvote_path(q['id']), method: "patch", form_class: "q_up") %>
+          <%= button_to("▼", question_downvote_path(q['id']), method: "patch", form_class: "q_down") %>
         </li>
       <% end %>
     </ul>

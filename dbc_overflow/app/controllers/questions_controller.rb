@@ -7,17 +7,13 @@ class QuestionsController < ApplicationController
   include HTTParty
 
   def index
-    @questions = Question.all
+    @questions = Overflow.new.questions
     @question = Question.new
     @quote = HTTParty.get("https://api.github.com/zen", {headers: {'Authorization' => KEY, 'User-Agent' => 'bananaboat'}} )
   end
 
-  def new
-    @question = Question.new
-  end
-
   def create
-    @question = Question.new(question_params)
+    @question = Overflow.new.create_question(params)
     respond_to do |format|
       if @question.save
         format.json {render :json => @question, :status => :created}
@@ -30,25 +26,25 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @question = Question.find(params[:id])
-    @answers = @question.answers
+    @payload = Overflow.new.show_question(params[:id])
+    @question = Question.new(@payload[0])
+    @answers = @payload[1]
     @answer = Answer.new
+    # @answer = Overflow.new.create_answer(params)
   end
 
   def destroy
-    @question = Question.find(params[:id])
-    @question.destroy
+    Overflow.new.destroy(params[:id])
     redirect_to root_path
   end
 
   def edit
-    @question = Question.find(params[:id])
+    @payload = Overflow.new.show_question(params[:id])
+    @question = Question.new(@payload[0])
   end
 
   def update
-    @question = Question.find(params[:id])
-    @question.update(title: params[:question][:title],
-                     content: params[:question][:content])
+    Overflow.new.edit(params[:id], params)
     redirect_to "/questions/#{params[:id]}"
   end
 
