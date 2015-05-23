@@ -1,0 +1,19 @@
+<h1> New Question </h1>
+
+<%= form_for @question do |this| %>
+
+  <p>
+    <%= this.label :title %><br>
+    <%= this.text_field :title %>
+  </p>
+
+  <p>
+    <%= this.label :text %><br>
+    <%= this.text_area :text %><br>
+  </p>
+
+  <p>
+    <%= this.submit %>
+  </p>
+
+<%end%>

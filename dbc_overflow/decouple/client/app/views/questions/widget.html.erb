@@ -1,0 +1,9 @@
+<div class="markdown_editor">
+  <%= form_for @question, :html => {:class => 'form'},  :url => {action: "update"} do |f|%>
+    <%= f.text_field :title %>
+  <%end%>
+</div>
+
+<div class="text">
+  <p class="markdown_line"><%=@question.title%></p>
+</div>

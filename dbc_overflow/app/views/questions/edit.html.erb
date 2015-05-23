@@ -1,0 +1,19 @@
+<h1>Editing the Question in question</h1>
+
+<%= form_for @question, :url => {action: "update"} do |f| %>
+
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %><br>
+  </p>
+
+  <p>
+    <%= f.label :text %><br>
+    <%= f.text_field :text %><br>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>

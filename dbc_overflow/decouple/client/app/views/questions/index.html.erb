@@ -1,0 +1,35 @@
+<div class="response">
+  <%=@response%>
+  <h1>Questions</h1><br>
+  <% @question.each do |question| %>
+  <div id="<% question.id%>">
+    <h2><%= link_to "#{question.title}", question_path(question), method: :get %><br></h2>
+    <div class="vote_count_<%=question.id%>">
+      <p class="vote_count_<%=question.id%>"><%=question.vote_count%></p>
+  </div><br>
+
+  <%= button_to 'Delete', {action: "destroy", controller: 'questions', id: question.id}, method: :delete %>
+
+  <div class="upvote">
+    <%= button_to 'upvote', upvote_question_path(question), method: :put %>
+  </div>
+
+  <div class="downvote">
+    <%= button_to 'downvote', downvote_question_path(question), method: :put %>
+  </div>
+
+  <div class="edit">
+    <%= link_to 'Edit', edit_question_path(question), method: :get%>
+  </div><br>
+
+
+  </div>
+    <%end%>
+  </div>
+
+
+
+
+
+
+

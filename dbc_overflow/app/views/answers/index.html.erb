@@ -1,0 +1,13 @@
+<%= @question.title %>
+
+<% @question.answers.each do |answer| %>
+<div>
+ <%= answer.title %>
+
+ <%= answer.text %>
+
+ <%= link_to 'Delete Answer', {action: "destroy", controller: 'answers', id: answer.question_id}, method: :delete %>
+</div>
+<% end %>
+
+
