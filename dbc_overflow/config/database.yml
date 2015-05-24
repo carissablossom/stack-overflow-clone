@@ -84,7 +84,6 @@ test:
   #username: dbc_overflow
   #password: <%= ENV['DBC_OVERFLOW_DATABASE_PASSWORD'] %>
 
-
 production:
     <<: *default
     adapter: postgresql
@@ -94,5 +93,3 @@ production:
     password: <%= ENV['RDS_PASSWORD'] %>
     host: <%= ENV['RDS_HOSTNAME'] %>
     port: <%= ENV['RDS_PORT'] %>
-
-
