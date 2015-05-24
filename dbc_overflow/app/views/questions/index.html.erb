@@ -1,11 +1,6 @@
+<div class="q_style">
 <h1>Questions</h1>
-<% if @resp %>
-  <% if @resp.headers["x-ratelimit-remaining"].to_i > 0 %>
-    <%= @resp.body %>
-  <% else %>
-    <%= "Fucking, I dunno!" %>
-  <% end %>
-<% end %>
+
 <ul id = 'question_list'>
 <% @questions.each do |quest| %>
   <li> <a href="/questions/<%= quest.id %>"> <%= quest.title %></a>
@@ -18,8 +13,8 @@
   <%= quest.content %>
   <% end %>
 </ul>
-
 <%= render template: "questions/_new_question" %>
+</div>
 
 <script id="question-display" type="text/x-handlebars-template">
 <li> <a href="/questions/{{id}}"> {{ title }}</a>
@@ -38,9 +33,7 @@
 </div>
 </form>
 
-
   <p>  {{ vote_counter }} </p>
 </li>
   <p> {{ content }}</p>
-
 </script>

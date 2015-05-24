@@ -1,15 +1,13 @@
-
-
 class QuestionsController < ApplicationController
   def new
-
   end
 
   def create
-    headers = {"User-Agent" => ENV['USER_AGENT'],
-               "Authorization" => 'token ' + ENV["AUTHORIZATION"]}
-    @resp = HTTParty.get("https://api.github.com/zen",
-                             :headers => headers)
+    # Removing this so AWS Beanstalk deployment works:
+    # headers = {"User-Agent" => ENV['USER_AGENT'],
+    #            "Authorization" => 'token ' + ENV["AUTHORIZATION"]}
+    # @resp = HTTParty.get("https://api.github.com/zen",
+    #                          :headers => headers)
 
     @questions = Question.order(vote_counter: :desc)
     @question = Question.new(question_params)
@@ -51,7 +49,6 @@ class QuestionsController < ApplicationController
     end
   end
 
-
   def edit
     @question = Question.find(params[:id])
   end
@@ -62,10 +59,10 @@ class QuestionsController < ApplicationController
   end
 
   def index
-    headers = {"User-Agent" => ENV['USER_AGENT'],
-               "Authorization" => 'token ' + ENV["AUTHORIZATION"]}
-    @resp = HTTParty.get("https://api.github.com/zen",
-                             :headers => headers)
+    # headers = {"User-Agent" => ENV['USER_AGENT'],
+    #            "Authorization" => 'token ' + ENV["AUTHORIZATION"]}
+    # @resp = HTTParty.get("https://api.github.com/zen",
+    #                          :headers => headers)
 
 
     @questions = Question.order(vote_counter: :desc)
@@ -77,10 +74,8 @@ class QuestionsController < ApplicationController
     @answer=Answer.new(question_id: @question.id)
   end
 
-
   private
   def question_params
     params.require(:question).permit(:title, :content)
   end
-
 end
