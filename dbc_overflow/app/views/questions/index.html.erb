@@ -1,39 +1,43 @@
 <div class="q_style">
-<h1>Questions</h1>
+  <h1>Questions</h1>
 
-<ul id = 'question_list'>
-<% @questions.each do |quest| %>
-  <li> <a href="/questions/<%= quest.id %>"> <%= quest.title %></a>
-    <%= button_to "△", {:controller => :questions,
-        :action => 'upvote', :question_id => quest.id }, {:method => :patch, :class => 'upvote'} %>
-    <%= button_to "▽", {:controller => :questions,
-        :action => 'downvote', :question_id => quest.id }, {:method => :patch, :class => 'downvote'} %>
-   <p> <%= quest.vote_counter %> </p>
-  </li>
-  <%= quest.content %>
-  <% end %>
-</ul>
-<%= render template: "questions/_new_question" %>
+  <ul id = 'question_list'>
+  <% @questions.each do |quest| %>
+    <li>
+      <a href="/questions/<%= quest.id %>"><%= quest.title %></a>
+      <%= button_to "△", {:controller => :questions,
+                           :action => 'upvote',
+                           :question_id => quest.id },
+                          {:method => :patch, :class => 'upvote'} %>
+
+      <%= button_to "▽", {:controller => :questions,
+                           :action => 'downvote',
+                           :question_id => quest.id },
+                          {:method => :patch, :class => 'downvote'} %>
+      <p>Votes: <%= quest.vote_counter %></p>
+    </li>
+    <%= quest.content %>
+    <% end %>
+  </ul>
+  <%= render template: "questions/_new_question" %>
 </div>
 
 <script id="question-display" type="text/x-handlebars-template">
-<li> <a href="/questions/{{id}}"> {{ title }}</a>
-
-<form method="post" action="/questions/{{id}}/upvote">
-<div>
-  <input type="hidden" name="_method" value="patch">
-  <button class="upvote" type="submit">△</button>
-</div>
-</form>
-
-<form method="post" action="/questions/{{id}}/downvote">
-<div>
-  <input type="hidden" name="_method" value="patch">
-  <button class="downvote" type="submit">▽</button>
-</div>
-</form>
-
-  <p>  {{ vote_counter }} </p>
-</li>
-  <p> {{ content }}</p>
+  <li>
+    <a href="/questions/{{id}}">{{ title }}</a>
+    <form method="post" action="/questions/{{id}}/upvote">
+      <div>
+        <input type="hidden" name="_method" value="patch">
+        <button class="upvote" type="submit">△</button>
+      </div>
+    </form>
+    <form method="post" action="/questions/{{id}}/downvote">
+      <div>
+        <input type="hidden" name="_method" value="patch">
+        <button class="downvote" type="submit">▽</button>
+      </div>
+    </form>
+    <p>Votes: {{ vote_counter }}</p>
+  </li>
+  <p>{{ content }}</p>
 </script>
