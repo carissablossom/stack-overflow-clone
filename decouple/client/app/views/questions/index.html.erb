@@ -1,31 +1,58 @@
-<div class="response">
-  <%=@response%>
-  <h1>Questions</h1><br>
-  <% @question.each do |question| %>
-  <div id="<% question.id%>">
-    <h2><%= link_to "#{question.title}", question_path(question), method: :get %><br></h2>
-    <div class="vote_count_<%=question.id%>">
-      <p class="vote_count_<%=question.id%>"><%=question.vote_count%></p>
-  </div><br>
+<section class="hero">
 
-  <%= button_to 'Delete', {action: "destroy", controller: 'questions', id: question.id}, method: :delete %>
+  <div class="row">
 
-  <div class="upvote">
-    <%= button_to 'upvote', upvote_question_path(question), method: :put %>
-  </div>
+    <div class="large-6 large-push-2 columns">
 
-  <div class="downvote">
-    <%= button_to 'downvote', downvote_question_path(question), method: :put %>
-  </div>
+      <div class="circle-bg quote-1">
 
-  <div class="edit">
-    <%= link_to 'Edit', edit_question_path(question), method: :get%>
-  </div><br>
+        <p><%=@response%></p>
 
+      </div>
+
+    </div>
 
   </div>
-    <%end%>
+
+</section>
+
+
+
+<div class="row text-center">
+
+  <div class="small-12 columns">
+
+    <div id="logo">
+      <%= image_tag "pencil_logo.png" %>
+    </div>
+    <br>
+    <div id="question-area">
+      <% @question.each do |question| %>
+
+        <h2><%= link_to "#{question.title}", question_path(question), method: :get %><br></h2>
+        <div class="vote_count_<%=question.id%>">
+          <p class="vote_count_<%=question.id%>"><%=question.vote_count%></p>
+        </div><br>
+
+        <%= button_to 'Delete', {action: "destroy", controller: 'questions', id: question.id}, method: :delete %>
+
+        <div class="upvote">
+          <%= button_to 'upvote', upvote_question_path(question), method: :put %>
+        </div>
+
+        <div class="downvote">
+          <%= button_to 'downvote', downvote_question_path(question), method: :put %>
+        </div>
+
+        <div class="edit">
+          <%= link_to 'Edit', edit_question_path(question), method: :get%>
+        </div><br>
+      <%end%>
+    </div>
   </div>
+</div>
+
+
 
 
 

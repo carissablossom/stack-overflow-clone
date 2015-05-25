@@ -1,19 +1,24 @@
-<h1> New Question </h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h3> What Are you Curious about today? </h3>
 
-<%= form_for @question do |this| %>
+    <%= form_for @question do |this| %>
 
-  <p>
-    <%= this.label :title %><br>
-    <%= this.text_field :title %>
-  </p>
+      <p>
+        <%= this.label :title %><br>
+        <%= this.text_field :title %>
+      </p>
 
-  <p>
-    <%= this.label :text %><br>
-    <%= this.text_area :text %><br>
-  </p>
+      <p>
+        <%= this.label :text %><br>
+        <%= this.text_area :text %><br>
+      </p>
 
-  <p>
-    <%= this.submit %>
-  </p>
+      <p>
+        <%= this.submit %>
+      </p>
 
-<%end%>
+    <%end%>
+
+  </div>
+</div>
