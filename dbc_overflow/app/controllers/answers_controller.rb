@@ -1,25 +1,19 @@
 class AnswersController < ApplicationController
-  def new
-    @answer = Answer.new
-  end
 
   def create
-    @answer = Answer.new(answer_params)
-    @answer.question_id = params[:question_id]
+    @answer = Overflow.new.create_answer(params[:question_id], params)
     respond_to do |format|
       if @answer.save
         format.json {render :json => @answer, :status => :created}
+        redirect_to "/questions/#{params[:question_id]}"
       else
-        p "You fucking suck"
+        p "Danger, Will Robinson!"
       end
     end
   end
 
-  def show
-  end
-
   def upvote
-    @answer = Answer.find(params[:answer_id])
+    @answer = Overflow.new.answer_upvote(params[:answer_id], params)
     if @answer.upvote
       respond_to do |format|
         format.json {render :json => @answer, :status => :created}
@@ -28,7 +22,7 @@ class AnswersController < ApplicationController
   end
 
   def downvote
-    @answer = Answer.find(params[:answer_id])
+    @answer = Overflow.new.answer_downvote(params[:answer_id], params)
     if @answer.downvote
       respond_to do |format|
         format.json {render :json => @answer, :status => :created}
@@ -42,7 +36,6 @@ class AnswersController < ApplicationController
           :title,
           :content
           )
-    #params.require(:question_id).permit! #how can allow mutiple params and not do the manual assignment of id on line8
   end
 
 end

@@ -18,9 +18,8 @@ class QuestionsController < ApplicationController
       if @question.save
         format.json {render :json => @question, :status => :created}
       else
-        p "************** we are in the else"
-        # format.html {render action: 'index'}
-        # format.json { render :json => root_path.errors.full_messages, :status => :unprocessable_entity}
+        format.html {render action: 'index'}
+        format.json { render :json => root_path.errors.full_messages, :status => :unprocessable_entity}
       end
     end
   end
@@ -30,7 +29,7 @@ class QuestionsController < ApplicationController
     @question = Question.new(@payload[0])
     @answers = @payload[1]
     @answer = Answer.new
-    # @answer = Overflow.new.create_answer(params)
+    @quote = HTTParty.get("https://api.github.com/zen", {headers: {'Authorization' => KEY, 'User-Agent' => 'bananaboat'}} )
   end
 
   def destroy
@@ -49,23 +48,24 @@ class QuestionsController < ApplicationController
   end
 
   def upvote
-    @question = Question.find(params[:question_id])
+    @question = Overflow.new.question_upvote(params[:question_id], params)
     if @question.upvote
       respond_to do |format|
         format.json {render :json => @question, :status => :created}
       end
+    else
+      format.html {render action: 'index'}
+      format.json { render :json => root_path.errors.full_messages, :status => :unprocessable_entity}
     end
-    #redirect_to root_path  #don't need this for ajax?
   end
 
   def downvote
-    @question = Question.find(params[:question_id])
+    @question = Overflow.new.question_downvote(params[:question_id], params)
     if @question.downvote
       respond_to do |format|
         format.json {render :json => @question, :status => :created}
       end
     end
-    #redirect_to root_path  #don't need this for ajax?
   end
 
   private

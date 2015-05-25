@@ -1,37 +1,31 @@
-<div class="show_markdown">
-  <h2>
-    <div class="show_md_title">
-      <%= @question['title'] %>
-    </div>
-  </h2>
-  <div class="show_md_content">
-
-
-
-    <%= @question['content'] %>
-  </div>
+<iframe class="animation" src="http://clips.animatron.com/f1bda786f612029a4b51c00cb4106096?w=1000&h=450&r=1&autoplay=1" width="1000" height="450" frameborder="0"></iframe>
+  <br>
+  <p class="quote"><%= @quote %> In bed.</p>
+<div class="question">
+  <div class="show_title"><%= @question['title'] %></div>
+  <div class="show_content"><%= @question['content'] %></div>
+  <%= form_for @question, :url => question_path(@question), :html => {:method => :delete} do |f| %>
+  <div class="delete"><%= f.submit "Delete" %></div>
+  <a class="edit" href="/questions/<%=@question['id']%>/edit">Edit Question</a>
+  <% end %>
 </div>
 
-<%= form_for @question, :url => question_path(@question), :html => {:method => :delete} do |f| %>
-<%= f.submit "Delete" %>
-<% end %>
-
-<a href="/questions/<%=@question['id']%>/edit">Edit Question</a>
 
 <div class="answer_div">
-<h2>Answers:</h2>
+<span class="answer_section">Answers:</span>
+<% @answers.sort! { |a,b| b['votes'] <=> a['votes'] } %>
 <% @answers.each do |answer| %>
-  <h4><%= answer['title'] %></h4>
-  <p><%= answer['content'] %></p>
-  votes: <span class="answer_votes"><%= answer['votes'] %></span>
   <%= button_to("△", "/questions/#{answer['question_id']}/answers/#{answer['id']}/upvote", method: "patch", form_class: "a_up") %>
+  <span class="answer_votes"><%= answer['votes'] %></span>
   <%= button_to("▼", "/questions/#{answer['question_id']}/answers/#{answer['id']}/downvote", method: "patch", form_class: "a_down") %>
+  <span class="a_title"><%= answer['title'] %></span>
+  <span class="a_content"><%= answer['content'] %></span>
 <% end %>
 </div>
 
 
-<hr>
-<h3>Post an answer:</h3>
+<span class="ask">Post An Answer:</span>
+<div class="a_form">
 <%= form_for [@question, @answer] do |form| %>
   <p>
     <%= form.label :title %>
@@ -45,14 +39,14 @@
     <%= form.submit %>
   </p>
 <% end %>
+</div>
 
 <script id="answer_block" type="text/x-handlebars-template">
-  <h4>{{ data.title }}</h4>
-  <p>{{ data.content }}</p>
-  votes: {{ data.votes }}
-  <form action = "/questions/{{data.question_id}}/answers/{{data.id}}/upvote" method="patch">
+  <form class="a-up" action = "/questions/{{data.question_id}}/answers/{{data.id}}/upvote" method="patch">
   <input type="submit", value="△"></form>
-  <form_action = "/questions/{{data.question_id}}/answers/{{data.id}}/downvote" method="patch">
+  <span class="answer-votes">{{ data.votes }}</span>
+  <form class="a-down" action = "/questions/{{data.question_id}}/answers/{{data.id}}/downvote" method="patch">
   <input type="submit", value="▼"></form>
+  <span class="a-title">{{ data.title }}</span>
+  <span class="a-content">{{ data.content }}</span>
 </script>
-

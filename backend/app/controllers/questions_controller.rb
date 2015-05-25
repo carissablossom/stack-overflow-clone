@@ -51,9 +51,7 @@ class QuestionsController < ApplicationController
   def downvote
     @question = Question.find(params[:question_id])
     if @question.downvote
-      respond_to do |format|
-        format.json {render :json => @question, :status => :created}
-      end
+      render :json => @question, :status => :created
     else
       render status: 500
     end

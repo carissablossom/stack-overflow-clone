@@ -1,17 +1,15 @@
 $(document).ready(function() {
-  //$(document).on(pageChange(function...something?)))
   $('#new_question').on('submit', function (event) {
     event.preventDefault();
 
     //For HandleBars
     var source = $('#question_block').html();
     var template = Handlebars.compile(source);
-
     var url = $(this).attr('action');
     var data = $(this).serialize();
     var request = $.ajax({
       type: 'post',
-      url: url,
+      url: 'http://127.0.0.1:3001' +url,
       data: data,
       dataType: 'json'
     });
@@ -29,16 +27,14 @@ $(document).ready(function() {
     });
   });
 
-
-
   $('.q_up').on('submit', function(event){
     event.preventDefault();
 
-    var upvotes = $(this).prev();
+    var upvotes = $(this).next();
     var data = $(this).serialize();
     var url = $(this).attr('action');
     var request = $.ajax({
-      url: url,
+      url: 'http://127.0.0.1:3001' +url,
       type: 'post',
       data: data
     });
@@ -47,49 +43,32 @@ $(document).ready(function() {
       upvotes.text(response.votes);
     });
 
-    request.fail(function(response){
-      console.log('failure');
+    request.fail(function(data) {
+      $(this).prepend('<span id="error">You fucked up</span>');
     });
 
   });
 
   $('.q_down').on('submit', function(event){
     event.preventDefault();
-    var downvotes = $(this).prev().prev();
+    var downvotes = $(this).prev();
     var data = $(this).serialize();
     var url = $(this).attr('action');
     console.log(downvotes);
     var request = $.ajax({
-      url: url,
+      url: 'http://127.0.0.1:3001' +url,
       type: 'post',
       data: data
     });
 
     request.done(function(response){
       downvotes.text(response.votes);
-      console.log(downvotes);
     });
 
-    request.fail(function(response){
-      console.log('failure');
+    request.fail(function(data) {
+      $(this).prepend('<span id="error">You fucked up</span>');
     });
 
   });
 
-  // $(document).ready(function() {
-  //   function loop() {
-  //       $('.gopher').css({right:1225, top:50});
-  //       $('.gopher').css('transform','rotate("180 deg")');
-  //       $('.gopher').animate ({
-  //           right: '-=1200',
-  //           top: '+=50',
-  //           right: '-=1200',
-  //           top: '+=50',
-  //           speed: 'fast'
-  //       }, 5000, 'linear', function() {
-  //           loop();
-  //       });
-  //   }
-  //   loop();
-// });
 });
