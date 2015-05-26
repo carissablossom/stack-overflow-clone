@@ -11,12 +11,16 @@ class QuestionsController < ApplicationController
   end
 
   def create
+    @questions = Question.all
     @question = Question.new(strong_params)
     if @question.save
       p "Great! It saved!"
+      redirect_to index
     else
-      p "Shit it didn't save!"
+      p "Shit! It didn't save!"
+      render "index"
     end
+
   end
 
     private
