@@ -1,9 +1,6 @@
 
-
-<a href="/questions/<%= question.id %>"> <%= question.title %></a>
-
-<a href="/questions/<%= question.id %>/edit">edit</a>
-
+<%= link_to question.title, question_path(question) %>
+<%= link_to "edit", edit_question_path(question) %>
 <%= link_to "delete", question, method: :delete %>
 
 

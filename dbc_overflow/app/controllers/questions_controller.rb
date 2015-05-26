@@ -52,7 +52,7 @@ class QuestionsController < ApplicationController
     private
 
     def strong_params
-      params.require(:question).permit(:title, :content)
+      params.require(:question).permit(:title, :content, :id)
     end
 
 end
