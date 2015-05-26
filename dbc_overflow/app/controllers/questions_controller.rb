@@ -20,8 +20,34 @@ class QuestionsController < ApplicationController
       p "Shit! It didn't save!"
       render "index"
     end
-
   end
+
+  def edit
+    @questions = Question.all
+    @question = Question.find(params[:id])
+    render "index"
+  end
+
+  def update
+    @questions = Question.all
+    @question = Question.find(params[:id])
+    @question.update_attributes(strong_params)
+    if @question.save
+      p "Great! It saved!"
+      redirect_to index
+    else
+      p "Shit! It didn't save!"
+      render "index"
+    end
+  end
+
+  def destroy
+    @question = Question.find(params[:id])
+    @question.destroy
+    redirect_to index
+  end
+
+
 
     private
 
