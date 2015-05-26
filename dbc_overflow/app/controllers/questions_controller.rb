@@ -13,12 +13,18 @@ class QuestionsController < ApplicationController
   def create
     @questions = Question.all
     @question = Question.new(strong_params)
-    if @question.save
-      p "Great! It saved!"
-      redirect_to index
-    else
-      p "Shit! It didn't save!"
-      render "index"
+
+    respond_to do |format|
+      if @question.save
+        p "*"*40
+        p "SAVED"
+        format.html { render "questions/_question", locals: {question: @question}, notice: 'User was successfully created.' }
+        format.js   {}
+        format.json { render json: @question, status: :created}
+      else
+        format.html { render action: 'index' }
+        format.json { render json: @question.errors, status: :unprocessable_entity }
+      end
     end
   end
 
