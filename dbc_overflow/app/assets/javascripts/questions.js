@@ -6,6 +6,9 @@ $(document).ready(function(){
     console.log("Making progress")
     data = $(this).serialize()
     url = $(this).attr("action")
+    debugger
+    $("#question_title").val("")
+    $("#question_content").val("")
 
 
     submission = $.ajax({
@@ -23,6 +26,7 @@ $(document).ready(function(){
     submission.done(function(response){
       console.log(response.content)
       $('.question_list').append(template(response))
+      console.log("AJAX happens")
     })
   });
 
