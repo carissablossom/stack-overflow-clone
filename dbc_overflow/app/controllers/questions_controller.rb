@@ -15,18 +15,29 @@ class QuestionsController < ApplicationController
     @question = Question.new(strong_params)
 
     respond_to do |format|
-      if @question.save
-        p "*"*40
-        p "SAVED"
-        format.html { render "questions/_question", locals: {question: @question}, notice: 'User was successfully created.' }
-        format.js   {}
-        format.json { render json: @question, status: :created}
-      else
-        format.html { render action: 'index' }
-        format.json { render json: @question.errors, status: :unprocessable_entity }
-      end
+    if @question.save
+      format.html { redirect_to root_path, notice: 'User was successfully created.' }
+      format.js   {}
+      format.json { render json: @question, status: :created}
+    else
+      format.html { render action: "new" }
+      format.json { render json: @question.errors, status: :unprocessable_entity }
     end
   end
+end
+  #   respond_to do |format|
+  #     if @question.save
+  #       p "*"*40
+  #       p "SAVED"
+  #       format.html { render "questions/_question", locals: {question: @question}, notice: 'User was successfully created.' }
+  #       format.js   {}
+  #       format.json { render json: @question, status: :created}
+  #     else
+  #       format.html { render action: 'index' }
+  #       format.json { render json: @question.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   def edit
     @questions = Question.all

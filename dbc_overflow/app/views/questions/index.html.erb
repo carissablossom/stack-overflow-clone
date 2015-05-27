@@ -23,4 +23,14 @@
     <%= render @questions %>
   </div>
 
+
+  <script id="entry-template" type="text/x-handlebars-template">
+
+    <a href="/questions/{{id}}">{{title}}</a>
+    <a href="/questions/{{id}}/edit">edit</a>
+    <a rel="nofollow" data-method="delete" href="/questions/{{id}}">delete</a>
+    <br><br>
+
+  </script>
+
 </div>
