@@ -1,4 +1,4 @@
-# Release 7: Make it Beautiful
+# Release 6: Make it Beautiful
 
 ### Learning Competencies
 
