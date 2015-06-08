@@ -4,7 +4,7 @@
 
 - Understand how to implement third-party JS and CSS libs in Rails
 - Understanding how to utilize Rails' asset pipeline
-- Use a CSS framework to design a flexible, reliable UI
+- Use a CSS framework to design a responsive, reliable UI
 
 ### Summary
 
