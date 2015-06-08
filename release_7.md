@@ -1,4 +1,4 @@
-# Release 8: Make it Robust
+# Release 7: Make it Robust
 
 ### Learning Competencies
 
