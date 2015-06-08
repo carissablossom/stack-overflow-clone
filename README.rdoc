@@ -1,0 +1,38 @@
+== README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+------
+
+Intention of this project is to create a clone of Stack Overflow using Rails.
+
+-Create a valid readme with your project's intention.
+-Create your question and answer models. A question and an answer should have a title and a content.
+-Create a question index page that lists all questions.
+-Create a question show page that lists the question and all associated answers.
+-Modify your routes so your question index page is the root route.
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.
