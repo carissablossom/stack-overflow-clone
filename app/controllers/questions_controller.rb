@@ -18,6 +18,8 @@ class QuestionsController < ApplicationController
 
   def show
     question_find
+    @answer = Answer.new
+    @answers = Answer.all
   end
 
   def edit
@@ -42,6 +44,7 @@ class QuestionsController < ApplicationController
   end
 
   private
+
   def question_params
     params.require(:question).permit(:title, :content)
   end

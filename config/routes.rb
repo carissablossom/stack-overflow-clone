@@ -1,7 +1,9 @@
+# @copyright Majd Inc.
+
 Rails.application.routes.draw do
 
   resources :questions do
-    resources :answers
+    resources :answers, only: [:create, :edit, :update, :destroy]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

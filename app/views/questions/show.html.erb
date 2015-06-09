@@ -11,28 +11,34 @@
   <%= @question.content %>
 </p>
 
-<%= form_for :answer do |f| %>
+<%= form_for @answer, url: question_answers_path(@question) do |f| %>
   <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
-
-  <p>
-    <%= f.label :content %><br>
+    <%= f.label 'Answer the Question:' %><br>
     <%= f.text_area :content %>
   </p>
 
   <p>
-    <%= f.submit %>
+    <%= f.submit "Add Answer" %>
   </p>
 <% end %>
+
+<table>
+  <% @answers.each do |answer| %>
+    <tr>
+      <td><%= answer.content %></td>
+      <td><%= link_to 'Edit', edit_question_answer_path(@question, answer) %></td>
+      <td><%= link_to 'Delete', question_answer_path(@question, answer),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
 
 <br><%= link_to 'Edit Question', edit_question_path %>
 
 <%= form_for :question, :html => {:method => :delete} do |f| %>
   <p>
     <%= f.label "Delete Question?" %>
-    <%= f.check_box :_destroy %>
     <%= submit_tag "Delete" %>
   </p>
 <% end %>
