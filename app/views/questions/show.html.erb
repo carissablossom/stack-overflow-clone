@@ -1,0 +1,32 @@
+<div>
+  <h1><%= @question.title %></h1>
+    <p><%= @question.content %></p>
+  <%= link_to 'Destroy', question_path(@question), method: :delete %>
+</div>
+
+  <p>Answers</p>
+
+  <% @answers.each do |answer| %>
+    <p><%= answer.title %></p>
+    <p><%= answer.content %></p>
+  <% end %>
+
+  <div>
+    <h1>Submit a new Answer</h1>
+      <%= form_for :answer do |f| %>
+      <p>
+        <%= f.label :title %><br>
+        <%= f.text_field :title %>
+      </p>
+
+      <p>
+        <%= f.label :content %><br>
+        <%= f.text_area :content %>
+      </p>
+
+      <p>
+        <%= f.submit %>
+      </p>
+      <% end %>
+  </div>
+
