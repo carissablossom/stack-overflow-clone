@@ -16,21 +16,19 @@ questions = Question.create([
   { title: 'What is the best programming language to start learning?', 
     content: 'I want to start programming, but I do not know the best language to learn' },
   { title: 'How do you create an index file in rails?', 
-    content: '' },
+    content: 'I want to create a front page for my rails application, how to?' },
   { title: 'What are the steps for setting up rails?', 
-    content: '' },
+    content: 'I want to create a new rails application... but I do not know how' },
   { title: 'Why Rails?', 
-    content: '' },
+    content: 'I have heard a lot about rails, but why should I use it?' },
   { title: 'How can I further break Jacob\'s toe?', 
-    content: '' },
+    content: 'I want to break my firend\'s already broken toe' },
   { title: 'Is it Action Hank or Hector?', 
-    content: '' },
+    content: 'I have a friend that looks like a Hector, but he is also really actionable... what should I call him?' },
   { title: 'What is the best cohort ever?', 
-    content: '' },
+    content: 'I want to figure out what the best cohort is and why!' },
   { title: 'Why are we still getting sandwiches from Specialties?', 
-    content: '' }])
+    content: 'We get these sandwiches every third monday and I want to know why we get them from where we get them.. cause they be gross doe.' }])
 
-1.'It is properly pronounced "conque", sorry Jacob.'
-2.'Nobody knows.' 
-3.'45% of people have been struck by lightening!'
+
 
