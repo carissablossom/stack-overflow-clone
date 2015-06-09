@@ -1,0 +1,10 @@
+<h1> Jerome is awesome ... lol jk </h1>
+<h2> Here's all of his questions: </h2>
+<ul id="question_list">
+  <% @questions.each do |question| %>
+    <li>
+      <div> <%=question.title%> </div>
+      <div> <%=question.content%> </div>
+    </li>
+  <% end %>
+</ul>
