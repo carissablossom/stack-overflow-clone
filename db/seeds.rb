@@ -11,4 +11,4 @@
 
 # Question.create([{ title: 'I dunno anything', content: 'Help me do something. anything. please.' }])
 
-Answer.create([{ title: 'Dude you gotta do this', content: 'Here is how you do the thing you didn not know how to do.', question_id: 5 }])
+Answer.create([{ title: 'Dude you gotta do this', content: 'Here is how you do the thing you didn not know how to do.', que}stion_id: 5 ])

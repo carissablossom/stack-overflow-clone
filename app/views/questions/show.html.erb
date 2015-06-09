@@ -1,16 +1,32 @@
-<h1>Questions#show</h1>
-<p>Find me in app/views/questions/show.html.erb</p>
-
 <h1>Question:</h1>
 
-<h2><%= @question.title %></h2>
+<h3><%= @question.title %></h3>
 <%= @question.content %>
 
 <h1>Answers:</h1>
 
 <% @answers.each do |answer| %>
-  <h2><%= answer.title %></h2>
+  <h3><%= answer.title %></h3>
   <%= answer.content %>
 <% end %>
+
+<h1>Answer this Question.</h1>
+<%= form_for :answer, url: answers_path do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Destroy', question_path, method: :delete, data: {confirm: 'Are you certain?'} %>
 
 
