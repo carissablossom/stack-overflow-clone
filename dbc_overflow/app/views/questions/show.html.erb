@@ -1,3 +1,16 @@
-<%=@question.id%>
-<%=@question.title%>
-<%=@question.content%>
+Question attributes and answers
+<br>
+Id: <%=@question.id%>
+<br>
+Title: <%=@question.title%>
+<br>
+Content: <%=@question.content%>
+<br>
+<br>
+Answers:
+<ul>
+<% @answers.each do |answer| %>
+  <li>
+    <%= answer.title %> <br> <%= answer.content %>
+  </li>
+<% end %>

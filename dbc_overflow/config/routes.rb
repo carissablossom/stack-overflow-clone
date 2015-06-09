@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   resources :questions
   resources :answers
 
+  #get '/' => 'questions#index'
+  root 'questions#index'
+
   # Example resource route with options:
   #   resources :products do
   #     member do
