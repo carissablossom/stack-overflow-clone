@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  include QuestionsHelper
+  before_action :set_question, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
   def index
     @questions = Question.all
@@ -12,23 +12,22 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
 
-    @question.save
-    redirect_to @question
+    if @question.save
+      redirect_to @question
+    else
+      render 'new'
+    end
   end
 
   def show
-    question_find
     @answer = Answer.new
     @answers = @question.answers
   end
 
   def edit
-    question_find
   end
 
   def update
-    question_find
-
     if @question.update(question_params)
       redirect_to @question
     else
@@ -37,13 +36,27 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    question_find
     @question.destroy
-
     redirect_to questions_path
   end
 
+  def upvote
+    @question.votes += 1
+    @question.save
+    redirect_to question_path
+  end
+
+  def downvote
+    @question.votes -= 1
+    @question.save
+    redirect_to question_path
+  end
+
   private
+
+  def set_question
+    @question = Question.find(params[:id])
+  end
 
   def question_params
     params.require(:question).permit(:title, :content)

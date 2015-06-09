@@ -1,6 +1,5 @@
 class AnswersController < ApplicationController
-  include AnswerHelper
-
+  before_action :set_answer, only: [:edit, :update, :destroy, :upvote, :downvote]
   def create
     @answer = Answer.new(answer_params)
     @answer.question = Question.find(params[:question_id])
@@ -10,11 +9,9 @@ class AnswersController < ApplicationController
   end
 
   def edit
-    answer_find
   end
 
   def update
-    answer_find
     @answer.update(answer_params)
     if @answer.save
       redirect_to Question.find(params[:question_id])
@@ -24,13 +21,28 @@ class AnswersController < ApplicationController
   end
 
   def destroy
-    answer_find
     @answer.destroy
+    redirect_to question_path(@answer.question)
+  end
 
+  def upvote
+    @answer.votes += 1
+    @answer.save
+    redirect_to question_path(@answer.question)
+  end
+
+  def downvote
+    @answer.votes -= 1
+    @answer.save
     redirect_to question_path(@answer.question)
   end
 
   private
+
+  def set_answer
+    @answer = Answer.find(params[:id])
+  end
+
   def answer_params
     params.require(:answer).permit(:content)
   end

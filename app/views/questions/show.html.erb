@@ -1,5 +1,4 @@
-<h1>Questions#show</h1>
-<p>Find me in app/views/questions/show.html.erb</p>
+<h1>Question</h1>
 
 <p>
   <strong>Title:</strong>
@@ -9,6 +8,13 @@
 <p>
   <strong>Content:</strong>
   <%= @question.content %>
+</p>
+
+<p>
+  <strong>Votes:</strong>
+  <%= @question.votes %><br>
+  <%= link_to '+1', upvote_question_path(@question), method: :post %><br>
+  <%= link_to '-1', downvote_question_path(@question), method: :post %>
 </p>
 
 <%= form_for @answer, url: question_answers_path(@question) do |f| %>
@@ -23,13 +29,16 @@
 <% end %>
 
 <table>
-  <% @answers.each do |answer| %>
+  <% @answers.order(votes: :desc).each do |answer| %>
     <tr>
       <td><%= answer.content %></td>
       <td><%= link_to 'Edit', edit_question_answer_path(@question, answer) %></td>
       <td><%= link_to 'Delete', question_answer_path(@question, answer),
                 method: :delete,
                 data: { confirm: 'Are you sure?' } %></td>
+      <td>Votes: <%= answer.votes %></td>
+      <td> <%= link_to '+1', upvote_question_answer_path(@question, answer), method: :post %><br></td>
+      <td><%= link_to '-1', downvote_question_answer_path(@question, answer), method: :post %></td>
     </tr>
   <% end %>
 </table>
