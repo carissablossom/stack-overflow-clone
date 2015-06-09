@@ -36,11 +36,10 @@
 
 <br><%= link_to 'Edit Question', edit_question_path %>
 
-<%= form_for :question, :html => {:method => :delete} do |f| %>
-  <p>
-    <%= f.label "Delete Question?" %>
-    <%= submit_tag "Delete" %>
-  </p>
-<% end %>
+<p>
+  <%= link_to 'Delete Question', question_path(@question),
+      method: :delete,
+      data: { confirm: 'Are you sure?' } %>
+</p>
 
 <%= link_to 'Back', questions_path %>

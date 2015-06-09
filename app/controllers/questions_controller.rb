@@ -19,7 +19,7 @@ class QuestionsController < ApplicationController
   def show
     question_find
     @answer = Answer.new
-    @answers = Answer.all
+    @answers = @question.answers
   end
 
   def edit
