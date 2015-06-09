@@ -6,6 +6,7 @@ class QuestionsController < ApplicationController
   end
 
   def new
+    @question = Question.new
   end
 
   def create
@@ -37,7 +38,7 @@ class QuestionsController < ApplicationController
     question_find
     @question.destroy
 
-    redirect_to question_path
+    redirect_to questions_path
   end
 
   private
