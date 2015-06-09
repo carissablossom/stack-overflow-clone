@@ -13,8 +13,8 @@
 <p>
   <strong>Votes:</strong>
   <%= @question.votes %><br>
-  <%= link_to '+1', upvote_question_path(@question), method: :post %><br>
-  <%= link_to '-1', downvote_question_path(@question), method: :post %>
+  <%= button_to '+1', upvote_question_path(@question), method: :post %><br>
+  <%= button_to '-1', downvote_question_path(@question), method: :post %>
 </p>
 
 <%= form_for @answer, url: question_answers_path(@question) do |f| %>

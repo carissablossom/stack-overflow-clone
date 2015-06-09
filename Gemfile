@@ -27,6 +27,9 @@ gem 'rspec-rails'
 gem 'factory_girl'
 gem 'shoulda-matchers'
 gem 'capybara'
+
+gem 'httparty', '~> 0.13.5'
+gem 'dotenv-rails', require: 'dotenv/rails-now'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

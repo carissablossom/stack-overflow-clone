@@ -6,6 +6,7 @@
   <tr>
     <th>Title</th>
     <th>Content</th>
+    <th>Answers</th>
     <th>Votes</th>
   </tr>
 
@@ -13,6 +14,7 @@
     <tr>
       <td><%= question.title %></td>
       <td><%= question.content %></td>
+      <td><%= question.answers.count %></td>
       <td><%= question.votes %></td>
       <td><%= link_to 'Show', question_path(question) %></td>
       <td><%= link_to 'Edit', edit_question_path(question) %></td>
@@ -22,3 +24,7 @@
     </tr>
   <% end %>
 </table>
+
+<h3>Quote of the Day</h3>
+
+<p><%= @quote %></p>
