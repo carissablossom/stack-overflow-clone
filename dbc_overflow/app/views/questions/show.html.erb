@@ -1,0 +1,12 @@
+<h1>Question</h1>
+
+<div id="question-page">
+  <%= @question.title %><br>
+  <%= @question.content %><br>
+  <% @answers.each do |answer| %>
+    <div class="answer">
+        <%= answer.title %><br>
+        <%= answer.content %><br>
+    </div>
+  <% end %>
+</div>
