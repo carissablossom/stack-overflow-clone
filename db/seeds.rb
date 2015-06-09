@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+Question.create([{ title: 'How do I do the thing', content: 'I cannot do the thing please help me learn to do the thing' }])
+
+Question.create([{ title: 'I dunno anything', content: 'Help me do something. anything. please.' }])
+
+
