@@ -7,8 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-Question.create([{ title: 'How do I do the thing', content: 'I cannot do the thing please help me learn to do the thing' }])
+# Question.create([{ title: 'How do I do the thing', content: 'I cannot do the thing please help me learn to do the thing' }])
 
-Question.create([{ title: 'I dunno anything', content: 'Help me do something. anything. please.' }])
+# Question.create([{ title: 'I dunno anything', content: 'Help me do something. anything. please.' }])
 
-
+Answer.create([{ title: 'Dude you gotta do this', content: 'Here is how you do the thing you didn not know how to do.', question_id: 5 }])
