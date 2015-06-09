@@ -11,8 +11,7 @@
 <% end %>
 
 <h1>Answer this Question.</h1>
-<%= form_for :answer, url: answers_path do |f| %>
-  <p>
+<%= form_for([@question, @question.answers.build]) do |f| %>  <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </p>
