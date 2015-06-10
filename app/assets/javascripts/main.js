@@ -1,8 +1,9 @@
 $(document).on('page:change',function() {
   console.log('READY')
+
   $('form').on('click', '.add_answer', function(e){
     e.preventDefault();
-    var form = $('form.new_answer')
+    var form = $('form.new_answer');
     $.ajax({
       url: form.attr('action'),
       type: form.attr('method'),
@@ -10,11 +11,11 @@ $(document).on('page:change',function() {
       dataType: 'json'
     })
     .done(function(response){
-
-      // Broke this on purpose, returns JSON instead of partial now. Handlebars?
-      console.log(response.content)
-      // $('#answer_content').val('');
-      // $('.answer_container').append(response);
+      console.log(response);
+      var test = $('#answer_template').html();
+      var template = Handlebars.compile(test);
+      $('#answer_content').val('');
+      $('.answer_container').append(template(response));
     })
     .fail(function(response){
       alert('Fail');
@@ -22,22 +23,12 @@ $(document).on('page:change',function() {
   })
 
   $('.new_question').on('click', '.new_question_link', function(e){
-    e.preventDefault();
-    $.ajax({
-      url: $(this).attr('href'),
-      type: 'GET'
-    })
-    .done(function(response){
-      $('.new_question').append(response);
-      $('.new_question_link').hide();
-    })
-    .fail(function(){
-      alert('Fail');
-    })
+    $('.hidden').css('display', 'block');
+    $('.new_question_link').hide();
   })
 
   $('.new_question').on('click', '.submit_question', function(e){
-    e.preventDefault()
+    e.preventDefault();
 
     var form = $(this).parent().parent();
     $.ajax({
@@ -47,7 +38,9 @@ $(document).on('page:change',function() {
     })
     .done(function(response){
       $('.list_questions').append(response);
-      form.remove();
+      $('.hidden').css('display','none');
+      $('#question_title').val('');
+      $('#question_content').val('');
       $('.new_question_link').show();
     })
     .fail(function(response){
@@ -67,7 +60,6 @@ $(document).on('page:change',function() {
     .done(function(response){
       $(_this).parent().parent().siblings('.votes').html("Votes: " + response)
       // $(_this).parent().prev().html("Votes: " + response)
-      console.log(response)
     })
     .fail(function(response){
       alert('Fail');
@@ -91,3 +83,4 @@ $(document).on('page:change',function() {
   })
 
 })
+

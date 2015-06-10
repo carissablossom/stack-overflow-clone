@@ -22,12 +22,13 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-
+gem 'handlebars_assets', '~> 0.4.4'
 gem 'rspec-rails'
 gem 'factory_girl'
 gem 'shoulda-matchers'
 gem 'capybara'
 
+gem 'sprockets'
 gem 'httparty', '~> 0.13.5'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
 # Use ActiveModel has_secure_password

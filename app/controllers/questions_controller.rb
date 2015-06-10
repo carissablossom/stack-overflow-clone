@@ -4,6 +4,7 @@ class QuestionsController < ApplicationController
   def index
     @questions = Question.all
     @quote = Quote.fetch
+    @question = Question.new
   end
 
   def new

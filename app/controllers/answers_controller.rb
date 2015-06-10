@@ -8,7 +8,7 @@ class AnswersController < ApplicationController
     respond_to do |format|
       if @answer.save
         format.html { render "questions/_answer", locals: {answer: @answer}, layout: false }
-        format.json {render json: @answer}
+        format.json {render json: {content: @answer.content, answer_id: @answer.id, question_id: @question.id}}
       else
         redirect_to @question
       end

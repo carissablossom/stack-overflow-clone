@@ -28,7 +28,7 @@
 
 <table class="answer_container">
   <% @answers.order(votes: :desc).each do |answer| %>
-    <%= render 'answer', answer: answer %>
+    <%= render partial: 'answer', locals: {answer: answer} %>
   <% end %>
 </table>
 
@@ -41,3 +41,27 @@
 </p>
 
 <%= link_to 'Back', questions_path %>
+
+<script id="answer_template" type="text/x-handlebars-template">
+  <tr>
+    <td colspan="5">{{content}}</td>
+  </tr>
+  <td>
+    <a href="/questions/{{question_id}}/answers/{{answer_id}}/edit">Edit</a>
+  </td>
+  <td>
+    <a href="/questions/{{question_id}}/answers/{{answer_id}}" data-method="delete">Delete</a>
+  </td>
+  <td class="votes">Votes: 0</td>
+  <td>
+    <form class="button_to" method="post" action="/questions/{{question_id}}/answers/{{answer_id}}/upvote"><input class="vote_answers" type="submit" value="+1"><input type="hidden" name="authenticity_token" value="iovtSYWW4p1BIN3jgSikauFUYqqCZE9xjVXf6hzm8sc8jlPLzWBm2BIPFXTK7zy0Mkj+l6HcFpRjZ9mIs01C3w==">
+    </form>
+  </td>
+  <td>
+    <form class="button_to" method="post" action="/questions/{{question_id}}/answers/{{answer_id}}/downvote"><input class="vote_answers" type="submit" value="-1"><input type="hidden" name="authenticity_token" value="iovtSYWW4p1BIN3jgSikauFUYqqCZE9xjVXf6hzm8sc8jlPLzWBm2BIPFXTK7zy0Mkj+l6HcFpRjZ9mIs01C3w==">
+    </form>
+  </td>
+</tr>
+</script>
+
+
