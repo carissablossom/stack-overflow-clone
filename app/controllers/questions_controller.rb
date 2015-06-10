@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  include QuestionsHelper
+  before_action :find_question, only: [:show, :edit, :update]
 
   def index
     @questions = Question.all
@@ -14,16 +14,15 @@ class QuestionsController < ApplicationController
 
     @question.save
     redirect_to @question
+    #redirect_to question_path
   end
 
   def show
-    question_find
     @answer = Answer.new
     @answers = @question.answers
   end
 
   def edit
-    question_find
   end
 
   def update
@@ -37,13 +36,14 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    question_find
     @question.destroy
-
     redirect_to questions_path
   end
 
   private
+  def find_question
+    @question = Question.find(params[:id])
+  end
 
   def question_params
     params.require(:question).permit(:title, :content)

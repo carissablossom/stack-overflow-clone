@@ -1,0 +1,1793 @@
+  [1m[36m (0.7ms)[0m  [1mCREATE DATABASE "dbc_overflow_development" ENCODING = 'unicode'[0m
+PG::DuplicateDatabase: ERROR:  database "dbc_overflow_development" already exists
+: CREATE DATABASE "dbc_overflow_development" ENCODING = 'unicode'
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateQuestions (20150608224217)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (3.2ms)[0m  [1mCREATE TABLE "questions" ("id" serial primary key, "title" character varying, "content" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+PG::DuplicateTable: ERROR:  relation "questions" already exists
+: CREATE TABLE "questions" ("id" serial primary key, "title" character varying, "content" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[35m (0.1ms)[0m  ROLLBACK
+
+
+Started GET "/" for ::1 at 2015-06-09 17:35:45 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.1) lib/active_record/migration.rb:393:in `check_pending!'
+  activerecord (4.2.1) lib/active_record/migration.rb:374:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.1ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (19.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (44.9ms)
+  [1m[36m (0.6ms)[0m  [1mCREATE DATABASE "dbc_overflow_development" ENCODING = 'unicode'[0m
+PG::DuplicateDatabase: ERROR:  database "dbc_overflow_development" already exists
+: CREATE DATABASE "dbc_overflow_development" ENCODING = 'unicode'
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateQuestions (20150608224217)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (18.6ms)[0m  [1mCREATE TABLE "questions" ("id" serial primary key, "title" character varying, "content" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+PG::DuplicateTable: ERROR:  relation "questions" already exists
+: CREATE TABLE "questions" ("id" serial primary key, "title" character varying, "content" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (116.0ms)[0m  [1mDROP DATABASE IF EXISTS "dbc_overflow_development"[0m
+  [1m[36m (328.6ms)[0m  [1mCREATE DATABASE "dbc_overflow_development" ENCODING = 'unicode'[0m
+  [1m[36m (3.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.3ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateQuestions (20150608224217)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (3.6ms)[0m  [1mCREATE TABLE "questions" ("id" serial primary key, "title" character varying, "content" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150608224217"]]
+  [1m[36m (16.0ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAnswers (20150608224243)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (3.7ms)[0m  [1mCREATE TABLE "answers" ("id" serial primary key, "title" character varying, "content" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150608224243"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to RemoveTitleFromAnswer (20150609015350)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "answers" DROP "title"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150609015350"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to AddQuestionIdToAnswer (20150609015441)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "answers" ADD "question_id" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150609015441"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'answers'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'questions'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/" for ::1 at 2015-06-09 18:09:09 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.5ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 2138ms (Views: 2122.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 18:09:12 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-09 18:09:12 -0700
+
+
+Started GET "/assets/answer.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 18:09:12 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-09 18:09:12 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-09 18:09:12 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-09 18:09:12 -0700
+
+
+Started GET "/assets/answer.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 18:09:12 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 18:09:12 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-09 18:09:12 -0700
+
+
+Started GET "/questions/new" for ::1 at 2015-06-09 18:09:22 -0700
+Processing by QuestionsController#new as HTML
+  Rendered questions/_form.html.erb (110.2ms)
+  Rendered questions/new.html.erb within layouts/application (114.2ms)
+Completed 200 OK in 151ms (Views: 143.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/questions" for ::1 at 2015-06-09 18:10:37 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 97ms (Views: 95.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/questions" for ::1 at 2015-06-09 18:15:21 -0700
+Processing by QuestionsController#index as HTML
+  Rendered questions/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 33ms (Views: 32.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/answer.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 18:15:21 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 18:15:21 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-09 18:15:21 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-09 18:15:21 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-09 18:15:21 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-09 18:15:21 -0700
+
+
+Started GET "/assets/answer.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 18:15:21 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 18:15:21 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-09 18:15:21 -0700
+
+
+Started GET "/questions" for ::1 at 2015-06-09 19:00:45 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 95ms (Views: 94.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/answer.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 19:00:46 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 19:00:46 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-09 19:00:46 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-09 19:00:46 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-09 19:00:46 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-09 19:00:46 -0700
+
+
+Started GET "/assets/answer.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 19:00:46 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 19:00:46 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-09 19:00:46 -0700
+
+
+Started GET "/questions" for ::1 at 2015-06-09 19:05:10 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 35ms (Views: 33.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/answer.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 19:05:10 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-09 19:05:10 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-09 19:05:10 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 19:05:10 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-09 19:05:10 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-09 19:05:10 -0700
+
+
+Started GET "/assets/answer.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 19:05:10 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 19:05:10 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-09 19:05:10 -0700
+
+
+Started GET "/questions/new" for ::1 at 2015-06-09 19:05:12 -0700
+Processing by QuestionsController#new as HTML
+  Rendered questions/_form.html.erb (1.8ms)
+  Rendered questions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 33ms (Views: 31.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/questions/new" for ::1 at 2015-06-09 19:08:41 -0700
+Processing by QuestionsController#new as HTML
+  Rendered questions/_form.html.erb (2.5ms)
+  Rendered questions/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 35ms (Views: 34.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/answer.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 19:08:41 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-09 19:08:41 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-09 19:08:41 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-09 19:08:41 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 19:08:41 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-09 19:08:41 -0700
+
+
+Started GET "/assets/answer.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 19:08:41 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 19:08:41 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-09 19:08:41 -0700
+
+
+Started GET "/questions" for ::1 at 2015-06-09 19:08:45 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 36ms (Views: 34.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questions" for ::1 at 2015-06-09 19:08:46 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 30ms (Views: 29.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/answer.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 19:08:46 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-09 19:08:46 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-09 19:08:46 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 19:08:46 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-09 19:08:46 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-09 19:08:46 -0700
+
+
+Started GET "/assets/answer.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 19:08:46 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 19:08:46 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-09 19:08:46 -0700
+
+
+Started GET "/questions/new" for ::1 at 2015-06-09 19:08:47 -0700
+Processing by QuestionsController#new as HTML
+  Rendered questions/_form.html.erb (1.7ms)
+  Rendered questions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 100ms (Views: 98.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/questions" for ::1 at 2015-06-09 19:09:00 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 31ms (Views: 30.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/answer.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 19:09:00 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-09 19:09:00 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-09 19:09:00 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-09 19:09:00 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 19:09:00 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-09 19:09:00 -0700
+
+
+Started GET "/assets/answer.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 19:09:00 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 19:09:00 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-09 19:09:00 -0700
+
+
+Started GET "/questions/new" for ::1 at 2015-06-09 19:09:01 -0700
+Processing by QuestionsController#new as HTML
+  Rendered questions/new.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Missing partial questions/_form, application/_form with {:locale=>[:en], :formats=>[:html, :xml], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/apprentice/Desktop/example_work/stack-overflow-workshop-challenge/app/views"
+):
+    1: <h1>New Question</h1>
+    2: 
+    3: <%= render 'form', question: @question %>
+  app/views/questions/new.html.erb:3:in `_app_views_questions_new_html_erb__2179069242653064674_70131496006420'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (25.1ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (22.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (46.9ms)
+
+
+Started GET "/questions/new" for ::1 at 2015-06-09 19:09:02 -0700
+Processing by QuestionsController#new as HTML
+  Rendered questions/new.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Missing partial questions/_form, application/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/apprentice/Desktop/example_work/stack-overflow-workshop-challenge/app/views"
+):
+    1: <h1>New Question</h1>
+    2: 
+    3: <%= render 'form', question: @question %>
+  app/views/questions/new.html.erb:3:in `_app_views_questions_new_html_erb__2179069242653064674_70131503547380'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (27.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (14.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (33.1ms)
+
+
+Started GET "/questions/new" for ::1 at 2015-06-09 19:33:14 -0700
+Processing by QuestionsController#new as HTML
+  Rendered questions/_form.html.erb (2.6ms)
+  Rendered questions/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 58ms (Views: 49.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 19:33:15 -0700
+
+
+Started GET "/assets/answer.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 19:33:15 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-09 19:33:15 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-09 19:33:15 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-09 19:33:15 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-09 19:33:15 -0700
+
+
+Started GET "/assets/answer.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 19:33:15 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 19:33:15 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-09 19:33:15 -0700
+
+
+Started POST "/questions" for ::1 at 2015-06-09 19:33:26 -0700
+Processing by QuestionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GAcLQDE+NSFzn/JhqOPv7B0UV7HA2wReTR+Jf22pPHDUDa9QPLNqD83P90lStygQtY7uEDrp8IjRFLuaQ6MX3g==", "question"=>{"title"=>"Why do I bother", "content"=>"just curious\r\n"}, "commit"=>"Create Question"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "questions" ("title", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Why do I bother"], ["content", "just curious\r\n"], ["created_at", "2015-06-10 02:33:26.939345"], ["updated_at", "2015-06-10 02:33:26.939345"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/1
+Completed 302 Found in 8ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/questions/1" for ::1 at 2015-06-09 19:33:26 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered questions/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 135ms (Views: 99.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/questions/new" for ::1 at 2015-06-09 19:35:46 -0700
+Processing by QuestionsController#new as HTML
+  Rendered questions/_form.html.erb (10.7ms)
+  Rendered questions/new.html.erb within layouts/application (11.8ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 2.5ms)
+
+ActionView::Template::Error (undefined method `answers_path' for #<#<Class:0x007f9186b3e9e8>:0x007f9186b3dde0>):
+    1: <%= form_for question do |f| %>
+    2: 
+    3:   <% if question.errors.any? %>
+    4:     <div id="error_explanation">
+  app/views/questions/_form.html.erb:1:in `_app_views_questions__form_html_erb__1756613215685303028_70131495818920'
+  app/views/questions/new.html.erb:3:in `_app_views_questions_new_html_erb__2179069242653064674_70131503457340'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (67.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (90.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (19.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (46.3ms)
+
+
+Started GET "/questions/new" for ::1 at 2015-06-09 19:36:56 -0700
+Processing by QuestionsController#new as HTML
+  Rendered questions/_form.html.erb (2.1ms)
+  Rendered questions/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 41ms (Views: 30.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/answer.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 19:36:56 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-09 19:36:56 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 19:36:56 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-09 19:36:56 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-09 19:36:56 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-09 19:36:56 -0700
+
+
+Started GET "/assets/answer.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 19:36:56 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 19:36:56 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-09 19:36:56 -0700
+
+
+Started GET "/questions" for ::1 at 2015-06-09 19:37:01 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (13.0ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined local variable or method `question' for #<#<Class:0x007f9185cfe428>:0x007f9186df0498>):
+    2: <%= link_to 'New question', new_question_path %>
+    3: <ul>
+    4: <% @questions.each do |questions| %>
+    5: <li> <div><%= question.title %></div> <div><%= question.content %></div> <br> <% link_to 'Show more', questions_path %></li>
+    6: <% end %>
+    7: </ul>
+  app/views/questions/index.html.erb:5:in `block in _app_views_questions_index_html_erb__2048662711050842926_70131505092860'
+  app/views/questions/index.html.erb:4:in `_app_views_questions_index_html_erb__2048662711050842926_70131505092860'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (26.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (15.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (34.6ms)
+
+
+Started GET "/questions" for ::1 at 2015-06-09 19:37:01 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.erb within layouts/application (13.5ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined local variable or method `question' for #<#<Class:0x007f9185cfe428>:0x007f91847b6570>):
+    2: <%= link_to 'New question', new_question_path %>
+    3: <ul>
+    4: <% @questions.each do |questions| %>
+    5: <li> <div><%= question.title %></div> <div><%= question.content %></div> <br> <% link_to 'Show more', questions_path %></li>
+    6: <% end %>
+    7: </ul>
+  app/views/questions/index.html.erb:5:in `block in _app_views_questions_index_html_erb__2048662711050842926_70131505480680'
+  app/views/questions/index.html.erb:4:in `_app_views_questions_index_html_erb__2048662711050842926_70131505480680'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (27.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (18.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (36.9ms)
+
+
+Started GET "/questions" for ::1 at 2015-06-09 19:37:03 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (12.4ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined local variable or method `question' for #<#<Class:0x007f9185cfe428>:0x007f9186dc62b0>):
+    2: <%= link_to 'New question', new_question_path %>
+    3: <ul>
+    4: <% @questions.each do |questions| %>
+    5: <li> <div><%= question.title %></div> <div><%= question.content %></div> <br> <% link_to 'Show more', questions_path %></li>
+    6: <% end %>
+    7: </ul>
+  app/views/questions/index.html.erb:5:in `block in _app_views_questions_index_html_erb__2048662711050842926_70131505480680'
+  app/views/questions/index.html.erb:4:in `_app_views_questions_index_html_erb__2048662711050842926_70131505480680'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (66.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (83.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (103.4ms)
+
+
+Started GET "/questions" for ::1 at 2015-06-09 19:37:18 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 35ms (Views: 34.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/answer.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 19:37:18 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 19:37:18 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-09 19:37:18 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-09 19:37:18 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-09 19:37:18 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-09 19:37:18 -0700
+
+
+Started GET "/assets/answer.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 19:37:18 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 19:37:18 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-09 19:37:18 -0700
+
+
+Started GET "/questions" for ::1 at 2015-06-09 19:37:30 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 35ms (Views: 33.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/answer.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 19:37:31 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-09 19:37:31 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-09 19:37:31 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-09 19:37:31 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-09 19:37:31 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 19:37:31 -0700
+
+
+Started GET "/assets/answer.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 19:37:31 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 19:37:31 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-09 19:37:31 -0700
+
+
+Started GET "/questions" for ::1 at 2015-06-09 19:37:34 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 31ms (Views: 30.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questions" for ::1 at 2015-06-09 19:37:36 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 32ms (Views: 30.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questions" for ::1 at 2015-06-09 19:37:43 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 30ms (Views: 29.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questions" for ::1 at 2015-06-09 19:38:32 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 33ms (Views: 31.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/answer.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 19:38:33 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-09 19:38:33 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-09 19:38:33 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 19:38:33 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-09 19:38:33 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-09 19:38:33 -0700
+
+
+Started GET "/assets/answer.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 19:38:33 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 19:38:33 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-09 19:38:33 -0700
+
+
+Started GET "/questions" for ::1 at 2015-06-09 19:38:34 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 32ms (Views: 30.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questions" for ::1 at 2015-06-09 19:50:00 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 39ms (Views: 33.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/questions" for ::1 at 2015-06-09 19:50:02 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 34ms (Views: 33.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/answer.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 19:50:02 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-09 19:50:02 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-09 19:50:02 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 19:50:02 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-09 19:50:02 -0700
+
+
+Started GET "/assets/answer.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 19:50:02 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-09 19:50:02 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 19:50:02 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-09 19:50:02 -0700
+
+
+Started GET "/questions.1" for ::1 at 2015-06-09 19:50:03 -0700
+Processing by QuestionsController#index as 
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 38ms (Views: 36.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questions.1" for ::1 at 2015-06-09 19:50:05 -0700
+Processing by QuestionsController#index as 
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 31ms (Views: 30.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questions" for ::1 at 2015-06-09 19:50:58 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 30ms (Views: 28.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questions" for ::1 at 2015-06-09 19:50:59 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 30ms (Views: 29.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/answer.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 19:50:59 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-09 19:50:59 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-09 19:50:59 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-09 19:50:59 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-09 19:50:59 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 19:50:59 -0700
+
+
+Started GET "/assets/answer.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 19:50:59 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 19:50:59 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-09 19:50:59 -0700
+
+
+Started GET "/questions.1" for ::1 at 2015-06-09 19:51:01 -0700
+Processing by QuestionsController#index as 
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 33ms (Views: 32.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questions.1" for ::1 at 2015-06-09 19:51:34 -0700
+Processing by QuestionsController#index as 
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 34ms (Views: 32.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questions.1" for ::1 at 2015-06-09 19:51:35 -0700
+Processing by QuestionsController#index as 
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 37ms (Views: 35.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questions" for ::1 at 2015-06-09 19:53:10 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 31ms (Views: 30.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/answer.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 19:53:10 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-09 19:53:10 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-09 19:53:10 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 19:53:10 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-09 19:53:10 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-09 19:53:10 -0700
+
+
+Started GET "/assets/answer.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 19:53:10 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 19:53:10 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-09 19:53:10 -0700
+
+
+Started GET "/questions/1" for ::1 at 2015-06-09 19:53:11 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered questions/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 40ms (Views: 29.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/questions/1" for ::1 at 2015-06-09 20:07:15 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered questions/show.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (Missing partial questions/_aform, application/_aform with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/apprentice/Desktop/example_work/stack-overflow-workshop-challenge/app/views"
+):
+    11:   <%= @question.content %>
+    12: </p>
+    13: 
+    14: <%= render 'aform', :locals => {:answer => @answer, :question => @question} %>
+  app/views/questions/show.html.erb:14:in `_app_views_questions_show_html_erb___1772624736875185427_70131505519780'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (25.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (17.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (46.6ms)
+
+
+Started GET "/questions/1" for ::1 at 2015-06-09 20:08:54 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mAnswer Load (0.6ms)[0m  SELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1  [["question_id", 1]]
+  Rendered questions/_aform.html.erb (18.1ms)
+  Rendered questions/show.html.erb within layouts/application (19.1ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.9ms)
+
+ActionView::Template::Error (undefined local variable or method `answer' for #<#<Class:0x007f9186ed3d88>:0x007f91830c3bd8>):
+    1: <%= form_for answer, url: question_answers_path(question) do |f| %>
+    2:   <p>
+    3:     <%= f.label :content %><br>
+    4:     <%= f.text_area :content %>
+  app/views/questions/_aform.html.erb:1:in `_app_views_questions__aform_html_erb__1132673443606599006_70131483129560'
+  app/views/questions/show.html.erb:14:in `_app_views_questions_show_html_erb___1772624736875185427_70131505519780'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (16.1ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (34.6ms)
+
+
+Started GET "/questions/1" for ::1 at 2015-06-09 20:10:19 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1  [["question_id", 1]]
+  Rendered questions/_aform.html.erb (77.7ms)
+  Rendered questions/show.html.erb within layouts/application (78.4ms)
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (undefined local variable or method `answer' for #<#<Class:0x007f9186ed3d88>:0x007f9186ee0d30>):
+    1: <%= form_for answer, url: question_answers_path(question) do |f| %>
+    2:   <p>
+    3:     <%= f.label :content %><br>
+    4:     <%= f.text_area :content %>
+  app/views/questions/_aform.html.erb:1:in `_app_views_questions__aform_html_erb__1132673443606599006_70131483129560'
+  app/views/questions/show.html.erb:14:in `_app_views_questions_show_html_erb___1772624736875185427_70131505519780'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (27.1ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (19.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (39.3ms)
+
+
+Started GET "/questions" for ::1 at 2015-06-09 20:10:31 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 77ms (Views: 75.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/answer.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 20:10:31 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-09 20:10:31 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 20:10:31 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-09 20:10:31 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-09 20:10:31 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-09 20:10:31 -0700
+
+
+Started GET "/assets/answer.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 20:10:31 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 20:10:31 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-09 20:10:31 -0700
+
+
+Started GET "/questions/1" for ::1 at 2015-06-09 20:10:32 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 1]]
+  Rendered questions/_aform.html.erb (75.3ms)
+  Rendered questions/show.html.erb within layouts/application (76.9ms)
+Completed 500 Internal Server Error in 81ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (undefined local variable or method `answer' for #<#<Class:0x007f9186ed3d88>:0x007f9186ff07e8>):
+    1: <%= form_for answer, url: question_answers_path(question) do |f| %>
+    2:   <p>
+    3:     <%= f.label :content %><br>
+    4:     <%= f.text_area :content %>
+  app/views/questions/_aform.html.erb:1:in `_app_views_questions__aform_html_erb__1132673443606599006_70131518538860'
+  app/views/questions/show.html.erb:14:in `_app_views_questions_show_html_erb___1772624736875185427_70131484958000'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (24.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (17.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (35.0ms)
+
+
+Started GET "/questions/1" for ::1 at 2015-06-09 20:10:33 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 1]]
+  Rendered questions/_aform.html.erb (13.7ms)
+  Rendered questions/show.html.erb within layouts/application (14.4ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.5ms)
+
+ActionView::Template::Error (undefined local variable or method `answer' for #<#<Class:0x007f9186ed3d88>:0x007f9186dbceb8>):
+    1: <%= form_for answer, url: question_answers_path(question) do |f| %>
+    2:   <p>
+    3:     <%= f.label :content %><br>
+    4:     <%= f.text_area :content %>
+  app/views/questions/_aform.html.erb:1:in `_app_views_questions__aform_html_erb__1132673443606599006_70131483129560'
+  app/views/questions/show.html.erb:14:in `_app_views_questions_show_html_erb___1772624736875185427_70131505519780'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (17.8ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (38.0ms)
+
+
+Started GET "/questions/1" for ::1 at 2015-06-09 20:11:59 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 1]]
+  Rendered questions/_aform.html.erb (16.1ms)
+  Rendered questions/show.html.erb within layouts/application (16.9ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (undefined local variable or method `answer' for #<#<Class:0x007f9186ed3d88>:0x007f9186b292a0>):
+    1: <%= form_for answer, url: question_answers_path(question) do |f| %>
+    2:   <p>
+    3:     <%= f.label :content %><br>
+    4:     <%= f.text_area :content %>
+  app/views/questions/_aform.html.erb:1:in `_app_views_questions__aform_html_erb__1132673443606599006_70131483129560'
+  app/views/questions/show.html.erb:14:in `_app_views_questions_show_html_erb___1772624736875185427_70131505519780'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (17.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (36.3ms)
+
+
+Started GET "/questions/1" for ::1 at 2015-06-09 20:27:20 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered questions/_aform.html.erb (2.1ms)
+  Rendered questions/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 33ms (Views: 30.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 20:27:21 -0700
+
+
+Started GET "/assets/answer.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 20:27:21 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-09 20:27:21 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-09 20:27:21 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-09 20:27:21 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-09 20:27:21 -0700
+
+
+Started GET "/assets/answer.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 20:27:21 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 20:27:21 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-09 20:27:21 -0700
+
+
+Started GET "/questions/1" for ::1 at 2015-06-09 20:27:25 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered questions/_aform.html.erb (1.9ms)
+  Rendered questions/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 35ms (Views: 33.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/questions/1/answers" for ::1 at 2015-06-09 20:33:55 -0700
+Processing by AnswersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IwMEJ7WOlI6ueoNJIi94NJSLIArG5CFzfutyOhnhVqjvCaA3uAPLoBAqhmHYe7/IPBGZqzzW1aXi4EDfN+t9Bg==", "answer"=>{"content"=>"because you have to"}, "commit"=>"Create Answer", "question_id"=>"1"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "because you have to"], ["question_id", 1], ["created_at", "2015-06-10 03:33:55.376329"], ["updated_at", "2015-06-10 03:33:55.376329"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/1
+Completed 302 Found in 24ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/questions/1" for ::1 at 2015-06-09 20:33:55 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms)
+
+NameError (undefined local variable or method `question_find' for #<QuestionsController:0x007f9180e26260>):
+  app/controllers/questions_controller.rb:21:in `show'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (80.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (110.3ms)
+
+
+Started GET "/questions/1" for ::1 at 2015-06-09 20:38:35 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered questions/_aform.html.erb (1.6ms)
+  Rendered questions/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 51ms (Views: 32.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/answer.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 20:38:35 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-09 20:38:35 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-09 20:38:35 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 20:38:35 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-09 20:38:35 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-09 20:38:35 -0700
+
+
+Started GET "/assets/answer.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 20:38:35 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 20:38:35 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-09 20:38:35 -0700
+
+
+Started POST "/questions/1/answers" for ::1 at 2015-06-09 20:38:43 -0700
+Processing by AnswersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F40+sdZUcM8V5vLWpf485kxyh7eRs2FDQgSZm3v+joTbh5qh29kv4au29/5fqvsa5Og+FmuBlZXeD6t+VfSlKg==", "answer"=>{"content"=>"because you have to"}, "commit"=>"Create Answer", "question_id"=>"1"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "because you have to"], ["question_id", 1], ["created_at", "2015-06-10 03:38:43.148528"], ["updated_at", "2015-06-10 03:38:43.148528"]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/1
+Completed 302 Found in 7ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/questions/1" for ::1 at 2015-06-09 20:38:43 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered questions/_aform.html.erb (1.3ms)
+  Rendered questions/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 33ms (Views: 31.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/questions/1" for ::1 at 2015-06-09 20:39:50 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered questions/_aform.html.erb (1.8ms)
+  Rendered questions/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 108ms (Views: 106.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 20:39:50 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-09 20:39:50 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-09 20:39:50 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-09 20:39:50 -0700
+
+
+Started GET "/assets/answer.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 20:39:50 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-09 20:39:50 -0700
+
+
+Started GET "/assets/answer.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 20:39:51 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 20:39:51 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-09 20:39:51 -0700
+
+
+Started GET "/questions/1" for ::1 at 2015-06-09 20:57:43 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 1]]
+  Rendered questions/_aform.html.erb (1.6ms)
+  Rendered questions/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 38ms (Views: 35.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/answer.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 20:57:43 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 20:57:43 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-09 20:57:43 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-09 20:57:43 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-09 20:57:43 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-09 20:57:43 -0700
+
+
+Started GET "/assets/answer.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 20:57:43 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 20:57:43 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-09 20:57:43 -0700
+
+
+Started GET "/questions/1" for ::1 at 2015-06-09 20:57:58 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 1]]
+  Rendered questions/_aform.html.erb (1.6ms)
+  Rendered questions/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 37ms (Views: 35.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/answer.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 20:57:58 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 20:57:58 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-09 20:57:58 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-09 20:57:58 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-09 20:57:58 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-09 20:57:58 -0700
+
+
+Started GET "/assets/answer.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 20:57:58 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 20:57:58 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-09 20:57:58 -0700
+
+
+Started GET "/questions/1" for ::1 at 2015-06-09 21:08:35 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 1]]
+  Rendered questions/_aform.html.erb (1.3ms)
+  Rendered questions/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 31ms (Views: 28.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 21:08:35 -0700
+
+
+Started GET "/assets/answer.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 21:08:35 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-09 21:08:35 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-09 21:08:35 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-09 21:08:35 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-09 21:08:35 -0700
+
+
+Started GET "/assets/answer.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 21:08:35 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 21:08:35 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-09 21:08:35 -0700
+
+
+Started GET "/questions" for ::1 at 2015-06-09 21:08:59 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 33ms (Views: 31.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questions" for ::1 at 2015-06-09 21:09:04 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 32ms (Views: 31.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 21:09:04 -0700
+
+
+Started GET "/assets/answer.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 21:09:04 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-09 21:09:04 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-09 21:09:04 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-09 21:09:04 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-09 21:09:04 -0700
+
+
+Started GET "/assets/answer.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 21:09:04 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 21:09:04 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-09 21:09:04 -0700
+
+
+Started GET "/questions" for ::1 at 2015-06-09 21:09:21 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 31ms (Views: 30.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/answer.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 21:09:21 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-09 21:09:21 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-09 21:09:21 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 21:09:21 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-09 21:09:21 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-09 21:09:21 -0700
+
+
+Started GET "/assets/answer.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 21:09:21 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 21:09:21 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-09 21:09:21 -0700
+
+
+Started GET "/questions" for ::1 at 2015-06-09 21:09:40 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.5ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 33ms (Views: 31.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/answer.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 21:09:40 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-09 21:09:40 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 21:09:40 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-09 21:09:40 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-09 21:09:40 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-09 21:09:40 -0700
+
+
+Started GET "/assets/answer.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 21:09:40 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 21:09:40 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-09 21:09:40 -0700
+
+
+Started GET "/questions" for ::1 at 2015-06-09 21:09:58 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 35ms (Views: 33.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/answer.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 21:09:58 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-09 21:09:58 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-09 21:09:58 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 21:09:58 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-09 21:09:58 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-09 21:09:58 -0700
+
+
+Started GET "/assets/answer.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 21:09:58 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 21:09:58 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-09 21:09:58 -0700
+
+
+Started GET "/questions/new" for ::1 at 2015-06-09 21:10:20 -0700
+Processing by QuestionsController#new as HTML
+  Rendered questions/_form.html.erb (3.0ms)
+  Rendered questions/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 35ms (Views: 34.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/questions" for ::1 at 2015-06-09 21:11:01 -0700
+Processing by QuestionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1mjGpY2Hnqlom8nmEeCxID7NsRe0/QsReO69d0NjPXYaYmK1gArBh9bLzM7rtHbcllcItk7P/8fk5Y+SbWkW2A==", "question"=>{"title"=>"how do you pass data", "content"=>"are you just passing nested hashes?"}, "commit"=>"Create Question"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "questions" ("title", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "how do you pass data"], ["content", "are you just passing nested hashes?"], ["created_at", "2015-06-10 04:11:01.787529"], ["updated_at", "2015-06-10 04:11:01.787529"]]
+  [1m[36m (14.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/2
+Completed 302 Found in 19ms (ActiveRecord: 15.2ms)
+
+
+Started GET "/questions/2" for ::1 at 2015-06-09 21:11:01 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 2]]
+  Rendered questions/_aform.html.erb (1.5ms)
+  Rendered questions/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 34ms (Views: 32.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/questions" for ::1 at 2015-06-09 21:11:06 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 33ms (Views: 31.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questions" for ::1 at 2015-06-09 21:11:27 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.6ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 34ms (Views: 32.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/answer.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 21:11:27 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-09 21:11:27 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-09 21:11:27 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 21:11:27 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-09 21:11:27 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-09 21:11:27 -0700
+
+
+Started GET "/assets/answer.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 21:11:27 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 21:11:27 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-09 21:11:27 -0700
+
+
+Started GET "/questions" for ::1 at 2015-06-09 21:12:17 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 32ms (Views: 30.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/answer.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 21:12:17 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-09 21:12:17 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-09 21:12:17 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-09 21:12:17 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 21:12:18 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-09 21:12:18 -0700
+
+
+Started GET "/assets/answer.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 21:12:18 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 21:12:18 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-09 21:12:18 -0700
+
+
+Started GET "/questions/2/edit" for ::1 at 2015-06-09 21:24:42 -0700
+Processing by QuestionsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms)
+
+NameError (undefined local variable or method `question_find' for #<QuestionsController:0x007f9185ddaa90>):
+  app/controllers/questions_controller.rb:26:in `edit'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (18.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (44.7ms)
+
+
+Started GET "/questions/2/edit" for ::1 at 2015-06-09 21:24:42 -0700
+Processing by QuestionsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 2]]
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms)
+
+NameError (undefined local variable or method `question_find' for #<QuestionsController:0x007f9186c62590>):
+  app/controllers/questions_controller.rb:26:in `edit'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (16.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (35.6ms)
+
+
+Started GET "/questions/2/edit" for ::1 at 2015-06-09 21:25:27 -0700
+Processing by QuestionsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered questions/_form.html.erb (2.1ms)
+  Rendered questions/edit.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 46ms (Views: 34.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/answer.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 21:25:28 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-09 21:25:28 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-09 21:25:28 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-09 21:25:28 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-09 21:25:28 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-09 21:25:28 -0700
+
+
+Started GET "/assets/answer.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 21:25:28 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-09 21:25:28 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-09 21:25:28 -0700
