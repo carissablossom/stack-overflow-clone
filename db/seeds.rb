@@ -7,5 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # 100.times do
-#   Quote.create(content: HTTParty.get('https://api.github.com/zen'))
+#   Quote.create(content: HTTParty.get('https://api.github.com/zen', headers: { "User-Agent" => "stack overflow", "Authorization" => "token #{ ENV['TOKEN'] }" } )
+# )
 # end

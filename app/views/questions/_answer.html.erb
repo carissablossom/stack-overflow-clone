@@ -1,0 +1,12 @@
+<tr>
+  <td colspan="5"><%= answer.content %></td>
+</tr>
+<tr>
+  <td><%= link_to 'Edit', edit_question_answer_path(@question, answer) %></td>
+  <td><%= link_to 'Delete', question_answer_path(@question, answer),
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %></td>
+  <td class="votes">Votes: <%= answer.votes %></td>
+  <td> <%= button_to '+1', upvote_question_answer_path(@question, answer), method: :post, class: "vote_answers" %><br></td>
+  <td><%= button_to '-1', downvote_question_answer_path(@question, answer), method: :post, class: "vote_answers" %></td>
+</tr>

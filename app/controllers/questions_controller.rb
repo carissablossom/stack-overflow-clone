@@ -8,16 +8,22 @@ class QuestionsController < ApplicationController
 
   def new
     @question = Question.new
+    respond_to do |format|
+      format.html{ render "_form", locals: {question: @question}, layout: false}
+    end
   end
 
   def create
     @question = Question.new(question_params)
 
-    if @question.save
-      redirect_to @question
-    else
-      render 'new'
+    respond_to do |format|
+      if @question.save
+        format.html { render '_question', locals: { question: @question }, layout: false }
+      else
+        render 'new'
+      end
     end
+
   end
 
   def show
@@ -43,14 +49,20 @@ class QuestionsController < ApplicationController
 
   def upvote
     @question.votes += 1
-    @question.save
-    redirect_to question_path
+    if @question.save
+      render :json => @question.votes
+    else
+      redirect_to question_path
+    end
   end
 
   def downvote
     @question.votes -= 1
-    @question.save
-    redirect_to question_path
+    if @question.save
+      render :json => @question.votes
+    else
+      redirect_to question_path
+    end
   end
 
   private

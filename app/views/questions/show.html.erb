@@ -1,20 +1,18 @@
 <h1>Question</h1>
 
 <p>
-  <strong>Title:</strong>
   <%= @question.title %>
 </p>
 
 <p>
-  <strong>Content:</strong>
   <%= @question.content %>
 </p>
 
 <p>
   <strong>Votes:</strong>
-  <%= @question.votes %><br>
-  <%= button_to '+1', upvote_question_path(@question), method: :post %><br>
-  <%= button_to '-1', downvote_question_path(@question), method: :post %>
+  <span class="question_votes"><%= @question.votes %></span><br>
+  <%= button_to '+1', upvote_question_path(@question), method: :post, class: "vote_questions" %><br>
+  <%= button_to '-1', downvote_question_path(@question), method: :post, class: "vote_questions" %>
 </p>
 
 <%= form_for @answer, url: question_answers_path(@question) do |f| %>
@@ -24,22 +22,13 @@
   </p>
 
   <p>
-    <%= f.submit "Add Answer" %>
+    <%= f.submit "Add Answer", class: "add_answer" %>
   </p>
 <% end %>
 
-<table>
+<table class="answer_container">
   <% @answers.order(votes: :desc).each do |answer| %>
-    <tr>
-      <td><%= answer.content %></td>
-      <td><%= link_to 'Edit', edit_question_answer_path(@question, answer) %></td>
-      <td><%= link_to 'Delete', question_answer_path(@question, answer),
-                method: :delete,
-                data: { confirm: 'Are you sure?' } %></td>
-      <td>Votes: <%= answer.votes %></td>
-      <td> <%= link_to '+1', upvote_question_answer_path(@question, answer), method: :post %><br></td>
-      <td><%= link_to '-1', downvote_question_answer_path(@question, answer), method: :post %></td>
-    </tr>
+    <%= render 'answer', answer: answer %>
   <% end %>
 </table>
 

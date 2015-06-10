@@ -1,3 +1,40 @@
 // Place all the styles related to the answer controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@mixin center-element {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header {
+  margin: -.5em;
+  font-size: 2em;
+  height: 2.6em;
+  background-color: #0077CC;
+  border: 3px solid black;
+
+  .inner_header {
+    color: #FFF;
+    padding-top: .8em;
+    @include center-element;
+  }
+}
+
+.container {
+  @include center-element;
+  margin-top: 3em;
+  font-family: arial;
+
+  a, a:visited {
+    color: #0077CC;
+    text-decoration: none;
+  }
+
+}
+
+/*td {
+  padding: .8em .5em .8em .5em;
+  border: 1px solid black;
+}*/

@@ -1,8 +1,6 @@
 <h1>Questions</h1>
 
-<%= link_to 'New Question', new_question_path %>
-
-<table>
+<table class="list_questions">
   <tr>
     <th>Title</th>
     <th>Content</th>
@@ -11,19 +9,12 @@
   </tr>
 
   <% @questions.each do |question| %>
-    <tr>
-      <td><%= question.title %></td>
-      <td><%= question.content %></td>
-      <td><%= question.answers.count %></td>
-      <td><%= question.votes %></td>
-      <td><%= link_to 'Show', question_path(question) %></td>
-      <td><%= link_to 'Edit', edit_question_path(question) %></td>
-      <td><%= link_to 'Delete', question_path(question),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
-    </tr>
+    <%= render 'question', question: question %>
   <% end %>
 </table>
+<div class="new_question">
+  <%= link_to 'New Question', new_question_path, class: "new_question_link", remote: true %>
+</div>
 
 <h3>Quote of the Day</h3>
 

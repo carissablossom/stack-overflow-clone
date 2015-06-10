@@ -27,9 +27,9 @@ ActiveRecord::Schema.define(version: 20150609185501) do
   create_table "questions", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "votes"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "votes",      default: 0
   end
 
   create_table "quotes", force: :cascade do |t|
