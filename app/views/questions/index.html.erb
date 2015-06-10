@@ -1,4 +1,4 @@
-<%= @quote %>
+<%#= @quote %>
 <h1>List of Questions</h1>
 <% @questions.each do |question| %>
   <p>
@@ -11,7 +11,7 @@
 <% end %>
 
 <h1>Create a new Question</h1>
-<%= form_for :question, url: questions_path do |f| %>
+<%= form_for :question, url: questions_path, remote: true, :html => { :class => 'question_form' } do |f| %>
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
@@ -26,5 +26,3 @@
     <%= f.submit 'Create new Question'%>
   </p>
 <% end %>
-
-

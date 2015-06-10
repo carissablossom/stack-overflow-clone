@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-
+  before_action :all_questions, only: [:edit, :show, :update, :destroy, :upvote, :downvote]
   include QuoteGetter
 
   def index
@@ -11,28 +11,20 @@ class QuestionsController < ApplicationController
     @questions = Question.new
   end
 
-  def edit
-    @question = Question.find(params[:id])
-  end
-
   def show
-    @question = Question.find(params[:id])
     @answers = @question.answers
   end
 
   def create
     @question = Question.new(question_params)
-
-    if @question.save
-      redirect_to @question
-    else
-      render 'index'
-    end
+    p '*'*100
+    p 'inside create'
+    p '*'*100
+    @question.save
+    render json: @question
   end
 
   def update
-    @question = Question.find(params[:id])
-
     if @question.update(question_params)
       redirect_to @question
     else
@@ -41,21 +33,17 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    @question = Question.find(params[:id])
     @question.destroy
-
     redirect_to questions_path
   end
 
   def upvote
-    @question = Question.find(params[:id])
     @question.vote_totals += 1
     @question.save
     redirect_to '/'
   end
 
   def downvote
-    @question = Question.find(params[:id])
     @question.vote_totals -= 1
     @question.save
     redirect_to '/'
@@ -65,6 +53,10 @@ class QuestionsController < ApplicationController
 
   def question_params
     params.require(:question).permit(:title, :content)
+  end
+
+  def all_questions
+    @question = Question.find(params[:id])
   end
 
 end
