@@ -21,10 +21,10 @@ function Controller() {
       alert('Fail');
     }
 
-    controller.ajaxRequest(form.attr('action'), form.attr('method'), form.serialize(), done, fail)
+    this.ajaxRequest(form.attr('action'), form.attr('method'), form.serialize(), done, fail)
   }
 
-  this.newQuestion = function() {
+  this.newQuestion = function(target) {
     var done = function(response) {
       $('.new_question').append(response);
       $('.new_question_link').hide();
@@ -33,7 +33,7 @@ function Controller() {
       alert('Fail');
     }
 
-    controller.ajaxRequest($(this).attr('href'), 'GET', {}, done, fail)
+    this.ajaxRequest($(target).attr('href'), 'GET', {}, done, fail)
   }
 
   this.addQuestion = function() {
@@ -48,23 +48,21 @@ function Controller() {
       alert('Fail');
     }
 
-    controller.ajaxRequest(form.attr('action'), form.attr('method'), form.serialize(), done, fail)
+    this.ajaxRequest(form.attr('action'), form.attr('method'), form.serialize(), done, fail)
   }
 
-  this.voteAnswer = function() {
-    var _this = $(this);
-
+  this.voteAnswer = function(target) {
     var done = function(response) {
-      $(_this).parents('td').siblings('.votes').html("Votes: " + response)
+      $(target).parents('td').siblings('.votes').html("Votes: " + response)
     }
     var fail = function(response) {
       alert('Fail');
     }
 
-    controller.ajaxRequest($(this).closest('form.button_to').attr('action'), 'POST', {}, done, fail)
+    this.ajaxRequest($(target).closest('form.button_to').attr('action'), 'POST', {}, done, fail)
   }
 
-  this.voteQuestion = function() {
+  this.voteQuestion = function(target) {
     var done = function(response) {
       $('.question_votes').html(response)
     }
@@ -72,7 +70,7 @@ function Controller() {
       alert('Fail');
     }
 
-    controller.ajaxRequest($(this).closest('.vote_questions').parent().attr('action'), 'POST', {}, done, fail)
+    this.ajaxRequest($(target).closest('.vote_questions').parent().attr('action'), 'POST', {}, done, fail)
   }
 }
 
@@ -85,7 +83,7 @@ var bindListeners = function(controller) {
 
   $('.new_question').on('click', '.new_question_link', function(e){
     e.preventDefault();
-    controller.newQuestion()
+    controller.newQuestion($(this))
   })
 
   $('.new_question').on('click', '.submit_question', function(e){
@@ -95,11 +93,11 @@ var bindListeners = function(controller) {
 
   $('.answer_container').on('click', '.vote_answers', function(e){
     e.preventDefault()
-    controller.voteAnswer()
+    controller.voteAnswer($(this))
   })
 
   $('.vote_questions').on('click', function(e) {
     e.preventDefault();
-    controller.voteQuestion()
+    controller.voteQuestion($(this))
   })
 }
