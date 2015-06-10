@@ -1,0 +1,38 @@
+.wrapper {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10em;
+  border: 2px solid black;
+  border-radius: 2em;
+  text-align: center;
+  padding: 1em;
+}
+
+* {
+  border: 1px solid red;
+}
+
+.sml {
+  font-size: .8em;
+}
+
+.pd-r {
+  padding-right: 6em;
+}
+
+.med {
+  font-size: 1em;
+}
+
+.lrg {
+  font-size: 3em;
+}
+
+.fl-l {
+  float: left;
+}
+
+.fl-r {
+  float: right;
+}

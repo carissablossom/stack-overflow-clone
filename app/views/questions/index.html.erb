@@ -1,28 +1,40 @@
 <%#= @quote %>
-<h1>List of Questions</h1>
-<% @questions.each do |question| %>
-  <p>
-    <%= link_to question.title, question_path(question) %>
-    <%= link_to 'Edit', edit_question_path(question) %><br>
-    Votes: <%= question.vote_totals %>
-    <%= button_to 'Upvote', upvote_question_path(question), :method => :put %>
-    <%= button_to 'Downvote', downvote_question_path(question), :method => :put %>
-  </p>
-<% end %>
+<div class='wrapper'>
+  <h1 class='lrg'>List of Questions</h1>
+  <% @questions.each do |question| %>
+    <p>
+      <div>
+        <div class='fl-r'>
+          <%= link_to 'Edit', edit_question_path(question) %>
+          <%= link_to 'Delete', question_path(question), method: :delete, data: {confirm: 'Are you certain?'} %>
+        </div>
+        <div class='fl-r pd-r'>
+          <%= link_to question.title, question_path(question) %>
+        </div>
+      </div>
+      <br>
+        Votes: <%= question.vote_totals %>
 
-<h1>Create a new Question</h1>
-<%= form_for :question, url: questions_path, remote: true, :html => { :class => 'question_form' } do |f| %>
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
+      <div class='sml'>
+          <%= button_to 'Upvote', upvote_question_path(question), :method => :put %>
+          <%= button_to 'Downvote', downvote_question_path(question), :method => :put %>
+      </div>
+    </p>
+  <% end %>
 
-  <p>
-    <%= f.label :content %><br>
-    <%= f.text_area :content %>
-  </p>
+  <%= form_for :question, url: questions_path, remote: true, :html => { :class => 'question_form sml' } do |f| %>
+    <p>
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+    </p>
 
-  <p>
-    <%= f.submit 'Create new Question'%>
-  </p>
-<% end %>
+    <p>
+      <%= f.label :content %><br>
+      <%= f.text_area :content %>
+    </p>
+
+    <p>
+      <%= f.submit 'Create new Question'%>
+    </p>
+  <% end %>
+</div>
