@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html class="no-js" lang="en">
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DbcOverflow</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
-<body>
-  <header>
-    <div class="inner_header">DBC Overflow</div>
-  </header>
+  <body>
+    <header>
+      <div class="inner_header">DBC Overflow</div>
+    </header>
 
-  <div class="container">
-    <%= yield %>
-  </div>
+    <div class="container">
+      <%= yield %>
+    </div>
 
-  <footer></footer>
-</body>
+    <footer></footer>
+  </body>
 </html>

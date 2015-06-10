@@ -8,8 +8,9 @@ class QuestionsController < ApplicationController
 
   def new
     @question = Question.new
+
     respond_to do |format|
-      format.html{ render "_form", locals: {question: @question}, layout: false}
+      format.html { render "_form", locals: {question: @question}, layout: false}
     end
   end
 
@@ -23,7 +24,6 @@ class QuestionsController < ApplicationController
         render 'new'
       end
     end
-
   end
 
   def show

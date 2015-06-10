@@ -1,21 +1,18 @@
-<h1>Questions</h1>
+<div class="row">
+    <h1 class="title">Questions</h1>
+    <span class="new_question">
+      <%= link_to 'New Question', new_question_path, class: "new_question_link", remote: true %>
+    </span>
+</div>
 
-<table class="list_questions">
-  <tr>
-    <th>Title</th>
-    <th>Content</th>
-    <th>Answers</th>
-    <th>Votes</th>
-  </tr>
-
+<div class="list_questions">
   <% @questions.each do |question| %>
     <%= render 'question', question: question %>
   <% end %>
-</table>
-<div class="new_question">
-  <%= link_to 'New Question', new_question_path, class: "new_question_link", remote: true %>
 </div>
 
-<h3>Quote of the Day</h3>
 
-<p><%= @quote %></p>
+<div class="quote">
+  <h3>Quote of the Day</h3>
+  <p><%= @quote %></p>
+</div>

@@ -1,3 +1,52 @@
 // Place all the styles related to the questions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.title {
+  display: inline-block;
+}
+
+.new_question {
+  vertical-align: bottom;
+  float: right;
+  margin-top: 3.5em;
+  margin-right: .5em;
+}
+
+.list_questions {
+  color: red;
+  display: block;
+}
+
+.question div {
+  display: inline-block;
+}
+
+.question_votes_list {
+  text-align: center;
+  width: 4em;
+}
+
+.question_answers_list {
+  text-align: center;
+  width: 5.5em;
+  border-width: 0px 1px 0px 1px;
+  border-style: solid;
+  border-color: black;
+}
+
+.question_titles_list {
+  margin-left: 1em;
+  width: 20em;
+}
+
+.question_options_list {
+  font-size: .9em;
+  vertical-align: top;
+  text-align: center;
+  padding: .5em;
+  border-width: 0px 0px 0px 1px;
+  border-style: solid;
+  border-color: black;
+}
+

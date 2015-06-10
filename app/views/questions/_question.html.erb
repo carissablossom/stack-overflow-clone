@@ -1,11 +1,9 @@
-<tr>
-  <td><%= question.title %></td>
-  <td><%= question.content %></td>
-  <td><%= question.answers.count %></td>
-  <td><%= question.votes %></td>
-  <td><%= link_to 'Show', question_path(question) %></td>
-  <td><%= link_to 'Edit', edit_question_path(question) %></td>
-  <td><%= link_to 'Delete', question_path(question),
+<div class="question">
+  <div class="question_votes_list"><%= question.votes %><br>vote(s)</div>
+  <div class="question_answers_list"><%= question.answers.count %><br>answer(s)</div>
+  <div class="question_titles_list"><%= link_to question.title, question_path(question) %><br><%= question.content %></div>
+  <div class="question_options_list"><%= link_to 'Edit', edit_question_path(question) %></div>
+  <div class="question_options_list"><%= link_to 'Delete', question_path(question),
           method: :delete,
-          data: { confirm: 'Are you sure?' } %></td>
-</tr>
+          data: { confirm: 'Are you sure?' } %></div>
+</div>
