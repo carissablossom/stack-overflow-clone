@@ -1,6 +1,10 @@
 class QuestionsController < ApplicationController
+
+  include QuoteGetter
+
   def index
-    @questions = Question.all
+    @questions = Question.all.order(:created_at)
+    @quote = quote
   end
 
   def new
@@ -41,6 +45,20 @@ class QuestionsController < ApplicationController
     @question.destroy
 
     redirect_to questions_path
+  end
+
+  def upvote
+    @question = Question.find(params[:id])
+    @question.vote_totals += 1
+    @question.save
+    redirect_to '/'
+  end
+
+  def downvote
+    @question = Question.find(params[:id])
+    @question.vote_totals -= 1
+    @question.save
+    redirect_to '/'
   end
 
   private

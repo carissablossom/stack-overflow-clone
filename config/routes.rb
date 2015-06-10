@@ -1,8 +1,25 @@
 Rails.application.routes.draw do
 
   resources :questions do
+    member do
+      put :upvote
+    end
+    member do
+      put :downvote
+    end
     resources :answers
   end
+
+  resources :answers do
+    member do
+      put :upvote
+    end
+    member do
+      put :downvote
+    end
+  end
+
+
 
   root 'questions#index'
 

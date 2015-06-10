@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rspec-rails'
-
+gem 'httparty'
 gem 'capybara'
 
 gem 'shoulda-matchers'
