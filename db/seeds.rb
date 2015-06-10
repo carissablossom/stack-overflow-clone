@@ -5,8 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Dotenv::Railtie.load
 
-# 100.times do
-#   Quote.create(content: HTTParty.get('https://api.github.com/zen', headers: { "User-Agent" => "stack overflow", "Authorization" => "token #{ ENV['TOKEN'] }" } )
-# )
-# end
+100.times do
+  Quote.create(content: HTTParty.get('https://api.github.com/zen', headers: { "User-Agent" => "stack overflow", "Authorization" => "token #{ ENV['TOKEN'] }" } )
+)
+end
