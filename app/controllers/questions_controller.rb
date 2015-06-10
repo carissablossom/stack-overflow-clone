@@ -49,19 +49,27 @@ class QuestionsController < ApplicationController
 
   def upvote
     @question.votes += 1
-    if @question.save
-      render :json => @question.votes
-    else
-      redirect_to question_path
+    respond_to do |format|
+      if @question.save
+        # This html response is not working currently
+        format.html {render 'show', locals: {question: @question, answer: @question.answers}}
+        format.json {render json: @question.votes}
+      else
+        redirect_to question_path
+      end
     end
   end
 
   def downvote
     @question.votes -= 1
-    if @question.save
-      render :json => @question.votes
-    else
-      redirect_to question_path
+    respond_to do |format|
+      if @question.save
+        # This html response is not working currently
+        format.html {render 'show', locals: {question: @question, answer: @question.answers}}
+        format.json {render json: @question.votes}
+      else
+        redirect_to question_path
+      end
     end
   end
 

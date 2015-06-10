@@ -1,16 +1,20 @@
-$(document).ready(function() {
+$(document).on('page:change',function() {
   console.log('READY')
   $('form').on('click', '.add_answer', function(e){
     e.preventDefault();
-    var form = $(this).parent().parent()
+    var form = $('form.new_answer')
     $.ajax({
       url: form.attr('action'),
       type: form.attr('method'),
-      data: form.serialize()
+      data: form.serialize(),
+      dataType: 'json'
     })
     .done(function(response){
-      $('#answer_content').val('');
-      $('.answer_container').append(response);
+
+      // Broke this on purpose, returns JSON instead of partial now. Handlebars?
+      console.log(response.content)
+      // $('#answer_content').val('');
+      // $('.answer_container').append(response);
     })
     .fail(function(response){
       alert('Fail');
@@ -57,7 +61,8 @@ $(document).ready(function() {
 
     $.ajax({
       url: $(this).parent().attr('action'),
-      type: 'POST'
+      type: 'POST',
+      dataType: 'json'
     })
     .done(function(response){
       $(_this).parent().parent().siblings('.votes').html("Votes: " + response)
@@ -74,7 +79,8 @@ $(document).ready(function() {
 
     $.ajax({
       url: $(this).closest('.vote_questions').parent().attr('action'),
-      type: 'POST'
+      type: 'POST',
+      dataType: 'json'
     })
     .done(function(response) {
       $('.question_votes').html(response)

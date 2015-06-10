@@ -8,6 +8,7 @@ class AnswersController < ApplicationController
     respond_to do |format|
       if @answer.save
         format.html { render "questions/_answer", locals: {answer: @answer}, layout: false }
+        format.json {render json: @answer}
       else
         redirect_to @question
       end
@@ -33,21 +34,27 @@ class AnswersController < ApplicationController
 
   def upvote
     @answer.votes += 1
-
-    if @answer.save
-      render :json => @answer.votes
-    else
-      redirect_to question_path(@answer.question)
+    respond_to do |format|
+      if @answer.save
+        # This html response is not working currently
+        format.html {redirect_to 'questions/show', locals: {answer: @answer} }
+        format.json {render json: @answer.votes}
+      else
+        redirect_to question_path(@answer.question)
+      end
     end
   end
 
   def downvote
     @answer.votes -= 1
-
-    if @answer.save
-      render :json => @answer.votes
-    else
-      redirect_to question_path(@answer.question)
+    respond_to do |format|
+      if @answer.save
+        # This html response is not working currently
+        format.html {redirect_to 'show', locals: {answer: @answer}}
+        format.json {render json: @answer.votes}
+      else
+        redirect_to question_path(@answer.question)
+      end
     end
   end
 
