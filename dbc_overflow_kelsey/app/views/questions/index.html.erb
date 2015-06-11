@@ -1,0 +1,17 @@
+<h1>Listing Questions</h1>
+
+<div class="all_questions">
+  <% @questions.each do |question| %>
+  <div class="question">
+    Title: <%= question.title %>
+    Context: <%= question.content %>
+
+    <%= link_to 'Back', questions_path %>
+    <%= link_to 'Edit', edit_question_path(question) %>
+    <%= link_to 'Delete', question_path(question),
+        method: :delete,
+        data: { confirm: 'Are you sure?'} %>
+  </div>
+  <% end %>
+</div>
+
