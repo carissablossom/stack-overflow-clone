@@ -14,3 +14,16 @@ Answers:
     <%= answer.title %> <br> <%= answer.content %>
   </li>
 <% end %>
+<hr>
+<div id="question_form_container">
+  <h2> Submit a new Answer to this Question</h2>
+  <%= form_for [@question, @question.answers.build], url: question_answers_path(@question), method: :post do |f| %>
+  <%= f.label :title %>:
+  <%= f.text_field :title %><br />
+
+  <%= f.label :content %>:
+  <%= f.text_field :content %><br />
+
+  <%= f.submit %>
+  <% end %>
+</div>

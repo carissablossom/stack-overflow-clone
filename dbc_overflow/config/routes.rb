@@ -1,7 +1,19 @@
 Rails.application.routes.draw do
+  resources :questions do
+    resources :answers
+  end
+  #routes for question voting
+  get 'question/:id/up_vote' => 'questions#up_vote', as: :question_up_vote
+  get 'question/:id/down_vote' => 'questions#down_vote', as: :question_down_vote
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  #route for answer voting
+  # get 'answers/:id/up_vote' => 'answers#vote', as: :answer_up_vote
+  # get 'answers/:id/down_vote' => 'answers#down_vote', as: :answer_down_vote
+
+  #get '/' => 'questions#index'
+  root 'question#index'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
@@ -13,11 +25,7 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resources :questions
-  resources :answers
 
-  #get '/' => 'questions#index'
-  root 'questions#index'
 
   # Example resource route with options:
   #   resources :products do

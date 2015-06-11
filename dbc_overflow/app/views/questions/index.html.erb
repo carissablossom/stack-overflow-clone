@@ -1,11 +1,25 @@
-<h1> Jerome is awesome ... lol jk </h1>
-<h2> Here's all of his questions: </h2>
+<h1> POOP OVERFLOW</h1>
+<h2> Here are all the questions: </h2>
+<h3>Title</h3>
+
 <ul id="question_list">
   <% @questions.each do |question| %>
     <li>
-      <div> <%=question.title%> </div>
-      <div> <%=question.content%> </div>
+
+      <div><b>Question: </b><%=question.title%> </div>
+      <div><b>Content: </b> <%=question.content%> </div>
+      <p>
+        <%= link_to raw('&#8607;'), question_up_vote_path(question) %>
+      </p>
+      <p>
+        <%= question.votes %>
+      </p>
+      <p>
+      <%= link_to raw('&#8609;'), question_down_vote_path(question)%>
+      </p>
+
     </li>
+    <br>
   <% end %>
 </ul>
 
@@ -21,3 +35,4 @@
   <%= f.submit %>
   <% end %>
 </div>
+
