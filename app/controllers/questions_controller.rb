@@ -16,12 +16,17 @@ class QuestionsController < ApplicationController
   end
 
   def create
+    @questions = Question.all
     @question = Question.new(question_params)
-    p '*'*100
-    p 'inside create'
-    p '*'*100
-    @question.save
-    render json: @question
+    respond_to do |format|
+      if @question.save
+        format.html { redirect_to @question, notice: 'Question successfully created.' }
+        format.json { render json: @question, status: :created }
+      else
+        format.html { render action: 'index' }
+        format.json { render json: @question.errors.full_messages, status: :unprocessable_entity }
+      end
+    end
   end
 
   def update
