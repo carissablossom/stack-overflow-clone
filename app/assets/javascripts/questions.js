@@ -4,6 +4,9 @@ $(document).ready(function(){
     e.preventDefault();
     console.log('we are in the form');
 
+    var source = $('#sample-template').html();
+    var template = Handlebars.compile(source);
+
     var submission = $.ajax({
       type: 'POST',
       url: $(this).attr('action'),
@@ -12,14 +15,7 @@ $(document).ready(function(){
     });
 
     submission.done(function(data) {
-      $('.error_messages').remove();
-      var title = data.title;
-      var content = data.content;
-      $('#template').append(content);
-      $('#template').append(title);
-
-      // var questionTemplate = $('.question_template').clone();
-      // $('.question_template').show();
+      $('#new_question').append(template(data))
     });
 
     submission.fail(function(data) {

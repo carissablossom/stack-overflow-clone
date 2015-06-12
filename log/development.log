@@ -29323,3 +29323,3093 @@ Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 11:21:28 -
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 11:21:28 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-11 11:28:00 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.8ms)[0m  SELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC
+  Rendered questions/index.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 575ms (Views: 190.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 11:28:01 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 11:28:01 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 11:28:01 -0700
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 11:28:01 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 11:28:01 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 11:28:01 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 11:28:01 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 11:28:01 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 11:28:01 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 11:28:01 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 11:28:01 -0700
+  [1m[36m (114.6ms)[0m  [1mDROP DATABASE IF EXISTS "dbc_overflow_development"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-11 16:42:05 -0700
+
+ActiveRecord::NoDatabaseError (FATAL:  database "dbc_overflow_development" does not exist
+Run `$ bin/rake db:create db:migrate` to create your database):
+  activerecord (4.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:898:in `rescue in connect'
+  activerecord (4.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:888:in `connect'
+  activerecord (4.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:568:in `initialize'
+  activerecord (4.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:41:in `new'
+  activerecord (4.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:41:in `postgresql_connection'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:435:in `new_connection'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:445:in `checkout_new_connection'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:416:in `acquire_connection'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:351:in `block in checkout'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:350:in `checkout'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:265:in `block in connection'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:264:in `connection'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:541:in `retrieve_connection'
+  activerecord (4.1.6) lib/active_record/connection_handling.rb:113:in `retrieve_connection'
+  activerecord (4.1.6) lib/active_record/connection_handling.rb:87:in `connection'
+  activerecord (4.1.6) lib/active_record/migration.rb:388:in `check_pending!'
+  activerecord (4.1.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.3) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.3) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.3) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.3) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.3) lib/rack/lock.rb:17:in `call'
+  rack (1.5.3) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.3) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-11 16:42:08 -0700
+
+ActiveRecord::NoDatabaseError (FATAL:  database "dbc_overflow_development" does not exist
+Run `$ bin/rake db:create db:migrate` to create your database):
+  activerecord (4.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:898:in `rescue in connect'
+  activerecord (4.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:888:in `connect'
+  activerecord (4.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:568:in `initialize'
+  activerecord (4.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:41:in `new'
+  activerecord (4.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:41:in `postgresql_connection'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:435:in `new_connection'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:445:in `checkout_new_connection'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:416:in `acquire_connection'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:351:in `block in checkout'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:350:in `checkout'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:265:in `block in connection'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:264:in `connection'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:541:in `retrieve_connection'
+  activerecord (4.1.6) lib/active_record/connection_handling.rb:113:in `retrieve_connection'
+  activerecord (4.1.6) lib/active_record/connection_handling.rb:87:in `connection'
+  activerecord (4.1.6) lib/active_record/migration.rb:388:in `check_pending!'
+  activerecord (4.1.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.3) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.3) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.3) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.3) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.3) lib/rack/lock.rb:17:in `call'
+  rack (1.5.3) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.3) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-11 16:42:10 -0700
+
+ActiveRecord::NoDatabaseError (FATAL:  database "dbc_overflow_development" does not exist
+Run `$ bin/rake db:create db:migrate` to create your database):
+  activerecord (4.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:898:in `rescue in connect'
+  activerecord (4.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:888:in `connect'
+  activerecord (4.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:568:in `initialize'
+  activerecord (4.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:41:in `new'
+  activerecord (4.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:41:in `postgresql_connection'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:435:in `new_connection'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:445:in `checkout_new_connection'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:416:in `acquire_connection'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:351:in `block in checkout'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:350:in `checkout'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:265:in `block in connection'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:264:in `connection'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:541:in `retrieve_connection'
+  activerecord (4.1.6) lib/active_record/connection_handling.rb:113:in `retrieve_connection'
+  activerecord (4.1.6) lib/active_record/connection_handling.rb:87:in `connection'
+  activerecord (4.1.6) lib/active_record/migration.rb:388:in `check_pending!'
+  activerecord (4.1.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.3) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.3) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.3) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.3) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.3) lib/rack/lock.rb:17:in `call'
+  rack (1.5.3) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.3) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-11 16:42:12 -0700
+
+ActiveRecord::NoDatabaseError (FATAL:  database "dbc_overflow_development" does not exist
+Run `$ bin/rake db:create db:migrate` to create your database):
+  activerecord (4.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:898:in `rescue in connect'
+  activerecord (4.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:888:in `connect'
+  activerecord (4.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:568:in `initialize'
+  activerecord (4.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:41:in `new'
+  activerecord (4.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:41:in `postgresql_connection'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:435:in `new_connection'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:445:in `checkout_new_connection'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:416:in `acquire_connection'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:351:in `block in checkout'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:350:in `checkout'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:265:in `block in connection'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:264:in `connection'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:541:in `retrieve_connection'
+  activerecord (4.1.6) lib/active_record/connection_handling.rb:113:in `retrieve_connection'
+  activerecord (4.1.6) lib/active_record/connection_handling.rb:87:in `connection'
+  activerecord (4.1.6) lib/active_record/migration.rb:388:in `check_pending!'
+  activerecord (4.1.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.3) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.3) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.3) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.3) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.3) lib/rack/lock.rb:17:in `call'
+  rack (1.5.3) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.3) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.6ms)
+  [1m[36m (0.2ms)[0m  [1mDROP DATABASE IF EXISTS "dbc_overflow_development"[0m
+  [1m[36m (261.7ms)[0m  [1mCREATE DATABASE "dbc_overflow_development" ENCODING = 'unicode'[0m
+  [1m[36m (2.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.7ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateQuestions (20150608230755)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (3.7ms)[0m  [1mCREATE TABLE "questions" ("id" serial primary key, "title" character varying(255), "content" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150608230755"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAnswers (20150608230824)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.7ms)[0m  [1mCREATE TABLE "answers" ("id" serial primary key, "title" character varying(255), "content" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150608230824"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to AddQuestionRefToAnswers (20150609003037)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "answers" ADD COLUMN "question_id" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150609003037"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to AddVoteTotalsToQuestions (20150609232236)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (3.5ms)[0m  [1mALTER TABLE "questions" ADD COLUMN "vote_totals" integer DEFAULT 0 NOT NULL[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150609232236"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+Migrating to AddVoteTotalsToAnswers (20150609232914)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (3.0ms)[0m  [1mALTER TABLE "answers" ADD COLUMN "vote_totals" integer DEFAULT 0 NOT NULL[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150609232914"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-11 16:43:27 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC
+  Rendered questions/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 630ms (Views: 186.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 16:43:28 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 16:43:28 -0700
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 16:43:28 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 16:43:28 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 16:43:28 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 16:43:28 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 16:43:28 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 16:43:28 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 16:43:28 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 16:43:28 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 16:43:28 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-11 16:44:36 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.8ms)[0m  SELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC
+  Rendered questions/index.html.erb within layouts/application (50.0ms)
+Completed 200 OK in 554ms (Views: 177.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 16:44:37 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 16:44:37 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 16:44:37 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 16:44:37 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 16:44:37 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 16:44:37 -0700
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 16:44:37 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 16:44:37 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 16:44:37 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 16:44:37 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 16:44:37 -0700
+  [1m[36mQuestion Load (0.5ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+
+
+Started POST "/questions" for 127.0.0.1 at 2015-06-11 16:56:10 -0700
+Processing by QuestionsController#create as JSON
+  Parameters: {"utf8"=>"✓", "question"=>{"title"=>"asdf", "content"=>"asdf"}}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "questions" ("content", "created_at", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "asdf"], ["created_at", "2015-06-11 23:56:10.265900"], ["title", "asdf"], ["updated_at", "2015-06-11 23:56:10.265900"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Completed 201 Created in 17ms (Views: 0.4ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/questions" for 127.0.0.1 at 2015-06-11 16:56:10 -0700
+Processing by QuestionsController#create as JS
+  Parameters: {"utf8"=>"✓", "question"=>{"title"=>"asdf", "content"=>"asdf"}, "commit"=>"Create new Question"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "questions" ("content", "created_at", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "asdf"], ["created_at", "2015-06-11 23:56:10.278808"], ["title", "asdf"], ["updated_at", "2015-06-11 23:56:10.278808"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/questions/2
+Completed 302 Found in 6ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/questions/2" for 127.0.0.1 at 2015-06-11 16:56:10 -0700
+Processing by QuestionsController#show as JS
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  [["question_id", 2]]
+  Rendered questions/show.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 154ms (Views: 137.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-11 16:56:12 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC[0m
+  Rendered questions/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 428ms (Views: 64.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 16:56:12 -0700
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2015-06-11 16:56:12 -0700
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 16:56:12 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 16:56:12 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 16:56:12 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 16:56:12 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 16:56:12 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 16:56:12 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 16:56:12 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 16:56:12 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 16:56:12 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 16:56:12 -0700
+  [1m[35mQuestion Load (0.7ms)[0m  SELECT "questions".* FROM "questions"
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-11 16:56:25 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC
+  Rendered questions/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 416ms (Views: 61.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 16:56:25 -0700
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 16:56:25 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 16:56:25 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 16:56:25 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 16:56:25 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 16:56:25 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 16:56:25 -0700
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2015-06-11 16:56:25 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 16:56:25 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 16:56:25 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 16:56:25 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 16:56:25 -0700
+
+
+Started POST "/questions" for 127.0.0.1 at 2015-06-11 16:56:29 -0700
+Processing by QuestionsController#create as JSON
+  Parameters: {"utf8"=>"✓", "question"=>{"title"=>"asdff", "content"=>"asdff"}}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.7ms)[0m  INSERT INTO "questions" ("content", "created_at", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "asdff"], ["created_at", "2015-06-11 23:56:29.467792"], ["title", "asdff"], ["updated_at", "2015-06-11 23:56:29.467792"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Completed 201 Created in 8ms (Views: 0.4ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/questions" for 127.0.0.1 at 2015-06-11 16:56:29 -0700
+Processing by QuestionsController#create as JS
+  Parameters: {"utf8"=>"✓", "question"=>{"title"=>"asdff", "content"=>"asdff"}, "commit"=>"Create new Question"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "questions" ("content", "created_at", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "asdff"], ["created_at", "2015-06-11 23:56:29.480070"], ["title", "asdff"], ["updated_at", "2015-06-11 23:56:29.480070"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/questions/4
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/questions/4" for 127.0.0.1 at 2015-06-11 16:56:29 -0700
+Processing by QuestionsController#show as JS
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 116ms (Views: 113.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-11 16:57:17 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC[0m
+  Rendered questions/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 493ms (Views: 67.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 16:57:17 -0700
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 16:57:17 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:17 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 16:57:17 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 16:57:17 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 16:57:17 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:17 -0700
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:17 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:17 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:17 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:17 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:17 -0700
+
+
+Started POST "/questions" for 127.0.0.1 at 2015-06-11 16:57:20 -0700
+Processing by QuestionsController#create as JSON
+  Parameters: {"utf8"=>"✓", "question"=>{"title"=>"Ff", "content"=>"ff"}}
+  [1m[35m (2.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "questions" ("content", "created_at", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "ff"], ["created_at", "2015-06-11 23:57:20.451401"], ["title", "Ff"], ["updated_at", "2015-06-11 23:57:20.451401"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Completed 201 Created in 7ms (Views: 0.4ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/questions" for 127.0.0.1 at 2015-06-11 16:57:20 -0700
+Processing by QuestionsController#create as JS
+  Parameters: {"utf8"=>"✓", "question"=>{"title"=>"Ff", "content"=>"ff"}, "commit"=>"Create new Question"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "questions" ("content", "created_at", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "ff"], ["created_at", "2015-06-11 23:57:20.460473"], ["title", "Ff"], ["updated_at", "2015-06-11 23:57:20.460473"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/6
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/questions/6" for 127.0.0.1 at 2015-06-11 16:57:20 -0700
+Processing by QuestionsController#show as JS
+  Parameters: {"id"=>"6"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1[0m  [["question_id", 6]]
+  Rendered questions/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 124ms (Views: 121.4ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/questions/3" for 127.0.0.1 at 2015-06-11 16:57:32 -0700
+Processing by QuestionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JDa19NgFFqN0neowa4qjGfY5o234G6CmtEW+EPGXGLE=", "id"=>"3"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  [["question_id", 3]]
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "questions" WHERE "questions"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/questions
+Completed 302 Found in 7ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 16:57:32 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC[0m
+  Rendered questions/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 416ms (Views: 61.2ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/questions/3" for 127.0.0.1 at 2015-06-11 16:57:32 -0700
+Processing by QuestionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JDa19NgFFqN0neowa4qjGfY5o234G6CmtEW+EPGXGLE=", "id"=>"3"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 3]]
+Completed 404 Not Found in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=3):
+  app/controllers/questions_controller.rb:64:in `all_questions'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.2ms)
+
+
+Started GET "/questions/3" for 127.0.0.1 at 2015-06-11 16:57:39 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 3]]
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=3):
+  app/controllers/questions_controller.rb:64:in `all_questions'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (50.8ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (66.7ms)
+
+
+Started DELETE "/questions/1" for 127.0.0.1 at 2015-06-11 16:57:43 -0700
+Processing by QuestionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JDa19NgFFqN0neowa4qjGfY5o234G6CmtEW+EPGXGLE=", "id"=>"1"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  [["question_id", 1]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "questions" WHERE "questions"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/questions
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 16:57:43 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC[0m
+  Rendered questions/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 423ms (Views: 64.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 16:57:44 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 16:57:44 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 16:57:44 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 16:57:44 -0700
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 16:57:44 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:44 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:44 -0700
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:44 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:44 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:44 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:44 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:44 -0700
+
+
+Started DELETE "/questions/2" for 127.0.0.1 at 2015-06-11 16:57:45 -0700
+Processing by QuestionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JDa19NgFFqN0neowa4qjGfY5o234G6CmtEW+EPGXGLE=", "id"=>"2"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  [["question_id", 2]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "questions" WHERE "questions"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/questions
+Completed 302 Found in 5ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 16:57:45 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC[0m
+  Rendered questions/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 416ms (Views: 59.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 16:57:45 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:45 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 16:57:45 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 16:57:45 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 16:57:45 -0700
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 16:57:45 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:45 -0700
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:45 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:45 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:45 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:45 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:45 -0700
+
+
+Started DELETE "/questions/4" for 127.0.0.1 at 2015-06-11 16:57:46 -0700
+Processing by QuestionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JDa19NgFFqN0neowa4qjGfY5o234G6CmtEW+EPGXGLE=", "id"=>"4"}
+  [1m[35mQuestion Load (0.5ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  [["question_id", 4]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "questions" WHERE "questions"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/questions
+Completed 302 Found in 6ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 16:57:46 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC[0m
+  Rendered questions/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 420ms (Views: 59.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 16:57:46 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 16:57:46 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:46 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 16:57:46 -0700
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 16:57:46 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 16:57:46 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:46 -0700
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:46 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:46 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:46 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:46 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:46 -0700
+
+
+Started DELETE "/questions/5" for 127.0.0.1 at 2015-06-11 16:57:47 -0700
+Processing by QuestionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JDa19NgFFqN0neowa4qjGfY5o234G6CmtEW+EPGXGLE=", "id"=>"5"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  [["question_id", 5]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "questions" WHERE "questions"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/questions
+Completed 302 Found in 5ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 16:57:47 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC[0m
+  Rendered questions/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 418ms (Views: 63.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 16:57:47 -0700
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 16:57:47 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 16:57:47 -0700
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 16:57:47 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 16:57:47 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:47 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:47 -0700
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:47 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:47 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:47 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:47 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:47 -0700
+
+
+Started DELETE "/questions/6" for 127.0.0.1 at 2015-06-11 16:57:48 -0700
+Processing by QuestionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JDa19NgFFqN0neowa4qjGfY5o234G6CmtEW+EPGXGLE=", "id"=>"6"}
+  [1m[35mQuestion Load (0.6ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  [["question_id", 6]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "questions" WHERE "questions"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/questions
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 16:57:48 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC[0m
+  Rendered questions/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 421ms (Views: 62.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 16:57:48 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 16:57:48 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 16:57:48 -0700
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 16:57:48 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:48 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 16:57:48 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:48 -0700
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:48 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:48 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:48 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:48 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 16:57:48 -0700
+
+
+Started POST "/questions" for 127.0.0.1 at 2015-06-11 16:58:05 -0700
+Processing by QuestionsController#create as JSON
+  Parameters: {"utf8"=>"✓", "question"=>{"title"=>"asdf", "content"=>"sadf"}}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "questions" ("content", "created_at", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "sadf"], ["created_at", "2015-06-11 23:58:05.332821"], ["title", "asdf"], ["updated_at", "2015-06-11 23:58:05.332821"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Completed 201 Created in 4ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/questions" for 127.0.0.1 at 2015-06-11 16:58:05 -0700
+Processing by QuestionsController#create as JS
+  Parameters: {"utf8"=>"✓", "question"=>{"title"=>"asdf", "content"=>"sadf"}, "commit"=>"Create new Question"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "questions" ("content", "created_at", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "sadf"], ["created_at", "2015-06-11 23:58:05.340207"], ["title", "asdf"], ["updated_at", "2015-06-11 23:58:05.340207"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/8
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/questions/8" for 127.0.0.1 at 2015-06-11 16:58:05 -0700
+Processing by QuestionsController#show as JS
+  Parameters: {"id"=>"8"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1[0m  [["question_id", 8]]
+  Rendered questions/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 118ms (Views: 115.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 16:58:08 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC
+  Rendered questions/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 421ms (Views: 59.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:08 -0700
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:08 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:08 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:08 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:08 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:08 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:08 -0700
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:08 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:08 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:08 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:08 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:08 -0700
+
+
+Started DELETE "/questions/7" for 127.0.0.1 at 2015-06-11 16:58:09 -0700
+Processing by QuestionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JDa19NgFFqN0neowa4qjGfY5o234G6CmtEW+EPGXGLE=", "id"=>"7"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1[0m  [["question_id", 7]]
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "questions" WHERE "questions"."id" = $1  [["id", 7]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions
+Completed 302 Found in 6ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 16:58:09 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.5ms)[0m  SELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC
+  Rendered questions/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 475ms (Views: 120.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:10 -0700
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:10 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:10 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:10 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:10 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:10 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:10 -0700
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:10 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:10 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:10 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:10 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:10 -0700
+
+
+Started DELETE "/questions/8" for 127.0.0.1 at 2015-06-11 16:58:10 -0700
+Processing by QuestionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JDa19NgFFqN0neowa4qjGfY5o234G6CmtEW+EPGXGLE=", "id"=>"8"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAnswer Load (0.5ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1[0m  [["question_id", 8]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "questions" WHERE "questions"."id" = $1  [["id", 8]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 16:58:10 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC
+  Rendered questions/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 418ms (Views: 62.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:11 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:11 -0700
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:11 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:11 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:11 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:11 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:11 -0700
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:11 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:11 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:11 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:11 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:11 -0700
+
+
+Started POST "/questions" for 127.0.0.1 at 2015-06-11 16:58:12 -0700
+Processing by QuestionsController#create as JSON
+  Parameters: {"utf8"=>"✓", "question"=>{"title"=>"", "content"=>""}}
+  [1m[36m (2.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "questions" ("content", "created_at", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", ""], ["created_at", "2015-06-11 23:58:12.383657"], ["title", ""], ["updated_at", "2015-06-11 23:58:12.383657"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Completed 201 Created in 6ms (Views: 0.3ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/questions" for 127.0.0.1 at 2015-06-11 16:58:12 -0700
+Processing by QuestionsController#create as JS
+  Parameters: {"utf8"=>"✓", "question"=>{"title"=>"", "content"=>""}, "commit"=>"Create new Question"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "questions" ("content", "created_at", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", ""], ["created_at", "2015-06-11 23:58:12.391471"], ["title", ""], ["updated_at", "2015-06-11 23:58:12.391471"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/questions/10
+Completed 302 Found in 5ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/questions/10" for 127.0.0.1 at 2015-06-11 16:58:12 -0700
+Processing by QuestionsController#show as JS
+  Parameters: {"id"=>"10"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 10]]
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  [["question_id", 10]]
+  Rendered questions/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 117ms (Views: 115.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 16:58:14 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC[0m
+  Rendered questions/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 414ms (Views: 59.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:14 -0700
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:14 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:14 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:14 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:14 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:14 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:14 -0700
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:14 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:14 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:14 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:14 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:14 -0700
+
+
+Started PUT "/questions/9/upvote" for 127.0.0.1 at 2015-06-11 16:58:15 -0700
+Processing by QuestionsController#upvote as HTML
+  Parameters: {"authenticity_token"=>"JDa19NgFFqN0neowa4qjGfY5o234G6CmtEW+EPGXGLE=", "id"=>"9"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "questions" SET "updated_at" = $1, "vote_totals" = $2 WHERE "questions"."id" = 9  [["updated_at", "2015-06-11 23:58:15.389039"], ["vote_totals", 1]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-11 16:58:15 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC
+  Rendered questions/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 479ms (Views: 120.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:15 -0700
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:15 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:15 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:15 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:15 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:15 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:15 -0700
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:15 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:15 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:15 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:15 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:15 -0700
+
+
+Started PUT "/questions/9/downvote" for 127.0.0.1 at 2015-06-11 16:58:16 -0700
+Processing by QuestionsController#downvote as HTML
+  Parameters: {"authenticity_token"=>"JDa19NgFFqN0neowa4qjGfY5o234G6CmtEW+EPGXGLE=", "id"=>"9"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "questions" SET "updated_at" = $1, "vote_totals" = $2 WHERE "questions"."id" = 9[0m  [["updated_at", "2015-06-11 23:58:16.637709"], ["vote_totals", 0]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-11 16:58:16 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC[0m
+  Rendered questions/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 427ms (Views: 58.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:17 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:17 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:17 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:17 -0700
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:17 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:17 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:17 -0700
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:17 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:17 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:17 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:17 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:17 -0700
+
+
+Started PUT "/questions/10/upvote" for 127.0.0.1 at 2015-06-11 16:58:17 -0700
+Processing by QuestionsController#upvote as HTML
+  Parameters: {"authenticity_token"=>"JDa19NgFFqN0neowa4qjGfY5o234G6CmtEW+EPGXGLE=", "id"=>"10"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 10]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "questions" SET "updated_at" = $1, "vote_totals" = $2 WHERE "questions"."id" = 10  [["updated_at", "2015-06-11 23:58:17.878516"], ["vote_totals", 1]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-11 16:58:17 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC
+  Rendered questions/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 581ms (Views: 125.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:18 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:18 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:18 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:18 -0700
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:18 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:18 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:18 -0700
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:18 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:18 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:18 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:18 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:18 -0700
+
+
+Started PUT "/questions/10/downvote" for 127.0.0.1 at 2015-06-11 16:58:18 -0700
+Processing by QuestionsController#downvote as HTML
+  Parameters: {"authenticity_token"=>"JDa19NgFFqN0neowa4qjGfY5o234G6CmtEW+EPGXGLE=", "id"=>"10"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 10]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "questions" SET "updated_at" = $1, "vote_totals" = $2 WHERE "questions"."id" = 10[0m  [["updated_at", "2015-06-11 23:58:18.989983"], ["vote_totals", 0]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-11 16:58:18 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC[0m
+  Rendered questions/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 421ms (Views: 61.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:19 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:19 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:19 -0700
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:19 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:19 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:19 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:19 -0700
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:19 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:19 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:19 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:19 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:19 -0700
+
+
+Started DELETE "/questions/10" for 127.0.0.1 at 2015-06-11 16:58:20 -0700
+Processing by QuestionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JDa19NgFFqN0neowa4qjGfY5o234G6CmtEW+EPGXGLE=", "id"=>"10"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 10]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  [["question_id", 10]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "questions" WHERE "questions"."id" = $1[0m  [["id", 10]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/questions
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 16:58:20 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC[0m
+  Rendered questions/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 567ms (Views: 119.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:21 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:21 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:21 -0700
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:21 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:21 -0700
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:21 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:21 -0700
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:21 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:21 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:21 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:21 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:21 -0700
+
+
+Started DELETE "/questions/9" for 127.0.0.1 at 2015-06-11 16:58:21 -0700
+Processing by QuestionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JDa19NgFFqN0neowa4qjGfY5o234G6CmtEW+EPGXGLE=", "id"=>"9"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAnswer Load (0.1ms)[0m  SELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  [["question_id", 9]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "questions" WHERE "questions"."id" = $1[0m  [["id", 9]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/questions
+Completed 302 Found in 4ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 16:58:21 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC[0m
+  Rendered questions/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 416ms (Views: 57.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:21 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:21 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:21 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:21 -0700
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:21 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 16:58:21 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:21 -0700
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:21 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:21 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:21 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:21 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 16:58:22 -0700
+
+
+Started POST "/questions" for 127.0.0.1 at 2015-06-11 16:59:14 -0700
+Processing by QuestionsController#create as JSON
+  Parameters: {"utf8"=>"✓", "question"=>{"title"=>"asdf", "content"=>"sadf"}}
+  [1m[35m (2.0ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "questions" ("content", "created_at", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "sadf"], ["created_at", "2015-06-11 23:59:14.279345"], ["title", "asdf"], ["updated_at", "2015-06-11 23:59:14.279345"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Completed 201 Created in 8ms (Views: 0.4ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/questions" for 127.0.0.1 at 2015-06-11 16:59:14 -0700
+Processing by QuestionsController#create as JS
+  Parameters: {"utf8"=>"✓", "question"=>{"title"=>"asdf", "content"=>"sadf"}, "commit"=>"Create new Question"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "questions" ("content", "created_at", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "sadf"], ["created_at", "2015-06-11 23:59:14.288091"], ["title", "asdf"], ["updated_at", "2015-06-11 23:59:14.288091"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/12
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/questions/12" for 127.0.0.1 at 2015-06-11 16:59:14 -0700
+Processing by QuestionsController#show as JS
+  Parameters: {"id"=>"12"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1[0m  [["question_id", 12]]
+  Rendered questions/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 64ms (Views: 61.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 16:59:33 -0700
+Processing by QuestionsController#index as HTML
+  Rendered questions/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 363ms
+
+SyntaxError (/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:21: syntax error, unexpected '}', expecting =>
+...fer.append=( link_to {{ title }}, question_path(question) );...
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:21: syntax error, unexpected ')', expecting '}'
+...e }}, question_path(question) );@output_buffer.safe_append='
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:52: syntax error, unexpected keyword_ensure, expecting '}'
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:54: syntax error, unexpected keyword_end, expecting '}'):
+  app/views/questions/index.html.erb:21: syntax error, unexpected '}', expecting =>
+  app/views/questions/index.html.erb:21: syntax error, unexpected ')', expecting '}'
+  app/views/questions/index.html.erb:52: syntax error, unexpected keyword_ensure, expecting '}'
+  app/views/questions/index.html.erb:54: syntax error, unexpected keyword_end, expecting '}'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.1ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 16:59:36 -0700
+Processing by QuestionsController#index as HTML
+  Rendered questions/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 358ms
+
+SyntaxError (/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:21: syntax error, unexpected '}', expecting =>
+...fer.append=( link_to {{ title }}, question_path(question) );...
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:21: syntax error, unexpected ')', expecting '}'
+...e }}, question_path(question) );@output_buffer.safe_append='
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:52: syntax error, unexpected keyword_ensure, expecting '}'
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:54: syntax error, unexpected keyword_end, expecting '}'):
+  app/views/questions/index.html.erb:21: syntax error, unexpected '}', expecting =>
+  app/views/questions/index.html.erb:21: syntax error, unexpected ')', expecting '}'
+  app/views/questions/index.html.erb:52: syntax error, unexpected keyword_ensure, expecting '}'
+  app/views/questions/index.html.erb:54: syntax error, unexpected keyword_end, expecting '}'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.8ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 16:59:55 -0700
+Processing by QuestionsController#index as HTML
+  Rendered questions/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 426ms
+
+SyntaxError (/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:21: syntax error, unexpected '}', expecting =>
+...fer.append=( link_to {{ title }}, question_path({{ id }}) );...
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:21: syntax error, unexpected '}', expecting =>
+...title }}, question_path({{ id }}) );@output_buffer.safe_appe...
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:52: syntax error, unexpected keyword_ensure, expecting '}'
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:54: syntax error, unexpected keyword_end, expecting '}'):
+  app/views/questions/index.html.erb:21: syntax error, unexpected '}', expecting =>
+  app/views/questions/index.html.erb:21: syntax error, unexpected '}', expecting =>
+  app/views/questions/index.html.erb:52: syntax error, unexpected keyword_ensure, expecting '}'
+  app/views/questions/index.html.erb:54: syntax error, unexpected keyword_end, expecting '}'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.1ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 17:01:12 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC
+  Rendered questions/index.html.erb within layouts/application (13.3ms)
+Completed 500 Internal Server Error in 383ms
+
+ActionView::Template::Error (undefined local variable or method `question' for #<#<Class:0x007ff4bf2e8b08>:0x007ff4bf0625a0>):
+    19: 
+    20:   <script id="sample-template" type="text/x-handlebars-template">
+    21:     <p>
+    22:       <%= link_to question.title, question_path(question) %>
+    23:       <br>
+    24:       <%= link_to 'Edit', edit_question_path(question) %>
+    25:       <%= link_to 'Delete', question_path(question), method: :delete %><!-- data: {confirm: 'Are you certain?'} %> -->
+  app/views/questions/index.html.erb:22:in `_app_views_questions_index_html_erb___613537265623924089_70344576795940'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.2ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 17:12:52 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC[0m
+  Rendered questions/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 470ms (Views: 107.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 17:12:52 -0700
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 17:12:52 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 17:12:52 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 17:12:52 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 17:12:52 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 17:12:52 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 17:12:52 -0700
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2015-06-11 17:12:52 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 17:12:53 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 17:12:53 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 17:12:53 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 17:12:53 -0700
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 17:15:19 -0700
+Processing by QuestionsController#index as HTML
+  Rendered questions/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 438ms
+
+SyntaxError (/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:22: syntax error, unexpected '}', expecting =>
+...fer.append=( link_to {{ title }}, question_path( '{{ id }}')...
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:22: syntax error, unexpected ')', expecting '}'
+...}, question_path( '{{ id }}') );@output_buffer.safe_append='
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:59: syntax error, unexpected keyword_ensure, expecting '}'
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:61: syntax error, unexpected keyword_end, expecting '}'):
+  app/views/questions/index.html.erb:22: syntax error, unexpected '}', expecting =>
+  app/views/questions/index.html.erb:22: syntax error, unexpected ')', expecting '}'
+  app/views/questions/index.html.erb:59: syntax error, unexpected keyword_ensure, expecting '}'
+  app/views/questions/index.html.erb:61: syntax error, unexpected keyword_end, expecting '}'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.4ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 17:15:33 -0700
+Processing by QuestionsController#index as HTML
+  Rendered questions/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 357ms
+
+SyntaxError (/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:22: syntax error, unexpected '}', expecting =>
+...fer.append=( link_to {{ title }}, question_path( '{{ id }}')...
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:22: syntax error, unexpected ')', expecting '}'
+...}, question_path( '{{ id }}') );@output_buffer.safe_append='
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:26: syntax error, unexpected '}', expecting =>
+...uffer.append=( {{ vote_totals }} );@output_buffer.safe_appen...
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:59: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:61: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/questions/index.html.erb:22: syntax error, unexpected '}', expecting =>
+  app/views/questions/index.html.erb:22: syntax error, unexpected ')', expecting '}'
+  app/views/questions/index.html.erb:26: syntax error, unexpected '}', expecting =>
+  app/views/questions/index.html.erb:59: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/questions/index.html.erb:61: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.0ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 17:15:57 -0700
+Processing by QuestionsController#index as HTML
+  Rendered questions/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 365ms
+
+SyntaxError (/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:22: syntax error, unexpected '}', expecting =>
+...fer.append=( link_to {{ title }}, question_path( "{{ id }}")...
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:22: syntax error, unexpected ')', expecting '}'
+...}, question_path( "{{ id }}") );@output_buffer.safe_append='
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:26: syntax error, unexpected '}', expecting =>
+...uffer.append=( {{ vote_totals }} );@output_buffer.safe_appen...
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:59: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:61: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/questions/index.html.erb:22: syntax error, unexpected '}', expecting =>
+  app/views/questions/index.html.erb:22: syntax error, unexpected ')', expecting '}'
+  app/views/questions/index.html.erb:26: syntax error, unexpected '}', expecting =>
+  app/views/questions/index.html.erb:59: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/questions/index.html.erb:61: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.3ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 17:16:29 -0700
+Processing by QuestionsController#index as HTML
+  Rendered questions/index.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 366ms
+
+SyntaxError (/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:22: syntax error, unexpected '}', expecting =>
+...fer.append=( link_to {{ title }}, question_path("{{ id }}") ...
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:22: syntax error, unexpected ')', expecting '}'
+...}}, question_path("{{ id }}") );@output_buffer.safe_append='
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:26: syntax error, unexpected '}', expecting =>
+...uffer.append=( {{ vote_totals }} );@output_buffer.safe_appen...
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:59: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:61: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/questions/index.html.erb:22: syntax error, unexpected '}', expecting =>
+  app/views/questions/index.html.erb:22: syntax error, unexpected ')', expecting '}'
+  app/views/questions/index.html.erb:26: syntax error, unexpected '}', expecting =>
+  app/views/questions/index.html.erb:59: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/questions/index.html.erb:61: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (62.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (80.2ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 17:16:43 -0700
+Processing by QuestionsController#index as HTML
+  Rendered questions/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 363ms
+
+SyntaxError (/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:22: syntax error, unexpected '}', expecting =>
+...fer.append=( link_to {{ title }}, question_path("{{id}}") );...
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:22: syntax error, unexpected ')', expecting '}'
+...e }}, question_path("{{id}}") );@output_buffer.safe_append='
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:26: syntax error, unexpected '}', expecting =>
+...uffer.append=( {{ vote_totals }} );@output_buffer.safe_appen...
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:59: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:61: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/questions/index.html.erb:22: syntax error, unexpected '}', expecting =>
+  app/views/questions/index.html.erb:22: syntax error, unexpected ')', expecting '}'
+  app/views/questions/index.html.erb:26: syntax error, unexpected '}', expecting =>
+  app/views/questions/index.html.erb:59: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/questions/index.html.erb:61: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.6ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 17:16:45 -0700
+Processing by QuestionsController#index as HTML
+  Rendered questions/index.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 359ms
+
+SyntaxError (/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:22: syntax error, unexpected '}', expecting =>
+...fer.append=( link_to {{ title }}, question_path("{{id}}") );...
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:22: syntax error, unexpected ')', expecting '}'
+...e }}, question_path("{{id}}") );@output_buffer.safe_append='
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:26: syntax error, unexpected '}', expecting =>
+...uffer.append=( {{ vote_totals }} );@output_buffer.safe_appen...
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:59: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:61: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/questions/index.html.erb:22: syntax error, unexpected '}', expecting =>
+  app/views/questions/index.html.erb:22: syntax error, unexpected ')', expecting '}'
+  app/views/questions/index.html.erb:26: syntax error, unexpected '}', expecting =>
+  app/views/questions/index.html.erb:59: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/questions/index.html.erb:61: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.1ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 17:18:05 -0700
+Processing by QuestionsController#index as HTML
+  Rendered questions/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 440ms
+
+SyntaxError (/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:22: syntax error, unexpected '}', expecting =>
+...fer.append=( link_to {{ title }}, question_path({{id}}) );@o...
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:22: syntax error, unexpected '}', expecting =>
+...{ title }}, question_path({{id}}) );@output_buffer.safe_appe...
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:24: syntax error, unexpected '}', expecting =>
+...Edit", edit_question_path({{id}}) );@output_buffer.safe_appe...
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:25: syntax error, unexpected '}', expecting =>
+...o "Delete", question_path({{id}}), method: :delete );@output...
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:26: syntax error, unexpected '}', expecting =>
+...uffer.append=( {{ vote_totals }} );@output_buffer.safe_appen...
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:27: syntax error, unexpected '}', expecting =>
+...te", upvote_question_path({{id}}), :method => :put );@output...
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:28: syntax error, unexpected '}', expecting =>
+...", downvote_question_path({{id}}), :method => :put );@output...
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:59: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:61: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/questions/index.html.erb:22: syntax error, unexpected '}', expecting =>
+  app/views/questions/index.html.erb:22: syntax error, unexpected '}', expecting =>
+  app/views/questions/index.html.erb:24: syntax error, unexpected '}', expecting =>
+  app/views/questions/index.html.erb:25: syntax error, unexpected '}', expecting =>
+  app/views/questions/index.html.erb:26: syntax error, unexpected '}', expecting =>
+  app/views/questions/index.html.erb:27: syntax error, unexpected '}', expecting =>
+  app/views/questions/index.html.erb:28: syntax error, unexpected '}', expecting =>
+  app/views/questions/index.html.erb:59: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/questions/index.html.erb:61: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.4ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 17:18:18 -0700
+Processing by QuestionsController#index as HTML
+  Rendered questions/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 360ms
+
+SyntaxError (/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:22: syntax error, unexpected '}', expecting =>
+...to "title", question_path({{id}}) );@output_buffer.safe_appe...
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:24: syntax error, unexpected '}', expecting =>
+...Edit", edit_question_path({{id}}) );@output_buffer.safe_appe...
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:25: syntax error, unexpected '}', expecting =>
+...o "Delete", question_path({{id}}), method: :delete );@output...
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:26: syntax error, unexpected '}', expecting =>
+...uffer.append=( {{ vote_totals }} );@output_buffer.safe_appen...
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:27: syntax error, unexpected '}', expecting =>
+...te", upvote_question_path({{id}}), :method => :put );@output...
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:28: syntax error, unexpected '}', expecting =>
+...", downvote_question_path({{id}}), :method => :put );@output...
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:59: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:61: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/questions/index.html.erb:22: syntax error, unexpected '}', expecting =>
+  app/views/questions/index.html.erb:24: syntax error, unexpected '}', expecting =>
+  app/views/questions/index.html.erb:25: syntax error, unexpected '}', expecting =>
+  app/views/questions/index.html.erb:26: syntax error, unexpected '}', expecting =>
+  app/views/questions/index.html.erb:27: syntax error, unexpected '}', expecting =>
+  app/views/questions/index.html.erb:28: syntax error, unexpected '}', expecting =>
+  app/views/questions/index.html.erb:59: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/questions/index.html.erb:61: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.2ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 17:18:28 -0700
+Processing by QuestionsController#index as HTML
+  Rendered questions/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 364ms
+
+SyntaxError (/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:26: syntax error, unexpected '}', expecting =>
+...uffer.append=( {{ vote_totals }} );@output_buffer.safe_appen...
+...                               ^
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:59: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/apprentice/Desktop/stack-overflow-workshop-challenge/app/views/questions/index.html.erb:61: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/questions/index.html.erb:26: syntax error, unexpected '}', expecting =>
+  app/views/questions/index.html.erb:59: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/questions/index.html.erb:61: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.3ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 17:18:36 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC
+  Rendered questions/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 422ms (Views: 64.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 17:18:37 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 17:18:37 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 17:18:37 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 17:18:37 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 17:18:37 -0700
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 17:18:37 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 17:18:37 -0700
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2015-06-11 17:18:37 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 17:18:37 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 17:18:37 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 17:18:37 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 17:18:37 -0700
+
+
+Started POST "/questions" for 127.0.0.1 at 2015-06-11 17:18:57 -0700
+Processing by QuestionsController#create as JSON
+  Parameters: {"utf8"=>"✓", "question"=>{"title"=>"does this work", "content"=>"content"}}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "questions" ("content", "created_at", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "content"], ["created_at", "2015-06-12 00:18:57.763563"], ["title", "does this work"], ["updated_at", "2015-06-12 00:18:57.763563"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Completed 201 Created in 8ms (Views: 0.6ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/questions" for 127.0.0.1 at 2015-06-11 17:18:57 -0700
+Processing by QuestionsController#create as JS
+  Parameters: {"utf8"=>"✓", "question"=>{"title"=>"does this work", "content"=>"content"}, "commit"=>"Create new Question"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "questions" ("content", "created_at", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "content"], ["created_at", "2015-06-12 00:18:57.772884"], ["title", "does this work"], ["updated_at", "2015-06-12 00:18:57.772884"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/questions/14
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/questions/14" for 127.0.0.1 at 2015-06-11 17:18:57 -0700
+Processing by QuestionsController#show as JS
+  Parameters: {"id"=>"14"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 14]]
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  [["question_id", 14]]
+  Rendered questions/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 116ms (Views: 113.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/questions/%7B%7Bid%7D%7D" for 127.0.0.1 at 2015-06-11 17:19:01 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"{{id}}"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 3ms
+
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'={{id}}):
+  app/controllers/questions_controller.rb:64:in `all_questions'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.5ms)
+
+
+Started GET "/questions/%7B%7Bid%7D%7D" for 127.0.0.1 at 2015-06-11 17:19:01 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"{{id}}"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'={{id}}):
+  app/controllers/questions_controller.rb:64:in `all_questions'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 17:19:08 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC[0m
+  Rendered questions/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 427ms (Views: 67.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/questions/14" for 127.0.0.1 at 2015-06-11 17:19:10 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 14]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1[0m  [["question_id", 14]]
+  Rendered questions/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 123ms (Views: 120.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/questions" for 127.0.0.1 at 2015-06-11 17:19:20 -0700
+Processing by QuestionsController#create as JSON
+  Parameters: {"utf8"=>"✓", "question"=>{"title"=>"trying again", "content"=>"toiwegfogwgewcontent"}}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "questions" ("content", "created_at", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "toiwegfogwgewcontent"], ["created_at", "2015-06-12 00:19:20.809028"], ["title", "trying again"], ["updated_at", "2015-06-12 00:19:20.809028"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Completed 201 Created in 6ms (Views: 0.6ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/questions" for 127.0.0.1 at 2015-06-11 17:19:20 -0700
+Processing by QuestionsController#create as JS
+  Parameters: {"utf8"=>"✓", "question"=>{"title"=>"trying again", "content"=>"toiwegfogwgewcontent"}, "commit"=>"Create new Question"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "questions" ("content", "created_at", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "toiwegfogwgewcontent"], ["created_at", "2015-06-12 00:19:20.818273"], ["title", "trying again"], ["updated_at", "2015-06-12 00:19:20.818273"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/16
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/questions/16" for 127.0.0.1 at 2015-06-11 17:19:20 -0700
+Processing by QuestionsController#show as JS
+  Parameters: {"id"=>"16"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 16]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1[0m  [["question_id", 16]]
+  Rendered questions/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 68ms (Views: 64.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 17:19:27 -0700
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 17:19:27 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 17:19:27 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 17:19:27 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 17:19:27 -0700
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 17:26:18 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC
+  Rendered questions/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 486ms (Views: 124.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:18 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:18 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:18 -0700
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:18 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:18 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:18 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:18 -0700
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:18 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:18 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:18 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:18 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:18 -0700
+
+
+Started POST "/questions" for 127.0.0.1 at 2015-06-11 17:26:21 -0700
+Processing by QuestionsController#create as JSON
+  Parameters: {"utf8"=>"✓", "question"=>{"title"=>"asdf", "content"=>"asdf"}}
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "questions" ("content", "created_at", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "asdf"], ["created_at", "2015-06-12 00:26:21.723448"], ["title", "asdf"], ["updated_at", "2015-06-12 00:26:21.723448"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Completed 201 Created in 9ms (Views: 0.7ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/questions" for 127.0.0.1 at 2015-06-11 17:26:21 -0700
+Processing by QuestionsController#create as JS
+  Parameters: {"utf8"=>"✓", "question"=>{"title"=>"asdf", "content"=>"asdf"}, "commit"=>"Create new Question"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "questions" ("content", "created_at", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "asdf"], ["created_at", "2015-06-12 00:26:21.733856"], ["title", "asdf"], ["updated_at", "2015-06-12 00:26:21.733856"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/questions/18
+Completed 302 Found in 5ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/questions/18" for 127.0.0.1 at 2015-06-11 17:26:21 -0700
+Processing by QuestionsController#show as JS
+  Parameters: {"id"=>"18"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 18]]
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  [["question_id", 18]]
+  Rendered questions/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 63ms (Views: 60.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/questions/%7B%7B@id%7D%7D" for 127.0.0.1 at 2015-06-11 17:26:23 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"{{@id}}"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'={{@id}}):
+  app/controllers/questions_controller.rb:64:in `all_questions'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.8ms)
+
+
+Started GET "/questions/%7B%7B@id%7D%7D" for 127.0.0.1 at 2015-06-11 17:26:23 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"{{@id}}"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 4ms
+
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'={{@id}}):
+  app/controllers/questions_controller.rb:64:in `all_questions'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.5ms)
+
+
+Started GET "/questions/%7B%7B@id%7D%7D" for 127.0.0.1 at 2015-06-11 17:26:37 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"{{@id}}"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'={{@id}}):
+  app/controllers/questions_controller.rb:64:in `all_questions'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 17:26:39 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC
+  Rendered questions/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 437ms (Views: 67.3ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/questions/18" for 127.0.0.1 at 2015-06-11 17:26:41 -0700
+Processing by QuestionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JDa19NgFFqN0neowa4qjGfY5o234G6CmtEW+EPGXGLE=", "id"=>"18"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 18]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1[0m  [["question_id", 18]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "questions" WHERE "questions"."id" = $1  [["id", 18]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions
+Completed 302 Found in 6ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 17:26:41 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.5ms)[0m  SELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC
+  Rendered questions/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 487ms (Views: 133.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:42 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:42 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:42 -0700
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:42 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:42 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:42 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:42 -0700
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:42 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:42 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:42 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:42 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:42 -0700
+
+
+Started DELETE "/questions/12" for 127.0.0.1 at 2015-06-11 17:26:42 -0700
+Processing by QuestionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JDa19NgFFqN0neowa4qjGfY5o234G6CmtEW+EPGXGLE=", "id"=>"12"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1[0m  [["question_id", 12]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "questions" WHERE "questions"."id" = $1  [["id", 12]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions
+Completed 302 Found in 6ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 17:26:42 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC
+  Rendered questions/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 426ms (Views: 72.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:43 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:43 -0700
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:43 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:43 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:43 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:43 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:43 -0700
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:43 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:43 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:43 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:43 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:43 -0700
+
+
+Started DELETE "/questions/11" for 127.0.0.1 at 2015-06-11 17:26:43 -0700
+Processing by QuestionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JDa19NgFFqN0neowa4qjGfY5o234G6CmtEW+EPGXGLE=", "id"=>"11"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 11]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAnswer Load (0.1ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1[0m  [["question_id", 11]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "questions" WHERE "questions"."id" = $1  [["id", 11]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 17:26:43 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.5ms)[0m  SELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC
+  Rendered questions/index.html.erb within layouts/application (69.8ms)
+Completed 200 OK in 489ms (Views: 132.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:44 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:44 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:44 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:44 -0700
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:44 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:44 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:44 -0700
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:44 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:44 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:44 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:44 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:44 -0700
+
+
+Started DELETE "/questions/13" for 127.0.0.1 at 2015-06-11 17:26:44 -0700
+Processing by QuestionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JDa19NgFFqN0neowa4qjGfY5o234G6CmtEW+EPGXGLE=", "id"=>"13"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1[0m  [["question_id", 13]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "questions" WHERE "questions"."id" = $1  [["id", 13]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 17:26:44 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC
+  Rendered questions/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 420ms (Views: 68.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:45 -0700
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:45 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:45 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:45 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:45 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:45 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:45 -0700
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:45 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:45 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:45 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:45 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:45 -0700
+
+
+Started DELETE "/questions/14" for 127.0.0.1 at 2015-06-11 17:26:46 -0700
+Processing by QuestionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JDa19NgFFqN0neowa4qjGfY5o234G6CmtEW+EPGXGLE=", "id"=>"14"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 14]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1[0m  [["question_id", 14]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "questions" WHERE "questions"."id" = $1  [["id", 14]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions
+Completed 302 Found in 6ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 17:26:46 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC
+  Rendered questions/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 418ms (Views: 65.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:46 -0700
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:46 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:46 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:46 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:46 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:46 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:46 -0700
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:46 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:46 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:46 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:46 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:46 -0700
+
+
+Started DELETE "/questions/15" for 127.0.0.1 at 2015-06-11 17:26:46 -0700
+Processing by QuestionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JDa19NgFFqN0neowa4qjGfY5o234G6CmtEW+EPGXGLE=", "id"=>"15"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 15]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAnswer Load (0.1ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1[0m  [["question_id", 15]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "questions" WHERE "questions"."id" = $1  [["id", 15]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 17:26:46 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.5ms)[0m  SELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC
+  Rendered questions/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 574ms (Views: 131.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:47 -0700
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:47 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:47 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:47 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:47 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:47 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:47 -0700
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:47 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:47 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:47 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:47 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:47 -0700
+
+
+Started DELETE "/questions/16" for 127.0.0.1 at 2015-06-11 17:26:48 -0700
+Processing by QuestionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JDa19NgFFqN0neowa4qjGfY5o234G6CmtEW+EPGXGLE=", "id"=>"16"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 16]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAnswer Load (0.1ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1[0m  [["question_id", 16]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "questions" WHERE "questions"."id" = $1  [["id", 16]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions
+Completed 302 Found in 4ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 17:26:48 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC
+  Rendered questions/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 437ms (Views: 66.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:48 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:48 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:48 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:48 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:48 -0700
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:48 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:48 -0700
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:48 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:48 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:48 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:48 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:48 -0700
+
+
+Started DELETE "/questions/17" for 127.0.0.1 at 2015-06-11 17:26:49 -0700
+Processing by QuestionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JDa19NgFFqN0neowa4qjGfY5o234G6CmtEW+EPGXGLE=", "id"=>"17"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 17]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1[0m  [["question_id", 17]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "questions" WHERE "questions"."id" = $1  [["id", 17]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions
+Completed 302 Found in 5ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 17:26:49 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC
+  Rendered questions/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 494ms (Views: 137.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:49 -0700
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:49 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:49 -0700
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:49 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 17:26:49 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:49 -0700
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:49 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:49 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:49 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:49 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:49 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 17:26:49 -0700
+
+
+Started POST "/questions" for 127.0.0.1 at 2015-06-11 17:26:54 -0700
+Processing by QuestionsController#create as JSON
+  Parameters: {"utf8"=>"✓", "question"=>{"title"=>"asdff", "content"=>"asdff"}}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.9ms)[0m  INSERT INTO "questions" ("content", "created_at", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "asdff"], ["created_at", "2015-06-12 00:26:54.360481"], ["title", "asdff"], ["updated_at", "2015-06-12 00:26:54.360481"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Completed 201 Created in 8ms (Views: 0.4ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/questions" for 127.0.0.1 at 2015-06-11 17:26:54 -0700
+Processing by QuestionsController#create as JS
+  Parameters: {"utf8"=>"✓", "question"=>{"title"=>"asdff", "content"=>"asdff"}, "commit"=>"Create new Question"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "questions" ("content", "created_at", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "asdff"], ["created_at", "2015-06-12 00:26:54.373451"], ["title", "asdff"], ["updated_at", "2015-06-12 00:26:54.373451"]]
+  [1m[35m (1.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/questions/20
+Completed 302 Found in 7ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/questions/20" for 127.0.0.1 at 2015-06-11 17:26:54 -0700
+Processing by QuestionsController#show as JS
+  Parameters: {"id"=>"20"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 20]]
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  [["question_id", 20]]
+  Rendered questions/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 66ms (Views: 64.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/questions/%7B%7Bid%7D%7D" for 127.0.0.1 at 2015-06-11 17:26:55 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"{{id}}"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'={{id}}):
+  app/controllers/questions_controller.rb:64:in `all_questions'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.0ms)
+
+
+Started GET "/questions/%7B%7Bid%7D%7D" for 127.0.0.1 at 2015-06-11 17:26:55 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"{{id}}"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 3ms
+
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'={{id}}):
+  app/controllers/questions_controller.rb:64:in `all_questions'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (74.9ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 17:28:32 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC[0m
+  Rendered questions/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 428ms (Views: 62.6ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 17:28:34 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC
+  Rendered questions/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 476ms (Views: 119.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 17:28:35 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 17:28:35 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 17:28:35 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 17:28:35 -0700
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 17:28:35 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 17:28:35 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 17:28:35 -0700
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2015-06-11 17:28:35 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 17:28:35 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 17:28:35 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 17:28:35 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 17:28:35 -0700
+
+
+Started POST "/questions" for 127.0.0.1 at 2015-06-11 17:28:38 -0700
+Processing by QuestionsController#create as JSON
+  Parameters: {"utf8"=>"✓", "question"=>{"title"=>"asdf", "content"=>"asdf"}}
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Question without an ID):
+  app/controllers/questions_controller.rb:64:in `all_questions'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb (15.3ms)
+
+
+Started POST "/questions" for 127.0.0.1 at 2015-06-11 17:28:38 -0700
+Processing by QuestionsController#create as JS
+  Parameters: {"utf8"=>"✓", "question"=>{"title"=>"asdf", "content"=>"asdf"}, "commit"=>"Create new Question"}
+Completed 404 Not Found in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find Question without an ID):
+  app/controllers/questions_controller.rb:64:in `all_questions'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.8ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb (15.6ms)
+
+
+Started POST "/questions" for 127.0.0.1 at 2015-06-11 17:28:40 -0700
+Processing by QuestionsController#create as JSON
+  Parameters: {"utf8"=>"✓", "question"=>{"title"=>"asdf", "content"=>"asdf"}}
+Completed 404 Not Found in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find Question without an ID):
+  app/controllers/questions_controller.rb:64:in `all_questions'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb (15.6ms)
+
+
+Started POST "/questions" for 127.0.0.1 at 2015-06-11 17:28:40 -0700
+Processing by QuestionsController#create as JS
+  Parameters: {"utf8"=>"✓", "question"=>{"title"=>"asdf", "content"=>"asdf"}, "commit"=>"Create new Question"}
+Completed 404 Not Found in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find Question without an ID):
+  app/controllers/questions_controller.rb:64:in `all_questions'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.8ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb (17.3ms)
+
+
+Started POST "/questions" for 127.0.0.1 at 2015-06-11 17:28:41 -0700
+Processing by QuestionsController#create as JSON
+  Parameters: {"utf8"=>"✓", "question"=>{"title"=>"asdf", "content"=>"asdf"}}
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Question without an ID):
+  app/controllers/questions_controller.rb:64:in `all_questions'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.1ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb (17.9ms)
+
+
+Started POST "/questions" for 127.0.0.1 at 2015-06-11 17:28:41 -0700
+Processing by QuestionsController#create as JS
+  Parameters: {"utf8"=>"✓", "question"=>{"title"=>"asdf", "content"=>"asdf"}, "commit"=>"Create new Question"}
+Completed 404 Not Found in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find Question without an ID):
+  app/controllers/questions_controller.rb:64:in `all_questions'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.8ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb (17.5ms)
+
+
+Started POST "/questions" for 127.0.0.1 at 2015-06-11 17:28:43 -0700
+Processing by QuestionsController#create as JSON
+  Parameters: {"utf8"=>"✓", "question"=>{"title"=>"asdf", "content"=>"asdf"}}
+Completed 404 Not Found in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find Question without an ID):
+  app/controllers/questions_controller.rb:64:in `all_questions'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb (14.0ms)
+
+
+Started POST "/questions" for 127.0.0.1 at 2015-06-11 17:28:43 -0700
+Processing by QuestionsController#create as JS
+  Parameters: {"utf8"=>"✓", "question"=>{"title"=>"asdf", "content"=>"asdf"}, "commit"=>"Create new Question"}
+Completed 404 Not Found in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find Question without an ID):
+  app/controllers/questions_controller.rb:64:in `all_questions'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb (19.0ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 17:28:44 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC[0m
+  Rendered questions/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 418ms (Views: 61.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 17:28:45 -0700
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 17:28:45 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 17:28:45 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 17:28:45 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 17:28:45 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 17:28:45 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 17:28:45 -0700
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2015-06-11 17:28:45 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 17:28:45 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 17:28:45 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 17:28:45 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 17:28:45 -0700
+
+
+Started POST "/questions" for 127.0.0.1 at 2015-06-11 17:28:47 -0700
+Processing by QuestionsController#create as JSON
+  Parameters: {"utf8"=>"✓", "question"=>{"title"=>"asdf", "content"=>"asdf"}}
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Question without an ID):
+  app/controllers/questions_controller.rb:64:in `all_questions'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb (15.5ms)
+
+
+Started POST "/questions" for 127.0.0.1 at 2015-06-11 17:28:47 -0700
+Processing by QuestionsController#create as JS
+  Parameters: {"utf8"=>"✓", "question"=>{"title"=>"asdf", "content"=>"asdf"}, "commit"=>"Create new Question"}
+Completed 404 Not Found in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find Question without an ID):
+  app/controllers/questions_controller.rb:64:in `all_questions'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.8ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb (16.9ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2015-06-11 17:28:56 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC
+  Rendered questions/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 430ms (Views: 67.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-11 17:28:57 -0700
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2015-06-11 17:28:57 -0700
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2015-06-11 17:28:57 -0700
+
+
+Started GET "/assets/trg.css?body=1" for 127.0.0.1 at 2015-06-11 17:28:57 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-11 17:28:57 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-11 17:28:57 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-11 17:28:57 -0700
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2015-06-11 17:28:57 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-11 17:28:57 -0700
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2015-06-11 17:28:57 -0700
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2015-06-11 17:28:57 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-11 17:28:57 -0700
+
+
+Started POST "/questions" for 127.0.0.1 at 2015-06-11 17:28:59 -0700
+Processing by QuestionsController#create as JSON
+  Parameters: {"utf8"=>"✓", "question"=>{"title"=>"ff", "content"=>"ff"}}
+  [1m[36m (2.9ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "questions" ("content", "created_at", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "ff"], ["created_at", "2015-06-12 00:28:59.456390"], ["title", "ff"], ["updated_at", "2015-06-12 00:28:59.456390"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Completed 201 Created in 9ms (Views: 0.5ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/questions" for 127.0.0.1 at 2015-06-11 17:28:59 -0700
+Processing by QuestionsController#create as JS
+  Parameters: {"utf8"=>"✓", "question"=>{"title"=>"ff", "content"=>"ff"}, "commit"=>"Create new Question"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "questions" ("content", "created_at", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "ff"], ["created_at", "2015-06-12 00:28:59.465286"], ["title", "ff"], ["updated_at", "2015-06-12 00:28:59.465286"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/questions/22
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/questions/22" for 127.0.0.1 at 2015-06-11 17:28:59 -0700
+Processing by QuestionsController#show as JS
+  Parameters: {"id"=>"22"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 22]]
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  [["question_id", 22]]
+  Rendered questions/show.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 133ms (Views: 124.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/questions/%7B%7Bid%7D%7D" for 127.0.0.1 at 2015-06-11 17:29:01 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"{{id}}"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'={{id}}):
+  app/controllers/questions_controller.rb:64:in `all_questions'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.0ms)
+
+
+Started GET "/questions/%7B%7Bid%7D%7D" for 127.0.0.1 at 2015-06-11 17:29:01 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"{{id}}"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 3ms
+
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'={{id}}):
+  app/controllers/questions_controller.rb:64:in `all_questions'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.9ms)
+  [1m[36mQuestion Load (0.6ms)[0m  [1mSELECT "questions".* FROM "questions"[0m

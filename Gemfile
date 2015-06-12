@@ -4,6 +4,9 @@ gem 'rspec-rails'
 gem 'httparty'
 gem 'capybara'
 
+gem 'handlebars_assets', '~> 0.4.4'
+gem 'sprockets'
+
 gem 'shoulda-matchers'
 
 gem 'factory_girl'
