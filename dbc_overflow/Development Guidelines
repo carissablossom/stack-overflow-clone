@@ -1,0 +1,9 @@
+1. User can create a question. Question should have a title and content.
+
+2. User can create answers to a question.  Answer should have a title and content.
+
+3. The Question index page(root page) lists all questions, displays a new question form, upvote and downvote links for questions and display vote totals.
+
+4. The Question show page lists a question and all associated answers, displays a new answer form, a destroy question link and an edit question link, upvote and downvote links for answers and display vote totals.
+
+5. The Question edit page displays an edit question form.

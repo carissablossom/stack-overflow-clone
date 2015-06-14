@@ -1,0 +1,26 @@
+
+<div>
+  <h2>Answers to the Question are Below</h2>
+</div>
+
+<p>
+  <strong>Title:</strong>
+  <%= @answer.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @answer.content %>
+</p>
+
+  <%= link_to 'Up Vote this Answer', question_answer_votes_path(@question.answer, value: 1), method: :post %>
+  <%= @answer.up_votes %>
+  <br>
+
+
+  <%= link_to 'Down Vote this Answer', question_answer_votes_path(@question.answer, value: -1), method: :post %>
+  <%= @answer.down_votes %>
+  <br>
+
+  <%= @answer.total_votes %> Votes
+

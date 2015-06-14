@@ -1,0 +1,33 @@
+<div>
+  <h1>Welcome to DBC Overflow<h2>
+  </div>
+
+
+  <div>
+    <h2>Listing Questions</h2>
+  </div>
+
+  <div>
+
+    <% @questions.each do |question| %>
+
+    <p><h3>Title</h3></p>
+    <p><%= question.title %></p>
+
+    <p><h3>Content</h3></p>
+    <p><%= question.content %></p>
+    <br>
+
+    <% end %>
+
+  </div>
+
+  <div>
+    <p><h2>New Question Form</h2></p>
+  </div>
+
+  <div>
+<%= render 'form' %>
+  </div>
+
+

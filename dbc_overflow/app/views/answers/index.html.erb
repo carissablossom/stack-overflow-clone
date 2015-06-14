@@ -1,0 +1,16 @@
+  <div>
+    <h2>Listing Answers</h2>
+  </div>
+
+  <div>
+
+    <% @answers.each do |answer| %>
+
+    <p><h3>Title</h3></p>
+    <p><%= answer.title %></p>
+
+    <p><h3>Content</h3></p>
+    <p><%= answer.content %></p>
+    <br>
+
+    <% end %>
