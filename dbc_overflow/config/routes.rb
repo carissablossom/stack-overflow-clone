@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   #route for answer voting
-  # get 'answers/:id/up_vote' => 'answers#vote', as: :answer_up_vote
-  # get 'answers/:id/down_vote' => 'answers#down_vote', as: :answer_down_vote
+  get 'answers/:id/up_vote' => 'answers#up_vote', as: :answer_up_vote
+  get 'answers/:id/down_vote' => 'answers#down_vote', as: :answer_down_vote
 
   #get '/' => 'questions#index'
   root 'question#index'

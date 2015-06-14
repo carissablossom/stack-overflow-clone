@@ -3,7 +3,9 @@ include QuestionsHelper
 before_action :question_find, only: [:show, :up_vote, :down_vote]
 # before_action :all_questions, only: [:index]
 # before_action :all_answers, only: [:show]
-
+  def edit
+    question_find
+  end
   def index
     all_questions
     @question = Question.new

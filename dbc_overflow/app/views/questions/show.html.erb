@@ -12,6 +12,15 @@ Answers:
 <% @answers.each do |answer| %>
   <li>
     <%= answer.title %> <br> <%= answer.content %>
+    <p>
+        <%= link_to raw('&#8607;'), answer_up_vote_path(answer) %>
+      </p>
+      <p>
+        <%= answer.votes %>
+      </p>
+      <p>
+      <%= link_to raw('&#8609;'), answer_down_vote_path(answer)%>
+      </p>
   </li>
 <% end %>
 <hr>
