@@ -2,16 +2,32 @@
 
 <h3><%= @question.title %></h3>
 <%= @question.content %>
+Votes: <%= @question.vote_totals %>
+<%= button_to 'Upvote', upvote_question_path(@question), { :class => 'upvote', :method => :put } %>
+<%= button_to 'Downvote', downvote_question_path(@question), :method => :put %><br>
+<%= link_to 'Delete Question', question_path, method: :delete, data: {confirm: 'Are you certain?'} %>
+<br>
 
-<h1>Answers:</h1>
+<div id='new_answers'>
+  <h1>Answers:</h1>
 
-<% @answers.each do |answer| %>
-  <h3><%= answer.title %></h3>
-  <%= answer.content %>
-  Votes: <%= answer.vote_totals %>
-    <%= button_to 'Upvote', upvote_answer_path(answer), :method => :put %>
-    <%= button_to 'Downvote', downvote_answer_path(answer), :method => :put %>
-<% end %>
+  <% @answers.each do |answer| %>
+    <h3><%= answer.title %></h3>
+    <%= answer.content %>
+    Votes: <%= answer.vote_totals %>
+      <%= button_to 'Upvote', upvote_answer_path(answer), :method => :put %>
+      <%= button_to 'Downvote', downvote_answer_path(answer), :method => :put %>
+  <% end %>
+</div>
+
+  <script id="answer-template" type="text/x-handlebars-template">
+    <p>
+      <h3><%= "{{ title }}" %></h3>
+      Votes: <%= "{{ vote_totals }}" %>
+      <%= button_to "Upvote", CGI::unescape(upvote_answer_path("{{ id }}")), :method => :put %>
+      <%= button_to "Downvote", CGI::unescape(downvote_answer_path("{{ id }}")), :method => :put %>
+    </p>
+  </script>
 
 <h1>Answer this Question.</h1>
 <%= form_for([@question, @question.answers.build]) do |f| %>  <p>
@@ -29,6 +45,6 @@
   </p>
 <% end %>
 
-<%= link_to 'Destroy', question_path, method: :delete, data: {confirm: 'Are you certain?'} %>
 
 
+<%= link_to "Go back", '/' %>

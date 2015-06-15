@@ -1,45 +1,33 @@
-<%#= @quote %>
+<%= @quote %>
 <div class='wrapper'>
 
-  <div id='new_question'
+  <div id='new_questions'>
+    <h1 class='lrg'>List of Questions</h1>
+    <% @questions.each do |question| %>
+        <p>
+          <%= link_to question.title, question_path(question) %>
+          <br>
+          <%= link_to 'Edit', edit_question_path(question) %>
+          <%= link_to 'Delete', question_path(question), method: :delete %>
+          Votes: <%= question.vote_totals %>
+          Answers: <%= Answer.where(question_id: question.id).count %>
+        </p>
+    <% end %>
   </div>
 
-  <h1 class='lrg'>List of Questions</h1>
-  <% @questions.each do |question| %>
-      <p>
-        <%= link_to question.title, question_path(question) %>
-        <br>
-        <%= link_to 'Edit', edit_question_path(question) %>
-        <%= link_to 'Delete', question_path(question), method: :delete %>
-        Votes: <%= question.vote_totals %>
-        <%= button_to 'Upvote', upvote_question_path(question), :method => :put %>
-        <%= button_to 'Downvote', downvote_question_path(question), :method => :put %>
-      </p>
-  <% end %>
-
-  <script id="sample-template" type="text/x-handlebars-template">
+  <script id="question-template" type="text/x-handlebars-template">
     <p>
-      <%= link_to "{{ title }}", question_path("{{id}}") %>
+      <%= link_to "{{ title }}", CGI::unescape(question_path('{{ id }}')) %>
       <br>
-      <%= link_to "Edit", edit_question_path("{{id}}") %>
-      <%= link_to "Delete", question_path("{{id}}"), method: :delete %>
+      <%= link_to "Edit", CGI::unescape(edit_question_path("{{id}}")) %>
+      <%= link_to "Delete", CGI::unescape(question_path("{{id}}")), method: :delete %>
       Votes: <%= "{{ vote_totals }}" %>
-      <%= button_to "Upvote", upvote_question_path("{{id}}"), :method => :put %>
-      <%= button_to "Downvote", downvote_question_path("{{id}}"), :method => :put %>
+      <%= button_to "Upvote", CGI::unescape(upvote_question_path("{{id}}")), :method => :put %>
+      <%= button_to "Downvote", CGI::unescape(downvote_question_path("{{id}}")), :method => :put %>
     </p>
   </script>
 
-<!--
-  <script id="sample-template" type="text/x-handlebars-template">
-    <li>
-      <h4>{{title}}</h4>
-      <p>{{content}}</p>
-      <p>{{vote_totals}}</p>
-    </li>
-  </script>
- -->
-
-  <%= form_for :question, url: questions_path, remote: true, :html => { :class => 'question_form sml' } do |f| %>
+  <%= form_for :question, url: questions_path, :html => { :class => 'question_form sml' } do |f| %>
     <p>
       <%= f.label :title %><br>
       <%= f.text_field :title %>

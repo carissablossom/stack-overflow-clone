@@ -45,13 +45,13 @@ class QuestionsController < ApplicationController
   def upvote
     @question.vote_totals += 1
     @question.save
-    redirect_to '/'
+    redirect_to question_path(@question)
   end
 
   def downvote
     @question.vote_totals -= 1
     @question.save
-    redirect_to '/'
+    redirect_to question_path(@question)
   end
 
   private
