@@ -1,0 +1,9 @@
+Stack Overflow Clone
+
+Recreating Stack Overflow website using Rails.
+
+* Ruby on Rails version - 4.2.1
+* User Stories
+  * Release 1
+    * As a user, I should be able to post a question with a title and content.
+    * As a user, I should be able to see a list of questions.
