@@ -1,16 +1,17 @@
 # DBC Overflow
 
-### Learning Competencies
+### Skills
 
-- Create a Rails application
-- Write tests for a Rails application, using rspec and related libraries
-- Implement CRUD the Rails way
+- Working with Rails applications
+- Implement CRUD The Rails Way
+- Write tests for a Rails app
 - Utilize incremental DB migrations
 - Work with APIs
-- Use Rails concerns
-- Utilize AJAX requests within Rails
+- Use Rails Concerns
+- AJAX in Rails
 - Professional git workflow
 - Rails heroku deployment
+- Building mobile first, resposive grid layouts
 
 ### Summary
 
