@@ -2,9 +2,9 @@
 
 ### Learning Competencies
 
-- Understand how to create a Rails application from scratch
-- Understand how to create simple resources in Rails
-- Understand how to create non-standard views, routes, and resources in Rails
+- Ability to generate a Rails app
+- Ability to implement CRUD the Rails way
+- Ability to use the `form_for` helper
 
 ### Summary
 
@@ -34,12 +34,8 @@ You'll also need to install `rspec-rails`, `capybara`, `shoulda-matchers`, and `
 
 ## Tasks
 
-- Create a valid `readme` with your project's intention.
-
-
-### Implement the following features
-
-0. As a user, I should be able to post a question with a title and content.
-0. As a user, I should be able to see a list of questions.
-0. As a user, I should be able to answer a question.
-0. As a user, I should be able to all the answers for a question.
+0. Create a valid `readme` with your project's intention.
+0. Implement the following features
+  0. As a user, I should be able to post a question with a title and content.
+  0. As a user, I should be able to see a list of questions.
+0. Deploy to heroku
