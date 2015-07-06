@@ -2,15 +2,15 @@
 
 ### Learning Competencies
 
-- Create a Rails application from scratch
+- Create a Rails application
 - Write tests for a Rails application, using rspec and related libraries
-- Use Rails form and view helpers
+- Implement CRUD the Rails way
 - Utilize incremental DB migrations
-- Map complex and non-standard relationships using ActiveRecord
-- Work with APIs using raw HTTP requests
-- Use Rails initializers
+- Work with APIs
+- Use Rails concerns
 - Utilize AJAX requests within Rails
-- Create a JS widget using Javascript best practices and design patterns
+- Professional git workflow
+- Rails heroku deployment
 
 ### Summary
 
