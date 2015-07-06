@@ -2,11 +2,11 @@
 
 ### Skills
 
-- Working with Rails applications
+- Work with Rails applications
 - Implement CRUD The Rails Way
 - Write tests for a Rails app
 - Utilize incremental DB migrations
-- Work with APIs
+- Integrate with APIs
 - Use Rails Concerns
 - AJAX in Rails
 - Professional git workflow
