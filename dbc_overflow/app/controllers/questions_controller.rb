@@ -1,49 +1,49 @@
 class QuestionsController < ApplicationController
   def index
-    @users = User.all
+    @questions = Question.all
   end
 
   def show
-    @user = User.find(params[:id])
+    @question = Question.find(params[:id])
   end
 
   def new
-    @user = User.new
+    @question = Question.new
   end
 
   def edit
-    @user = User.find(params[:id])
+    @question = Question.find(params[:id])
   end
 
   def create
-    @user = User.new(user_params)
+    @question = Question.new(question_params)
 
-    if @user.save
-      redirect_to @user
+    if @question.save
+      redirect_to @question
     else
       render 'new'
     end
   end
 
   def update
-    @user = User.find(params[:id])
+    @question = Question.find(params[:id])
 
-    if @user.update(user_params)
-      redirect_to @user
+    if @question.update(question_params)
+      redirect_to @question
     else
       render 'edit'
     end
   end
 
   def destroy
-    @user = User.find(params[:id])
-    @user.destroy
+    @question = Question.find(params[:id])
+    @question.destroy
 
-    redirect_to users_path
+    redirect_to questions_path
   end
 
   private
-    def user_params
-      params.require(:user).permit(:title, :text)
+    def question_params
+      params.require(:question).permit(:title, :text)
     end
 end
