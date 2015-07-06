@@ -17,4 +17,4 @@ a joy both to use AND look at.
 
 0. Use a CSS grid for the layout
 0. Use a CSS framework for code organization and reusability (the Atomic pattern is a good starting point)
-0. Develop mobile-first so that your application is responsive and viewable both on the desktop and on mobile phones
+0. Develop mobile-first so that your application is responsive and functional both on the desktop and on mobile phones
