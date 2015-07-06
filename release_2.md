@@ -2,18 +2,17 @@
 
 ### Learning Competencies
 
-- Understand how to use the `form_for` helper
-- Understand how to implement a create, destroy, update, and edit route
-- Understand how to use `form_for` to create multi-use partials
+- Ability to generate a Rails app
+- Ability to implement CRUD the Rails way
+- Ability to use the `form_for` helper
 
 ### Summary
 
 Now that you have your basic index and show routes, your job is to implement create, destroy, update, and edit routes. To do so, you'll be using [the Rails form_for helper](http://guides.rubyonrails.org/form_helpers.html). For more in-depth explanation of its properties, check out [the Rails documentation](http://api.rubyonrails.org/classes/ActionView/Helpers/FormHelper.html).
 
-## Features
+## Tasks
 
-- create a new question form on the question index page
-- create a new answer form on the question show page
-- create a destroy question link on the question show page
-- create a question edit page
-- create an update question form on the question edit page
+0. Implement the following features:
+  0. As a user, I should be able to answer a question.
+  0. As a user, I should be able to view all the answers for a question.
+  0. As a user, I should be able to edit the questions I've posted.
