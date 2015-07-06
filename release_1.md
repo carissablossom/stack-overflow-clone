@@ -18,7 +18,7 @@ You are training to be a professional developer, and its time to start acting li
   
 First, let's check our installed version of Rails:
 
-```text
+```sh
   $ rails -v
 ```
 
@@ -26,16 +26,20 @@ Your Rails version should be `4.x`.
 
 To create a new Rails 4 application with a postgres database and without the default testing framework, run:
 
-```text
+```sh
   $ rails new dbc_overflow -T -d=postgresql
 ```
 
 You'll also need to install `rspec-rails`, `capybara`, `shoulda-matchers`, and `factory_girl` in your project.
 
-## Features
+## Tasks
 
 - Create a valid `readme` with your project's intention.
-- Create your question and answer models. A question and an answer should have a `title` and a `content`.
-- Create a question index page that lists all questions.
-- Create a question show page that lists the question and all associated answers.
-- Modify your routes so your question index page is the `root` route.
+
+
+### Implement the following features
+
+0. As a user, I should be able to post a question with a title and content.
+0. As a user, I should be able to see a list of questions.
+0. As a user, I should be able to answer a question.
+0. As a user, I should be able to all the answers for a question.
