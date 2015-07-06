@@ -2,6 +2,11 @@
 
 ### Learning Competencies
 
+- Ability to install and use multiple versions of IE on a mac
+- Ability to fix UI issues across browsers
+- Ability to create responsive user interfaces
+
+
 - Utilize Virtual Machines to test webapps cross-platform/cross-browser
 - Understand how to fix layout/UI issues in less-capable browsers
 - Learn how to build a flexible, robust UI that works in all browsers
@@ -19,7 +24,13 @@ their directions for installing the VM image and booting Windows XP.
 
 In addition to testing your site in IE, you should download Firefox and Safari on OSX and test on them as well.
 
-## Features
+## Tasks
+
+0. Implement the following features:
+  0. As a user I can use the website on a mobile phone, tablet, desktop PC, or TI85.
+  
+
+## Hints
 
 - Your application should be responsive and viewable both on the desktop and on mobile phones
 - Your application should be usable and free of errors on all tested browsers
