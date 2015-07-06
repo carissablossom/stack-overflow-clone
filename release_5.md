@@ -2,17 +2,20 @@
 
 ### Learning Competencies
 
-- Understand how to implement AJAX in Rails
+- Ability to make an `xhr` (AKA AJAX) request
+- Ability to render `json` from a Rails Controller
 
 ### Summary
 
-For this release, you are now going to limit the number of synchronous requests your users have to make. You will be implementing AJAX in Rails.
-
-As you are changing your controller methods, you should be sure to update your testing suite to conform to the new setup.
+In this release we're going to improve our users experience by "[ajaxifying](https://en.wiktionary.org/wiki/Ajaxify)" some of our user actions. Before you start this release, these actions should work using classical forms or links with full page reloads. 
 
 ## Features
 
-- The new question form should update the question index page asynchronously.
-- The new answer form should update the question show page asynchronously.
-- The question upvote and downvote links should update the question index page asynchronously.
-- The answer upvote and downvote links should update the question show page asynchronously.
+- As a user, when I create a new question, it should appear on the page right away and not reload the page
+- As a user, when I answer a new question, it should appear on the page right away and not reload the page
+- As a user, when I upvote or downvote a new question, it should not reload the page
+
+
+## Reminders
+
+- Always bind to the `submit` event of a `form` and never the `click` event of a submit button. 
