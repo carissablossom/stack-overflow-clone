@@ -34,7 +34,7 @@ You'll also need to install `rspec-rails`, `capybara`, `shoulda-matchers`, and `
 
 ## Tasks
 
-0. Create a valid `readme` with your project's intention.
+0. Create a valid `README` with your project's intention.
 0. Implement the following features
   0. As a user, I should be able to post a question with a title and content.
   0. As a user, I should be able to see a list of questions.
