@@ -6,11 +6,6 @@
 - Ability to fix UI issues across browsers
 - Ability to create responsive user interfaces
 
-
-- Utilize Virtual Machines to test webapps cross-platform/cross-browser
-- Understand how to fix layout/UI issues in less-capable browsers
-- Learn how to build a flexible, robust UI that works in all browsers
-
 ### Summary
 
 You've developed a website that's functional, utilizes Rails best practices, and employs CSS frameworks and
