@@ -1,0 +1,10 @@
+<table>
+  <tbody>
+    <% @answers.each do |answer| %>
+      <tr>
+        <td><%= answer.answer %></td>
+        <td><%= answer.author_id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
