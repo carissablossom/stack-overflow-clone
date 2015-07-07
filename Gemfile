@@ -34,6 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'better_errors'
   gem 'capybara'
   gem 'shoulda-matchers'
   gem 'factory_girl'
