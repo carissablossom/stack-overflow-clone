@@ -39,9 +39,6 @@ class QuestionsController < ApplicationController
 
   def upvote
     @question = Question.find(params[:id])
-    p "^ " * 50
-    p current_user
-    p "^ " * 50
 
     @question.upvote_by current_user
     redirect_to question_path(@question)
@@ -49,12 +46,13 @@ class QuestionsController < ApplicationController
 
   def downvote
     @question = Question.find(params[:id])
-    @question.downvote_from @current_user
+
+    @question.downvote_from current_user
     redirect_to question_path(@question)
   end
 
-  def unvote
-  end
+  # def unvote
+  # end
 
   private
 
