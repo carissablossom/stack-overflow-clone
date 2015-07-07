@@ -12,6 +12,7 @@
 <%= @question.get_upvotes.size %>
 <%= link_to "downvote", dislike_question_path(@question), method: :put %>
 <%= @question.get_downvotes.size %>
+<br>Score: <%= @question.score %>
 
 
 <h3>Answers: </h3>
@@ -21,6 +22,7 @@
   <%= answer.get_upvotes.size %>
   <%= link_to "downvote", dislike_question_answer_path(@question, answer.id), method: :put %>
   <%= answer.get_downvotes.size %>
+  <br>Score: <%= answer.score %>
 <% end %>
 
 <h3>Add Answer: </h3>
