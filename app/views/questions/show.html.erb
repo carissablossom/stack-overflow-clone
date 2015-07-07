@@ -7,10 +7,18 @@
   <%= link_to "Edit Question", edit_question_path(@question) %>
 <% end %>
 
+<h3>Votes</h3>
+<%= link_to "upvote", like_question_path(@question), method: :put %>
+<%= @question.get_upvotes.size %>
+<%= link_to "downvote", dislike_question_path(@question), method: :put %>
+<%= @question.get_downvotes.size %>
+
+
 <h3>Answers: </h3>
 <% @question.answers.each do |answer| %>
   <p><%= answer.answer %></p>
 <% end %>
+
 
 <h3>Add Answer: </h3>
 <%= form_for([@question, @question.answers.build]) do |f| %>

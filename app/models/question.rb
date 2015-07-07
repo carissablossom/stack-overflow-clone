@@ -5,4 +5,6 @@ class Question < ActiveRecord::Base
   validates :title, presence: true, uniqueness: true
   validates :content, presence: true, uniqueness: true
 
+  acts_as_votable
+
 end
