@@ -9,11 +9,11 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    if @current_user
+    # if current_user
       @question = Question.new
-    else
-      render 'sessions/new'
-    end
+    # else
+      # render 'sessions/new'
+    # end
   end
 
   def create

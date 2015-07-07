@@ -7,7 +7,10 @@ class SessionsController < ApplicationController
   	@user = User.where(username: params[:session][:username]).first
 
   	if @user && (@user.password == params[:session][:password])
-  		session[:user_id] = @user.id
+  		p "^ " * 50
+      p session[:user_id] = @user.id
+      p "^ " * 50
+      
   		redirect_to root_url
   	else
   		@signin_error = "Username/Password invalid. Please try again."
