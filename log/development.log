@@ -12733,3 +12733,125 @@ Processing by QuestionsController#show as HTML
   Rendered answer/_show.html.erb (1.0ms)
   Rendered questions/show.html.erb within layouts/application (5.7ms)
 Completed 200 OK in 124ms (Views: 121.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/questions/1" for ::1 at 2015-07-07 15:58:20 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 1]]
+  Rendered answer/_show.html.erb (0.8ms)
+  Rendered questions/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 48ms (Views: 45.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/answers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 15:58:20 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 15:58:20 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 15:58:20 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-07 15:58:20 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-07 15:58:20 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 15:58:20 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-07 15:58:20 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-07 15:58:20 -0700
+
+
+Started GET "/assets/answers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 15:58:20 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 15:58:20 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 15:58:20 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 15:58:20 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-07-07 15:58:20 -0700
+
+
+Started PUT "/questions/1" for ::1 at 2015-07-07 15:58:24 -0700
+Processing by QuestionsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eqxG13hnX8uAS4czd9OyGVO92KLys+n7fjhzqQzXkTSUBm5nAiOTg0vI2p85MQWGl8s2OcJ0/3sdXcLnEfriqw==", "question"=>{"votes"=>"true"}, "commit"=>"Downvote", "id"=>"1"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mQuestion Exists (0.4ms)[0m  SELECT  1 AS one FROM "questions" WHERE ("questions"."title" = 'hi' AND "questions"."id" != 1) LIMIT 1
+  [1m[36mQuestion Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "questions" WHERE ("questions"."content" = 'this is thing' AND "questions"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "questions" SET "votes" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["votes", 1], ["updated_at", "2015-07-07 22:58:24.543310"], ["id", 1]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/1
+Completed 302 Found in 10ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/questions/1" for ::1 at 2015-07-07 15:58:24 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1  [["question_id", 1]]
+  Rendered answer/_show.html.erb (0.7ms)
+  Rendered questions/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 48ms (Views: 45.9ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/questions/1" for ::1 at 2015-07-07 15:59:17 -0700
+Processing by QuestionsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"unTbQGtAyX7VRU+etYzMcdJRDDDBi5KJAkfqrPlBeoZU3vPwEQQFNh7GEjL7bnvuFifiq/FMhAlhIlvi5GwJGQ==", "question"=>{"votes"=>"true"}, "commit"=>"Upvote", "id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mQuestion Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "questions" WHERE ("questions"."title" = 'hi' AND "questions"."id" != 1) LIMIT 1[0m
+  [1m[35mQuestion Exists (0.5ms)[0m  SELECT  1 AS one FROM "questions" WHERE ("questions"."content" = 'this is thing' AND "questions"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "questions" SET "votes" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["votes", 2], ["updated_at", "2015-07-07 22:59:17.948480"], ["id", 1]]
+  [1m[35m (1.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/questions/1
+Completed 302 Found in 11ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/questions/1" for ::1 at 2015-07-07 15:59:17 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 1]]
+  Rendered answer/_show.html.erb (1.0ms)
+  Rendered questions/show.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 121ms (Views: 119.0ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/questions/1" for ::1 at 2015-07-07 15:59:18 -0700
+Processing by QuestionsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rv7i/R1WaKm0TJg7qxfa7Fj2MCL8A10ZqRXXLZLRdJhAVMpNZxKk4X/PxZfl9W1znIDeuczES5nKcGZjj/wHBw==", "commit"=>"Downvote", "id"=>"1"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mQuestion Exists (0.4ms)[0m  SELECT  1 AS one FROM "questions" WHERE ("questions"."title" = 'hi' AND "questions"."id" != 1) LIMIT 1
+  [1m[36mQuestion Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "questions" WHERE ("questions"."content" = 'this is thing' AND "questions"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "questions" SET "votes" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["votes", 1], ["updated_at", "2015-07-07 22:59:18.883777"], ["id", 1]]
+  [1m[36m (1.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/1
+Completed 302 Found in 11ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/questions/1" for ::1 at 2015-07-07 15:59:18 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1  [["question_id", 1]]
+  Rendered answer/_show.html.erb (0.9ms)
+  Rendered questions/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 50ms (Views: 48.1ms | ActiveRecord: 0.7ms)
