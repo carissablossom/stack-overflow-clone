@@ -6,6 +6,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    @answers = @question.answers
   end
 
   def new
@@ -31,13 +32,24 @@ class QuestionsController < ApplicationController
   end
 
   def update
+    p "*" * 100
+    p params
     @question = Question.find(params[:id])
-
-    if @question.update(question_params)
+    if params[:commit] == "Upvote"
+      @question.votes += 1
+      @question.save
+      redirect_to question_path(@question)
+    elsif params[:commit] == "Downvote"
+      @question.votes -= 1
+      @question.save
       redirect_to question_path(@question)
     else
-      @update_errors = @question.errors.full_messages
-      render 'edit'
+      if @question.update(question_params)
+        redirect_to question_path(@question)
+      else
+        @update_errors = @question.errors.full_messages
+        render 'edit'
+      end
     end
   end
 

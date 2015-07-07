@@ -2,18 +2,28 @@
 
 <h2><%= @question.title %></h2>
 <p><%= @question.content %></p>
+<p>Votes: <%= @question.votes %></p>
+
+<%= form_for(@question) do |f| %>
+  <p>
+    <%= form_tag(question_path, method: "put") %>
+    <%= f.hidden_field :votes, :value => true %>
+  </p>
+
+  <p>
+    <%= f.submit "Upvote" %>
+  </p>
+<% end %>
 
 <% if current_user && (current_user.id == @question.user_id) %>
   <%= link_to "Edit Question", edit_question_path(@question) %>
 <% end %>
 
 <h3>Answers: </h3>
-<% @question.answers.each do |answer| %>
-  <p><%= answer.answer %></p>
-<% end %>
+<%= render '/answer/show' %>
 
 <h3>Add Answer: </h3>
-<%= form_for([@question, @question.answers.build]) do |f| %>
+<%= form_for([@question, @answers.build]) do |f| %>
   <% if @error %>
     <p><%= @error.first %></p>
   <% end %>
