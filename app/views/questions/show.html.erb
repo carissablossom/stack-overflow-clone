@@ -1,9 +1,9 @@
 <%= link_to "Go back to all the Questions!", questions_path %>
 
-<h2> <%= @question.title%> </h2>
-<p> <%= @question.content %></p>
+<h2><%= @question.title %></h2>
+<p><%= @question.content %></p>
 
-<%= link_to "Edit Question", edit_question_path %>
+<%= link_to "Edit Question", edit_question_path(@question) %>
 
 <h3>Answers: </h3>
 <% @question.answers.each do |answer| %>
