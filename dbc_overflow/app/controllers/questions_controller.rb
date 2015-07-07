@@ -1,4 +1,5 @@
 class QuestionsController < ApplicationController
+
   def index
     @questions = Question.all
   end
@@ -44,6 +45,6 @@ class QuestionsController < ApplicationController
 
   private
     def question_params
-      params.require(:question).permit(:title, :text)
+      params.require(:question).permit(:title, :content, :votes)
     end
 end

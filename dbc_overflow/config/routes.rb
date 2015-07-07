@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :questions
 
-  root 'users#index'
+  root 'questions#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
+
   def index
     @users = User.all
   end
@@ -42,8 +45,8 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
-  private
-    def user_params
-      params.require(:user).permit(:title, :text)
-    end
+private
+  def user_params
+    params.require(:user).permit(:username, :email, :password)
+  end
 end
