@@ -6600,3 +6600,687 @@ Processing by SessionsController#destroy as HTML
   Parameters: {"authenticity_token"=>"kX59q32Y2k6dcamizK8FAVP92WNO7cV9Le0f1nm4ztODHooskcOEk/upvQWkBLywwScOyUy4FKYE9Xwwfg3ZoQ=="}
 Redirected to http://localhost:3000questions_path
 Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/signout" for ::1 at 2015-07-07 00:02:17 -0700
+
+ActionController::RoutingError (No route matches [GET] "/signout"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.3) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.9ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (37.6ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (19.5ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (41.9ms)
+
+
+Started GET "/questions" for ::1 at 2015-07-07 00:02:24 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 140ms (Views: 132.9ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/answers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 00:02:25 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 00:02:25 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 00:02:25 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 00:02:25 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-07 00:02:25 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-07 00:02:25 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-07 00:02:25 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-07 00:02:25 -0700
+
+
+Started GET "/assets/answers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 00:02:25 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 00:02:25 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 00:02:25 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 00:02:25 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-07-07 00:02:25 -0700
+
+
+Started GET "/questions" for ::1 at 2015-07-07 00:03:47 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 63ms (Views: 56.1ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-07 00:03:47 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 00:03:47 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 00:03:47 -0700
+
+
+Started GET "/assets/answers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 00:03:47 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 00:03:47 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-07 00:03:47 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-07 00:03:47 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-07 00:03:47 -0700
+
+
+Started GET "/assets/answers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 00:03:47 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 00:03:47 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 00:03:47 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 00:03:47 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-07-07 00:03:47 -0700
+
+
+Started DELETE "/signout" for ::1 at 2015-07-07 00:03:49 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"jgRB2pMW3fXh6W2PVc2Egnhb4dPDYCl3VQla8j83tSmcZLZdf02DKIcxeSg9Zj0z6oE2ecE1+Kx8ETkUOIKiWw=="}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+NameError (undefined local variable or method `signout' for #<SessionsController:0x007fa5bd4ee6b0>):
+  app/controllers/sessions_controller.rb:20:in `destroy'
+
+
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.3ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (14.8ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (34.8ms)
+
+
+Started GET "/questions" for ::1 at 2015-07-07 00:04:16 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 57ms (Views: 50.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 00:04:16 -0700
+
+
+Started GET "/assets/answers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 00:04:16 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-07 00:04:16 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-07 00:04:16 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 00:04:16 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 00:04:16 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-07 00:04:16 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-07 00:04:16 -0700
+
+
+Started GET "/assets/answers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 00:04:16 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 00:04:16 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 00:04:16 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 00:04:16 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-07-07 00:04:16 -0700
+
+
+Started DELETE "/signout" for ::1 at 2015-07-07 00:04:17 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"nC+mAdrorAlvYh1XHiIKvahJ8UXapfDLALCxwwD09laOT1GGNrPy1Am6CfB2ibMMOpMm79jwIRApqNIlB0HhJA=="}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `signout' for SessionsHelper:Module):
+  app/controllers/sessions_controller.rb:20:in `destroy'
+
+
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (86.3ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (102.7ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (15.4ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (32.3ms)
+
+
+Started GET "/questions" for ::1 at 2015-07-07 00:04:34 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 57ms (Views: 51.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/answers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 00:04:34 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 00:04:34 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-07 00:04:34 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-07 00:04:34 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 00:04:34 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 00:04:34 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-07 00:04:34 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-07 00:04:34 -0700
+
+
+Started GET "/assets/answers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 00:04:34 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 00:04:34 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 00:04:34 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 00:04:34 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-07-07 00:04:34 -0700
+
+
+Started DELETE "/signout" for ::1 at 2015-07-07 00:04:35 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ucCzlMeu4/hTeDj2sBlRPAAac7cMWi20COy2QbzPXUaroEQTK/W9JTWgLFHYsuiNksCkHQ4P/G8h9NWnu3pKNA=="}
+Redirected to http://localhost:3000questions_path
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started DELETE "/signout" for ::1 at 2015-07-07 00:04:35 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ucCzlMeu4/hTeDj2sBlRPAAac7cMWi20COy2QbzPXUaroEQTK/W9JTWgLFHYsuiNksCkHQ4P/G8h9NWnu3pKNA=="}
+Redirected to http://localhost:3000questions_path
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started DELETE "/signout" for ::1 at 2015-07-07 00:04:35 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ucCzlMeu4/hTeDj2sBlRPAAac7cMWi20COy2QbzPXUaroEQTK/W9JTWgLFHYsuiNksCkHQ4P/G8h9NWnu3pKNA=="}
+Redirected to http://localhost:3000questions_path
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started DELETE "/signout" for ::1 at 2015-07-07 00:04:35 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ucCzlMeu4/hTeDj2sBlRPAAac7cMWi20COy2QbzPXUaroEQTK/W9JTWgLFHYsuiNksCkHQ4P/G8h9NWnu3pKNA=="}
+Redirected to http://localhost:3000questions_path
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started DELETE "/signout" for ::1 at 2015-07-07 00:04:35 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ucCzlMeu4/hTeDj2sBlRPAAac7cMWi20COy2QbzPXUaroEQTK/W9JTWgLFHYsuiNksCkHQ4P/G8h9NWnu3pKNA=="}
+Redirected to http://localhost:3000questions_path
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started DELETE "/signout" for ::1 at 2015-07-07 00:04:35 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ucCzlMeu4/hTeDj2sBlRPAAac7cMWi20COy2QbzPXUaroEQTK/W9JTWgLFHYsuiNksCkHQ4P/G8h9NWnu3pKNA=="}
+Redirected to http://localhost:3000questions_path
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started DELETE "/signout" for ::1 at 2015-07-07 00:04:35 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ucCzlMeu4/hTeDj2sBlRPAAac7cMWi20COy2QbzPXUaroEQTK/W9JTWgLFHYsuiNksCkHQ4P/G8h9NWnu3pKNA=="}
+Redirected to http://localhost:3000questions_path
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/questions" for ::1 at 2015-07-07 00:04:51 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 52ms (Views: 45.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/answers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 00:04:51 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-07 00:04:51 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 00:04:51 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 00:04:51 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 00:04:51 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-07 00:04:51 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-07 00:04:51 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-07 00:04:51 -0700
+
+
+Started GET "/assets/answers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 00:04:51 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 00:04:51 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 00:04:51 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 00:04:51 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-07-07 00:04:51 -0700
+
+
+Started GET "/questions" for ::1 at 2015-07-07 00:06:25 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 62ms (Views: 55.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/answers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 00:06:25 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 00:06:25 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-07 00:06:25 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 00:06:25 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-07 00:06:25 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 00:06:25 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-07 00:06:25 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-07 00:06:25 -0700
+
+
+Started GET "/assets/answers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 00:06:25 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 00:06:25 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 00:06:25 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 00:06:25 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-07-07 00:06:25 -0700
+
+
+Started DELETE "/signout" for ::1 at 2015-07-07 00:06:27 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"unCpXPcRP86xeix+Yqs0tLLu/HIoSKze8fo4TRORdIaoEF7bG0phE9eiONkKAI0FIDQr2CodfQXY4lurFCRj9A=="}
+Redirected to http://localhost:3000questions_path
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started DELETE "/signout" for ::1 at 2015-07-07 00:06:27 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"unCpXPcRP86xeix+Yqs0tLLu/HIoSKze8fo4TRORdIaoEF7bG0phE9eiONkKAI0FIDQr2CodfQXY4lurFCRj9A=="}
+Redirected to http://localhost:3000questions_path
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started DELETE "/signout" for ::1 at 2015-07-07 00:06:27 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"unCpXPcRP86xeix+Yqs0tLLu/HIoSKze8fo4TRORdIaoEF7bG0phE9eiONkKAI0FIDQr2CodfQXY4lurFCRj9A=="}
+Redirected to http://localhost:3000questions_path
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started DELETE "/signout" for ::1 at 2015-07-07 00:06:27 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"unCpXPcRP86xeix+Yqs0tLLu/HIoSKze8fo4TRORdIaoEF7bG0phE9eiONkKAI0FIDQr2CodfQXY4lurFCRj9A=="}
+Redirected to http://localhost:3000questions_path
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started DELETE "/signout" for ::1 at 2015-07-07 00:06:27 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"unCpXPcRP86xeix+Yqs0tLLu/HIoSKze8fo4TRORdIaoEF7bG0phE9eiONkKAI0FIDQr2CodfQXY4lurFCRj9A=="}
+Redirected to http://localhost:3000questions_path
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started DELETE "/signout" for ::1 at 2015-07-07 00:06:27 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"unCpXPcRP86xeix+Yqs0tLLu/HIoSKze8fo4TRORdIaoEF7bG0phE9eiONkKAI0FIDQr2CodfQXY4lurFCRj9A=="}
+Redirected to http://localhost:3000questions_path
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started DELETE "/signout" for ::1 at 2015-07-07 00:06:27 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"unCpXPcRP86xeix+Yqs0tLLu/HIoSKze8fo4TRORdIaoEF7bG0phE9eiONkKAI0FIDQr2CodfQXY4lurFCRj9A=="}
+Redirected to http://localhost:3000questions_path
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/questions" for ::1 at 2015-07-07 00:07:40 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 135ms (Views: 129.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-07 00:07:41 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 00:07:41 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 00:07:41 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 00:07:41 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-07 00:07:41 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 00:07:41 -0700
+
+
+Started GET "/assets/answers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 00:07:41 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-07 00:07:41 -0700
+
+
+Started GET "/assets/answers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 00:07:41 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-07 00:07:41 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 00:07:41 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 00:07:41 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-07-07 00:07:41 -0700
+
+
+Started DELETE "/signout" for ::1 at 2015-07-07 00:07:42 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"DegzT/YLMKyu4FS+QC6rJfJismwiC/ToaFX8Bf6mBDwfiMTIGlBuccg4QBkohRKUYLhlxiBeJTNBTZ/j+RMTTg=="}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+NameError (undefined local variable or method `root_url' for #<SessionsController:0x007fa5c02c7938>):
+  app/controllers/sessions_controller.rb:21:in `destroy'
+
+
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.2ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (16.4ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Arielle/.rbenv/versions/2.1.6/lib/ruby/gems/2.1.0/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (34.0ms)
+
+
+Started GET "/" for ::1 at 2015-07-07 00:08:48 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 75ms (Views: 68.6ms | ActiveRecord: 3.1ms)
+
+
+Started DELETE "/signout" for ::1 at 2015-07-07 00:08:50 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"yRBZa5M4i2/UpjAmiuAodbIBkojnycGWbi5AVuIZ5fnbcK7sf2PVsrJ+JIHiS5HEINtFIuWcEE1HNiOw5azyiw=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-07-07 00:08:50 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 47ms (Views: 45.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-07-07 00:09:19 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 54ms (Views: 48.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/answers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 00:09:20 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 00:09:20 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 00:09:20 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 00:09:20 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-07 00:09:20 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-07 00:09:20 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-07 00:09:20 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-07 00:09:20 -0700
+
+
+Started GET "/assets/answers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 00:09:20 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 00:09:20 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 00:09:20 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 00:09:20 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-07-07 00:09:20 -0700
+
+
+Started GET "/signin" for ::1 at 2015-07-07 00:09:21 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 48ms (Views: 46.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for ::1 at 2015-07-07 00:09:26 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oSBWEHT4ZF5v6F87J4mZqI/pplvzEJ5oD7Xv7Tw1mwKzQKGXmKM6gwkwS5xPIiAZHTNx8fFFT7MmrYwLO4CMcA==", "session"=>{"username"=>"tomtom", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["username", "tomtom"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2015-07-07 00:09:26 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 37ms (Views: 36.1ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/signout" for ::1 at 2015-07-07 00:09:28 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"lu0NziUzu6qVUqFZr7e5s1SCG7B8QP87oSiTcMmzUuiEjfpJyWjld/OKtf7HHAACxljMGn4VLuCIMPCWzgZFmg=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-07-07 00:09:28 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 46ms (Views: 45.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signup" for ::1 at 2015-07-07 00:09:29 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 44ms (Views: 42.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-07-07 00:09:36 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N4NJZ4VRbPYnsNpNk9NNjnPl1JVxbGkFogyCDgtj1dcl477gaQoyK0Fozur7ePQ/4T8DP3M5uN6LFOHoDNbCpQ==", "user"=>{"username"=>"banana", "email"=>"banana@b.com", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'banana' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'banana@b.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "banana"], ["email", "banana@b.com"], ["password", "banana"], ["created_at", "2015-07-07 07:09:36.125291"], ["updated_at", "2015-07-07 07:09:36.125291"]]
+  [1m[35m (6.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 7.5ms)
+
+
+Started GET "/" for ::1 at 2015-07-07 00:09:36 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 41ms (Views: 39.6ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/signout" for ::1 at 2015-07-07 00:09:38 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2Alw6kqf+rN3JKJ6GCgSwCr40gBhxwUDdUhEiK2DqOTKaYdtpsSkbhH8tt1wg6txuCIFqmOS1NhcUCduqja/lg=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-07-07 00:09:38 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 44ms (Views: 43.1ms | ActiveRecord: 0.3ms)

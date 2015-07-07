@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-
-  get 'sessions/new'
+	root 'questions#index'
 
   resources :questions do
     resources :answers

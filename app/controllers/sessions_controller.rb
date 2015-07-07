@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
   	if @user && (@user.password == params[:session][:password])
   		session[:user_id] = @user.id
-  		redirect_to 'questions_path'
+  		redirect_to root_url
   	else
   		@signin_error = "Username/Password invalid. Please try again."
   		# checkout Hartl Ch.8 for implementing flash msgs to catch session errors
@@ -18,7 +18,6 @@ class SessionsController < ApplicationController
 
   def destroy
 		session[:user_id] = nil
-
-  	redirect_to 'questions_path'
+  	redirect_to root_url
   end
 end
