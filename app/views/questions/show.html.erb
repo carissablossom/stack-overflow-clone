@@ -3,6 +3,8 @@
 <h2> <%= @question.title%> </h2>
 <p> <%= @question.content %></p>
 
+<%= link_to "Edit Question", edit_question_path %>
+
 <h3>Answers: </h3>
 <% @question.answers.each do |answer| %>
   <p><%= answer.answer %></p>
