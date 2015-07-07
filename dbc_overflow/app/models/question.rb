@@ -1,4 +1,6 @@
 class Question < ActiveRecord::Base
+  validates :user_id, :title, :content, presence: true
+
   belongs_to :user
   has_many :answers
   has_many :question_tags

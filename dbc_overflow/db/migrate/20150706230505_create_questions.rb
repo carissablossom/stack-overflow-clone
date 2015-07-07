@@ -3,6 +3,7 @@ class CreateQuestions < ActiveRecord::Migration
     create_table :questions do |t|
       t.string :title
       t.text :content
+      t.integer :views
       t.references :user, index: true, foreign_key: true
       #is this the same as vvv
       t.timestamps null: false
