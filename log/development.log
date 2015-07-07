@@ -12189,3 +12189,711 @@ Processing by QuestionsController#show as HTML
   [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 6]]
   Rendered questions/show.html.erb within layouts/application (8.3ms)
 Completed 200 OK in 131ms (Views: 128.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/questions/6" for ::1 at 2015-07-07 12:22:44 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2  [["votable_id", 6], ["votable_type", "Question"]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 6]]
+  Rendered questions/show.html.erb within layouts/application (34.7ms)
+Completed 200 OK in 89ms (Views: 70.4ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 12:22:44 -0700
+
+
+Started GET "/assets/answers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 12:22:44 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 12:22:44 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-07 12:22:44 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 12:22:44 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-07 12:22:44 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-07 12:22:44 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-07 12:22:44 -0700
+
+
+Started GET "/assets/answers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 12:22:44 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 12:22:44 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 12:22:44 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 12:22:44 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-07-07 12:22:44 -0700
+
+
+Started PUT "/questions/6/dislike" for ::1 at 2015-07-07 12:22:47 -0700
+Processing by QuestionsController#downvote as HTML
+  Parameters: {"authenticity_token"=>"4nmTLDLKdNfc5NnmLpJpODBAB83w+h1EFfsKeYSyljnSRZapIEbLW8HvFfn97jIR3OPTIa2h6CWXasA/i1N5jw==", "id"=>"6"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."voter_type" = $4 AND "votes"."vote_scope" IS NULL  [["votable_id", 6], ["votable_type", "Question"], ["voter_id", 3], ["voter_type", "User"]]
+  [1m[36mActsAsVotable::Vote Load (0.4ms)[0m  [1mSELECT  "votes".* FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."voter_type" = $4 AND "votes"."vote_scope" IS NULL  ORDER BY "votes"."id" DESC LIMIT 1[0m  [["votable_id", 6], ["votable_type", "Question"], ["voter_id", 3], ["voter_type", "User"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "votes" SET "vote_flag" = $1, "updated_at" = $2 WHERE "votes"."id" = $3[0m  [["vote_flag", "f"], ["updated_at", "2015-07-07 19:22:47.019983"], ["id", 7]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/questions/6
+Completed 302 Found in 14ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/questions/6" for ::1 at 2015-07-07 12:22:47 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 6], ["votable_type", "Question"]]
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1  [["question_id", 6]]
+  Rendered questions/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 49ms (Views: 46.3ms | ActiveRecord: 0.9ms)
+
+
+Started PUT "/questions/6/dislike" for ::1 at 2015-07-07 12:22:48 -0700
+Processing by QuestionsController#downvote as HTML
+  Parameters: {"authenticity_token"=>"g5ebKXjihAK/pF+5wv/I8z9ZpJ4ij7D1B8ok1OKPXqizq56sam47jqKvk6YRg5Pa0/pwcn/URZSFW+6S7W6xHg==", "id"=>"6"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."voter_type" = $4 AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 6], ["votable_type", "Question"], ["voter_id", 3], ["voter_type", "User"]]
+  [1m[35mActsAsVotable::Vote Load (0.5ms)[0m  SELECT  "votes".* FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."voter_type" = $4 AND "votes"."vote_scope" IS NULL  ORDER BY "votes"."id" DESC LIMIT 1  [["votable_id", 6], ["votable_type", "Question"], ["voter_id", 3], ["voter_type", "User"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/questions/6
+Completed 302 Found in 9ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/questions/6" for ::1 at 2015-07-07 12:22:48 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 6], ["votable_type", "Question"]]
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1  [["question_id", 6]]
+  Rendered questions/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 47ms (Views: 44.5ms | ActiveRecord: 1.0ms)
+
+
+Started PUT "/questions/6/like" for ::1 at 2015-07-07 12:22:49 -0700
+Processing by QuestionsController#upvote as HTML
+  Parameters: {"authenticity_token"=>"usJYg0vE59m5lxE/vsbLmsO0NOCHjrBj7GtvmEwDBaqK/l0GWUhYVaSc3SBtupCzLxfgDNrVRQJu+qXeQ+LqHA==", "id"=>"6"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."voter_type" = $4 AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 6], ["votable_type", "Question"], ["voter_id", 3], ["voter_type", "User"]]
+  [1m[35mActsAsVotable::Vote Load (0.6ms)[0m  SELECT  "votes".* FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."voter_type" = $4 AND "votes"."vote_scope" IS NULL  ORDER BY "votes"."id" DESC LIMIT 1  [["votable_id", 6], ["votable_type", "Question"], ["voter_id", 3], ["voter_type", "User"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "votes" SET "vote_flag" = $1, "updated_at" = $2 WHERE "votes"."id" = $3  [["vote_flag", "t"], ["updated_at", "2015-07-07 19:22:49.537665"], ["id", 7]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/6
+Completed 302 Found in 12ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/questions/6" for ::1 at 2015-07-07 12:22:49 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2  [["votable_id", 6], ["votable_type", "Question"]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 6]]
+  Rendered questions/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 48ms (Views: 45.3ms | ActiveRecord: 0.9ms)
+
+
+Started PUT "/questions/6/like" for ::1 at 2015-07-07 12:22:50 -0700
+Processing by QuestionsController#upvote as HTML
+  Parameters: {"authenticity_token"=>"615yIN5LSUfccvP7HaNx0BuSDFfUWb4tTldOdqyoZzzbYnelzMf2y8F5P+TO3yr59zHYu4kCS0zMxoQwo0mIig==", "id"=>"6"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."voter_type" = $4 AND "votes"."vote_scope" IS NULL  [["votable_id", 6], ["votable_type", "Question"], ["voter_id", 3], ["voter_type", "User"]]
+  [1m[36mActsAsVotable::Vote Load (0.3ms)[0m  [1mSELECT  "votes".* FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."voter_type" = $4 AND "votes"."vote_scope" IS NULL  ORDER BY "votes"."id" DESC LIMIT 1[0m  [["votable_id", 6], ["votable_type", "Question"], ["voter_id", 3], ["voter_type", "User"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/6
+Completed 302 Found in 9ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/questions/6" for ::1 at 2015-07-07 12:22:50 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2  [["votable_id", 6], ["votable_type", "Question"]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 6]]
+  Rendered questions/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 56ms (Views: 52.9ms | ActiveRecord: 1.0ms)
+
+
+Started PUT "/questions/6/dislike" for ::1 at 2015-07-07 12:22:51 -0700
+Processing by QuestionsController#downvote as HTML
+  Parameters: {"authenticity_token"=>"tX8PmmtDBWWi7/WcVhAzpOgYUTBeTt9V9PMSog/SzoaFQwofec+66b/kOYOFbGiNBLuF3AMVKjR2YtjkADMhMA==", "id"=>"6"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."voter_type" = $4 AND "votes"."vote_scope" IS NULL  [["votable_id", 6], ["votable_type", "Question"], ["voter_id", 3], ["voter_type", "User"]]
+  [1m[36mActsAsVotable::Vote Load (0.3ms)[0m  [1mSELECT  "votes".* FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."voter_type" = $4 AND "votes"."vote_scope" IS NULL  ORDER BY "votes"."id" DESC LIMIT 1[0m  [["votable_id", 6], ["votable_type", "Question"], ["voter_id", 3], ["voter_type", "User"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "votes" SET "vote_flag" = $1, "updated_at" = $2 WHERE "votes"."id" = $3[0m  [["vote_flag", "f"], ["updated_at", "2015-07-07 19:22:51.146667"], ["id", 7]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/questions/6
+Completed 302 Found in 10ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/questions/6" for ::1 at 2015-07-07 12:22:51 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 6], ["votable_type", "Question"]]
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1  [["question_id", 6]]
+  Rendered questions/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 131ms (Views: 128.3ms | ActiveRecord: 0.9ms)
+
+
+Started PUT "/questions/6/dislike" for ::1 at 2015-07-07 12:22:51 -0700
+Processing by QuestionsController#downvote as HTML
+  Parameters: {"authenticity_token"=>"BoHK4k8xv6pzjg3vJKcsE/9vEo/flyudghkl/z9VPbk2vc9nXb0AJm6FwfD323c6E8zGY4LM3vwAiO+5MLTSDw==", "id"=>"6"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."voter_type" = $4 AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 6], ["votable_type", "Question"], ["voter_id", 3], ["voter_type", "User"]]
+  [1m[35mActsAsVotable::Vote Load (0.3ms)[0m  SELECT  "votes".* FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."voter_type" = $4 AND "votes"."vote_scope" IS NULL  ORDER BY "votes"."id" DESC LIMIT 1  [["votable_id", 6], ["votable_type", "Question"], ["voter_id", 3], ["voter_type", "User"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/questions/6
+Completed 302 Found in 10ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/questions/6" for ::1 at 2015-07-07 12:22:51 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 6], ["votable_type", "Question"]]
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1  [["question_id", 6]]
+  Rendered questions/show.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 46ms (Views: 43.8ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/questions/6/dislike" for ::1 at 2015-07-07 12:22:51 -0700
+Processing by QuestionsController#downvote as HTML
+  Parameters: {"authenticity_token"=>"cI6vLX9HIu44IpdiYN6GxZNCbWSH19JXDv1pQ9IxmUBAsqqobcudYiUpW32zot3sf+G5iNqMJzaMbKMF3dB29g==", "id"=>"6"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."voter_type" = $4 AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 6], ["votable_type", "Question"], ["voter_id", 3], ["voter_type", "User"]]
+  [1m[35mActsAsVotable::Vote Load (0.3ms)[0m  SELECT  "votes".* FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."voter_type" = $4 AND "votes"."vote_scope" IS NULL  ORDER BY "votes"."id" DESC LIMIT 1  [["votable_id", 6], ["votable_type", "Question"], ["voter_id", 3], ["voter_type", "User"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/questions/6
+Completed 302 Found in 11ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/questions/6" for ::1 at 2015-07-07 12:22:51 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2[0m  [["votable_id", 6], ["votable_type", "Question"]]
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1  [["question_id", 6]]
+  Rendered questions/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 53ms (Views: 50.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/questions/6" for ::1 at 2015-07-07 12:23:43 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 6], ["votable_type", "Question"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL  [["votable_id", 6], ["votable_type", "Question"]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 6]]
+  Rendered questions/show.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 52ms (Views: 49.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/answers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 12:23:43 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 12:23:43 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 12:23:43 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-07 12:23:43 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 12:23:43 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-07 12:23:43 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-07 12:23:43 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-07 12:23:43 -0700
+
+
+Started GET "/assets/answers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 12:23:43 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 12:23:43 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 12:23:43 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 12:23:43 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-07-07 12:23:43 -0700
+
+
+Started PUT "/questions/6/like" for ::1 at 2015-07-07 12:23:45 -0700
+Processing by QuestionsController#upvote as HTML
+  Parameters: {"authenticity_token"=>"LpEQK8DpzXbSn4Z6SCvOcZeNLiErLbepxjDCLqmMMwQerRWu0mVy+s+USmWbV5VYey76zXZ2QshEoQhopm3csg==", "id"=>"6"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."voter_type" = $4 AND "votes"."vote_scope" IS NULL  [["votable_id", 6], ["votable_type", "Question"], ["voter_id", 3], ["voter_type", "User"]]
+  [1m[36mActsAsVotable::Vote Load (0.4ms)[0m  [1mSELECT  "votes".* FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."voter_type" = $4 AND "votes"."vote_scope" IS NULL  ORDER BY "votes"."id" DESC LIMIT 1[0m  [["votable_id", 6], ["votable_type", "Question"], ["voter_id", 3], ["voter_type", "User"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "votes" SET "vote_flag" = $1, "updated_at" = $2 WHERE "votes"."id" = $3[0m  [["vote_flag", "t"], ["updated_at", "2015-07-07 19:23:45.153272"], ["id", 7]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/questions/6
+Completed 302 Found in 18ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/questions/6" for ::1 at 2015-07-07 12:23:45 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 6], ["votable_type", "Question"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL  [["votable_id", 6], ["votable_type", "Question"]]
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 6]]
+  Rendered questions/show.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 49ms (Views: 46.6ms | ActiveRecord: 1.2ms)
+
+
+Started PUT "/questions/6/dislike" for ::1 at 2015-07-07 12:23:45 -0700
+Processing by QuestionsController#downvote as HTML
+  Parameters: {"authenticity_token"=>"PzEO7IuydmsEt36DVrIuSATRvjq1OIOUZygj7F3KYGkPDQtpmT7J5xm8spyFznVh6HJq1uhjdvXluemqUiuP3w==", "id"=>"6"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."voter_type" = $4 AND "votes"."vote_scope" IS NULL  [["votable_id", 6], ["votable_type", "Question"], ["voter_id", 3], ["voter_type", "User"]]
+  [1m[36mActsAsVotable::Vote Load (0.4ms)[0m  [1mSELECT  "votes".* FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."voter_type" = $4 AND "votes"."vote_scope" IS NULL  ORDER BY "votes"."id" DESC LIMIT 1[0m  [["votable_id", 6], ["votable_type", "Question"], ["voter_id", 3], ["voter_type", "User"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "votes" SET "vote_flag" = $1, "updated_at" = $2 WHERE "votes"."id" = $3[0m  [["vote_flag", "f"], ["updated_at", "2015-07-07 19:23:45.913918"], ["id", 7]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/questions/6
+Completed 302 Found in 12ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/questions/6" for ::1 at 2015-07-07 12:23:45 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 6], ["votable_type", "Question"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL  [["votable_id", 6], ["votable_type", "Question"]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 6]]
+  Rendered questions/show.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 50ms (Views: 47.6ms | ActiveRecord: 1.2ms)
+
+
+Started PUT "/questions/6/like" for ::1 at 2015-07-07 12:23:46 -0700
+Processing by QuestionsController#upvote as HTML
+  Parameters: {"authenticity_token"=>"YOdxYdhQLzgkUABhNV8di5GwOhNMOwZQHIoI2OikNzVQ23TkytyQtDlbzH7mI0aifRPu/xFg8zGeG8Ke50XYgw==", "id"=>"6"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."voter_type" = $4 AND "votes"."vote_scope" IS NULL  [["votable_id", 6], ["votable_type", "Question"], ["voter_id", 3], ["voter_type", "User"]]
+  [1m[36mActsAsVotable::Vote Load (0.3ms)[0m  [1mSELECT  "votes".* FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."voter_type" = $4 AND "votes"."vote_scope" IS NULL  ORDER BY "votes"."id" DESC LIMIT 1[0m  [["votable_id", 6], ["votable_type", "Question"], ["voter_id", 3], ["voter_type", "User"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "votes" SET "vote_flag" = $1, "updated_at" = $2 WHERE "votes"."id" = $3[0m  [["vote_flag", "t"], ["updated_at", "2015-07-07 19:23:46.627865"], ["id", 7]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/questions/6
+Completed 302 Found in 11ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/questions/6" for ::1 at 2015-07-07 12:23:46 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 6], ["votable_type", "Question"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL  [["votable_id", 6], ["votable_type", "Question"]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 6]]
+  Rendered questions/show.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 52ms (Views: 49.1ms | ActiveRecord: 1.3ms)
+
+
+Started PUT "/questions/6/dislike" for ::1 at 2015-07-07 12:23:51 -0700
+Processing by QuestionsController#downvote as HTML
+  Parameters: {"authenticity_token"=>"ZrRIO3nU8+2RSL59vTeSoD3OaRj33NO7C1fDohr7H5VWiE2+a1hMYYxDcmJuS8mJ0W299KqHJtqJxgnkFRrwIw==", "id"=>"6"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."voter_type" = $4 AND "votes"."vote_scope" IS NULL  [["votable_id", 6], ["votable_type", "Question"], ["voter_id", 3], ["voter_type", "User"]]
+  [1m[36mActsAsVotable::Vote Load (0.5ms)[0m  [1mSELECT  "votes".* FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."voter_type" = $4 AND "votes"."vote_scope" IS NULL  ORDER BY "votes"."id" DESC LIMIT 1[0m  [["votable_id", 6], ["votable_type", "Question"], ["voter_id", 3], ["voter_type", "User"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "votes" SET "vote_flag" = $1, "updated_at" = $2 WHERE "votes"."id" = $3[0m  [["vote_flag", "f"], ["updated_at", "2015-07-07 19:23:51.236581"], ["id", 7]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/questions/6
+Completed 302 Found in 12ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/questions/6" for ::1 at 2015-07-07 12:23:51 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 6], ["votable_type", "Question"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL  [["votable_id", 6], ["votable_type", "Question"]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 6]]
+  Rendered questions/show.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 49ms (Views: 46.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/questions/6" for ::1 at 2015-07-07 12:24:42 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL  [["votable_id", 6], ["votable_type", "Question"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 6], ["votable_type", "Question"]]
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1  [["question_id", 6]]
+  Rendered questions/show.html.erb within layouts/application (34.8ms)
+Completed 200 OK in 87ms (Views: 69.8ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/assets/answers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 12:24:42 -0700
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 12:24:42 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 12:24:42 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-07 12:24:42 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 12:24:42 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-07 12:24:42 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-07 12:24:42 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-07 12:24:42 -0700
+
+
+Started GET "/assets/answers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 12:24:42 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 12:24:42 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 12:24:42 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 12:24:42 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-07-07 12:24:42 -0700
+
+
+Started GET "/questions/6" for ::1 at 2015-07-07 12:24:44 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 6], ["votable_type", "Question"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL  [["votable_id", 6], ["votable_type", "Question"]]
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 6]]
+  Rendered questions/show.html.erb within layouts/application (85.0ms)
+Completed 200 OK in 129ms (Views: 125.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 12:24:44 -0700
+
+
+Started GET "/assets/answers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 12:24:44 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 12:24:44 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-07-07 12:24:44 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-07 12:24:44 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-07 12:24:44 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-07 12:24:44 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-07 12:24:44 -0700
+
+
+Started GET "/assets/answers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 12:24:44 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 12:24:44 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 12:24:44 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-07 12:24:44 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-07-07 12:24:44 -0700
+
+
+Started PUT "/questions/6/like" for ::1 at 2015-07-07 12:24:46 -0700
+Processing by QuestionsController#upvote as HTML
+  Parameters: {"authenticity_token"=>"1gNDES/bbAEpwjF1PR07cif/Fpwbedcpn70d+by9Y13mP0aUPVfTjTTJ/WruYWBby1zCcEYiIkgdLNe/s1yM6w==", "id"=>"6"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+Redirected to http://localhost:3000/questions/6
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/questions/6" for ::1 at 2015-07-07 12:24:46 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL  [["votable_id", 6], ["votable_type", "Question"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 6], ["votable_type", "Question"]]
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1  [["question_id", 6]]
+  Rendered questions/show.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 49ms (Views: 45.9ms | ActiveRecord: 1.2ms)
+
+
+Started PUT "/questions/6/dislike" for ::1 at 2015-07-07 12:24:47 -0700
+Processing by QuestionsController#downvote as HTML
+  Parameters: {"authenticity_token"=>"6Whg+U3scJvrlug0EPwHbt9LRltjYODPc9Tx3eHZ3EDZVGV8X2DPF/adJCvDgFxHM+iStz47Fa7xRTub7jgz9g==", "id"=>"6"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+Redirected to http://localhost:3000/questions/6
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/questions/6" for ::1 at 2015-07-07 12:24:47 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 6], ["votable_type", "Question"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL  [["votable_id", 6], ["votable_type", "Question"]]
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 6]]
+  Rendered questions/show.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 50ms (Views: 47.1ms | ActiveRecord: 1.3ms)
+
+
+Started PUT "/questions/6/like" for ::1 at 2015-07-07 12:24:47 -0700
+Processing by QuestionsController#upvote as HTML
+  Parameters: {"authenticity_token"=>"IRA/faNW7iaQ/T6nEoxaBFh21vz8s4sJP6IUx3yBqasRLDr4sdpRqo328rjB8AEttNUCEKHofmi9M96Bc2BGHQ==", "id"=>"6"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+Redirected to http://localhost:3000/questions/6
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/questions/6" for ::1 at 2015-07-07 12:24:47 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL  [["votable_id", 6], ["votable_type", "Question"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 6], ["votable_type", "Question"]]
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1  [["question_id", 6]]
+  Rendered questions/show.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 132ms (Views: 129.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/questions" for ::1 at 2015-07-07 12:24:49 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 51ms (Views: 49.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/questions/new" for ::1 at 2015-07-07 12:24:50 -0700
+Processing by QuestionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered questions/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 54ms (Views: 52.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/questions" for ::1 at 2015-07-07 12:24:58 -0700
+Processing by QuestionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tirg1pNRYa09HGlAleHEqFAr6WK59riypoQGLK0PWyiGFuVTgd3eISAXpV9GnZ+BvIg9juStTdMkFcxqou60ng==", "question"=>{"title"=>"lkslkjsdljkdsjlkf", "content"=>"lkjdslkjf", "user_id"=>"3"}, "commit"=>"Create Question"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mQuestion Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "questions" WHERE "questions"."title" = 'lkslkjsdljkdsjlkf' LIMIT 1[0m
+  [1m[35mQuestion Exists (0.4ms)[0m  SELECT  1 AS one FROM "questions" WHERE "questions"."content" = 'lkjdslkjf' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "questions" ("title", "content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "lkslkjsdljkdsjlkf"], ["content", "lkjdslkjf"], ["user_id", 3], ["created_at", "2015-07-07 19:24:58.728528"], ["updated_at", "2015-07-07 19:24:58.728528"]]
+  [1m[35m (14.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/questions/7
+Completed 302 Found in 24ms (ActiveRecord: 16.4ms)
+
+
+Started GET "/questions/7" for ::1 at 2015-07-07 12:24:58 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 7], ["votable_type", "Question"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL  [["votable_id", 7], ["votable_type", "Question"]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 7]]
+  Rendered questions/show.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 46ms (Views: 43.4ms | ActiveRecord: 1.1ms)
+
+
+Started PUT "/questions/7/like" for ::1 at 2015-07-07 12:25:00 -0700
+Processing by QuestionsController#upvote as HTML
+  Parameters: {"authenticity_token"=>"62TCWbQbcqVxxGxdAyBJvbCYzXcwGpxBkPZYAlPjdnvbWMfcppfNKWzPoELQXBKUXDsZm21BaSASZ5JEXAKZzQ==", "id"=>"7"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+Redirected to http://localhost:3000/questions/7
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/questions/7" for ::1 at 2015-07-07 12:25:00 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL  [["votable_id", 7], ["votable_type", "Question"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 7], ["votable_type", "Question"]]
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1  [["question_id", 7]]
+  Rendered questions/show.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 59ms (Views: 56.9ms | ActiveRecord: 1.1ms)
+
+
+Started PUT "/questions/7/dislike" for ::1 at 2015-07-07 12:25:00 -0700
+Processing by QuestionsController#downvote as HTML
+  Parameters: {"authenticity_token"=>"kl25Z8Ckh7FtrU0Pb4wxo25DiOsiU3cWUcKKt5hz0IGiYbzi0ig4PXCmgRC88GqKguBcB38IgnfTU0Dxl5I/Nw==", "id"=>"7"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+Redirected to http://localhost:3000/questions/7
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/questions/7" for ::1 at 2015-07-07 12:25:00 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 7], ["votable_type", "Question"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL  [["votable_id", 7], ["votable_type", "Question"]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 7]]
+  Rendered questions/show.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 129ms (Views: 126.1ms | ActiveRecord: 1.2ms)
+
+
+Started PUT "/questions/7/dislike" for ::1 at 2015-07-07 12:25:01 -0700
+Processing by QuestionsController#downvote as HTML
+  Parameters: {"authenticity_token"=>"ijxj6XTfWe4egZgYHpiKwMAUr98ueOm3RJr2zu4c/0m6AGZsZlPmYgOKVAfN5NHpLLd7M3MjHNbGCzyI4f0Q/w==", "id"=>"7"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+Redirected to http://localhost:3000/questions/7
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/questions/7" for ::1 at 2015-07-07 12:25:01 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL  [["votable_id", 7], ["votable_type", "Question"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 7], ["votable_type", "Question"]]
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1  [["question_id", 7]]
+  Rendered questions/show.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 54ms (Views: 51.8ms | ActiveRecord: 1.2ms)
+
+
+Started PUT "/questions/7/dislike" for ::1 at 2015-07-07 12:25:02 -0700
+Processing by QuestionsController#downvote as HTML
+  Parameters: {"authenticity_token"=>"DmLXSZS8jWpjpd0ISsoBCRnfrGEcTM6Sx4hBTI/3Cr8+XtLMhjAy5n6uEReZtlog9Xx4jUEXO/NFGYsKgBblCQ==", "id"=>"7"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+Redirected to http://localhost:3000/questions/7
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/questions/7" for ::1 at 2015-07-07 12:25:02 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 7], ["votable_type", "Question"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL  [["votable_id", 7], ["votable_type", "Question"]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 7]]
+  Rendered questions/show.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 57ms (Views: 54.3ms | ActiveRecord: 1.1ms)
+
+
+Started PUT "/questions/7/like" for ::1 at 2015-07-07 12:25:02 -0700
+Processing by QuestionsController#upvote as HTML
+  Parameters: {"authenticity_token"=>"5BEGCp4EomDcLqRfkxqww9XfRfdNzlCYZ78QfsyJl1rULQOPjIgd7MElaEBAZuvqOXyRGxCVpfnlLto4w2h47A==", "id"=>"7"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+Redirected to http://localhost:3000/questions/7
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/questions/7" for ::1 at 2015-07-07 12:25:02 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL  [["votable_id", 7], ["votable_type", "Question"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 7], ["votable_type", "Question"]]
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1  [["question_id", 7]]
+  Rendered questions/show.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 52ms (Views: 50.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/questions/7/answers" for ::1 at 2015-07-07 12:25:14 -0700
+Processing by AnswersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SF7cvp75pDG2vPrYgwpP0x+6lHW7gxDrFsTGL6ZwWcV4Ytk7jHUbvau3NsdQdhT68xlAmebY5YqUVQxpqZG2cw==", "answer"=>{"answer"=>"this question doesnt make any sense"}, "commit"=>"Create Answer", "question_id"=>"7"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "answers" ("answer", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["answer", "this question doesnt make any sense"], ["question_id", 7], ["created_at", "2015-07-07 19:25:14.549045"], ["updated_at", "2015-07-07 19:25:14.549045"]]
+  [1m[35m (15.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/questions/7
+Completed 302 Found in 21ms (ActiveRecord: 16.3ms)
+
+
+Started GET "/questions/7" for ::1 at 2015-07-07 12:25:14 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 7], ["votable_type", "Question"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL  [["votable_id", 7], ["votable_type", "Question"]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 7]]
+  Rendered questions/show.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 130ms (Views: 127.8ms | ActiveRecord: 1.0ms)

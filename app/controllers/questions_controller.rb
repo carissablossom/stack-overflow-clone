@@ -40,14 +40,14 @@ class QuestionsController < ApplicationController
   def upvote
     @question = Question.find(params[:id])
 
-    @question.upvote_by current_user
+    @question.upvote_by current_user unless current_user.id == @question.user_id
     redirect_to question_path(@question)
   end
 
   def downvote
     @question = Question.find(params[:id])
 
-    @question.downvote_from current_user
+    @question.downvote_from current_user unless current_user.id == @question.user_id
     redirect_to question_path(@question)
   end
 
