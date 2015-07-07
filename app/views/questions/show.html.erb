@@ -3,7 +3,9 @@
 <h2><%= @question.title %></h2>
 <p><%= @question.content %></p>
 
-<%= link_to "Edit Question", edit_question_path(@question) %>
+<% if current_user && (current_user.id == @question.user_id) %>
+  <%= link_to "Edit Question", edit_question_path(@question) %>
+<% end %>
 
 <h3>Answers: </h3>
 <% @question.answers.each do |answer| %>
