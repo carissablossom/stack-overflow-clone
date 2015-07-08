@@ -11,18 +11,14 @@ class QuestionsController < ApplicationController
 
   def new
     @question = Question.new
-    render partial: 'new', layout: false
+    render 'new', layout: false
   end
 
   def create
     @question = Question.new(question_params)
 
     if @question.save
-      # respond_to do |format|
-      #   format.html
-      #   format.json { render json: {question_show_page: render_to_string :show }}
-      # end
-      # render partial: :new, layout: false, locals: {flskdjl}
+      render 'show', layout: false
     else
       render 'new'
     end

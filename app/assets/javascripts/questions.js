@@ -1,7 +1,6 @@
 $(document).ready(function(){
-  newQuestionForm.init();
   addQuestionLink.init();
-
+  newQuestionForm.init();
 })
 
 var addQuestionLink = {
@@ -11,7 +10,6 @@ var addQuestionLink = {
 
   },
   appendForm: function(event, response) {
-    console.log('response', response);
     $('.add-question-link').hide();
     $('.add-question-form').append(response);
   },
@@ -23,8 +21,8 @@ var addQuestionLink = {
 
 var newQuestionForm = {
   init: function(){
-    $('.new_question').on('ajax:success', this.appendForm);
-    $('.new_question').on('ajax:error', this.displayError);
+    $('.add-question-form').on('ajax:success', this.appendForm);
+    $('.add-question-form').on('ajax:error', this.displayError);
 
   },
   appendForm: function(event, response) {
