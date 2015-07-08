@@ -15,15 +15,16 @@ User.create(
     )
 
 24.times do
+  name = "#{Faker::Internet.domain_word}"
   User.create(
-    username: "#{Faker::Internet.domain_word}",
-    email: "#{Faker::Internet.domain_word}@aol.com",
+    username: name,
+    email: "#{name}@aol.com",
     password: 'password'
     )
 end
 
 60.times do
-  user = (1 + rand(25))
+  user = (1 + rand(User.all.length))
   Question.create(
     user_id: user,
     title: "#{Faker::Lorem.sentence}?",
@@ -32,7 +33,7 @@ end
 end
 
 240.times do
-  user = (1 + rand(25))
+  user = (1 + rand(User.all.length))
   question = (1 + rand(60))
   Answer.create(
     user_id: user,
@@ -42,10 +43,10 @@ end
 end
 
 600.times do
-  coin_toss = rand(1)
-  user = (1 + rand(25))
+  coin_toss = (1 + rand(2))
+  user = (1 + rand(User.all.length))
 
-  if coin_toss == 0
+  if coin_toss == 1
     answer = (1 + rand(Answer.all.length))
     Answer.find(answer).comments.create(user_id: user, content: "#{Faker::Lorem.sentence}")
   else
@@ -55,10 +56,10 @@ end
 end
 
 1000.times do
-  coin_toss = rand(1)
-  user = (1 + rand(25))
+  coin_toss = (1 + rand(2))
+  user = (1 + rand(User.all.length))
 
-  if coin_toss == 0
+  if coin_toss == 1
     answer = (1 + rand(Answer.all.length))
     Answer.find(answer).votes.create(user_id: user, eval: 0) if
     !Answer.find(answer).votes.where(user_id: user).first
@@ -93,9 +94,13 @@ Tag.create([
 end
 
 80.times do
-  user = (1 + rand(25))
+  user = (1 + rand(User.all.length))
   question = (1 + rand(60))
-  FavoriteQuestion.create(user_id: user, question_id: question) if
+  def time_rand from = 0.0, to = Time.now
+    Time.at(from + rand * (to.to_f - from.to_f))
+  end
+  date = time_rand
+  FavoriteQuestion.create(user_id: user, question_id: question, favorited_date: date) if
   !FavoriteQuestion.where(user_id: user, question_id: question).first &&
   Question.find(question).user_id != user
 end
@@ -103,7 +108,11 @@ end
 30.times do
   question = (1 + rand(60))
   answer = (1 + rand(Answer.all.length))
-  FavoriteAnswer.create(question_id: question, answer_id: answer) if
+  def time_rand from = 0.0, to = Time.now
+    Time.at(from + rand * (to.to_f - from.to_f))
+  end
+  date = time_rand
+  FavoriteAnswer.create(question_id: question, answer_id: answer, favorited_date: date) if
   !FavoriteAnswer.where(question_id: question, answer_id: answer).first &&
-  FavoriteAnswer.where(question_id: question, answer_id: answer).exists?
+  Question.find(question).favorite_answers.length == 0
 end
