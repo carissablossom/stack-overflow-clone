@@ -4,7 +4,7 @@ class AnswersController < ApplicationController
 		@answer = @question.answers.new(answer_params)
 
 		if @answer.save
-			redirect_to question_path(@question)
+			render '_show', layout: false
 		else
 			@error = @answer.errors.full_messages
 			render 'questions/show'

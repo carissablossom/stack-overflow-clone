@@ -1,20 +1,22 @@
-<% if current_user %>
-	<h1>Welcome <%= current_user.username %></h1>
-<% end %>
-<p><%= @zen_quote %></p>
+<div class="index">
+  <% if current_user %>
+  	<h1>Welcome <%= current_user.username %></h1>
+  <% end %>
+  <p><%= @zen_quote %></p>
 
-<h2> All your Questions! </h2>
+  <h2> All your Questions! </h2>
 
 
 
-<% @questions.each do |question|%>
-  <%= link_to "#{question.title}", question_path(question.id) %>
+  <% @questions.each do |question|%>
+    <%= link_to "#{question.title}", question_path(question.id) %>
+    <br>
+  <% end %>
+
   <br>
-<% end %>
 
-<br>
+  <div class="add-question-form">
+  </div>
 
-<div class="add-question-form">
+  <%= link_to "Add a Question", new_question_path, remote: true, class: "add-question-link" %>
 </div>
-
-<%= link_to "Add a Question", new_question_path, remote: true, class: "add-question-link" %>

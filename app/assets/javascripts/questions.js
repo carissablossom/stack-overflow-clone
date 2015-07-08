@@ -10,7 +10,8 @@ $(document).on('ajax:error', '.add-question-link', function(event) {
 
 // append new question
 $(document).on('ajax:success', '.new_question', function(event, response, status, xhr) {
-  $('body').append(response); //needs to be cleaned up
+  $('.index').hide();
+  $('body').append(response);
 });
 
 $(document).on('ajax:error', '.new_question', function(event, response, status, xhr) {
