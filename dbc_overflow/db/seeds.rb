@@ -14,7 +14,7 @@ User.create(
     password: 'password'
     )
 
-24.times do
+49.times do
   name = "#{Faker::Internet.domain_word}"
   User.create(
     username: name,
@@ -55,17 +55,23 @@ end
   end
 end
 
-1000.times do
-  coin_toss = (1 + rand(2))
+10000.times do
+  dice_toss = (1 + rand(10))
   user = (1 + rand(User.all.length))
 
-  if coin_toss == 1
+  if dice_toss > 3
     answer = (1 + rand(Answer.all.length))
-    Answer.find(answer).votes.create(user_id: user, eval: 0) if
+    Answer.find(answer).votes.create(user_id: user, eval: 1) if
     !Answer.find(answer).votes.where(user_id: user).first
-  else
     question = (1 + rand(60))
     Question.find(question).votes.create(user_id: user, eval: 1) if
+    !Question.find(question).votes.where(user_id: user).first
+  else
+    answer = (1 + rand(Answer.all.length))
+    Answer.find(answer).votes.create(user_id: user, eval: -1) if
+    !Answer.find(answer).votes.where(user_id: user).first
+    question = (1 + rand(60))
+    Question.find(question).votes.create(user_id: user, eval: -1) if
     !Question.find(question).votes.where(user_id: user).first
   end
 end
