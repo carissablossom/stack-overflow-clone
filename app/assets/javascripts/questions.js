@@ -1,50 +1,17 @@
-$(document).ready(function(){
-  addQuestionLink.init();
-  newQuestionForm.init();
-})
+// append question form
+$(document).on('ajax:success', '.add-question-link', function(event, response) {
+  $('.add-question-link').hide();
+  $('.add-question-form').append(response);
+});
 
-var addQuestionLink = {
-  init: function(){
-    $('.add-question-link').on('ajax:success', this.appendForm);
-    $('.add-question-link').on('ajax:error', this.displayError);
+$(document).on('ajax:error', '.add-question-link', function(event) {
+  console.log('load question form fail', arguments);
+});
 
-  },
-  appendForm: function(event, response) {
-    $('.add-question-link').hide();
-    $('.add-question-form').append(response);
-  },
-  displayError: function() {
-    console.log('fail', arguments);
-  }
+$(document).on('ajax:success', '.new_question', function(event, response, status, xhr) {
+  $('body').append(response);
+});
 
-}
-
-var newQuestionForm = {
-  init: function(){
-    $('.add-question-form').on('ajax:success', this.appendForm);
-    $('.add-question-form').on('ajax:error', this.displayError);
-
-  },
-  appendForm: function(event, response) {
-    console.log('success', arguments);
-    console.log('response', response);
-
-  },
-  displayError: function() {
-    console.log('fail', arguments);
-  }
-
-}
-
-// $.ajax({
-//   //...
-// }).success(function(data) {
-//   data // {title: "Hello", content: "World"}
-//   $("<li class='question'><h4> " + data.title + "</h4></li>");
-// })
-
-// $.ajax({
-//   //...
-// }).success(function(data) {
-//   $('.question_list').append(data);
-// })
+$(document).on('ajax:error', '.new_question', function(event, response, status, xhr) {
+  console.log('new question fail', arguments);
+});

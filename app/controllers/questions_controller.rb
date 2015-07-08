@@ -18,7 +18,8 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
 
     if @question.save
-      render 'show', layout: false
+      render partial: 'show', layout: false
+      # render json: @question, status: :created, location: @user
     else
       render 'new'
     end
