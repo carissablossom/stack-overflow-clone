@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
   		redirect_to root_url
   	else
   		@signin_error = "Username/Password invalid. Please try again."
-  		render 'new'
+  		render '_new'
   	end
   end
 
