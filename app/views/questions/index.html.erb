@@ -14,4 +14,7 @@
 
 <br>
 
-<%= link_to "Add a Question", new_question_path %>
+<div class="add-question-form">
+</div>
+
+<%= link_to "Add a Question", new_question_path, remote: true, class: "add-question-link" %>
