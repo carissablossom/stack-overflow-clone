@@ -9,7 +9,7 @@
 </p>
 
 <p>
-  <strong>Content:</strong>
+  <strong>Question:</strong>
   <%= @question.content %>
 </p>
 
@@ -23,8 +23,12 @@
   <%= @question.user.username %>
 </p>
 
+<% @question.comments.each do |comment| %>
+  <h5><strong>Comment: </strong><%= comment.content %> | <strong>Username: </strong><%= comment.user.username %></h5>
+<% end %>
 
-<strong>Answers:</strong>
+<br>
+<h2><strong>Answers:</strong></h2>
 <% if @question.chosen.length != 0  %>
   <h3><%= @question.chosen.first.vote_count %> <strong>Chosen: <%= @question.chosen.first.content %></strong></h3>
   <h4><%= @question.chosen.first.user.username %></h4>
