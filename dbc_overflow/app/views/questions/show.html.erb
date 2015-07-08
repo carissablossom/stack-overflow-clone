@@ -1,12 +1,11 @@
-<p>
-  <strong>Votes:</strong>
-  <%= @question.vote_count %>
-</p>
-
-<p>
+<h1>
   <strong>Title:</strong>
   <%= @question.title %>
-</p>
+</h1>
+
+<h5>Upvote</h5>
+<h3><%= @question.vote_count %></h3>
+<h5>Downvote</h5>
 
 <p>
   <strong>Question:</strong>
@@ -19,35 +18,53 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @question.user.username %>
+  <strong>Asked By:</strong>
+  <%= @question.user.username %> |
+  <%= @question.updated_at %>
 </p>
+<%= link_to 'Edit Question', edit_question_path(@question) %>
 
 <% @question.comments.each do |comment| %>
-  <h5><strong>Comment: </strong><%= comment.content %> | <strong>Username: </strong><%= comment.user.username %></h5>
+  <p>
+    <strong>Comment: </strong><%= comment.content %> |
+    <strong>Username: </strong><%= link_to comment.user.username, user_path(comment.user) %> |
+    <%= comment.created_at %>
+  </p>
 <% end %>
 
 <br>
 <h2><strong>Answers:</strong></h2>
 <% if @question.chosen.length != 0  %>
-  <h3><%= @question.chosen.first.vote_count %> <strong>Chosen: <%= @question.chosen.first.content %></strong></h3>
-  <h4><%= @question.chosen.first.user.username %></h4>
+  <h5>Upvote</h5>
+  <h3><%= @question.chosen.first.vote_count %></h3>
+  <h5>Downvote</h5>
+  <h3><strong>Chosen: <%= @question.chosen.first.content %></strong></h3>
+  <h4>Answered By: <%= @question.chosen.first.user.username %> | <%= @question.chosen.first.updated_at %> </h4>
   <% @question.chosen.first.comments.each do |comment| %>
-  <br>
-  <h5><strong>Comment: </strong><%= comment.content %> | <strong>Username: </strong><%= comment.user.username %></h5>
+  <p>
+    <strong>Comment: </strong><%= comment.content %> |
+    <strong>Username: </strong><%= link_to comment.user.username, user_path(comment.user) %> |
+    <%= comment.created_at %>
+  </p>
   <% end %>
 <% end %>
-
 
 <% @question.answers.each do |answer| %>
   <br>
-  <h3><%= answer.vote_count %> <%= answer.content unless @question.favorite_answers.first == answer%></h3>
-  <h4><%= @question.user.username %></h4>
+  <h5>Upvote</h5>
+  <h3><%= answer.vote_count %></h3>
+  <h5>Downvote</h5>
+  <h3><%= answer.content unless @question.favorite_answers.first == answer%></h3>
+  <h4>Answered By: <%= answer.user.username %> | <%= answer.updated_at %> </h4>
   <% answer.comments.each do |comment| %>
-    <h5><strong>Comment: </strong><%= comment.content %> | <strong>Username: </strong><%= comment.user.username %></h5>
+    <p>
+      <strong>Comment: </strong><%= comment.content %> |
+      <strong>Username: </strong><%= link_to comment.user.username, user_path(comment.user) %> |
+      <%= comment.created_at %>
+    </p>
   <% end %>
 <% end %>
 
+<%= render 'answer_form' %>
 
-<%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>
