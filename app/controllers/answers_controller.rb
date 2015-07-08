@@ -11,6 +11,19 @@ class AnswersController < ApplicationController
 		end
 	end
 
+	def update
+    @answer = Answer.find(params[:id])
+    if params[:commit] == "Upvote"
+      @answer.votes += 1
+      @answer.save
+      redirect_to question_path(@answer)
+    else params[:commit] == "Downvote"
+      @answer.votes -= 1
+      @answer.save
+      redirect_to question_path(@answer)
+    end
+  end
+
 	private
 	def answer_params
 		params.require(:answer).permit(:answer)

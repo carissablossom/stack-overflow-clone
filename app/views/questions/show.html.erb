@@ -1,28 +1,19 @@
 <%= link_to "Go back to all the Questions!", questions_path %>
 
-<h2><%= @question.title %></h2>
-<p><%= @question.content %></p>
-<p>Votes: <%= @question.votes %></p>
 
-<%= form_for(@question) do |f| %>
-  <p>
-    <%= form_tag(question_path, method: "put") %>
-  </p>
+<table>
+  <td>
+    <tr><h2>Title: <%= @question.title %></h2></tr>
+    <tr><p>Question: <%= @question.content %></p></tr>
+    <tr><p>Votes: <%= @question.votes %></p></tr>
+    <tr>
+      <%= form_tag question_path, method: "put" %>
+      <%= submit_tag "Upvote" %>
+      <%= submit_tag "Downvote" %>
+    </td>
+  </tr>
+</table>
 
-  <p>
-    <%= f.submit "Upvote" %>
-  </p>
-<% end %>
-
-<%= form_for(@question) do |f| %>
-  <p>
-    <%= form_tag(question_path, method: "put") %>
-  </p>
-
-  <p>
-    <%= f.submit "Downvote" %>
-  </p>
-<% end %>
 
 <% if current_user && (current_user.id == @question.user_id) %>
   <%= link_to "Edit Question", edit_question_path(@question) %>
@@ -30,6 +21,8 @@
 
 <h3>Answers: </h3>
 <%= render '/answer/show' %>
+
+
 
 <h3>Add Answer: </h3>
 <%= form_for([@question, @answers.build]) do |f| %>

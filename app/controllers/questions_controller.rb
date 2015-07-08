@@ -1,7 +1,12 @@
+require 'github'
+
 class QuestionsController < ApplicationController
 
   def index
     @questions = Question.all
+    @quote = Github.quote
+    p @quote
+    p "*" * 100
   end
 
   def show
@@ -32,8 +37,6 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    p "*" * 100
-    p params
     @question = Question.find(params[:id])
     if params[:commit] == "Upvote"
       @question.votes += 1
