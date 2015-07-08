@@ -1,0 +1,19 @@
+<h1>DBC Overflow Pooooosts</h1>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.title %></td>
+      <td><%= post.content %></td>
+      <td><%= link_to 'Show', post_path(post) %></td>
+      <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'My posts', controller: 'posts' %>
+<%= link_to 'New post', new_post_path %>
