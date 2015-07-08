@@ -11,6 +11,10 @@ class QuestionsController < ApplicationController
 
   def new
     @question = Question.new
+    # if response.xhr?
+      render partial: 'question_form', layout:false, locals: {question: @question}
+    # else
+    # end
   end
 
   def create

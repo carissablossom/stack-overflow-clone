@@ -1,0 +1,8 @@
+<h3>Answers: </h3>
+<%= @answer.answer %><br>
+<%= link_to "upvote", like_question_answer_path(@question, @answer.id), method: :put %>
+<%= @answer.get_upvotes.size %>
+<%= link_to "downvote", dislike_question_answer_path(@question, @answer.id), method: :put %>
+<%= @answer.get_downvotes.size %>
+<br>Score: <%= @answer.score %>
+

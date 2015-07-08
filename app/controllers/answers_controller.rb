@@ -1,10 +1,12 @@
 class AnswersController < ApplicationController
 	def create
+    p "in answer create"
 		@question = Question.find(params[:question_id])
 		@answer = @question.answers.new(answer_params)
 
 		if @answer.save
-			redirect_to question_path(@question)
+			# redirect_to question_path(@question)
+      render partial: 'answers', layout:false, locals: {answer: @answer, question: @question}
 		else
 			@error = @answer.errors.full_messages
 			render 'questions/show'

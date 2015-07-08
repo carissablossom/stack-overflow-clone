@@ -14,7 +14,7 @@
 <%= @question.get_downvotes.size %>
 <br>Score: <%= @question.score %>
 
-
+<div class="answers">
 <h3>Answers: </h3>
 <% @question.answers.each do |answer| %>
   <p><%= answer.answer %></p>
@@ -24,19 +24,21 @@
   <%= answer.get_downvotes.size %>
   <br>Score: <%= answer.score %>
 <% end %>
+</div>
 
 <h3>Add Answer: </h3>
+<div class="answer-form">
 <%= form_for([@question, @question.answers.build]) do |f| %>
   <% if @error %>
     <p><%= @error.first %></p>
   <% end %>
-
-  <p>
+  <div class="formz">
     <%= f.label :answer %>
     <%= f.text_field :answer %>
-  </p>
+  </div>
 
   <p>
     <%= f.submit %>
   </p>
 <% end %>
+</div>
