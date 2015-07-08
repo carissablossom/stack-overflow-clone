@@ -8,5 +8,47 @@
   <%= @user.email %>
 </p>
 
+
+<strong>Questions:</strong>
+<% @user.questions.each do |question| %>
+  <p>
+    <%= question.vote_count %> |
+    <%= question.title %> |
+    <%= question.content %> |
+    <%= question.updated_at %>
+  </p>
+<% end %>
+<br>
+
+<strong>Favorite Questions:</strong>
+<% @user.favorites.each do |question| %>
+  <p>
+    <%= question.vote_count %> |
+    <%= question.title %> |
+    <%= question.content %> |
+    <%= question.updated_at %>
+  </p>
+<% end %>
+<br>
+
+<strong>Answers:</strong>
+<% @user.answers.each do |answer| %>
+  <p>
+    <%= answer.vote_count %> |
+    <%= answer.content %> |
+    <%= answer.updated_at %>
+  </p>
+<% end %>
+<br>
+
+<strong>Comments:</strong>
+<% @user.comments.each do |comment| %>
+  <p>
+    <%= comment.content %> |
+    <%= comment.updated_at %>
+  </p>
+<% end %>
+<br>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

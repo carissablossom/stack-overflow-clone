@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :votes
   has_many :favorite_questions
+  has_many :favorites, through: :favorite_questions, source: :question
 
 
   def password

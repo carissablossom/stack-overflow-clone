@@ -3,9 +3,13 @@
   <%= @question.title %>
 </h1>
 
-<h5>Upvote</h5>
+<div class="upvote">
+  <h5>Upvote</h5>
+</div>
 <h3><%= @question.vote_count %></h3>
-<h5>Downvote</h5>
+<div class="downvote">
+  <h5>Downvote</h5>
+</div>
 
 <p>
   <strong>Question:</strong>
@@ -22,7 +26,10 @@
   <%= @question.user.username %> |
   <%= @question.updated_at %>
 </p>
-<%= link_to 'Edit Question', edit_question_path(@question) %>
+
+<% if logged_in? && @question.user.id == current_user.id %>
+  <%= link_to 'Edit Question', edit_question_path(@question) %>
+<% end %>
 
 <% @question.comments.each do |comment| %>
   <p>
@@ -35,11 +42,18 @@
 <br>
 <h2><strong>Answers:</strong></h2>
 <% if @question.chosen.length != 0  %>
-  <h5>Upvote</h5>
+  <div class="upvote">
+    <h5>Upvote</h5>
+  </div>
   <h3><%= @question.chosen.first.vote_count %></h3>
-  <h5>Downvote</h5>
+  <div class="downvote">
+    <h5>Downvote</h5>
+  </div>
   <h3><strong>Chosen: <%= @question.chosen.first.content %></strong></h3>
   <h4>Answered By: <%= @question.chosen.first.user.username %> | <%= @question.chosen.first.updated_at %> </h4>
+  <% if logged_in? && @question.chosen.first.user.id == current_user.id %>
+    <%= link_to 'Edit Answer', edit_answer_path(@question.chosen.first) %>
+  <% end %>
   <% @question.chosen.first.comments.each do |comment| %>
   <p>
     <strong>Comment: </strong><%= comment.content %> |
@@ -51,11 +65,18 @@
 
 <% @question.answers.each do |answer| %>
   <br>
-  <h5>Upvote</h5>
+  <div class="upvote">
+    <h5>Upvote</h5>
+  </div>
   <h3><%= answer.vote_count %></h3>
-  <h5>Downvote</h5>
+  <div class="downvote">
+    <h5>Downvote</h5>
+  </div>
   <h3><%= answer.content unless @question.favorite_answers.first == answer%></h3>
   <h4>Answered By: <%= answer.user.username %> | <%= answer.updated_at %> </h4>
+  <% if logged_in? && answer.user.id == current_user.id %>
+    <%= link_to 'Edit Answer', edit_answer_path(answer) %>
+  <% end %>
   <% answer.comments.each do |comment| %>
     <p>
       <strong>Comment: </strong><%= comment.content %> |
