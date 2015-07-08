@@ -1,8 +1,10 @@
 <% if current_user %>
 	<h1>Welcome <%= current_user.username %></h1>
 <% end %>
+<p><%= @zen_quote %></p>
 
 <h2> All your Questions! </h2>
+
 
 
 <% @questions.each do |question|%>
