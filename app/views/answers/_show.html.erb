@@ -1,6 +1,4 @@
 <p><%= answer.answer %></p>
-<%= link_to "upvote", like_question_answer_path(@question, answer), method: :put %>
-<%= answer.get_upvotes.size %>
-<%= link_to "downvote", dislike_question_answer_path(@question, answer), method: :put %>
-<%= answer.get_downvotes.size %>
-<br>Score: <%= answer.score %>
+<div class="answer-votes">
+  <%= render 'votes' %>
+</div>

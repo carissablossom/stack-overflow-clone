@@ -1,0 +1,7 @@
+<%= link_to "upvote", like_question_answer_path(@question, answer.id), method: :put, remote: true, class: "upvote-answer" %>
+<%= answer.get_upvotes.size %>
+
+<%= link_to "downvote", dislike_question_answer_path(@question, answer.id), method: :put, remote: true, class: "downvote-answer" %>
+<%= answer.get_downvotes.size %>
+<br>
+Score: <%= answer.score %>
