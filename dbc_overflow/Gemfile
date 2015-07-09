@@ -29,6 +29,9 @@ gem 'factory_girl'
 gem 'rspec-rails'
 gem 'capybara'
 gem 'shoulda-matchers'
+gem 'httparty'
+gem 'octokit'
+gem 'dotenv-rails', :groups => [:development, :test]
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
