@@ -1,0 +1,15 @@
+<h3>Add Answer: </h3>
+<%= form_for [@question, @question.answers.build], remote: true do |f| %>
+  <% if @error %>
+    <p><%= @error.first %></p>
+  <% end %>
+
+  <p>
+    <%= f.label :answer %>
+    <%= f.text_field :answer %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
