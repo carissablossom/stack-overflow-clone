@@ -8,6 +8,9 @@
   <%= @user.email %>
 </p>
 
+<%= link_to 'Edit Profile', edit_user_path(@user) %>
+<br>
+<br>
 
 <strong>Questions:</strong>
 <% @user.questions.each do |question| %>
@@ -15,7 +18,11 @@
     <%= question.vote_count %> |
     <%= question.title %> |
     <%= question.content %> |
-    <%= question.updated_at %>
+    <%= question.updated_at %> |
+    <%= link_to 'Edit', edit_question_path(question) %> |
+    <%= link_to 'Delete', question_path(question),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
   </p>
 <% end %>
 <br>
@@ -27,6 +34,9 @@
     <%= question.title %> |
     <%= question.content %> |
     <%= question.updated_at %>
+    <%= link_to 'Unfavorite', favorite_question_path(question),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
   </p>
 <% end %>
 <br>
@@ -36,7 +46,11 @@
   <p>
     <%= answer.vote_count %> |
     <%= answer.content %> |
-    <%= answer.updated_at %>
+    <%= answer.updated_at %> |
+    <%= link_to 'Edit', edit_answer_path(answer) %> |
+    <%= link_to 'Delete', answer_path(answer),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
   </p>
 <% end %>
 <br>
@@ -50,5 +64,4 @@
 <% end %>
 <br>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Main', questions_path %>
