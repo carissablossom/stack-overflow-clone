@@ -6,14 +6,13 @@
 <h2> All your Questions! </h2>
 
 
-<div class="questions">
-<% @questions.each do |question|%>
-  <%= link_to "#{question.title}", question_path(question.id) %>
-  <br>
-<% end %>
-</div>
+<ul class="question-list">
+  <% @questions.each do |question|%>
+    <%= render 'question_list_item', question: question %>
+  <% end %>
+</ul>
 
 <br>
-<div>
-  <%= link_to "Add a Question", new_question_path, {:class=>"question-link"} %>
+<div class="new-question-form-container">
+  <%= link_to "Add a Question", new_question_path, class: 'question-link' %>
 </div>

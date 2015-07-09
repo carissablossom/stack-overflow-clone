@@ -11,20 +11,31 @@ class QuestionsController < ApplicationController
 
   def new
     @question = Question.new
-    # if response.xhr?
-      render partial: 'question_form', layout:false, locals: {question: @question}
-    # else
-    # end
+    render partial: 'question_form', layout:false, local: {question: @question}
   end
 
   def create
     @question = Question.new(question_params)
 
-    if @question.save
-      redirect_to question_path(@question)
-    else
-      render 'new'
+    respond_to do |format|
+      if @question.save
+        format.html { redirect_to @question, notice: 'yay'}
+        format.json {
+          hash = @question.as_json
+          hash['html'] = render_to_string partial: 'question_list_item', formats:['html'], locals: {question: @question}
+          render json: hash, status: :created
+        }
+      else
+        format.html { render action: 'new'}
+        format.json { render json: @question.errors.full_messages, status: 400 }
+      end
     end
+
+    # if @question.save
+    #   redirect_to question_path(@question)
+    # else
+    #   render 'new'
+    # end
   end
 
   def edit
