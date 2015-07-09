@@ -14,11 +14,11 @@
   </tr>
   <tr>
     <td>
-      <p>Votes: <%= @question.votes %></p>
+      <p id = "question-vote">Votes: <%= @question.votes %></p>
     </td>
   </tr>
   <tr>
-    <td>
+    <td id = "question-vote-form">
       <%= form_tag question_path, method: "put" do %>
         <%= submit_tag "Upvote" %>
         <%= submit_tag "Downvote" %>
@@ -33,9 +33,9 @@
 <% end %>
 
 <h3>Answers: </h3>
-<%= render '/answer/show' %>
+<%= render '/answers/show' %>
 
 
 
 <h3>Add Answer: </h3>
-<%= render '/answer/new' %>
+<%= render '/answers/new' %>

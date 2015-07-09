@@ -1,5 +1,4 @@
-$(document).ready(function() {
-
+$(document).on("page:change", function() {
   $('#question_add').on("click", function(event){
     event.preventDefault();
     var $target = event.target;
@@ -29,7 +28,7 @@ $(document).ready(function() {
       url: path,
       type: "POST",
       data: $(this).serialize()
-    })
+    });
 
     request.done(function(response){
       console.log(response);
@@ -42,6 +41,5 @@ $(document).ready(function() {
       console.log('i fail');
        console.log(response);
     });
-
-  })
+  });
 });
