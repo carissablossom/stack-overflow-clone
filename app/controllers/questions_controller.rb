@@ -12,23 +12,30 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @answers = @question.answers
+    @answer = Answer.new(question: @question)
+
   end
 
   def new
     # if current_user
-      @question = Question.new
+    @question = Question.new
+    # format.json { render json: @question, status: :created, location: @question }
+    render partial: 'new', layout: false, locals: {question: @question}
+    # format.html{render: 'new', layout: false}
     # else
       # render 'sessions/new'
     # end
   end
 
   def create
+    p "*"* 100
+    p params
     @question = Question.new(question_params)
 
     if @question.save
-      redirect_to question_path(@question)
+      render partial: 'question', layout: false, locals: {question: @question}
     else
-      render 'new'
+      render 'root'
     end
   end
 

@@ -1,17 +1,20 @@
-<h2>Quote of the day: <%= @quote %></h2>
+<div id="question_index">
+  <h2>Quote of the day: <%= @quote %></h2>
 
-<% if current_user %>
-	<h1>Welcome <%= current_user.username %></h1>
-<% end %>
+  <% if current_user %>
+  	<h1>Welcome <%= current_user.username %></h1>
+  <% end %>
 
-<h2> All your Questions! </h2>
+  <h2> All your Questions! </h2>
 
-
-<% @questions.each do |question|%>
-  <%= link_to "#{question.title}", question_path(question.id) %>
+  <div id="question_list">
+    <% @questions.each do |question|%>
+      <%= render 'question', question: question%>
+    <% end %>
+  </div>
   <br>
-<% end %>
 
-<br>
-
-<%= link_to "Add a Question", new_question_path %>
+  <div id="question_add">
+    <%= link_to "Add a Question", new_question_path %>
+  </div>
+</div>

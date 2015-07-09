@@ -1,0 +1,23 @@
+<h2>Sign In</h2>
+
+<%= form_for :session, url: signin_path do |f| %>
+  <% if @signin_error %>
+    <p><%= @signin_error %></p>
+  <% end %>
+
+  <p>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </p>
+
+  <p>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </p>
+
+  <p>
+    <%= f.submit "Sign In" %>
+  </p>
+<% end %>
+
+<%= link_to "Sign Up Instead", signup_path %>

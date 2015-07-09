@@ -2,14 +2,27 @@
 
 
 <table>
-  <td>
-    <tr><h2>Title: <%= @question.title %></h2></tr>
-    <tr><p>Question: <%= @question.content %></p></tr>
-    <tr><p>Votes: <%= @question.votes %></p></tr>
-    <tr>
-      <%= form_tag question_path, method: "put" %>
-      <%= submit_tag "Upvote" %>
-      <%= submit_tag "Downvote" %>
+  <tr>
+    <td>
+      <h2>Title: <%= @question.title %></h2>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p>Question: <%= @question.content %></p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p>Votes: <%= @question.votes %></p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= form_tag question_path, method: "put" do %>
+        <%= submit_tag "Upvote" %>
+        <%= submit_tag "Downvote" %>
+      <% end %>
     </td>
   </tr>
 </table>
@@ -25,17 +38,4 @@
 
 
 <h3>Add Answer: </h3>
-<%= form_for([@question, @answers.build]) do |f| %>
-  <% if @error %>
-    <p><%= @error.first %></p>
-  <% end %>
-
-  <p>
-    <%= f.label :answer %>
-    <%= f.text_field :answer %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<%= render '/answer/new' %>

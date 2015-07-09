@@ -1,23 +1,7 @@
 <% if current_user %>
-  <%= form_for @question do |f| %>
-
-    <p>
-      <%= f.label :title %>
-      <%= f.text_field :title %>
-    </p>
-
-    <p>
-      <%= f.label :content %>
-      <%= f.text_field :content %>
-    </p>
-
-    <%= f.hidden_field :user_id, :value => current_user.id %>
-
-    <p>
-      <%= f.submit %>
-    </p>
-
-  <% end %>
+  <div id="question_form">
+    render 'new'
+  </div>
 <% else %>
-  <%= render 'sessions/signin' %>
+  <%= render 'sessions/new' %>
 <% end %>
