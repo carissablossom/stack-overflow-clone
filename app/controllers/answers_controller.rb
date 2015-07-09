@@ -1,12 +1,12 @@
 class AnswersController < ApplicationController
 	def create
 		@question = Question.find(params[:question_id])
-		@answer = @question.answers.new(answer_params)
+		answer = @question.answers.new(answer_params)
 
-		if @answer.save
-			render '_show', layout: false
+		if answer.save
+			render '_show', layout: false, locals: { answer: answer }
 		else
-			@error = @answer.errors.full_messages
+			@error = answer.errors.full_messages
 			render 'questions/show'
 		end
 	end

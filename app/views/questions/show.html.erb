@@ -14,6 +14,9 @@
 
 
 <h3>Answers: </h3>
-<div class="show-answer"></div>
-
+  <div class="show-answer">
+    <% @question.answers.each do |answer| %>
+      <p><%= render partial: 'answers/show', locals: { answer: answer } %></p>
+    <% end %>
+  </div>
 <%= render 'answers/new' %>
