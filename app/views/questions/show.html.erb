@@ -20,8 +20,8 @@
   <tr>
     <td id = "question-vote-form">
       <%= form_tag question_path, method: "put" do %>
-        <%= submit_tag "Upvote" %>
-        <%= submit_tag "Downvote" %>
+        <%= submit_tag "Upvote", :class => "upvote" %>
+        <%= submit_tag "Downvote", :class => "downvote" %>
       <% end %>
     </td>
   </tr>

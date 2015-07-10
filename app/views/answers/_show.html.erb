@@ -1,0 +1,10 @@
+<div id="answer_table">
+  <table>
+    <tbody id="answer_body">
+      <% @answers.each do |answer| %>
+        <%= render '/answers/answer', answer: answer%>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+

@@ -16,16 +16,13 @@ class AnswersController < ApplicationController
 	end
 
 	def update
+    p params
+    p "^" * 100
     @answer = Answer.find(params[:id])
-    if params[:commit] == "Upvote"
-      @answer.votes += 1
-      @answer.save
-      redirect_to question_path(@answer.question)
-    else params[:commit] == "Downvote"
-      @answer.votes -= 1
-      @answer.save
-      redirect_to question_path(@answer.question)
-    end
+    @answer.votes += 1 if params[:vote] == "Upvote"
+    @answer.votes -= 1 if params[:vote] == "Downvote"
+    @answer.save
+    render :json => {:vote => @answer.votes, :id => @answer.id}
   end
 
 	private

@@ -1,0 +1,18 @@
+<tr>
+  <td>
+    <%= answer.answer %>
+  </td>
+</tr>
+<tr>
+  <td data-answer-id=<%= answer.id %> class="answer">
+    Votes: <%= answer.votes %>
+  </td>
+</tr>
+<tr>
+  <td>
+    <%= form_tag question_answer_path(answer.question_id, answer), method: 'patch' do %>
+      <%= submit_tag "Upvote", :class => "upvote_answer" %>
+      <%= submit_tag "Downvote", :class => "downvote_answer" %>
+    <% end %>
+  </td>
+</tr>

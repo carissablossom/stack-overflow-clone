@@ -45,14 +45,17 @@ class QuestionsController < ApplicationController
 
   def update
     @question = Question.find(params[:id])
-    if params[:commit] == "Upvote"
+    p "*" * 100
+    p params
+    p "*" * 100
+    if params[:vote] == "Upvote"
       @question.votes += 1
       @question.save
-      redirect_to question_path(@question)
-    elsif params[:commit] == "Downvote"
+      render :json => {:vote => @question.votes, :id => @question.id}
+    elsif params[:vote] == "Downvote"
       @question.votes -= 1
       @question.save
-      redirect_to question_path(@question)
+      render :json => {:vote => @question.votes, :id => @question.id}
     else
       if @question.update(question_params)
         redirect_to question_path(@question)

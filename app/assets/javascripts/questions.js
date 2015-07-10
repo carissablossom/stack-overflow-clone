@@ -42,4 +42,32 @@ $(document).on("page:change", function() {
        console.log(response);
     });
   });
+
+  function vote(domElement) {
+    domElement.on('click', function(event) {
+      event.preventDefault();
+      var $target = event.target;
+      var path = $target.parentElement.action;
+      var vote = $target.value;
+      var request = $.ajax({
+        url: path,
+        type: "PUT",
+        data: {vote: vote}
+      });
+
+      request.done(function(response){
+        console.log(response);
+        $('#question-vote').text("Votes: "+ response.vote);
+      });
+
+      request.fail(function(response){
+        console.log('i fail');
+         console.log(response);
+      });
+    });
+  }
+
+  vote($('.upvote'));
+  vote($('.downvote'));
+
 });
